@@ -3,3 +3,16 @@
     grid-template-areas: 'text properties';
     grid-template-columns: 1fr 250px;
 }
+
+.area-text {
+    height: 100%;
+    background-color: rgb(40, 40, 40);
+}
+
+.editorText {
+    margin: 20px;
+    font-size: 1.5rem;
+    color: rgb(220, 220, 220);
+    line-height: 1.8rem;
+
+}

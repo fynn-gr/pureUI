@@ -4,8 +4,29 @@
 
 .area {
     background-color: c.$areaBG1;
+    border-radius: v.$cBase;
 }
 
 .propertie-view {
-    
+    margin: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.propertie-view {
+    .propName {
+        font-size: 1.2rem;
+    }
+    .propValue {
+        font-size: 1.2rem;
+    }
+}
+
+input {
+    height: 20px;
+    font-size: 1.2rem;
+    text-align: center;
+    color: c.$text;
+    background-color: c.$inputField;
+    border-radius: v.$cBase;
 }

@@ -1,6 +1,7 @@
 // Window common elements for all Operating systems
 
 @use '../scss/_colors' as c;
+@use '../scss/variables' as v;
 @use '../scss/_mixins' as mix;
 
 .windowTitleBar {
@@ -116,8 +117,10 @@
 
 .windowBody {
     position: fixed;
+    margin: v.$gridGap;
     display: grid;
+    grid-gap: v.$gridGap;
     top: 30px;
-    width: 100vw;
-    height: calc(100vh - 30px);
+    width: calc(100vw - v.$gridGap * 2);
+    height: calc(100vh - 30px - v.$gridGap * 2);
 }

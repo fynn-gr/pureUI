@@ -109,14 +109,39 @@
 
 .windowBody {
   position: fixed;
+  margin: 3px;
   display: grid;
+  grid-gap: 3px;
   top: 30px;
-  width: 100vw;
-  height: calc(100vh - 30px);
+  width: calc(100vw - 6px);
+  height: calc(100vh - 30px - 6px);
 }
 
 .area {
-  background-color: gray;
+  background-color: #505050;
+  border-radius: 4px;
+}
+
+.propertie-view {
+  margin: 10px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.propertie-view .propName {
+  font-size: 1.2rem;
+}
+.propertie-view .propValue {
+  font-size: 1.2rem;
+}
+
+input {
+  height: 20px;
+  font-size: 1.2rem;
+  text-align: center;
+  color: white;
+  background-color: #6e6e6e;
+  border-radius: 4px;
 }
 
 :root {
@@ -133,5 +158,5 @@
 }
 
 body {
-  background-color: gray;
+  background-color: #282828;
 }
