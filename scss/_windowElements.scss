@@ -1,0 +1,123 @@
+// Window common elements for all Operating systems
+
+@use '../scss/_colors' as c;
+@use '../scss/_mixins' as mix;
+
+.windowTitleBar {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    background-color: c.$windowTitleBarBG;
+
+    .windowTitleBarContent {
+        @include mix.noSelect;
+        position: fixed;
+        left: 72px;
+        height: inherit;
+        width: calc(100vw - 120px - 72px);
+        p {
+            height: inherit;
+            padding: 5px;
+            font-size: 15px;
+            text-align: center;
+        }
+    }
+
+    #windowCloseWin {
+        float: right;
+        right: 0;
+        width: 40px;
+        height: inherit;
+        background-color: transparent;
+        &:hover {
+            background-color: #ff0000;
+        }
+    }
+    
+    #windowMinWin {
+        float: right;
+        right: 0;
+        width: 40px;
+        height: inherit;
+        background-color: transparent;
+        &:hover {
+            background-color: #ffffff22;
+        }
+    }
+
+    #windowMaxWin {
+        float: right;
+        right: 0;
+        width: 40px;
+        height: inherit;
+        background-color: transparent;
+        &:hover {
+            background-color: #ffffff22;
+        }
+    }
+
+    #windowCloseMac {
+        float: left;
+        margin: 9px 9px 9px 9px;
+        width: 12px;
+        height: 12px;
+        background-color: #FD5754;
+        border-radius: 7px;
+        &:hover {
+            img {
+                display: block;
+            }
+        }
+        img {
+            display: none;
+            height: 12px;
+        }
+    }
+
+    #windowMinMac {
+        float: left;
+        margin: 9px 9px 9px 0px;
+        width: 12px;
+        height: 12px;
+        background-color: #FEBB40;
+        border-radius: 7px;
+        &:hover {
+            img {
+                display: block;
+            }
+        }
+        img {
+            display: none;
+            height: 12px;
+        }
+    }
+
+    #windowMaxMac {
+        float: left;
+        margin: 9px 9px 9px 0px;
+        width: 12px;
+        height: 12px;
+        background-color: #35C748;
+        border-radius: 7px;
+        &:hover {
+            img {
+                display: block;
+            }
+        }
+        img {
+            display: none;
+            height: 12px;
+        }
+    }
+}
+
+.windowBody {
+    position: fixed;
+    display: grid;
+    top: 30px;
+    width: 100vw;
+    height: calc(100vh - 30px);
+}

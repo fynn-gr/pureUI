@@ -1,0 +1,29 @@
+//Main css File
+
+//variables
+@use '../scss/_colors' as c;
+@use '../scss/_fonts' as f;
+@use '../scss/_layout' as l;
+@use '../scss/_mixins' as mix;
+
+//components
+@use '../scss/windowElements' as we;
+@use '../scss/_areaElements' as aE;
+
+//base
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+}
+
+body {
+    background-color: c.$areaBG1;
+}

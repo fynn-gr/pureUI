@@ -1,0 +1,5 @@
+
+.windowBody {
+    grid-template-areas: 'text properties';
+    grid-template-columns: 1fr 250px;
+}
