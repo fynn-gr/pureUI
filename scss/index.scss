@@ -1,14 +1,15 @@
 //Main css File
 
 //variables
-@use '../scss/_colors' as c;
-@use '../scss/_fonts' as f;
-@use '../scss/_layout' as l;
-@use '../scss/_mixins' as mix;
+@forward '../scss/_colors';
+@forward '../scss/_fonts';
+@forward '../scss/_layout';
+@forward '../scss/_mixins';
+@use '../scss/colors' as c;
 
 //components
-@use '../scss/windowElements' as we;
-@use '../scss/_areaElements' as aE;
+@forward '../scss/windowElements';
+@forward '../scss/_areaElements';
 
 //base
 :root {
