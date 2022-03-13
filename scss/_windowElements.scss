@@ -4,21 +4,18 @@
 @use '../scss/variables' as v;
 @use '../scss/_mixins' as mix;
 
-.windowTitleBar {
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    height: 30px;
+.topBar {
+    grid-area: topBar;
     margin: 0;
     padding: 0;
-    background-color: c.$windowTitleBarBG;
 
-    .windowTitleBarContent {
+    background-color: c.$topBarBG;
+
+    .topBarContent {
         @include mix.noSelect;
-        position: fixed;
-        left: 72px;
+        position: relative;
         height: inherit;
-        width: calc(100vw - 120px - 72px);
+
         p {
             height: inherit;
             padding: 5px;
@@ -28,37 +25,48 @@
     }
 
     #windowCloseWin {
-        float: right;
+        position: absolute;
+        top: 0px;
         right: 0;
         width: 40px;
-        height: inherit;
+        height: 30px;
         background-color: transparent;
+
         &:hover {
             background-color: #ff0000;
         }
     }
     
     #windowMinWin {
-        float: right;
-        right: 0;
+        position: absolute;
+        top: 0px;
+        right: 80px;
         width: 40px;
-        height: inherit;
+        height: 30px;
         background-color: transparent;
+
         &:hover {
             background-color: #ffffff22;
         }
     }
 
     #windowMaxWin {
-        float: right;
-        right: 0;
+        position: absolute;
+        top: 0px;
+        right: 40px;
         width: 40px;
-        height: inherit;
+        height: 30px;
         background-color: transparent;
+
         &:hover {
             background-color: #ffffff22;
         }
     }
+}
+
+.trafficLight {
+    position: fixed;
+    z-index: 100;
 
     #windowCloseMac {
         float: left;
@@ -115,12 +123,16 @@
     }
 }
 
+.sideBar {
+    grid-area: sideBar;
+
+    background-color: c.$sideBar;
+}
+
 .windowBody {
     position: fixed;
-    margin: v.$gridGap;
     display: grid;
     grid-gap: v.$gridGap;
-    top: 30px;
-    width: calc(100vw - v.$gridGap * 2);
-    height: calc(100vh - 30px - v.$gridGap * 2);
+    width: 100vw;
+    height: 100vh;
 }

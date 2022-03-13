@@ -8,7 +8,7 @@
 @use '../scss/colors' as c;
 
 //components
-@forward '../scss/windowElements';
+@forward '../scss/_windowElements';
 @forward '../scss/_areaElements';
 
 //base
@@ -26,5 +26,5 @@
 }
 
 body {
-    background-color: c.$areaBG5;
+    background-color: c.$gridGap;
 }

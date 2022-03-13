@@ -1,7 +1,9 @@
 
 .windowBody {
-    grid-template-areas: 'text properties';
-    grid-template-columns: 1fr 250px;
+    grid-template-areas:'sideBar topBar topBar' 
+                        'sideBar text properties';
+    grid-template-rows: 50px 1fr;
+    grid-template-columns: 200px 1fr 250px;
 }
 
 .area-text {
