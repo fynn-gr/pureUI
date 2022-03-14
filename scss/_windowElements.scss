@@ -24,6 +24,20 @@
         }
     }
 
+    .toolBar {
+        padding: 10px;
+
+        .toolBarItem {
+            height: 30px;
+            width: 40px;
+            border-radius: 12px;
+
+            &:hover {
+                background-color: c.$hover;
+            }
+        }
+    }
+
     #windowCloseWin {
         position: absolute;
         top: 0px;
