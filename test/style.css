@@ -1,5 +1,6 @@
 
 .windowBody {
+
     grid-template-columns: 200px 1fr 250px;
     grid-template-rows: 30px 1fr;
     grid-template-areas:'sideBar topBar topBar'
@@ -14,6 +15,7 @@
 
 .area-properties {
     grid-area: properties;
+    background-color: #333;
 }
 
 .editorText {

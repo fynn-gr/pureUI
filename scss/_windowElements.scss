@@ -7,7 +7,7 @@
 .topBar {
     grid-area: topBar;
     height: 30px;
-    background-color: c.$windowTitleBarBG;
+    background-color: c.$topBarBG;
 
     &.toolBar {
         height: 50px !important;
@@ -18,8 +18,9 @@
         @include mix.drag;
         position: fixed;
         left: 72px;
+
         height: inherit;
-        width: calc(100vw - 120px - 72px);
+
         p {
             height: inherit;
             padding: 5px;
@@ -28,38 +29,68 @@
         }
     }
 
+    .toolBar {
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        .toolBarItem {
+            height: 30px;
+            width: 40px;
+            border-radius: 5px;
+            background-color: transparent;
+
+            &:hover {
+                background-color: c.$hover;
+            }
+        }
+    }
+
     #windowCloseWin {
-        float: right;
+        position: absolute;
+        top: 0px;
         right: 0;
         width: 40px;
-        height: inherit;
+        height: 30px;
         background-color: transparent;
+
         &:hover {
             background-color: #ff0000;
         }
     }
     
     #windowMinWin {
-        float: right;
-        right: 0;
+        position: absolute;
+        top: 0px;
+        right: 80px;
         width: 40px;
-        height: inherit;
+        height: 30px;
         background-color: transparent;
+
         &:hover {
             background-color: #ffffff22;
         }
     }
 
     #windowMaxWin {
-        float: right;
-        right: 0;
+        position: absolute;
+        top: 0px;
+        right: 40px;
         width: 40px;
-        height: inherit;
+        height: 30px;
         background-color: transparent;
+
         &:hover {
             background-color: #ffffff22;
         }
     }
+}
+
+.sideBar {
+    grid-area: sideBar;
+
+    background-color: c.$sideBar;
 }
 
 .windowBody {
