@@ -1,12 +1,19 @@
 
 .windowBody {
-    grid-template-areas: 'text properties';
-    grid-template-columns: 1fr 250px;
+    grid-template-columns: 200px 1fr 250px;
+    grid-template-rows: 30px 1fr;
+    grid-template-areas:'sideBar topBar topBar'
+                        'sideBar text   properties';
 }
 
 .area-text {
+    grid-area: text;
     height: 100%;
     background-color: rgb(40, 40, 40);
+}
+
+.area-properties {
+    grid-area: properties;
 }
 
 .editorText {

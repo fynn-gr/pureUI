@@ -1,13 +1,12 @@
-.windowTitleBar {
-  position: fixed;
-  top: 0;
-  width: 100vw;
+.topBar {
+  grid-area: topBar;
   height: 30px;
-  margin: 0;
-  padding: 0;
   background-color: #474747;
 }
-.windowTitleBar .windowTitleBarContent {
+.topBar.toolBar {
+  height: 50px !important;
+}
+.topBar .topBarContent {
   -webkit-touch-callout: none;
   /*Safari ios*/
   -webkit-user-select: none;
@@ -20,106 +19,55 @@
   /*IE/Edge */
   user-select: none;
   /*Non-prefixed version */
+  -webkit-app-region: drag;
   position: fixed;
   left: 72px;
   height: inherit;
   width: calc(100vw - 120px - 72px);
 }
-.windowTitleBar .windowTitleBarContent p {
+.topBar .topBarContent p {
   height: inherit;
   padding: 5px;
   font-size: 15px;
   text-align: center;
 }
-.windowTitleBar #windowCloseWin {
+.topBar #windowCloseWin {
   float: right;
   right: 0;
   width: 40px;
   height: inherit;
   background-color: transparent;
 }
-.windowTitleBar #windowCloseWin:hover {
+.topBar #windowCloseWin:hover {
   background-color: #ff0000;
 }
-.windowTitleBar #windowMinWin {
+.topBar #windowMinWin {
   float: right;
   right: 0;
   width: 40px;
   height: inherit;
   background-color: transparent;
 }
-.windowTitleBar #windowMinWin:hover {
+.topBar #windowMinWin:hover {
   background-color: #ffffff22;
 }
-.windowTitleBar #windowMaxWin {
+.topBar #windowMaxWin {
   float: right;
   right: 0;
   width: 40px;
   height: inherit;
   background-color: transparent;
 }
-.windowTitleBar #windowMaxWin:hover {
+.topBar #windowMaxWin:hover {
   background-color: #ffffff22;
-}
-.windowTitleBar #windowCloseMac {
-  float: left;
-  margin: 9px 9px 9px 9px;
-  width: 12px;
-  height: 12px;
-  background-color: #FD5754;
-  border-radius: 7px;
-}
-.windowTitleBar #windowCloseMac:hover img {
-  display: block;
-}
-.windowTitleBar #windowCloseMac img {
-  display: none;
-  height: 12px;
-}
-.windowTitleBar #windowMinMac {
-  float: left;
-  margin: 9px 9px 9px 0px;
-  width: 12px;
-  height: 12px;
-  background-color: #FEBB40;
-  border-radius: 7px;
-}
-.windowTitleBar #windowMinMac:hover img {
-  display: block;
-}
-.windowTitleBar #windowMinMac img {
-  display: none;
-  height: 12px;
-}
-.windowTitleBar #windowMaxMac {
-  float: left;
-  margin: 9px 9px 9px 0px;
-  width: 12px;
-  height: 12px;
-  background-color: #35C748;
-  border-radius: 7px;
-}
-.windowTitleBar #windowMaxMac:hover img {
-  display: block;
-}
-.windowTitleBar #windowMaxMac img {
-  display: none;
-  height: 12px;
 }
 
 .windowBody {
   position: fixed;
-  margin: 3px;
+  width: 100vw;
+  height: 100vh;
   display: grid;
-  grid-gap: 3px;
-  top: 30px;
-  width: calc(100vw - 6px);
-  height: calc(100vh - 30px - 6px);
-}
-
-.area {
-  background-color: #505050;
-  border-radius: 4px;
+  grid-gap: 1px;
 }
 
 .propertie-view {
@@ -127,12 +75,15 @@
   overflow-y: scroll;
   overflow-x: hidden;
 }
-
 .propertie-view .propName {
   font-size: 1.2rem;
 }
 .propertie-view .propValue {
   font-size: 1.2rem;
+}
+
+.sideBar {
+  grid-area: sideBar;
 }
 
 input {
@@ -147,7 +98,7 @@ input {
 :root {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 10px;
-  color: #ffffff;
+  color: white;
 }
 
 * {

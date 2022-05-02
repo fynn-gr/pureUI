@@ -6,3 +6,7 @@
     -ms-user-select: none;       /*IE/Edge */
     user-select: none;           /*Non-prefixed version */
 }
+
+@mixin drag {
+    -webkit-app-region: drag;
+}

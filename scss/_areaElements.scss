@@ -2,24 +2,22 @@
 @use '../scss/_colors' as c;
 @use '../scss/_variables' as v;
 
-.area {
-    background-color: c.$areaBG1;
-    border-radius: v.$cBase;
-}
-
 .propertie-view {
     margin: 10px;
     overflow-y: scroll;
     overflow-x: hidden;
-}
-
-.propertie-view {
+    
     .propName {
         font-size: 1.2rem;
     }
+
     .propValue {
         font-size: 1.2rem;
     }
+}
+
+.sideBar {
+    grid-area: sideBar;
 }
 
 input {

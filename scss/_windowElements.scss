@@ -4,17 +4,18 @@
 @use '../scss/variables' as v;
 @use '../scss/_mixins' as mix;
 
-.windowTitleBar {
-    position: fixed;
-    top: 0;
-    width: 100vw;
+.topBar {
+    grid-area: topBar;
     height: 30px;
-    margin: 0;
-    padding: 0;
     background-color: c.$windowTitleBarBG;
 
-    .windowTitleBarContent {
+    &.toolBar {
+        height: 50px !important;
+    }
+
+    .topBarContent {
         @include mix.noSelect;
+        @include mix.drag;
         position: fixed;
         left: 72px;
         height: inherit;
@@ -59,68 +60,12 @@
             background-color: #ffffff22;
         }
     }
-
-    #windowCloseMac {
-        float: left;
-        margin: 9px 9px 9px 9px;
-        width: 12px;
-        height: 12px;
-        background-color: #FD5754;
-        border-radius: 7px;
-        &:hover {
-            img {
-                display: block;
-            }
-        }
-        img {
-            display: none;
-            height: 12px;
-        }
-    }
-
-    #windowMinMac {
-        float: left;
-        margin: 9px 9px 9px 0px;
-        width: 12px;
-        height: 12px;
-        background-color: #FEBB40;
-        border-radius: 7px;
-        &:hover {
-            img {
-                display: block;
-            }
-        }
-        img {
-            display: none;
-            height: 12px;
-        }
-    }
-
-    #windowMaxMac {
-        float: left;
-        margin: 9px 9px 9px 0px;
-        width: 12px;
-        height: 12px;
-        background-color: #35C748;
-        border-radius: 7px;
-        &:hover {
-            img {
-                display: block;
-            }
-        }
-        img {
-            display: none;
-            height: 12px;
-        }
-    }
 }
 
 .windowBody {
     position: fixed;
-    margin: v.$gridGap;
+    width: 100vw;
+    height: 100vh;
     display: grid;
     grid-gap: v.$gridGap;
-    top: 30px;
-    width: calc(100vw - v.$gridGap * 2);
-    height: calc(100vh - 30px - v.$gridGap * 2);
 }
