@@ -1,0 +1,135 @@
+.topBar {
+  grid-area: topBar;
+  height: 30px;
+  background-color: #363636;
+}
+.topBar.toolBar {
+  height: 50px !important;
+}
+.topBar .topBarContent {
+  -webkit-touch-callout: none;
+  /*Safari ios*/
+  -webkit-user-select: none;
+  /*Safari */
+  -khtml-user-select: none;
+  /*Konqueror HTML */
+  -moz-user-select: none;
+  /*Old Firefox */
+  -ms-user-select: none;
+  /*IE/Edge */
+  user-select: none;
+  /*Non-prefixed version */
+  -webkit-app-region: drag;
+  position: fixed;
+  left: 72px;
+  height: inherit;
+}
+.topBar .topBarContent p {
+  height: inherit;
+  padding: 5px;
+  font-size: 15px;
+  text-align: center;
+}
+.topBar .toolBar {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.topBar .toolBar .toolBarItem {
+  height: 30px;
+  width: 40px;
+  border-radius: 5px;
+  background-color: transparent;
+}
+.topBar .toolBar .toolBarItem:hover {
+  background-color: #5e5e5e;
+}
+.topBar #windowCloseWin {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  width: 40px;
+  height: 30px;
+  background-color: transparent;
+}
+.topBar #windowCloseWin:hover {
+  background-color: #ff0000;
+}
+.topBar #windowMinWin {
+  position: absolute;
+  top: 0px;
+  right: 80px;
+  width: 40px;
+  height: 30px;
+  background-color: transparent;
+}
+.topBar #windowMinWin:hover {
+  background-color: #ffffff22;
+}
+.topBar #windowMaxWin {
+  position: absolute;
+  top: 0px;
+  right: 40px;
+  width: 40px;
+  height: 30px;
+  background-color: transparent;
+}
+.topBar #windowMaxWin:hover {
+  background-color: #ffffff22;
+}
+
+.sideBar {
+  grid-area: sideBar;
+  background-color: #242424;
+}
+
+.windowBody {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-gap: 1px;
+}
+
+.propertie-view {
+  margin: 10px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.propertie-view .propName {
+  font-size: 1.2rem;
+}
+.propertie-view .propValue {
+  font-size: 1.2rem;
+}
+
+.sideBar {
+  grid-area: sideBar;
+}
+
+input {
+  height: 20px;
+  font-size: 1.2rem;
+  text-align: center;
+  color: white;
+  background-color: #6e6e6e;
+  border-radius: 4px;
+}
+
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+}
+
+body {
+  background-color: black;
+}
