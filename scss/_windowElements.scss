@@ -5,20 +5,22 @@
 @use '../scss/_mixins' as mix;
 
 .topBar {
+    @include mix.drag;
     grid-area: topBar;
-    height: 30px;
+    height: 25px;
     background-color: c.$topBarBG;
 
-    &.toolBar {
-        height: 50px !important;
+    &.tools {
+        height: 50px;
     }
+
+    &.buttons {
+        height: 40px;
+    }
+
 
     .topBarContent {
         @include mix.noSelect;
-        @include mix.drag;
-        position: fixed;
-        left: 72px;
-
         height: inherit;
 
         p {
