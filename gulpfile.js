@@ -13,6 +13,7 @@ function watchTask() {
     watch(['scss/_windowElements.scss'], buildStyles);
     watch(['scss/_layout.scss'], buildStyles);
     watch(['scss/_areaElements.scss'], buildStyles);
+    watch(['scss/_colors_dark.scss'], buildStyles);
 }
 
 exports.default = series(buildStyles, watchTask)

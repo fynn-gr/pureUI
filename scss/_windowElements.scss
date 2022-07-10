@@ -1,6 +1,6 @@
 // Window common elements for all Operating systems
 
-@use '../scss/_colors' as c;
+@use '../scss/_colors_dark' as c;
 @use '../scss/variables' as v;
 @use '../scss/_mixins' as mix;
 
@@ -92,7 +92,11 @@
 .sideBar {
     grid-area: sideBar;
 
-    background-color: c.$sideBar;
+    background-color: c.$sideBarBG;
+}
+
+.properties {
+    background-color: c.$propertiesBG;
 }
 
 .windowBody {

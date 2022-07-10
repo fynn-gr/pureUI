@@ -1,30 +1,66 @@
 
-@use '../scss/_colors' as c;
+@use '../scss/_colors_dark' as c;
 @use '../scss/_variables' as v;
 
-.propertie-view {
-    margin: 10px;
-    overflow-y: scroll;
+.propertieRow {
+    display: flex;
+    margin: 5px;
     overflow-x: hidden;
     
     .propName {
+        width: 40%;
+        margin: 0px;
+        padding: 0px 8px 0px 0px;
+        text-align: right;
         font-size: 1.2rem;
     }
 
     .propValue {
+        margin: 0px;
+        padding: 0px;
+        width: 60%;
         font-size: 1.2rem;
     }
+
+    input {
+        height: 20px;
+        font-size: 1.2rem;
+        text-align: center;
+
+        color: c.$text;
+        background-color: c.$inputField;
+        outline: none;
+        border: none;
+        border-radius: v.$cBase;
+    }
+}
+
+.panelName {
+    margin: 2px 10px 2px 10px;
+    font-size: 1.2rem;
+}
+
+.panel {
+    margin: 5px;
+    overflow-x: hidden;
+    border-radius: 6px;
+    background-color: c.$panel;
+}
+
+.panel2 {
+    margin: 5px;
+    overflow-x: hidden;
+    border-radius: 6px;
+    background-color: c.$panel2;
+}
+
+.panel3 {
+    margin: 5px;
+    overflow-x: hidden;
+    border-radius: 6px;
+    background-color: c.$panel3;
 }
 
 .sideBar {
     grid-area: sideBar;
-}
-
-input {
-    height: 20px;
-    font-size: 1.2rem;
-    text-align: center;
-    color: c.$text;
-    background-color: c.$inputField;
-    border-radius: v.$cBase;
 }
