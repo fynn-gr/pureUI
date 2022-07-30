@@ -22,19 +22,23 @@
   font-family: OpenSans-medium;
   src: url("../assets/fonts/OpenSans-Medium.ttf");
 }
+.windowBody {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-gap: 1px;
+}
+
 .topBar {
   -webkit-app-region: drag;
   grid-area: topBar;
-  height: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
   background-color: #363636;
 }
-.topBar.tools {
-  height: 50px;
-}
-.topBar.buttons {
-  height: 40px;
-}
-.topBar .topBarContent {
+.topBar .topBarText {
   -webkit-touch-callout: none;
   /*Safari ios*/
   -webkit-user-select: none;
@@ -49,7 +53,7 @@
   /*Non-prefixed version */
   height: inherit;
 }
-.topBar .topBarContent p {
+.topBar .topBarText p {
   height: inherit;
   padding: 5px;
   font-size: 15px;
@@ -57,51 +61,72 @@
 }
 .topBar .toolBar {
   padding: 10px;
+  flex: 1;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
 }
-.topBar .toolBar .toolBarItem {
+.topBar .toolBar .toolBarButton {
   height: 30px;
   width: 40px;
   border-radius: 5px;
   background-color: transparent;
 }
-.topBar .toolBar .toolBarItem:hover {
+.topBar .toolBar .toolBarButton .icon {
+  filter: invert(100%);
+}
+.topBar .toolBar .toolBarButton:hover {
   background-color: #5e5e5e;
 }
-.topBar #windowCloseWin {
+.topBar .toolBar .toolBarSwitch {
+  height: 30px;
+}
+.topBar .toolBar .toolBarSpacer {
+  flex: 1;
+}
+.topBar .windowButtonsWin {
+  height: 25px;
+  width: 120px;
+}
+.topBar .windowButtonsWin #windowCloseWin {
   position: absolute;
   top: 0px;
   right: 0;
   width: 40px;
-  height: 30px;
+  height: 25px;
   background-color: transparent;
 }
-.topBar #windowCloseWin:hover {
+.topBar .windowButtonsWin #windowCloseWin:hover {
   background-color: #ff0000;
 }
-.topBar #windowMinWin {
+.topBar .windowButtonsWin #windowMinWin {
   position: absolute;
   top: 0px;
   right: 80px;
   width: 40px;
-  height: 30px;
+  height: 25px;
   background-color: transparent;
 }
-.topBar #windowMinWin:hover {
+.topBar .windowButtonsWin #windowMinWin:hover {
   background-color: #ffffff22;
 }
-.topBar #windowMaxWin {
+.topBar .windowButtonsWin #windowMaxWin {
   position: absolute;
   top: 0px;
   right: 40px;
   width: 40px;
-  height: 30px;
+  height: 25px;
   background-color: transparent;
 }
-.topBar #windowMaxWin:hover {
+.topBar .windowButtonsWin #windowMaxWin:hover {
   background-color: #ffffff22;
+}
+
+.sideBarTop {
+  -webkit-app-region: drag;
+  grid-area: sideBarTop;
+  background-color: #242424;
+  margin-bottom: -1px;
 }
 
 .sideBar {
@@ -111,14 +136,6 @@
 
 .properties {
   background-color: #242424;
-}
-
-.windowBody {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  display: grid;
-  grid-gap: 1px;
 }
 
 .propertieRow {
@@ -141,19 +158,29 @@
   font-size: 1.2rem;
 }
 .propertieRow input {
-  height: 2rem;
+  height: 1.8rem;
   font-size: 1.2rem;
   text-align: center;
-  color: white;
+  color: #f3f3f3;
   background-color: #6e6e6e;
   outline: none;
   border: none;
   border-radius: 4px;
 }
-.propertieRow input[type=checkbox] {
-  width: 2rem;
+.propertieRow input[type=number] {
+  border-style: solid;
+  border-width: 0.1rem;
+  border-color: #141414;
 }
-
+.propertieRow input[type=text] {
+  border-style: solid;
+  border-width: 0.1rem;
+  border-color: #141414;
+}
+.propertieRow input[type=checkbox] {
+  width: 1.8rem;
+  height: 1.8rem;
+}
 .panelName {
   position: absolute;
   margin: 0.5rem;
@@ -194,7 +221,7 @@
 :root {
   font-family: OpenSans-regular, sans-serif;
   font-size: 10px;
-  color: #fff;
+  color: #f3f3f3;
 }
 
 * {

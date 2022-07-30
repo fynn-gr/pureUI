@@ -4,22 +4,26 @@
 @use '../scss/variables' as v;
 @use '../scss/_mixins' as mix;
 
+.windowBody {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-gap: v.$gridGap;
+}
+
 .topBar {
+    //25px default
+    //40px buttons & menus
+    //50px toolbar
     @include mix.drag;
     grid-area: topBar;
-    height: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
     background-color: c.$topBarBG;
 
-    &.tools {
-        height: 50px;
-    }
-
-    &.buttons {
-        height: 40px;
-    }
-
-
-    .topBarContent {
+    .topBarText {
         @include mix.noSelect;
         height: inherit;
 
@@ -33,76 +37,97 @@
 
     .toolBar {
         padding: 10px;
+        flex: 1;
+
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
 
-        .toolBarItem {
+        .toolBarButton {
             height: 30px;
             width: 40px;
             border-radius: 5px;
             background-color: transparent;
 
+            .icon {
+                filter: invert(100%);
+            }
+
             &:hover {
                 background-color: c.$hover;
             }
         }
-    }
 
-    #windowCloseWin {
-        position: absolute;
-        top: 0px;
-        right: 0;
-        width: 40px;
-        height: 30px;
-        background-color: transparent;
+        .toolBarSwitch {
+            height: 30px;
 
-        &:hover {
-            background-color: #ff0000;
+            button {
+                
+            }
+        }
+
+        .toolBarSpacer {
+            flex: 1;
         }
     }
+
+    .windowButtonsWin {
+        height: 25px;
+        width: 120px;
+
+        #windowCloseWin {
+            position: absolute;
+            top: 0px;
+            right: 0;
+            width: 40px;
+            height: 25px;
+            background-color: transparent;
     
-    #windowMinWin {
-        position: absolute;
-        top: 0px;
-        right: 80px;
-        width: 40px;
-        height: 30px;
-        background-color: transparent;
-
-        &:hover {
-            background-color: #ffffff22;
+            &:hover {
+                background-color: #ff0000;
+            }
         }
-    }
-
-    #windowMaxWin {
-        position: absolute;
-        top: 0px;
-        right: 40px;
-        width: 40px;
-        height: 30px;
-        background-color: transparent;
-
-        &:hover {
-            background-color: #ffffff22;
+        
+        #windowMinWin {
+            position: absolute;
+            top: 0px;
+            right: 80px;
+            width: 40px;
+            height: 25px;
+            background-color: transparent;
+    
+            &:hover {
+                background-color: #ffffff22;
+            }
+        }
+    
+        #windowMaxWin {
+            position: absolute;
+            top: 0px;
+            right: 40px;
+            width: 40px;
+            height: 25px;
+            background-color: transparent;
+    
+            &:hover {
+                background-color: #ffffff22;
+            }
         }
     }
 }
 
+.sideBarTop {
+    @include mix.drag;
+    grid-area: sideBarTop;
+    background-color: c.$sideBarBG;
+    margin-bottom: -1px;
+}
+
 .sideBar {
     grid-area: sideBar;
-
     background-color: c.$sideBarBG;
 }
 
 .properties {
     background-color: c.$propertiesBG;
-}
-
-.windowBody {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    grid-gap: v.$gridGap;
 }

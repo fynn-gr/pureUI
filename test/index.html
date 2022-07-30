@@ -13,9 +13,15 @@
 <body>
 	<div class="windowBody">
 
-		<div class="topBar tools">
-			<div class="topBarContent">
-				<p class="windowTitle">pureTest</p>
+		<div class="topBar">
+			<div class="toolBar">
+				<button class="toolBarButton"><object class="icon" data="../assets/icons/tb_sidebar.svg"></object></button>
+				<div class="toolBarSpacer"></div>
+				<button class="toolBarButton"><object class="icon" data="../assets/icons/tb_start.svg"></object></button>
+				<button class="toolBarButton"><object class="icon" data="../assets/icons/tb_play.svg"></object></button>
+				<button class="toolBarButton"><object class="icon" data="../assets/icons/tb_end.svg"></object></button>
+				<div class="toolBarSpacer"></div>
+				<button class="toolBarButton"><object class="icon" data="../assets/icons/tb_properties.svg"></object></button>
 			</div>
 	
 			<!--Windows Buttons-->
@@ -30,16 +36,10 @@
 					<img src="../assets/icons/windowIconMin.png">
 				</button>
 			</div>
-	
-			<!--Linux Buttons
-			<button id="windowMinKde"></button>
-			<button id="windowMaxKde"></button>
-			<button id="windowCloseKde"></button>
-	
-			<button id="windowMinCin"></button>
-			<button id="windowMaxCin"></button>
-			<button id="windowCloseCin"></button>
-			-->
+		</div>
+
+		<div class="sideBarTop">
+
 		</div>
 
 		<div class="sideBar">
@@ -51,46 +51,51 @@
 		</div>
 
 		<div class="properties">
-      <div class="propertieRow">
-        <p class="propName">Number</p>
-        <input class="propValue" type="number" value="15168">
-      </div>
-      <div class="propertieRow">
-        <p class="propName">test String</p>
-        <input class="propValue" type="text" value="Foo Bar Spam eggs">
-      </div>
-
+			<div class="propertieRow">
+				<p class="propName">Number</p>
+				<input class="propValue" type="number" value="15168">
+			</div>
+			<div class="propertieRow">
+				<p class="propName">test String</p>
+				<input class="propValue" type="text" value="Foo Bar Spam eggs">
+			</div>
+		
 			<div class="panel">
-				<input type="checkbox" class="panelName"><p>Panel Name Here</p>
-        <div class="propertieRow">
-          <p class="propName">test slider</p>
-          <input class="propValue" type="range" value="1">
-        </div>
-
+				<input type="checkbox" class="panelName">
+				<p>Panel Name Here</p>
+				<div class="propertieRow">
+					<p class="propName">test slider</p>
+					<input class="propValue" type="range" value="1">
+				</div>
+		
 				<div class="panel2">
-					<input type="checkbox" class="panelName"><p>Subpanel</p>
+					<input type="checkbox" class="panelName">
+					<p>Subpanel</p>
 					<div class="propertieRow">
-            <p class="propName">checkbox</p>
-            <input class="propValue" type="checkbox" value="true">
+						<p class="propName">checkbox</p>
+						<input class="propValue" type="checkbox" value="true">
 					</div>
-
+		
 					<div class="panel3">
-						<input type="checkbox" class="panelName"><p>sub-sub panel</p>
+						<input type="checkbox" class="panelName">
+						<p>sub-sub panel</p>
 						<div class="propertieRow">
-              <p class="propName">color picker</p>
-              <input class="propValue" type="color" value="#567812">
+							<p class="propName">color picker</p>
+							<input class="propValue" type="color" value="#567812">
 						</div>
 					</div>
-				</dvi>
+					</dvi>
+				</div>
+			</div>
+			<div class="panel">
+				<input type="checkbox" class="panelName">
+				<p>Another panel</p>
+				<div class="propertieRow">
+					<p class="propName">Number</p>
+					<input class="propValue" type="number" value="15168">
+				</div>
 			</div>
 		</div>
-    <div class="panel">
-      <input type="checkbox" class="panelName"><p>Another panel</p>
-      <div class="propertieRow">
-        <p class="propName">Number</p>
-        <input class="propValue" type="number" value="15168">
-      </div>
-    </div>
 	</div>
 </body>
 
