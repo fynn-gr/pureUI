@@ -56,12 +56,13 @@
     "windows": [
       {
         "fullscreen": false,
-        "width": 800,
-        "height": 600,
+        "width": 880,
+        "height": 720,
         "resizable": true,
         "center": false,
         "title": "pure UI",
-        "decorations": false
+        "decorations": false,
+        "transparent": true
       }
     ]
   }

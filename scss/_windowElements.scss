@@ -10,6 +10,9 @@
     height: 100vh;
     display: grid;
     grid-gap: v.$gridGap;
+    border-radius: 9px;
+    overflow: hidden;
+    background-color: c.$gridGap;
 }
 
 .topBar {
@@ -70,48 +73,82 @@
             flex: 1;
         }
     }
+}
 
-    .windowButtonsWin {
-        height: 25px;
-        width: 120px;
+.winButtonsMac {
+    position: fixed;
+    padding: 19px;
+    top: 0;
+    left: 0;
 
-        #windowCloseWin {
-            position: absolute;
-            top: 0px;
-            right: 0;
-            width: 40px;
-            height: 25px;
-            background-color: transparent;
-    
-            &:hover {
-                background-color: #ff0000;
-            }
+    button {
+        width: 12px;
+        height: 12px;
+        box-sizing: border-box;
+        border: none;
+        border-width: 1px;
+        border-radius: 50%;
+
+        object {
+            display: none;
         }
+
+        &:hover object {
+            display: block;
+        }
+    }
+
+    & > :nth-child(1) {
+        background-color: rgb(254, 95, 87);
+        border-color: rgb(127, 47, 43);
+        margin-right: 8px;
+    }
+
+    & > :nth-child(2) {
+        background-color: rgb(255, 188, 46);
+        border-color: rgb(128, 94, 23);
+        margin-right: 8px;
+    }
+    
+    & > :nth-child(3) {
+        background-color: rgb(40, 200, 65);
+        border-color: rgb(20, 100, 33);
+    }
+}
+
+.winButtonsMS {
+    top: 0px;
+    right: 0px;
+
+    button {
+        width: 45px;
+        height: 30px;
+        color: white;
+        background-color: transparent;
+
+        object {
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    & > :nth-child(1) {
+        &:hover {
+            background-color: rgba(100, 100, 100, 0.4);
+        }
+    }
+
+    & > :nth-child(2) {
+        &:hover {
+            background-color: rgba(100, 100, 100, 0.4);
+        }
+    }
+    
+    & > :nth-child(3) {
+        border-top-right-radius: 9px;
         
-        #windowMinWin {
-            position: absolute;
-            top: 0px;
-            right: 80px;
-            width: 40px;
-            height: 25px;
-            background-color: transparent;
-    
-            &:hover {
-                background-color: #ffffff22;
-            }
-        }
-    
-        #windowMaxWin {
-            position: absolute;
-            top: 0px;
-            right: 40px;
-            width: 40px;
-            height: 25px;
-            background-color: transparent;
-    
-            &:hover {
-                background-color: #ffffff22;
-            }
+        &:hover {
+            background-color: rgb(255, 0, 0);
         }
     }
 }
@@ -130,4 +167,34 @@
 
 .properties {
     background-color: c.$propertiesBG;
+}
+
+.statusBar {
+    grid-area: statusBar;
+    display: flex;
+    height: 25px;
+    padding: 0 10px 0 5px;
+    background-color: #1f1f1f;
+
+    p {
+        color: c.$text;
+        line-height: 22px;
+    }
+
+    .spacer {
+        flex: 1;
+    }
+}
+
+.windowRim {
+    position: fixed;
+    z-index: 9999;
+    width: calc(100vw - 2px);
+    height: calc(100vh - 2px);
+    left: 0;
+    top: 0;
+    background-color: none;
+    border: solid 1px rgb(77, 77, 77);
+    border-radius: 9px;
+    pointer-events: none;
 }
