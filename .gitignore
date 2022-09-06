@@ -5,5 +5,5 @@
 .DS_Store
 
 /node_modules
-test/test/node_modules
+test/node_modules
 

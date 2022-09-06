@@ -1,101 +1,14 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="theme-color" content="#555">
-	<link rel="stylesheet" href="../dist/index.css">
-	<link rel="stylesheet" href="./style.css">
-	<title>pureTest</title>
-</head>
-
-<body>
-	<div class="windowBody">
-
-		<div class="topBar">
-			<div class="toolBar">
-				<button class="toolBarButton"><object class="icon" data="../assets/icons/tb_sidebar.svg"></object></button>
-				<div class="toolBarSpacer"></div>
-				<button class="toolBarButton"><object class="icon" data="../assets/icons/tb_start.svg"></object></button>
-				<button class="toolBarButton"><object class="icon" data="../assets/icons/tb_play.svg"></object></button>
-				<button class="toolBarButton"><object class="icon" data="../assets/icons/tb_end.svg"></object></button>
-				<div class="toolBarSpacer"></div>
-				<button class="toolBarButton"><object class="icon" data="../assets/icons/tb_properties.svg"></object></button>
-			</div>
-	
-			<!--Windows Buttons-->
-			<div class="windowButtonsWin">
-				<button id="windowCloseWin">
-					<img src="../assets/icons/windowIconClose.png">
-				</button>
-				<button id="windowMaxWin">
-					<img src="../assets/icons/windowIconMax.png">
-				</button>
-				<button id="windowMinWin">
-					<img src="../assets/icons/windowIconMin.png">
-				</button>
-			</div>
-		</div>
-
-		<div class="sideBarTop">
-		</div>
-
-		<div class="sideBar">
-		</div>
-
-		<div class="area-text">
-			<p class="editorText" contenteditable="true" spellcheck="false">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		</div>
-
-		<div class="properties">
-			<div class="propertieRow">
-				<p class="propName">Number</p>
-				<input class="propValue" type="number" value="15168">
-			</div>
-			<div class="propertieRow">
-				<p class="propName">test String</p>
-				<input class="propValue" type="text" value="Foo Bar Spam eggs">
-			</div>
-		
-			<div class="panel">
-				<input type="checkbox" class="panelName">
-				<p>Panel Name Here</p>
-				<div class="propertieRow">
-					<p class="propName">test slider</p>
-					<input class="propValue" type="range" value="1">
-				</div>
-		
-				<div class="panel2">
-					<input type="checkbox" class="panelName">
-					<p>Subpanel</p>
-					<div class="propertieRow">
-						<p class="propName">checkbox</p>
-						<input class="propValue" type="checkbox" value="true">
-					</div>
-		
-					<div class="panel3">
-						<input type="checkbox" class="panelName">
-						<p>sub-sub panel</p>
-						<div class="propertieRow">
-							<p class="propName">color picker</p>
-							<input class="propValue" type="color" value="#567812">
-						</div>
-					</div>
-					</dvi>
-				</div>
-			</div>
-			<div class="panel">
-				<input type="checkbox" class="panelName">
-				<p>Another panel</p>
-				<div class="propertieRow">
-					<p class="propName">Number</p>
-					<input class="propValue" type="number" value="15168">
-				</div>
-			</div>
-		</div>
-	</div>
-</body>
-
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <title>pureUI App</title>
+  </head>
+  <body class="Dark">
+    <noscript>script loading error</noscript>
+    <div id="root"></div>
+    <script src="/src/app.tsx" type="module"></script>
+  </body>
 </html>
