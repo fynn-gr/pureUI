@@ -1,19 +1,25 @@
 import { Show } from "solid-js";
 import WinButtonsMS from '../windowElements/winButtonsMS';
+import WinButtonsMac from '../windowElements/winButtonsMac';
 
 export default function TopBar(props:any) {
 
-  console.log(props.content)
-  console.log(props.type)
-
   return (
     <div class="topBar" data-tauri-drag-region>
-      <props.content/>
-      <Show when={props.platform === 'win32' || 
-                  props.platform === 'dev' ||
-                  props.platform === 'linux'}>
-        <WinButtonsMS/>
-      </Show>
+      <div class="topBarContainer">
+        <Show when={props.platform === 'dev' ||
+                    props.platform === 'macos'}>
+          <WinButtonsMac/>
+        </Show>
+
+        <props.content/>
+
+        <Show when={props.plaform === 'dev' ||
+                    props.plaform === 'win' ||
+                    props.plaform === 'linux'}>
+          <WinButtonsMS/>
+        </Show>
+      </div>
     </div>
   );
 }

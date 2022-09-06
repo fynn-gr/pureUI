@@ -1,6 +1,8 @@
-export default function Properties() {
+export default function Properties(props:any) {
     return(
-        <div class="properties">
+        <div
+			class={props.status + " properties"}
+			style={{"width": `${props.width}px`}}>
 			<div class="propertieRow">
 				<p class="propName">Number</p>
 				<input class="propValue" type="number" value="15168"></input>
@@ -35,9 +37,9 @@ export default function Properties() {
 						<input class="propValue" type="checkbox" value="true"></input>
                         <p class="propDescription">explination</p>
 					</div>
-                    <div class="propertieRow">
+                    <div class="propertieRow inactive">
                         <p class="propName">A new Row</p>
-                        <input type="text"></input>
+                        <input class="propValue"type="text"></input>
                     </div>
                     <div class="propertieRow">
                         <p class="propName">color picker</p>

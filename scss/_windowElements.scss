@@ -1,6 +1,6 @@
 // Window common elements for all Operating systems
 
-@use '../scss/_colors_dark' as c;
+@use '../scss/_colors' as c;
 @use '../scss/variables' as v;
 @use '../scss/_mixins' as mix;
 
@@ -12,7 +12,7 @@
     grid-gap: v.$gridGap;
     border-radius: 9px;
     overflow: hidden;
-    background-color: c.$gridGap;
+    background-color: var(--gridGap);
 }
 
 .topBar {
@@ -24,7 +24,7 @@
     display: flex;
     flex-direction: row;
     justify-content: right;
-    background-color: c.$topBarBG;
+    background-color: var(--topBarBG);
 
     .topBarText {
         @include mix.noSelect;
@@ -36,6 +36,12 @@
             font-size: 15px;
             text-align: center;
         }
+    }
+
+    .topBarContainer {
+        position: fixed;
+        width: 100vw;
+        display: flex;
     }
 
     .toolBar {
@@ -57,15 +63,22 @@
             }
 
             &:hover {
-                background-color: c.$hover;
+                background-color: var(--hover);
             }
         }
-
-        .toolBarSwitch {
+        
+        .toolBarSelector {
             height: 30px;
+            border-radius: 5px;
 
-            button {
-                
+            &:hover {
+                background-color: var(--hover2);
+            }
+
+            .toolBarButton {
+                &:hover {
+                    background-color: var(--hover);
+                }
             }
         }
 
@@ -76,7 +89,6 @@
 }
 
 .winButtonsMac {
-    position: fixed;
     padding: 19px;
     top: 0;
     left: 0;
@@ -156,17 +168,21 @@
 .sideBarTop {
     @include mix.drag;
     grid-area: sideBarTop;
-    background-color: c.$sideBarBG;
+    background-color: var(--sideBarBG);
     margin-bottom: -1px;
 }
 
 .sideBar {
     grid-area: sideBar;
-    background-color: c.$sideBarBG;
+    background-color: var(--sideBarBG);
+
+    &.inactive {
+        width: 0px;
+    }
 }
 
 .properties {
-    background-color: c.$propertiesBG;
+    background-color: var(--propertiesBG);
 }
 
 .statusBar {
@@ -177,8 +193,9 @@
     background-color: #1f1f1f;
 
     p {
-        color: c.$text;
+        color: var(--text);
         line-height: 22px;
+        letter-spacing: 0.3pt;
     }
 
     .spacer {

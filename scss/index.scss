@@ -1,11 +1,11 @@
 //Main css File
 
 //variables
-@forward '../scss/_colors_dark';
+@forward '../scss/_colors';
 @forward '../scss/_fonts';
 @forward '../scss/_layout';
 @forward '../scss/_mixins';
-@use '../scss/colors_dark' as c;
+@use '../scss/colors' as c;
 
 //components
 @forward '../scss/_windowElements';
@@ -15,7 +15,7 @@
 :root {
     font-family: OpenSans-regular, sans-serif;
     font-size: 10px;
-    color: c.$text;
+    color: #fff;
 }
 
 * {

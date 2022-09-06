@@ -5,7 +5,7 @@
 .windowBody {
   //width: 100%;
   //height: 100%;
-  grid-template-columns: 200px 1fr 300px;
+  grid-template-columns: min-content 1fr min-content;
   grid-template-rows: 50px 1fr 25px;
   grid-template-areas:'sideBarTop topBar    topBar'
                       'sideBar    canvas      properties'

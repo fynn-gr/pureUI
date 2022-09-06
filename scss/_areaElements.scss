@@ -1,5 +1,5 @@
 
-@use '../scss/_colors_dark' as c;
+@use '../scss/_colors' as c;
 @use '../scss/_variables' as v;
 
 .propertieRow {
@@ -7,20 +7,26 @@
     height: 2rem;
     margin: 0.6rem;
     overflow: hidden;
+
+    &.inactive {
+        opacity: 0.4;
+    }
     
     .propName {
         width: 40%;
         margin: 0px;
         padding: 0px 8px 0px 0px;
         text-align: right;
+        line-height: 2rem;
         font-size: 1.2rem;
-        text-shadow: 1px 1px 2px c.$textShadow;
+        text-shadow: 1px 1px 2px var(--textShadow);
     }
 
     .propDescription {
         margin: 0 0 0 0.4rem;
         font-size: 1.2rem;
-        text-shadow: 1px 1px 2px c.$textShadow;
+        line-height: 2rem;
+        text-shadow: 1px 1px 2px var(--textShadow);
     }
 
     .propValue {
@@ -36,19 +42,19 @@
         font-size: 1.1rem;
         text-align: center;
 
-        color: c.$text;
-        text-shadow: 1px 1px 2px c.$textShadow;
-        background-color: c.$inputField;
+        color: var(--text);
+        text-shadow: 1px 1px 2px var(--textShadow);
+        background-color: var(--inputField);
         outline: none;
         border: none;
         border-radius: v.$cBase;
 
         &[type=number] {
-            border: solid 0.1rem c.$inputBorder;
+            border: solid 0.1rem var(--inputBorder);
         }
 
         &[type=text] {
-            border: solid 0.1rem c.$inputBorder;
+            border: solid 0.1rem var(--inputBorder);
         }
 
         &[type=checkbox] {
@@ -58,7 +64,7 @@
         }
 
         &[type=color] {
-            border: solid 0.1rem c.$inputBorder;
+            border: solid 0.1rem var(--inputBorder);
         }
 
         &[type=range] {
@@ -71,11 +77,11 @@
         font-size: 1.2rem;
         text-align: center;
 
-        color: c.$text;
-        text-shadow: 1px 1px 2px c.$textShadow;
-        background-color: c.$button;
+        color: var(--text);
+        text-shadow: 1px 1px 2px var(--textShadow);
+        background-color: var(--button);
         outline: none;
-        border: solid 0.1rem c.$inputBorder;
+        border: solid 0.1rem var(--inputBorder);
         border-radius: v.$cBase;
     }
 }
@@ -86,7 +92,7 @@
     height: 20px;
     background-color: transparent;
     font-size: 1.1rem;
-    text-shadow: 1px 1px 2px c.$textShadow;
+    text-shadow: 1px 1px 2px var(--textShadow);
 
     object {
         width: 1.2rem;
@@ -103,7 +109,7 @@
 
     & > p {
         margin: 0 0 0 0.4rem;
-        color: c.$text;
+        color: var(--text);
         line-height: 2rem;
         font-size: 1.1rem;
     }
@@ -113,12 +119,12 @@
     margin: 0.6rem;
     overflow-x: hidden;
     border-radius: 0.8rem;
-    background-color: c.$panel;
+    background-color: var(--panel);
 }
 
 .panelSub {
     margin: 0.6rem;
     overflow-x: hidden;
     border-radius: 0.6rem;
-    background-color: c.$panel2;
+    background-color: var(--panel2);
 }
