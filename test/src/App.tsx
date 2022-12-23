@@ -6,7 +6,7 @@ import TopBar from '../components/windowElements/TopBar';
 import SideBar from '../components/windowElements/SideBar';
 import PropertiesLayout from '../components/PropertiesLayout';
 import SideBarTop from '../components/windowElements/SideBarTop';
-import '../../../scss/index.scss';
+import '../../scss/index.scss';
 import './App.scss';
 
 import TopBarContent from '../components/TopBarContent';
@@ -21,6 +21,7 @@ const icons = '../src-tauri/icons/';
 const App:Component = () => {
   return (
     <div class="windowBody">
+
       <TopBar type="toolbar" content={TopBarContent} platform={platform()}/>
 
       <SideBar status={sideBarStatus()} width="200"/>

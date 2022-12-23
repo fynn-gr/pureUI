@@ -17,6 +17,7 @@
   height: 100%;
   padding: 10px;
   background-color: rgb(20, 20, 20);
+  outline: solid 1px black;
 
   .frame {
     position: absolute;
@@ -31,4 +32,13 @@
 
 .properties {
   grid-area: properties;
+  outline: solid 1px black;
+}
+
+.topBar {
+  outline: solid 1px black;
+}
+
+.statusBar {
+  outline: solid 1px black;
 }
