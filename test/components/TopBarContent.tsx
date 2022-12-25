@@ -3,7 +3,7 @@ import ToolBarSelector from "./windowElements/ToolBarSelector";
 
 export default function Properties() {
 	return(
-		<div class="toolBar" data-tauri-drag-region>
+		<div class="topBarContent" data-tauri-drag-region>
 			<ToolBarButton icon={'../../src-tauri/icons/tb_sidebar.svg'}/>
 			<div class="toolBarSpacer" data-tauri-drag-region></div>
 			<ToolBarButton icon={'../../src-tauri/icons/tb_start.svg'}/>

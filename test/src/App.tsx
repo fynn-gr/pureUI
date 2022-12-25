@@ -6,12 +6,13 @@ import TopBar from '../components/windowElements/TopBar';
 import SideBar from '../components/windowElements/SideBar';
 import PropertiesLayout from '../components/PropertiesLayout';
 import SideBarTop from '../components/windowElements/SideBarTop';
+import TopBarContent from '../components/TopBarContentSlim';
+import SideBarContent from '../components/SideBarContent';
 import '../../scss/index.scss';
 import './App.scss';
 
-import TopBarContent from '../components/TopBarContent';
 
-const [platform, setPlatform] = createSignal("macos"); //win, macos, linux, dev
+const [platform, setPlatform] = createSignal("dev"); //win, macos, linux, dev
 const [sideBarStatus, setSideBarStatus] = createSignal("active"); //active, inactive
 const [propertiesStatus, setPropertiesStatus] = createSignal("inactive"); //active, inactive
 const icons = '../src-tauri/icons/';
@@ -22,9 +23,9 @@ const App:Component = () => {
   return (
     <div class="windowBody">
 
-      <TopBar type="toolbar" content={TopBarContent} platform={platform()}/>
+      <TopBar type="default" content={TopBarContent} platform={platform()}/>
 
-      <SideBar status={sideBarStatus()} width="200"/>
+      <SideBar status={sideBarStatus()} width="200" content={SideBarContent}/>
 
       <PropertiesLayout status={propertiesStatus()} width="250"/>
 
@@ -47,6 +48,5 @@ const App:Component = () => {
     </div>
   );
 };
-
 
 render(() => <App />, document.getElementById('root') as HTMLElement);

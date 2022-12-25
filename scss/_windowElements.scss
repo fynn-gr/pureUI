@@ -16,9 +16,9 @@
 }
 
 .topBar {
-    //25px default
-    //40px buttons & menus
-    //50px toolbar
+    //26px default
+    //40px buttonBar
+    //50px toolBar
     @include mix.drag;
     grid-area: topBar;
     display: flex;
@@ -41,56 +41,102 @@
     .topBarContainer {
         position: fixed;
         width: 100vw;
+        height: inherit;
         display: flex;
     }
 
-    .toolBar {
-        padding: 10px;
-        height: 50px;
-        flex: 1;
+    &.default {
+        .winButtonsMac {
+            height: 26px;
+            padding: 7px;
+        }
+        .topBarContent {
+            height: 26px;
+            flex: 1;
 
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
 
-        .toolBarButton {
-            height: 30px;
-            width: 40px;
-            border-radius: 5px;
-            background-color: transparent;
-
-            .icon {
-                filter: invert(100%);
-            }
-
-            &:hover {
-                background-color: var(--hover);
+            .windowTitle {
+                height: 26px;
+                margin: 0px auto;
+                line-height: 26px;
+                font-size: 12px;
             }
         }
-        
-        .toolBarSelector {
-            height: 30px;
-            border-radius: 5px;
+    }
 
-            &:hover {
-                background-color: var(--hover2);
-            }
+    &.toolBar {
+        .winButtonsMac {
+            height: 50px;
+            padding: 19px;
+        }
+
+        .topBarContent {
+            padding: 10px;
+            height: 50px;
+            flex: 1;
+
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
 
             .toolBarButton {
+                height: 30px;
+                width: 40px;
+                border-radius: 5px;
+                background-color: transparent;
+
+                .icon {
+                    filter: var(--toolIconColor);
+                }
+
                 &:hover {
                     background-color: var(--hover);
                 }
             }
+            
+            .toolBarSelector {
+                height: 30px;
+                border-radius: 5px;
+
+                &:hover {
+                    background-color: var(--hover2);
+                }
+
+                .toolBarButton {
+                    &:hover {
+                        background-color: var(--hover);
+                    }
+                }
+            }
+
+            .toolBarSpacer {
+                flex: 1;
+            }
+        }
+    }
+
+    &.buttonBar {
+        .winButtonsMac {
+            height: 40px;
+            padding: 14px;
         }
 
-        .toolBarSpacer {
+        .topBarContent {
+            padding: 10px;
+            height: 40px;
             flex: 1;
+
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
         }
     }
 }
 
 .winButtonsMac {
-    padding: 19px;
     top: 0;
     left: 0;
 
@@ -104,10 +150,11 @@
 
         object {
             display: none;
+            position: relative;
         }
 
         &:hover object {
-            display: block;
+            
         }
     }
 

@@ -4,6 +4,7 @@
 )]
 
 use tauri::Manager;
+#[cfg(target_os = "macos")]
 use window_vibrancy::{apply_vibrancy, NSVisualEffectMaterial};
 
 fn main() {
@@ -16,15 +17,14 @@ fn main() {
         tauri::Menu::default()
     })
 
-    .setup(|app| {
+    /*.setup(|app| {
         let window = app.get_window("main").unwrap();
 
         #[cfg(target_os = "macos")]
-        //apply_vibrancy(&window, NSVisualEffectMaterial::Sidebar, None, None)
-            //.expect("Unsupported platform! 'apply_vibrancy' is only supported on macOS");
-
+        apply_vibrancy(&window, NSVisualEffectMaterial::Sidebar, None, None)
+        .expect("Unsupported platform! 'apply_vibrancy' is only supported on macOS");
         Ok(())
-    })
+    })*/
 
     .run(context)
 

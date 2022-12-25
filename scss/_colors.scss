@@ -1,32 +1,37 @@
 
-body.Light {
+body.light {
     //window
-    --topBarBG:     rgb(54, 54, 54);
-    --sideBarBG:    rgb(36, 36, 36);
-    --propertiesBG: rgb(48, 48, 48);
-    --gridGap:      rgb(0, 0, 0);
+    --topBarBG:     rgb(250, 250, 250);
+    --sideBarBG:    rgb(146, 146, 146);
+    --propertiesBG: rgb(121, 121, 121);
+    --gridGap:      rgb(82, 82, 82);
+
+    --toolIconColor: invert(20%);
     
     //area
     --panel:        rgb(60, 60, 60);
-    --panel2:       rgb(45, 45, 45);
+    --panel2:       rgb(41, 41, 41);
     --panel3:       rgb(30, 30, 30);
     
-    --text:         rgb(243, 243, 243);
-    --textShadow:   rgb(20, 20, 20);
+    --text:         rgb(22, 22, 22);
+    --textShadow:   rgba(20, 20, 20, 0);
     
     //elements
     --inputField:   rgb(84, 84, 84);
     --inputBorder:  rgb(61, 61, 61);
     --button:       rgb(40, 40, 40);
-    --hover:        rgb(94, 94, 94);
+    --hover:        rgba(111, 111, 111, 0.3);
+    --hover2:       rgba(93, 93, 93, 0.4);
 }
 
-body.Dark {
+body.dark {
     //window
     --topBarBG:     rgb(54, 54, 54);
     --sideBarBG:    rgb(36, 36, 36);
     --propertiesBG: rgb(48, 48, 48);
     --gridGap:      rgb(0, 0, 0);
+
+    --toolIconColor: invert(100%);
     
     //area
     --panel:        rgb(60, 60, 60);

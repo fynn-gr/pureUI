@@ -4,8 +4,10 @@ import WinButtonsMac from '../windowElements/winButtonsMac';
 
 export default function TopBar(props:any) {
 
+  console.log(props.platform);
+
   return (
-    <div class="topBar" data-tauri-drag-region>
+    <div class={"topBar " + props.type} data-tauri-drag-region>
       <div class="topBarContainer">
         <Show when={props.platform === 'dev' ||
                     props.platform === 'macos'}>
@@ -14,9 +16,9 @@ export default function TopBar(props:any) {
 
         <props.content/>
 
-        <Show when={props.plaform === 'dev' ||
-                    props.plaform === 'win' ||
-                    props.plaform === 'linux'}>
+        <Show when={props.platform === 'dev' ||
+                    props.platform === 'win' ||
+                    props.platform === 'linux'}>
           <WinButtonsMS/>
         </Show>
       </div>

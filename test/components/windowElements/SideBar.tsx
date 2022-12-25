@@ -3,6 +3,8 @@ export default function (props:any) {
         <div
             class={props.status + " sideBar"}
             style={{"width": `${props.width}px`}}>
+
+            <props.content />
         </div>
     );
 }

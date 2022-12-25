@@ -1,15 +1,24 @@
 :root{
   font-size: 10px;
+
+  --accent: #E07123;
+  --accentFilter: invert(40%) sepia(97%) saturate(501%) hue-rotate(344deg) brightness(106%) contrast(88%);
 }
 
 .windowBody {
   //width: 100%;
   //height: 100%;
   grid-template-columns: min-content 1fr min-content;
-  grid-template-rows: 50px 1fr 25px;
+  grid-template-rows: 25px 1fr 25px;
   grid-template-areas:'sideBarTop topBar    topBar'
                       'sideBar    canvas      properties'
                       'sideBar    statusBar statusBar';
+}
+
+body.win {
+  .windowBody {
+    grid-template-rows: 30px 1fr 25px;
+  }
 }
 
 .area-canvas {
@@ -32,13 +41,25 @@
 
 .properties {
   grid-area: properties;
-  outline: solid 1px black;
+  outline: solid 1px var(--gridGap);
 }
 
 .topBar {
-  outline: solid 1px black;
+  outline: solid 1px var(--gridGap);
 }
 
 .statusBar {
-  outline: solid 1px black;
+  outline: solid 1px var(--gridGap);
+}
+
+.light {
+  .area-canvas {
+    background-color: rgb(180, 180, 180);
+  }
+}
+
+.dark {
+  .area-canvas {
+    background-color: rgb(20, 20, 20);
+  }
 }

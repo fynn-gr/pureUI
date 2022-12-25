@@ -15,7 +15,6 @@
 :root {
     font-family: OpenSans-regular, sans-serif;
     font-size: 10px;
-    color: #fff;
 }
 
 * {
@@ -28,4 +27,5 @@
 
 body {
     background-color: transparent;
+    color: var(--text);
 }
