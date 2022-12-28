@@ -23,7 +23,7 @@ const App:Component = () => {
   return (
     <div class="windowBody">
 
-      <TopBar type="default" content={TopBarContent} platform={platform()}/>
+      <TopBar type="buttonBar" content={TopBarContent} platform={platform()}/>
 
       <SideBar status={sideBarStatus()} width="200" content={SideBarContent}/>
 
