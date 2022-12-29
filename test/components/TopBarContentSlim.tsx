@@ -10,10 +10,10 @@ export default function Properties() {
 
 			<div class="buttonBarSelector">
 				<button class="buttonBarButton">
-					<object class="icon" data="../../src-tauri/icons/tb_sidebar.svg"></object>
+					<object class="icon" data="../../src-tauri/icons/bB_sidebar.svg"></object>
 				</button>
 				<button class="buttonBarButton active">
-					<object class="icon" data="../../src-tauri/icons/tb_play.svg"></object>
+					<object class="icon" data="../../src-tauri/icons/bB_properties.svg"></object>
 				</button>
 			</div>
 
