@@ -154,6 +154,44 @@
                     }
                 }
             }
+
+            .buttonBarButton {
+                height: 22px;
+                width: 40px;
+                margin: 9px 0px;
+                border-radius: 5px;
+                background-color: transparent;
+
+                .icon {
+                    filter: var(--toolIconColor);
+                }
+
+                &:hover {
+                    background-color: var(--hover);
+                }
+            }
+
+            .buttonBarSelector {
+                height: 22px;
+                margin: 9px 0px;
+                border-radius: 5px;
+
+                &:hover {
+                    background-color: var(--hover2);
+                }
+
+                .buttonBarButton {
+                    margin: 0;
+
+                    &:hover {
+                        background-color: var(--hover);
+                    }
+
+                    &.active {
+                        background-color: var(--hover);
+                    }
+                }
+            }
         }
     }
 }
