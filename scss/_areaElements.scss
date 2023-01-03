@@ -2,10 +2,11 @@
 @use '../scss/_colors' as c;
 @use '../scss/_variables' as v;
 
-.propertieRow {
+.propRow {
     display: flex;
-    height: 2rem;
-    margin: 0.6rem;
+    flex-direction: row;
+    justify-content: right;
+    margin: 6rem;
     overflow: hidden;
 
     &.inactive {
@@ -13,19 +14,18 @@
     }
     
     .propName {
-        width: 40%;
         margin: 0px;
         padding: 0px 8px 0px 0px;
         text-align: right;
-        line-height: 2rem;
-        font-size: 1.2rem;
+        line-height: 20rem;
+        font-size: 12rem;
         text-shadow: 1px 1px 2px var(--textShadow);
     }
 
     .propDescription {
-        margin: 0 0 0 0.4rem;
-        font-size: 1.2rem;
-        line-height: 2rem;
+        margin: 0 0 0 4rem;
+        font-size: 12rem;
+        line-height: 20rem;
         text-shadow: 1px 1px 2px var(--textShadow);
     }
 
@@ -33,38 +33,73 @@
         margin: 0px;
         padding: 0px;
         width: 60%;
-        font-size: 1.1rem;
+        font-size: 11rem;
+
+        &.optional {
+            width: calc(60% - 18rem);
+        }
+
+        &.s {
+            width: 30%;
+        }
+    }
+
+    .propCol {
+        width: 60%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+
+        &.s {
+            width: 30%;
+        }
+
+        .propValue {
+            width: 100%;
+            border-radius: 0;
+            border-bottom: none;
+        }
+
+        :first-child {
+            border-radius: v.$cBase v.$cBase 0 0;
+        }
+
+        :last-child {
+            border-radius: 0 0 v.$cBase v.$cBase;
+        }
     }
 
     input {
-        height: 2rem;
+        height: 20rem;
         box-sizing: border-box;
-        font-size: 1.1rem;
+        font-size: 11rem;
         text-align: center;
 
         color: var(--text);
-        text-shadow: 1px 1px 2px var(--textShadow);
         background-color: var(--inputField);
         outline: none;
         border: none;
         border-radius: v.$cBase;
 
         &[type=number] {
-            border: solid 0.1rem var(--inputBorder);
+            border: solid 1rem var(--inputBorder);
         }
 
         &[type=text] {
-            border: solid 0.1rem var(--inputBorder);
+            text-align: left;
+            padding: 0 4rem;
+            border: solid 1rem var(--inputBorder);
         }
 
         &[type=checkbox] {
-            width: 1.2rem;
-            height: 1.2rem;
-            margin: 0.4rem 0.4rem 0.4rem 0;
+            width: 12rem;
+            height: 12rem;
+            margin: 4rem 4rem 4rem 0;
         }
 
         &[type=color] {
-            border: solid 0.1rem var(--inputBorder);
+            border: solid 1rem var(--inputBorder);
         }
 
         &[type=range] {
@@ -74,14 +109,13 @@
 
     button {
         height: 2rem;
-        font-size: 1.2rem;
+        font-size: 2rem;
         text-align: center;
 
         color: var(--text);
-        text-shadow: 1px 1px 2px var(--textShadow);
         background-color: var(--button);
         outline: none;
-        border: solid 0.1rem var(--inputBorder);
+        border: solid 1rem var(--inputBorder);
         border-radius: v.$cBase;
     }
 }
@@ -91,41 +125,40 @@
     width: 100%;
     height: 20px;
     background-color: transparent;
-    font-size: 1.1rem;
-    text-shadow: 1px 1px 2px var(--textShadow);
+    font-size: 1rem;
 
     object {
-        width: 1.2rem;
-        height: 1.2rem;
-        margin: 0.4rem 0.4rem 0.4rem 0.6rem;
+        width: 12rem;
+        height: 12rem;
+        margin: 4rem 4rem 4rem 6rem;
         //background-color: rgb(0, 175, 228);
     }
 
     .panelCheckbox {
-        width: 1.2rem;
-        height: 1.2rem;
-        margin: 0.4rem;
+        width: 12rem;
+        height: 12rem;
+        margin: 04rem;
     }
 
     & > p {
-        margin: 0 0 0 0.4rem;
+        margin: 0 0 0 4rem;
         color: var(--text);
-        line-height: 2rem;
-        font-size: 1.1rem;
+        line-height: 20rem;
+        font-size: 11rem;
     }
 }
 
 .panel {
-    margin: 0.6rem;
+    margin: 6rem;
     overflow-x: hidden;
-    border-radius: 0.8rem;
+    border-radius: 8rem;
     background-color: var(--panel);
 }
 
 .panelSub {
-    margin: 0.6rem;
+    margin: 6rem;
     overflow-x: hidden;
-    border-radius: 0.6rem;
+    border-radius: 6rem;
     background-color: var(--panel2);
 }
 
@@ -136,8 +169,9 @@
 
     .category {
         height: 20px;
+        font-size: 10rem;
         padding-left: 10px;
-        font-weight: regular;
+        font-weight: bold;
     }
 
     button {
