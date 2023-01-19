@@ -23,9 +23,18 @@
     padding: 0;
     border: none;
     outline: none;
+
+    &:hover {
+        outline: none;
+    }
 }
 
 body {
     background-color: transparent;
     color: var(--text);
+    font-size: 12rem;
+}
+
+object {
+    pointer-events: none;
 }

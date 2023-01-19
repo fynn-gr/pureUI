@@ -183,7 +183,7 @@
         font-weight: 400;
     }
 
-    button {
+    button.navItem {
         position: relative;
         display: flex;
         height: 30px;
@@ -199,12 +199,34 @@
             height: 30px;
             filter: var(--accentFilter);
         }
+        
+        input {
+            height: 12px;
+            width: 12px;
+            margin: 9px 3px 9px 9px;
+            border-radius: 6px;
+        }
 
         p {
             margin: 3px 0 3px 6px;
             line-height: 24px;
             color: var(--text);
             text-align: left;
+        }
+    }
+
+    &.slim {
+        button.navItem {
+            height: 24px;
+            
+            input {
+                margin: 6px 3px 6px 6px;
+            }
+    
+            p {
+                line-height: 22px;
+                margin: 1px 0 1px 6px;
+            }
         }
     }
 }
