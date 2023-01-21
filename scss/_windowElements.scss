@@ -26,6 +26,19 @@
     justify-content: right;
     background-color: var(--topBarBG);
 
+    .logo {
+        font-family: Louis;
+        height: 40px;
+        padding: 0 0 0 10px;
+        line-height: 40px;
+        font-size: 15px;
+        color: var(--text);
+
+        b {
+        font-weight: bold;
+        }
+    }
+
     .topBarText {
         @include mix.noSelect;
         height: inherit;
@@ -184,7 +197,7 @@
                     margin: 0;
 
                     &:hover {
-                        background-color: var(--hover);
+                        background-color: transparent;
                     }
 
                     &.active {
@@ -213,9 +226,11 @@
             display: none;
             position: relative;
         }
+    }
 
-        &:hover object {
-            
+    &:hover {
+        object {
+            display: block;
         }
     }
 
