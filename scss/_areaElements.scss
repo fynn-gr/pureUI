@@ -226,6 +226,9 @@
             p {
                 line-height: 22px;
                 margin: 1px 0 1px 6px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
             }
         }
     }

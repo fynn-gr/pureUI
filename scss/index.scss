@@ -23,6 +23,7 @@
     padding: 0;
     border: none;
     outline: none;
+    user-select: none;
 
     &:hover {
         outline: none;
@@ -38,3 +39,6 @@ body {
 object {
     pointer-events: none;
 }
+
+//z-index layer
+//500 - window rim

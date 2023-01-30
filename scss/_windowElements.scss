@@ -5,337 +5,402 @@
 @use '../scss/_mixins' as mix;
 
 .windowBody {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    grid-gap: v.$gridGap;
-    border-radius: 9px;
-    overflow: hidden;
-    background-color: transparent;
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	border-radius: 9px;
+	overflow: hidden;
+	background-color: transparent;
+}
+
+.viewNavSplit {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: row;
+
+	.resizer {
+		position: absolute;
+		right: 0;
+		width: 1rem;
+		margin: 0 0rem;
+		height: 100%;
+		background-color: var(--gridGap);
+		cursor: e-resize;
+	}
+}
+
+.viewTopBar {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+
+.viewSplitHorizontal {
+	display: flex;
+	flex-direction: row;
+	flex: 1;
 }
 
 .topBar {
-    //26px default
-    //40px buttonBar
-    //50px toolBar
-    @include mix.drag;
-    grid-area: topBar;
-    display: flex;
-    flex-direction: row;
-    justify-content: right;
-    background-color: var(--topBarBG);
+	//26px default
+	//40px buttonBar
+	//50px toolBar
+	@include mix.drag;
+	grid-area: topBar;
+	height: var(--topBarHeight);
+	top: 0;
+	right: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: right;
+	background-color: var(--topBarBG);
+	border-bottom: 1px solid var(--gridGap);
 
-    .logo {
-        font-family: Louis;
-        height: 40px;
-        padding: 0 0 0 10px;
-        line-height: 40px;
-        font-size: 15px;
-        color: var(--text);
+	.logo {
+		font-family: Louis;
+		height: 40px;
+		padding: 0 0 0 10px;
+		line-height: 40px;
+		font-size: 15px;
+		color: var(--text);
+		text-decoration: none;
 
-        b {
-        font-weight: bold;
-        }
-    }
+		b {
+			font-weight: bold;
+		}
 
-    .topBarText {
-        @include mix.noSelect;
-        height: inherit;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 
-        p {
-            height: inherit;
-            padding: 5px;
-            font-size: 15px;
-            text-align: center;
-        }
-    }
+	.topBarContainer {
+		position: fixed;
+		width: 100vw;
+		height: inherit;
+		display: flex;
+	}
 
-    .topBarContainer {
-        position: fixed;
-        width: 100vw;
-        height: inherit;
-        display: flex;
-    }
+	&.default {
+		.winButtonsMac {
+			height: 26px;
+			padding: 7px;
+		}
 
-    &.default {
-        .winButtonsMac {
-            height: 26px;
-            padding: 7px;
-        }
-        .topBarContent {
-            height: 26px;
-            flex: 1;
+		.topBarContent {
+			height: 26px;
+			flex: 1;
 
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
 
-            .windowTitle {
-                height: 26px;
-                margin: 0px auto;
-                line-height: 26px;
-                font-size: 12px;
-            }
-        }
-    }
+			.windowTitle {
+				height: 26px;
+				margin: 0px auto;
+				line-height: 26px;
+				font-size: 12px;
+			}
+		}
+	}
 
-    &.toolBar {
-        .winButtonsMac {
-            height: 50px;
-            padding: 19px;
-        }
+	&.toolBar {
+		.winButtonsMac {
+			height: 50px;
+			padding: 19px;
+		}
 
-        .topBarContent {
-            padding: 10px;
-            height: 50px;
-            flex: 1;
+		.topBarContent {
+			padding: 10px;
+			height: 50px;
+			flex: 1;
 
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
 
-            .toolBarButton {
-                height: 30px;
-                width: 40px;
-                border-radius: 5px;
-                background-color: transparent;
+			.toolBarButton {
+				height: 30px;
+				width: 40px;
+				border-radius: 5px;
+				background-color: transparent;
 
-                .icon {
-                    filter: var(--toolIconColor);
-                }
+				.icon {
+					filter: var(--toolIconColor);
+				}
 
-                &:hover {
-                    background-color: var(--hover);
-                }
-            }
-            
-            .toolBarSelector {
-                height: 30px;
-                border-radius: 5px;
+				&:hover {
+					background-color: var(--hover);
+				}
+			}
 
-                &:hover {
-                    background-color: var(--hover2);
-                }
+			.toolBarSelector {
+				height: 30px;
+				border-radius: 5px;
 
-                .toolBarButton {
-                    &:hover {
-                        background-color: var(--hover);
-                    }
-                }
-            }
+				&:hover {
+					background-color: var(--hover2);
+				}
 
-            .toolBarSpacer {
-                flex: 1;
-            }
-        }
-    }
+				.toolBarButton {
+					&:hover {
+						background-color: var(--hover);
+					}
+				}
+			}
 
-    &.buttonBar {
-        .winButtonsMac {
-            height: 40px;
-            padding: 14px;
-        }
+			.toolBarSpacer {
+				flex: 1;
+			}
+		}
+	}
 
-        .topBarContent {
-            height: 40px;
-            flex: 1;
+	&.buttonBar {
+		.winButtonsMac {
+			height: 40px;
+			padding: 14px;
+		}
 
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
+		.topBarContent {
+			height: 40px;
+			flex: 1;
 
-            .tabContainer {
-                height: 22px;
-                margin: 9px 0px;
-                border: solid 1px var(--hover);
-                border-radius: 6px;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
 
-                button {
-                    height: 20px;
-                    padding: 0 5px;
-                    color: var(--text);
-                    background-color: transparent;
-                    border-radius: 5px;
+			.tabContainer {
+				height: 22px;
+				margin: 9px 0px;
+				border: solid 1px var(--hover);
+				border-radius: 6px;
 
-                    &:hover {
-                        background-color: var(--hover2);
-                    }
+				button {
+					height: 20px;
+					padding: 0 5px;
+					color: var(--text);
+					background-color: transparent;
+					border-radius: 5px;
 
-                    &.active {
-                        background-color: var(--hover);
-                    }
-                }
-            }
+					&:hover {
+						background-color: var(--hover2);
+					}
 
-            .buttonBarButton {
-                height: 22px;
-                width: 30px;
-                margin: 9px 9px;
-                border-radius: 5px;
-                background-color: transparent;
+					&.active {
+						background-color: var(--hover);
+					}
+				}
+			}
 
-                .icon {
-                    filter: var(--toolIconColor);
-                }
+			.buttonBarButton {
+				height: 22px;
+				width: 30px;
+				margin: 9px 9px;
+				border-radius: 5px;
+				background-color: transparent;
 
-                &:hover {
-                    background-color: var(--hover);
-                }
-            }
+				.icon {
+					filter: var(--toolIconColor);
+				}
 
-            .buttonBarSelector {
-                height: 22px;
-                margin: 9px 9px;
-                border-radius: 5px;
+				&:hover {
+					background-color: var(--hover);
+				}
+			}
 
-                &:hover {
-                    background-color: var(--hover2);
-                }
+			.buttonBarSelector {
+				height: 22px;
+				margin: 9px 9px;
+				border-radius: 5px;
 
-                .buttonBarButton {
-                    margin: 0;
+				&:hover {
+					background-color: var(--hover2);
+				}
 
-                    &:hover {
-                        background-color: transparent;
-                    }
+				.buttonBarButton {
+					margin: 0;
 
-                    &.active {
-                        background-color: var(--hover);
-                    }
-                }
-            }
-        }
-    }
+					&:hover {
+						background-color: transparent;
+					}
+
+					&.active {
+						background-color: var(--hover);
+					}
+				}
+			}
+		}
+	}
 }
 
 .winButtonsMac {
-    top: 0;
-    left: 0;
-    display: flex;
+	top: 0;
+	left: 0;
+	display: flex;
 
-    button {
-        width: 12px;
-        height: 12px;
-        box-sizing: border-box;
-        border: none;
-        border-width: 1px;
-        border-radius: 50%;
+	button {
+		width: 12px;
+		height: 12px;
+		box-sizing: border-box;
+		border: none;
+		border-width: 1px;
+		border-radius: 50%;
 
-        object {
-            display: none;
-            position: relative;
-        }
-    }
+		object {
+			display: none;
+			position: relative;
+		}
+	}
 
-    &:hover {
-        object {
-            display: block;
-        }
-    }
+	&:hover {
+		object {
+			display: block;
+		}
+	}
 
-    & > :nth-child(1) {
-        background-color: rgb(254, 95, 87);
-        border-color: rgb(127, 47, 43);
-        margin-right: 8px;
-    }
+	&> :nth-child(1) {
+		background-color: rgb(254, 95, 87);
+		border-color: rgb(127, 47, 43);
+		margin-right: 8px;
+	}
 
-    & > :nth-child(2) {
-        background-color: rgb(255, 188, 46);
-        border-color: rgb(128, 94, 23);
-        margin-right: 8px;
-    }
-    
-    & > :nth-child(3) {
-        background-color: rgb(40, 200, 65);
-        border-color: rgb(20, 100, 33);
-    }
+	&> :nth-child(2) {
+		background-color: rgb(255, 188, 46);
+		border-color: rgb(128, 94, 23);
+		margin-right: 8px;
+	}
+
+	&> :nth-child(3) {
+		background-color: rgb(40, 200, 65);
+		border-color: rgb(20, 100, 33);
+	}
 }
 
 .winButtonsMS {
-    top: 0px;
-    right: 0px;
+	top: 0px;
+	right: 0px;
 
-    button {
-        width: 45px;
-        height: 30px;
-        color: white;
-        background-color: transparent;
+	button {
+		width: 45px;
+		height: 30px;
+		color: white;
+		background-color: transparent;
 
-        object {
-            width: 16px;
-            height: 16px;
-        }
-    }
+		object {
+			width: 16px;
+			height: 16px;
+		}
+	}
 
-    & > :nth-child(1) {
-        &:hover {
-            background-color: rgba(100, 100, 100, 0.4);
-        }
-    }
+	&> :nth-child(1) {
+		&:hover {
+			background-color: rgba(100, 100, 100, 0.4);
+		}
+	}
 
-    & > :nth-child(2) {
-        &:hover {
-            background-color: rgba(100, 100, 100, 0.4);
-        }
-    }
-    
-    & > :nth-child(3) {
-        border-top-right-radius: 9px;
-        
-        &:hover {
-            background-color: rgb(255, 0, 0);
-        }
-    }
-}
+	&> :nth-child(2) {
+		&:hover {
+			background-color: rgba(100, 100, 100, 0.4);
+		}
+	}
 
-.sideBarTop {
-    @include mix.drag;
-    grid-area: sideBarTop;
-    background-color: var(--sideBarBG);
-    margin-bottom: -1px;
+	&> :nth-child(3) {
+		border-top-right-radius: 9px;
+
+		&:hover {
+			background-color: rgb(255, 0, 0);
+		}
+	}
 }
 
 .sideBar {
-    grid-area: sideBar;
-    background-color: var(--sideBarBG);
-
-    &.inactive {
-        width: 0px;
-    }
+	padding: var(--topBarHeight) 0 0 0;
+	grid-area: sideBar;
+	background-color: var(--sideBarBG);
+	border-right: 1rem solid var(--gridGap);
 }
 
 .properties {
-    background-color: var(--propertiesBG);
+	background-color: var(--propertiesBG);
 }
 
 .statusBar {
-    grid-area: statusBar;
-    display: flex;
-    height: 25px;
-    padding: 0 10px 0 5px;
-    background-color: #1f1f1f;
+	grid-area: statusBar;
+	display: flex;
+	height: 25px;
+	padding: 0 10px 0 5px;
+	background-color: #1f1f1f;
 
-    p {
-        color: var(--text);
-        line-height: 22px;
-        letter-spacing: 0.3pt;
-    }
+	p {
+		color: var(--text);
+		line-height: 22px;
+		letter-spacing: 0.3pt;
+	}
 
-    .spacer {
-        flex: 1;
-    }
+	.spacer {
+		flex: 1;
+	}
 }
 
 .windowRim {
-    position: fixed;
-    z-index: 9999;
-    width: 100vw;
-    height: 100vh;
-    left: 0;
-    top: 0;
-    background-color: none;
-    border: solid 1px rgb(77, 77, 77);
-    border-radius: 9px;
-    pointer-events: none;
+	position: fixed;
+	z-index: 500;
+	width: 100vw;
+	height: 100vh;
+	left: 0;
+	top: 0;
+	background-color: none;
+	border: solid 1px rgb(77, 77, 77);
+	border-radius: 9px;
+	pointer-events: none;
+}
+
+body.win .topBar {
+	&.buttonBar > .topBarContainer {
+		background-color: rgb(29, 29, 29);
+		border-bottom: 1px solid rgb(65, 65, 65);
+		border-radius: 9px 9px 0px 0px;
+
+		.spacerFix {
+			width: 0;
+		}
+
+		.buttonBarButton {
+			width: 30px;
+			height: 28px;
+			margin: 6px;
+		}
+
+		.buttonBarSelector {
+			height: 28px;
+			margin: 6px;
+
+			.buttonBarButton {
+				margin: 0;
+			}
+		}
+
+		.tabContainer {
+			border: none;
+			height: 28px;
+			margin: 6px 0;
+
+			button {
+				height: 28px;
+				margin-right: 6px;
+				width: 80px;
+				background-color: rgb(41, 41, 41);
+
+			}
+		}
+	}
+}
+
+body.web .topBar {
+	&.buttonBar > .topBarContainer {
+		background-color: rgb(29, 29, 29);
+		border-bottom: 1px solid rgb(65, 65, 65);
+		border-bottom: 1px solid var(--gridGap);
+	}
 }
