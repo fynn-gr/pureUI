@@ -42,11 +42,16 @@
 	flex: 1;
 }
 
+.viewSplitVertical {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+
 .topBar {
 	//26px default
 	//40px buttonBar
 	//50px toolBar
-	@include mix.drag;
 	grid-area: topBar;
 	height: var(--topBarHeight);
 	top: 0;
@@ -120,6 +125,13 @@
 			flex-direction: row;
 			flex-wrap: nowrap;
 
+			select {
+				height: 30px;
+				background-color: transparent;
+				color: var(--text);
+				border-radius: 5px;
+			}
+
 			.toolBarButton {
 				height: 30px;
 				width: 40px;
@@ -138,6 +150,7 @@
 			.toolBarSelector {
 				height: 30px;
 				border-radius: 5px;
+				display: flex;
 
 				&:hover {
 					background-color: var(--hover2);
@@ -145,12 +158,15 @@
 
 				.toolBarButton {
 					&:hover {
+						background-color: transparent;
+					}
+					&.active {
 						background-color: var(--hover);
 					}
 				}
 			}
 
-			.toolBarSpacer {
+			.spacer {
 				flex: 1;
 			}
 		}
@@ -280,6 +296,7 @@
 .winButtonsMS {
 	top: 0px;
 	right: 0px;
+	display: flex;
 
 	button {
 		width: 45px;
@@ -356,49 +373,68 @@
 	pointer-events: none;
 }
 
-body.win .topBar {
-	&.buttonBar > .topBarContainer {
-		background-color: rgb(29, 29, 29);
-		border-bottom: 1px solid rgb(65, 65, 65);
-		border-radius: 9px 9px 0px 0px;
+body.win {
 
-		.spacerFix {
-			width: 0;
+	select {
+		height: 30px;
+		background-color: transparent;
+
+		&:hover {
+			background-color: var(--hover);
 		}
+	}
 
-		.buttonBarButton {
-			width: 30px;
-			height: 28px;
-			margin: 6px;
-		}
-
-		.buttonBarSelector {
-			height: 28px;
-			margin: 6px;
+	.topBar {
+		&.buttonBar > .topBarContainer {
+			background-color: rgb(29, 29, 29);
+			border-bottom: 1px solid rgb(65, 65, 65);
+			border-radius: 9px 9px 0px 0px;
 
 			.buttonBarButton {
-				margin: 0;
+				width: 30px;
+				height: 28px;
+				margin: 6px;
+			}
+
+			.buttonBarSelector {
+				height: 28px;
+				margin: 6px;
+
+				.buttonBarButton {
+					margin: 0;
+				}
+			}
+
+			.tabContainer {
+				border: none;
+				height: 28px;
+				margin: 6px 0;
+
+				button {
+					height: 28px;
+					margin-right: 6px;
+					width: 80px;
+					background-color: rgb(41, 41, 41);
+				}
 			}
 		}
 
-		.tabContainer {
-			border: none;
-			height: 28px;
-			margin: 6px 0;
-
-			button {
-				height: 28px;
-				margin-right: 6px;
-				width: 80px;
-				background-color: rgb(41, 41, 41);
-
-			}
+		&.toolBar > .topBarContainer{
+			background-color: rgb(29, 29, 29);
+			border-bottom: 1px solid rgb(65, 65, 65);
+			border-radius: 9px 9px 0px 0px;
 		}
 	}
 }
 
 body.web .topBar {
 	&.buttonBar > .topBarContainer {
+		background-color: rgb(29, 29, 29);
+		border-bottom: 1px solid rgb(65, 65, 65);
+		border-bottom: 1px solid var(--gridGap);
+	}
+
+	&.toolBar > .topBarContainer {
 		background-color: rgb(29, 29, 29);
 		border-bottom: 1px solid rgb(65, 65, 65);
 		border-bottom: 1px solid var(--gridGap);

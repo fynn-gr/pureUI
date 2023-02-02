@@ -10,18 +10,18 @@
     on:mouseenter={() => {hover = true}}
     on:mouseleave={() => {hover = false}}
     on:click={() => {appWindow.close()}}>
-    <object data="../src-tauri/icons/winButtonsMacClose.svg" aria-label="">
+    <object data="./icons/winButtonsMacClose.svg" aria-label="">
   </button>
   <button 
     on:mouseenter={() => {hover = true}}
     on:mouseleave={() => {hover = false}}
     on:click={() => {appWindow.minimize()}}>
-    <object data="../src-tauri/icons/winButtonsMacMin.svg" aria-label="">
+    <object data="./icons/winButtonsMacMin.svg" aria-label="">
   </button>
   <button
     on:mouseenter={() => {hover = true}}
     on:mouseleave={() => {hover = false}}
     on:click={() => {appWindow.toggleMaximize()}}>
-    <object data="../src-tauri/icons/winButtonsMacMax.svg" aria-label="">
+    <object data="./icons/winButtonsMacMax.svg" aria-label="">
   </button>
 </div>
