@@ -50,8 +50,8 @@
 
 .topBar {
 	//26px default
-	//40px buttonBar
-	//50px toolBar
+	//38px buttonBar
+	//54px toolBar
 	grid-area: topBar;
 	height: var(--topBarHeight);
 	top: 0;
@@ -65,7 +65,7 @@
 	.logo {
 		font-family: Louis;
 		height: 40px;
-		padding: 0 0 0 10px;
+		margin: auto 0 auto 12px;
 		line-height: 40px;
 		font-size: 15px;
 		color: var(--text);
@@ -111,34 +111,46 @@
 	}
 
 	&.toolBar {
+		height: 54px;
+		min-height: 54px;
+
 		.winButtonsMac {
-			height: 50px;
-			padding: 19px;
+			height: 54px;
+			padding: 21px;
 		}
 
 		.topBarContent {
-			padding: 10px;
-			height: 50px;
+			height: 54px;
 			flex: 1;
-
 			display: flex;
 			flex-direction: row;
 			flex-wrap: nowrap;
+			gap: 12px;
+
+			.windowTitle {
+				height: 28px;
+				line-height: 28px;
+				margin: 13px 0 12px 0;
+				font-size: 13px;
+				font-weight: 600;
+			}
 
 			select {
-				height: 30px;
+				height: 28px;
+				margin: 13px 0 12px 0;
 				background-color: transparent;
 				color: var(--text);
-				border-radius: 5px;
+				border-radius: 6px;
 			}
 
 			.toolBarButton {
-				height: 30px;
-				width: 40px;
-				border-radius: 5px;
+				height: 28px;
+				width: 39px;
+				margin: 14px 0 13px 0;
+				border-radius: 6px;
 				background-color: transparent;
 
-				.icon {
+				img {
 					filter: var(--toolIconColor);
 				}
 
@@ -148,8 +160,9 @@
 			}
 
 			.toolBarSelector {
-				height: 30px;
-				border-radius: 5px;
+				height: 28px;
+				margin: 13px 0 12px 0;
+				border-radius: 6px;
 				display: flex;
 
 				&:hover {
@@ -157,6 +170,8 @@
 				}
 
 				.toolBarButton {
+					margin: 0;
+
 					&:hover {
 						background-color: transparent;
 					}
@@ -368,9 +383,23 @@
 	left: 0;
 	top: 0;
 	background-color: none;
-	border: solid 1px rgb(77, 77, 77);
+	border: solid 1px rgb(0, 0, 0);
 	border-radius: 9px;
 	pointer-events: none;
+
+	&::after {
+		content: '';
+		position: fixed;
+		z-index: 501;
+		left: 1px;
+		top: 1px;
+		bottom: 1px;
+		right: 1px;
+		background-color: none;
+		border: solid 1px rgb(90, 90, 90);
+		border-radius: 8px;
+		pointer-events: none;
+	}
 }
 
 body.win {
@@ -423,6 +452,14 @@ body.win {
 			background-color: rgb(29, 29, 29);
 			border-bottom: 1px solid rgb(65, 65, 65);
 			border-radius: 9px 9px 0px 0px;
+		}
+	}
+
+	.windowRim {
+		border-color: rgb(83, 83, 83);
+
+		&::after {
+			content: none;
 		}
 	}
 }

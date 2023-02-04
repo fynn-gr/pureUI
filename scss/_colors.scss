@@ -6,7 +6,7 @@ body.light {
     --propertiesBG: rgb(121, 121, 121);
     --gridGap:      rgb(82, 82, 82);
 
-    --toolIconColor: invert(20%);
+    --toolIconColor: invert(10%);
     
     //area
     --panel:        rgb(60, 60, 60);
@@ -22,10 +22,6 @@ body.light {
     --button:       rgb(40, 40, 40);
     --hover:        rgba(111, 111, 111, 0.3);
     --hover2:       rgba(93, 93, 93, 0.4);
-
-    .topBar .topBarContent object {
-        filter: invert(10%);
-    }
 }
 
 body.dark {
@@ -51,8 +47,4 @@ body.dark {
     --button:       rgb(40, 40, 40);
     --hover:        rgba(111, 111, 111, 0.3);
     --hover2:       rgba(93, 93, 93, 0.4);
-
-    .topBar .topBarContent object {
-        filter: invert(90%);
-    }
 }

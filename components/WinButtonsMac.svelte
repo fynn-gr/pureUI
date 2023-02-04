@@ -10,18 +10,18 @@
     on:mouseenter={() => {hover = true}}
     on:mouseleave={() => {hover = false}}
     on:click={() => {appWindow.close()}}>
-    <object data="./icons/winButtonsMacClose.svg" aria-label="">
+    <object data="./pureUI/icons/winButtonsMacClose.svg" aria-label="">
   </button>
   <button 
     on:mouseenter={() => {hover = true}}
     on:mouseleave={() => {hover = false}}
     on:click={() => {appWindow.minimize()}}>
-    <object data="./icons/winButtonsMacMin.svg" aria-label="">
+    <object data="./pureUI/icons/winButtonsMacMin.svg" aria-label="">
   </button>
   <button
     on:mouseenter={() => {hover = true}}
     on:mouseleave={() => {hover = false}}
     on:click={() => {appWindow.toggleMaximize()}}>
-    <object data="./icons/winButtonsMacMax.svg" aria-label="">
+    <object data="./pureUI/icons/winButtonsMacMax.svg" aria-label="">
   </button>
 </div>

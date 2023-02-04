@@ -5,14 +5,14 @@
 <div class="winButtonsMS" data-tauri-drag-region>
   <button
     on:click={() => {appWindow.minimize()}}>
-    <object data="./icons/winButtonsMSMin.svg">
+    <object data="./pureUI/icons/winButtonsMSMin.svg">
   </button>
   <button
     on:click={() => {appWindow.toggleMaximize()}}>
-    <object data="./icons/winButtonsMSMax.svg">
+    <object data="./pureUI/icons/winButtonsMSMax.svg">
   </button>
   <button
     on:click={() => {appWindow.close()}}>
-    <object data="./icons/winButtonsMSClose.svg">
+    <object data="./pureUI/icons/winButtonsMSClose.svg">
   </button>
 </div>
