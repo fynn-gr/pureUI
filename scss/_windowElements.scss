@@ -145,6 +145,12 @@
 				color: var(--text);
 				border: 1px solid rgb(108, 108, 108);
 				border-radius: 6px;
+
+				option {
+					color: black;
+					background-color: transparent;
+					border-radius: 0;
+				}
 			}
 
 			.toolBarButton {
@@ -353,7 +359,7 @@
 .sideBar {
 	padding: var(--topBarHeight) 0 0 0;
 	grid-area: sideBar;
-	background-color: var(--sideBarBG);
+	background-color: transparent;
 	border-right: 1rem solid var(--gridGap);
 }
 
@@ -394,10 +400,6 @@
 
 body.win {
 
-	.windowRim {
-		border: solid 1px rgb(0, 0, 0);
-	}
-
 	select {
 		height: 30px;
 		background-color: transparent;
@@ -405,6 +407,10 @@ body.win {
 		&:hover {
 			background-color: var(--hover);
 		}
+	}
+
+	.sideBar {
+		background-color: var(--sideBarBG);
 	}
 
 	.topBar {
@@ -458,16 +464,26 @@ body.win {
 	}
 }
 
-body.web .topBar {
-	&.buttonBar > .topBarContainer {
-		background-color: rgb(29, 29, 29);
-		border-bottom: 1px solid rgb(65, 65, 65);
-		border-bottom: 1px solid var(--gridGap);
+body.web {
+	.windowBody {
+		border-radius: 0;
+	}
+	
+	.sideBar {
+		background-color: var(--sideBarBG);
 	}
 
-	&.toolBar > .topBarContainer {
-		background-color: rgb(29, 29, 29);
-		border-bottom: 1px solid rgb(65, 65, 65);
-		border-bottom: 1px solid var(--gridGap);
+	.topBar {
+		&.buttonBar > .topBarContainer {
+			background-color: rgb(29, 29, 29);
+			border-bottom: 1px solid rgb(65, 65, 65);
+			border-bottom: 1px solid var(--gridGap);
+		}
+
+		&.toolBar > .topBarContainer {
+			background-color: rgb(29, 29, 29);
+			border-bottom: 1px solid rgb(65, 65, 65);
+			border-bottom: 1px solid var(--gridGap);
+		}
 	}
 }
