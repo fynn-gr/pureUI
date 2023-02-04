@@ -25,6 +25,7 @@
     border: none;
     outline: none;
     user-select: none;
+    -webkit-user-select: none;
 
     &:hover {
         outline: none;
@@ -32,6 +33,8 @@
 }
 
 body {
+    position: fixed;
+    overflow: hidden;
     background-color: transparent;
     color: var(--text);
     font-size: 12rem;
