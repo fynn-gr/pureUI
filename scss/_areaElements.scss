@@ -128,6 +128,16 @@
 
 .header {
     width: 100%;
+    display: flex;
+    padding: 0 7px;
+    gap: 7px;
+
+    .toggleBtn {
+        height: 20px;
+        min-width: 20px;
+        margin: 7px 0;
+        border-radius: 5px;
+    }
 }
 
 .panel {
@@ -188,11 +198,12 @@
         position: relative;
         display: flex;
         height: 30px;
+        color: var(--text);
         background-color: transparent;
         border-radius: 6px;
 
         &.active {
-            background-color: var(--hover);
+            background-color: var(--accent);
         }
 
         object {
@@ -237,7 +248,7 @@
 
 main.mac {
     .header {
-        
+        height: 34px;
     }
 }
 
@@ -247,7 +258,7 @@ main.win {
 
 main.web {
     .header {
-        height: 24px;
+        height: 34px;
         background-color: rgb(77, 77, 77);
     }
 }
