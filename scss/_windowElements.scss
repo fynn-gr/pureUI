@@ -60,6 +60,11 @@
 	}
 }
 
+.resizer {
+	position: absolute;
+	background-color: transparent;
+}
+
 .windowRim {
 	position: fixed;
 	z-index: 500;
@@ -73,13 +78,13 @@
 	pointer-events: none;
 }
 
-body.light {
+main.light {
 	.windowRim {
 		display: none;
 	}
 }
 
-body.win {
+main.win {
 
 	select {
 		height: 30px;
@@ -105,7 +110,7 @@ body.win {
 	}
 }
 
-body.web {
+main.web {
 	.windowBody {
 		border-radius: 0;
 	}

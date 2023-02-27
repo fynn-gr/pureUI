@@ -41,8 +41,26 @@ body {
     font-size: 12rem;
 }
 
-object {
-    pointer-events: none;
+.debugMenu {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: darkviolet;
+    border-radius: 8px;
+
+    &:hover {
+        width: auto;
+        height: auto;
+    }
+
+    button {
+        margin: 5px;
+        padding: 3px 12px;
+        border-radius: 4px;
+    }
 }
 
 //z-index layer

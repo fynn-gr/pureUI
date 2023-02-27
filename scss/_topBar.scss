@@ -14,26 +14,6 @@
 	flex-direction: row;
 	justify-content: right;
 	background-color: var(--topBarBG);
-	border-bottom: 1px solid var(--gridGap);
-    border-radius: 0 8px 0 0;
-
-	.logo {
-		font-family: Louis;
-		height: 40px;
-		margin: auto 0 auto 12px;
-		line-height: 40px;
-		font-size: 15px;
-		color: var(--text);
-		text-decoration: none;
-
-		b {
-			font-weight: bold;
-		}
-
-		&:hover {
-			text-decoration: underline;
-		}
-	}
 
 	.topBarContainer {
 		position: fixed;
@@ -66,53 +46,58 @@
 	}
 
 	&.toolBar {
-		height: 54px;
+		height: var(--topBarHeight);
 		min-height: 54px;
 
-		.winButtonsMac {
-			height: 54px;
-			padding: 21px;
-		}
-
 		.topBarContent {
-			height: 54px;
+			height: var(--topBarHeight);
 			flex: 1;
 			display: flex;
 			flex-direction: row;
 			flex-wrap: nowrap;
-			gap: 12px;
 
-			.windowTitle {
-				height: 28px;
-				line-height: 28px;
-				margin: 13px 0 12px 0;
-				font-size: 13px;
-				font-weight: 600;
-			}
+			.appMenu {
+				&:hover {
+					.menuContent { display: flex; }
+				}
 
-			select {
-				height: 22px;
-				margin: 16px 0 15px 0;
-				padding: 0 10px;
-				line-height: 22px;
-				background-color: transparent;
-				appearance: none;
-				color: var(--text);
-				border: 1px solid rgb(108, 108, 108);
-				border-radius: 6px;
+				.appMenuBtn {
+					color: var(--text);
+					background-color: var(--hover);
+				}
 
-				option {
-					color: black;
-					background-color: transparent;
-					border-radius: 0;
+				.menuContent {
+					position: absolute;
+					display: none;
+					z-index: 40;
+					flex-direction: column;
+					background-color: var(--appMenuContentBG);
+
+					button {
+						text-align: left;
+						color: var(--text);
+						background-color: transparent;
+
+						&:hover {
+							background-color: var(--hover);
+						}
+					}
+
+					.subMenu {
+						.subMenuContent {
+							position: absolute;
+						}
+					}
+
+					.seperator {
+						margin: 0;
+						height: 1px;
+						background-color: var(--hover);
+					}
 				}
 			}
 
 			.toolBarButton {
-				height: 28px;
-				width: 39px;
-				margin: 14px 0 13px 0;
-				border-radius: 6px;
 				background-color: transparent;
 
 				img {
@@ -125,9 +110,6 @@
 			}
 
 			.toolBarSelector {
-				height: 28px;
-				margin: 13px 0 12px 0;
-				border-radius: 6px;
 				display: flex;
 
 				&:hover {
@@ -311,12 +293,96 @@
 	}
 }
 
-body.win {
+.logo {
+	font-family: Louis;
+	height: 40px;
+	margin: auto 0 auto 12px;
+	line-height: 40px;
+	font-size: 15px;
+	color: var(--text);
+	text-decoration: none;
+
+	b {
+		font-weight: bold;
+	}
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+main.mac {
+	.topBar {
+		border-bottom: 1px solid var(--gridGap);
+		border-radius: 0 8px 0 0;
+
+		&.toolBar {
+			.topBarContent {
+				gap: 12px;
+			}
+
+			.winButtonsMac {
+				height: 54px;
+				padding: 21px;
+			}
+
+			.windowTitle {
+				height: 28px;
+				line-height: 28px;
+				margin: 13px 0 12px 0;
+				font-size: 13px;
+				font-weight: 600;
+			}
+
+			select {
+				height: 22px;
+				margin: 16px 0 15px 0;
+				padding: 0 10px;
+				line-height: 22px;
+				appearance: none;
+				color: var(--text);
+				background-color: transparent;
+				border: 1px solid rgb(108, 108, 108);
+				border-radius: 6px;
+				
+				option {
+					color: black;
+				}
+			}
+
+			select {
+				
+			}
+
+			.toolBarButton {
+				height: 28px;
+				width: 40px;
+				margin: 14px 0 13px 0;
+				padding: 0;
+				border-radius: 6px;
+
+				img {
+					margin: 0;
+				}
+			}
+
+			.toolBarSelector {
+				height: 28px;
+				margin: 13px 0 12px 0;
+				border-radius: 6px;
+			}
+		}
+	}
+}
+
+main.win {
     .topBar {
-		&.buttonBar > .topBarContainer {
-			background-color: rgb(29, 29, 29);
-			border-bottom: 1px solid rgb(65, 65, 65);
-			border-radius: 9px 9px 0px 0px;
+		&.buttonBar {
+			.topBarContainer {
+				background-color: var(--topBarBG);
+				border-bottom: 1px solid rgb(65, 65, 65);
+				border-radius: 9px 9px 0px 0px;
+			}
 
 			.buttonBarButton {
 				width: 30px;
@@ -347,26 +413,249 @@ body.win {
 			}
 		}
 
-		&.toolBar > .topBarContainer{
-			background-color: rgb(29, 29, 29);
-			border-bottom: 1px solid rgb(65, 65, 65);
-			border-radius: 9px 9px 0px 0px;
+		&.toolBar {
+			
+			.topBarContainer {
+				background-color: var(--topBarBG);
+				border-bottom: 1px solid rgb(65, 65, 65);
+				border-radius: 9px 9px 0px 0px;
+			}
+
+			.topBarContent {
+				gap: 9px;
+
+				.appMenu {
+					.appMenuBtn {
+						height: 36px;
+						padding: 0 12px;
+						margin: 9px 0;
+						border-radius: 4px;
+					}
+	
+					.menuContent {
+						gap: 4px;
+						padding: 4px 0;
+						border-radius: 8px;
+						border: 1px solid rgb(26, 26, 26);
+	
+						button {
+							height: 28px;
+							margin: 0 4px;
+							padding: 0 12px;
+							border-radius: 4px;
+							font-size: 14px;
+						}
+					}
+				}
+
+				.windowTitle {
+					position: fixed;
+					left: 10px;
+					top: 0;
+					height: 30px;
+					line-height: 30px;
+					font-size: 13px;
+					font-weight: 400;
+					color: var(--text);
+				}
+
+				.select {
+					&:hover {
+						.optionContainer { display: flex; }
+					}
+
+					.selectBtn {
+						height: 36px;
+						margin: 9px 0;
+						padding: 0 12px;
+						border-radius: 4px;
+						color: var(--text);
+						background-color: transparent;
+
+						&:hover {
+							background-color: var(--hover);
+						}
+					}
+
+					.optionContainer {
+						display: none;
+						position: absolute;
+						flex-direction: column;
+						padding: 4px 0;
+						gap: 4px;
+						border-radius: 8px;
+						border: 1px solid rgb(26, 26, 26);
+						background-color: var(--appMenuContentBG);
+
+						button {
+							height: 28px;
+							margin: 0 4px;
+							padding: 0 12px;
+							border-radius: 4px;
+							font-size: 14px;
+							text-align: left;
+							color: var(--text);
+							background-color: transparent;
+
+							&:hover {
+								background-color: var(--hover);
+							}
+
+							&.selected {
+								background-color: var(--hover2);
+							}
+						}
+					}
+				}
+	
+				.toolBarButton {
+					height: 36px;
+					width: 36px;
+					margin: 9px 0 9px 0;
+					border-radius: 4px;
+	
+					img {
+						margin: 4px -2px;
+					}
+				}
+	
+				.toolBarSelector {
+					height: 36px;
+					margin: 9px 0;
+					border-radius: 3px;
+
+					.toolBarButton {
+						margin: 0;
+					}
+				}
+			}
 		}
 	}
 }
 
-body.web {
+main.web {
     .topBar {
-		&.buttonBar > .topBarContainer {
-			background-color: rgb(29, 29, 29);
-			border-bottom: 1px solid rgb(65, 65, 65);
-			border-bottom: 1px solid var(--gridGap);
+		&.buttonBar {
+			.topBarContainer {
+				background-color: var(--topBarBG);
+				border-bottom: 1px solid rgb(65, 65, 65);
+				border-bottom: 1px solid var(--gridGap);
+			}
 		}
 
-		&.toolBar > .topBarContainer {
-			background-color: rgb(29, 29, 29);
-			border-bottom: 1px solid rgb(65, 65, 65);
-			border-bottom: 1px solid var(--gridGap);
+		&.toolBar {
+
+			.topBarContainer {
+				background-color: var(--topBarBG);
+				border-bottom: 1px solid rgb(65, 65, 65);
+				border-bottom: 1px solid var(--gridGap);
+			}
+
+			.topBarContent {
+				gap: 12px;
+			}
+
+			.windowTitle {
+				height: 28px;
+				line-height: 28px;
+				margin: 13px 0 12px 0;
+				font-size: 13px;
+				font-weight: 600;
+			}
+
+			.appMenu {
+				.appMenuBtn {
+					height: 28px;
+					padding: 0 12px;
+					margin: 13px 0;
+					border-radius: 6px;
+				}
+
+				.menuContent {
+					gap: 4px;
+					padding: 4px 0;
+					border-radius: 8px;
+					backdrop-filter: blur(40px);
+					box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+
+					button {
+						height: 28px;
+						margin: 0 4px;
+						padding: 0 12px;
+						border-radius: 4px;
+						font-size: 14px;
+					}
+				}
+			}
+
+			.select {
+				&:hover {
+					.optionContainer { display: flex; }
+				}
+
+				.selectBtn {
+					height: 28px;
+					margin: 13px 0;
+					padding: 0 12px;
+					border-radius: 6px;
+					color: var(--text);
+					background-color: transparent;
+					border: 1px solid var(--hover);
+
+					&:hover {
+						background-color: var(--hover);
+					}
+				}
+
+				.optionContainer {
+					display: none;
+					position: absolute;
+					flex-direction: column;
+					padding: 4px 0;
+					gap: 4px;
+					border-radius: 8px;
+					background-color: var(--appMenuContentBG);
+					backdrop-filter: blur(40px);
+					box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+
+					button {
+						height: 28px;
+						margin: 0 4px;
+						padding: 0 12px;
+						border-radius: 4px;
+						font-size: 14px;
+						text-align: left;
+						color: var(--text);
+						background-color: transparent;
+
+						&:hover {
+							background-color: var(--hover);
+						}
+
+						&.selected {
+							background-color: var(--hover2);
+						}
+					}
+				}
+			}
+
+			.toolBarButton {
+				height: 28px;
+				width: 40px;
+				margin: 14px 0 13px 0;
+				padding: 0;
+				border-radius: 6px;
+
+				img {
+					margin: 0;
+				}
+			}
+
+			.toolBarSelector {
+				height: 28px;
+				margin: 13px 0 12px 0;
+				border-radius: 6px;
+			}
 		}
 	}
 }
