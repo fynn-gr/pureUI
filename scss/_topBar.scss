@@ -449,14 +449,12 @@ main.win {
 				}
 
 				.windowTitle {
-					position: fixed;
-					left: 10px;
-					top: 0;
-					height: 30px;
-					line-height: 30px;
-					font-size: 13px;
-					font-weight: 400;
 					color: var(--text);
+					height: 28px;
+					line-height: 28px;
+					margin: 13px 0 12px 0;
+					font-size: 13px;
+					font-weight: 600;
 				}
 
 				.select {

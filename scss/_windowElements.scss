@@ -8,7 +8,6 @@
 	position: fixed;
 	width: 100vw;
 	height: 100vh;
-	border-radius: 9px;
 	overflow: hidden;
 	background-color: transparent;
 }
@@ -72,19 +71,26 @@
 	height: 100vh;
 	left: 0;
 	top: 0;
-	background-color: none;
+	background-color: transparent;
 	border: 1px solid rgb(123, 123, 123, 0.5);
 	border-radius: 8px;
 	pointer-events: none;
 }
 
 main.light {
+	.windowBody {
+		border-radius: 9px;
+	}
+
 	.windowRim {
 		display: none;
 	}
 }
 
 main.win {
+	&.customDecorations.windowBody {
+		border-radius: 9px;
+	}
 
 	select {
 		height: 30px;
@@ -98,8 +104,6 @@ main.win {
 	.sideBar {
 		background-color: var(--sideBarBG);
 	}
-
-	
 
 	.windowRim {
 		border-color: rgb(83, 83, 83);
