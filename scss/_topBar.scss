@@ -97,7 +97,7 @@
 				}
 			}
 
-			.toolBarButton {
+			button{
 				background-color: transparent;
 
 				img {
@@ -116,7 +116,7 @@
 					background-color: var(--hover2);
 				}
 
-				.toolBarButton {
+				button {
 					margin: 0;
 
 					&:hover {
@@ -129,6 +129,10 @@
 			}
 
 			.spacer {
+				flex: 10;
+			}
+
+			.spacerFix {
 				flex: 1;
 			}
 		}
@@ -319,57 +323,57 @@ main.mac {
 		&.toolBar {
 			.topBarContent {
 				gap: 12px;
+
+				.windowTitle {
+					height: 28px;
+					line-height: 28px;
+					margin: 13px 0 12px 0;
+					font-size: 13px;
+					font-weight: 600;
+				}
+	
+				select {
+					height: 22px;
+					margin: 16px 0 15px 0;
+					padding: 0 10px;
+					line-height: 22px;
+					appearance: none;
+					color: var(--text);
+					background-color: transparent;
+					border: 1px solid rgb(108, 108, 108);
+					border-radius: 6px;
+					
+					option {
+						color: black;
+					}
+				}
+	
+				select {
+					
+				}
+	
+				button {
+					height: 28px;
+					width: 40px;
+					margin: 14px 0 13px 0;
+					padding: 0;
+					border-radius: 6px;
+	
+					img {
+						margin: 0;
+					}
+				}
+	
+				.toolBarSelector {
+					height: 28px;
+					margin: 13px 0 12px 0;
+					border-radius: 6px;
+				}
 			}
 
 			.winButtonsMac {
 				height: 54px;
 				padding: 21px;
-			}
-
-			.windowTitle {
-				height: 28px;
-				line-height: 28px;
-				margin: 13px 0 12px 0;
-				font-size: 13px;
-				font-weight: 600;
-			}
-
-			select {
-				height: 22px;
-				margin: 16px 0 15px 0;
-				padding: 0 10px;
-				line-height: 22px;
-				appearance: none;
-				color: var(--text);
-				background-color: transparent;
-				border: 1px solid rgb(108, 108, 108);
-				border-radius: 6px;
-				
-				option {
-					color: black;
-				}
-			}
-
-			select {
-				
-			}
-
-			.toolBarButton {
-				height: 28px;
-				width: 40px;
-				margin: 14px 0 13px 0;
-				padding: 0;
-				border-radius: 6px;
-
-				img {
-					margin: 0;
-				}
-			}
-
-			.toolBarSelector {
-				height: 28px;
-				margin: 13px 0 12px 0;
-				border-radius: 6px;
 			}
 		}
 	}
@@ -384,7 +388,7 @@ main.win {
 				border-radius: 9px 9px 0px 0px;
 			}
 
-			.buttonBarButton {
+			button {
 				width: 30px;
 				height: 28px;
 				margin: 6px;
@@ -394,7 +398,7 @@ main.win {
 				height: 28px;
 				margin: 6px;
 
-				.buttonBarButton {
+				button {
 					margin: 0;
 				}
 			}
@@ -506,7 +510,7 @@ main.win {
 					}
 				}
 	
-				.toolBarButton {
+				button {
 					height: 36px;
 					width: 40px;
 					margin: 9px 0 9px 0;
@@ -522,7 +526,7 @@ main.win {
 					margin: 9px 0;
 					border-radius: 5px;
 
-					.toolBarButton {
+					button {
 						margin: 0;
 					}
 				}
