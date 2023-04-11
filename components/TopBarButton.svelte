@@ -1,5 +1,7 @@
 <script lang="ts">
+    import Icon from './Icon.svelte';
 
+    export let uiPlatform: string;
     export let icon: string;
     export let onClick: Function
     export let toolTip: string;
@@ -12,6 +14,6 @@
     disabled={disabled}
 >
 
-    <img src={icon} alt={toolTip}>
+    <Icon {icon} {uiPlatform}/>
 
 </button>

@@ -6,4 +6,4 @@
 
 </script>
 
-<img src={`./icons/${uiPlatform}/${icon}.svg`} alt="">
+<img src={`../pureUI/icons/tb_${uiPlatform}/${icon}.svg`} alt="">
