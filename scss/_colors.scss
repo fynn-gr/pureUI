@@ -32,6 +32,15 @@ main.dark {
         --topBarBG: rgb(29, 29, 29);
         --appMenuContentBG: rgba(44, 44, 44, 0.8);
     }
+
+    --sysBlue: rgb(0, 112, 245);
+    --sysPurple: rgb(159, 75, 201);
+    --sysPink: rgb(245, 35, 75);
+    --sysRed: rgb(255, 49, 38);
+    --sysOrange: rgb(245, 139, 0);
+    --sysYellow: rgb(245, 194, 0);
+    --sysGreen: rgb(30, 195, 55);
+    --sysGray: rgb(132, 132, 137);
 }
 
 main.light {
@@ -68,4 +77,13 @@ main.light {
         --topBarBG: rgb(255, 255, 255);
         --appMenuContentBG: rgba(44, 44, 44, 0.6);
     }
+
+    --sysBlue: rgb(0, 112, 245);
+    --sysPurple: rgb(159, 75, 201);
+    --sysPink: rgb(245, 35, 75);
+    --sysRed: rgb(255, 49, 38);
+    --sysOrange: rgb(245, 139, 0);
+    --sysYellow: rgb(245, 194, 0);
+    --sysGreen: rgb(30, 195, 55);
+    --sysGray: rgb(132, 132, 137);
 }
