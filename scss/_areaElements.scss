@@ -142,9 +142,15 @@
 
 .panel {
     margin: 6rem;
-    overflow-x: hidden;
+    overflow: hidden;
     border-radius: 8rem;
     background-color: var(--panel);
+
+    &.collapsed {
+        height: 20rem;
+
+        .panelName > img {rotate: 0deg;}
+    }
     
     .panelName {
         display: flex;
@@ -153,10 +159,11 @@
         background-color: transparent;
         font-size: 1rem;
     
-        object {
+        img {
             width: 12rem;
             height: 12rem;
             margin: 4rem 4rem 4rem 6rem;
+            rotate: 90deg;
             //background-color: rgb(0, 175, 228);
         }
     
