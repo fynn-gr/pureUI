@@ -97,7 +97,7 @@
 				}
 			}
 
-			button{
+			.toolBarButton {
 				background-color: transparent;
 
 				img {
@@ -116,7 +116,7 @@
 					background-color: var(--hover2);
 				}
 
-				button {
+				.toolBarButton {
 					margin: 0;
 
 					&:hover {
@@ -348,11 +348,7 @@ main.mac {
 					}
 				}
 	
-				select {
-					
-				}
-	
-				button {
+				.ToolBarButton {
 					height: 28px;
 					width: 40px;
 					margin: 14px 0 13px 0;
@@ -388,7 +384,7 @@ main.win {
 				border-radius: 9px 9px 0px 0px;
 			}
 
-			button {
+			.buttonBarButton {
 				width: 30px;
 				height: 28px;
 				margin: 6px;
@@ -398,7 +394,7 @@ main.win {
 				height: 28px;
 				margin: 6px;
 
-				button {
+				.buttonBarButton {
 					margin: 0;
 				}
 			}
@@ -510,7 +506,7 @@ main.win {
 					}
 				}
 	
-				button {
+				.toolBarButton {
 					height: 36px;
 					width: 40px;
 					margin: 9px 0 9px 0;
@@ -526,7 +522,7 @@ main.win {
 					margin: 9px 0;
 					border-radius: 5px;
 
-					button {
+					.toolBarButton {
 						margin: 0;
 					}
 				}
