@@ -109,7 +109,7 @@
 				}
 			}
 
-			.toolBarSelector {
+			.toolBarGroup {
 				display: flex;
 
 				&:hover {
@@ -360,7 +360,7 @@ main.mac {
 					}
 				}
 	
-				.toolBarSelector {
+				.toolBarGroup {
 					height: 28px;
 					margin: 13px 0 12px 0;
 					border-radius: 6px;
@@ -521,7 +521,7 @@ main.win {
 					}
 				}
 	
-				.toolBarSelector {
+				.toolBarGroup {
 					height: 36px;
 					margin: 9px 0;
 					border-radius: 5px;
@@ -653,7 +653,7 @@ main.web {
 				}
 			}
 
-			.toolBarSelector {
+			.toolBarGroup {
 				height: 28px;
 				margin: 13px 0 12px 0;
 				border-radius: 6px;
