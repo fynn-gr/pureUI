@@ -30,7 +30,6 @@
 				topBarShort = "bb"
 			}
 		}
-
 	})
 
 </script>
