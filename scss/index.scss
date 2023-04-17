@@ -5,12 +5,14 @@
 @forward '../scss/_fonts';
 @forward '../scss/_layout';
 @forward '../scss/_mixins';
-@use '../scss/colors' as c;
 
 //components
 @forward '../scss/_windowElements';
 @forward '../scss/_areaElements';
-@forward '../scss/topBar';
+@forward '../scss/_topBar';
+@forward '../scss/_topBarMac';
+@forward '../scss/_topBarWin';
+@forward '../scss/_topBarWeb';
 
 //base
 :root {

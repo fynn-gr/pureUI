@@ -3,10 +3,11 @@
 
 	export let uiPlatform: string;
 	export let buttons: Array<button>;
-	export let state: number;
+	export let state: string;
 
 	interface button {
 		icon: string,
+		value: string,
 		toolTip: string,
 		disabled?: boolean,
 	}
@@ -19,7 +20,6 @@
 	onMount(() => {
 		let cls = self;
 		while (cls.parentElement) {
-			console.log(cls, cls.classList.contains("buttonBar"))
 			cls = cls.parentElement;
 
 			if (cls.classList.contains("toolBar")) {
@@ -40,10 +40,15 @@
 	{#each buttons as b, i}
 	<button
 		bind:this={self}
-		class={topBarType}
+		class="topBarButton"
+		class:active={state === b.value}
 		disabled={b.disabled}
 		on:click={() => {
-			state == i ? state = 0 : state = i;
+			if (state === b.value) {
+				state = ""
+			} else {
+				state = b.value
+			}
 		}}
 	>
 	

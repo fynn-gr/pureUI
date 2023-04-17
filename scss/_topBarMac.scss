@@ -1,0 +1,101 @@
+main.mac {
+	.topBar {
+		border-bottom: 1px solid var(--gridGap);
+		border-radius: 0 8px 0 0;
+
+		&.toolBar {
+			.topBarContent {
+				gap: 12px;
+
+				.windowTitle {
+					height: 28px;
+					line-height: 28px;
+					margin: 13px 0 12px 0;
+					font-size: 13px;
+					font-weight: 600;
+				}
+	
+				select {
+					height: 22px;
+					margin: 16px 0 15px 0;
+					padding: 0 10px;
+					line-height: 22px;
+					appearance: none;
+					color: var(--text);
+					background-color: transparent;
+					border: 1px solid rgb(108, 108, 108);
+					border-radius: 6px;
+					
+					option {
+						color: black;
+					}
+				}
+	
+				.topBarButton {
+					height: 28px;
+					width: 40px;
+					margin: 14px 0 13px 0;
+					padding: 0;
+					border-radius: 6px;
+	
+					img {
+						margin: 0;
+					}
+				}
+	
+				.topBarGroup {
+					height: 28px;
+					margin: 13px 0 12px 0;
+					border-radius: 6px;
+				}
+			}
+
+			.winButtonsMac {
+				height: 54px;
+				padding: 21px;
+			}
+		}
+
+        &.buttonBar {
+            .winButtonsMac {
+                height: 40px;
+                padding: 14px;
+            }
+
+            .topBarContent {
+                height: 40px;
+                gap: 9px;
+
+                .tabContainer {
+                    height: 22px;
+                    margin: 9px 0px;
+                    border: solid 1px var(--hover);
+                    border-radius: 6px;
+    
+                    button {
+                        height: 20px;
+                        padding: 0 5px;
+                        border-radius: 5px;
+                    }
+                }
+
+                .topBarButton {
+                    height: 22px;
+                    width: 30px;
+                    margin: 9px 0;
+                    border-radius: 5px;
+                }
+
+                .topBarGroup {
+                    height: 22px;
+                    margin: 9px 0;
+                    border-radius: 5px;
+
+                    .topBarButton {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+	}
+}

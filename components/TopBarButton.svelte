@@ -15,7 +15,6 @@
     onMount(() => {
         let cls = self;
         while (cls.parentElement) {
-            console.log(cls, cls.classList.contains("buttonBar"))
             cls = cls.parentElement;
 
             if (cls.classList.contains("toolBar")) {
@@ -33,7 +32,7 @@
 
 <button
     bind:this={self}
-    class={topBarType}
+    class="topBarButton"
     on:click={!disabled ? onClick() : null}
     disabled={disabled}
 >

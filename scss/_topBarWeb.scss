@@ -1,0 +1,185 @@
+main.web {
+    .topBar {
+        &.toolBar {
+
+			.topBarContainer {
+				background-color: var(--topBarBG);
+				border-bottom: 1px solid rgb(65, 65, 65);
+				border-bottom: 1px solid var(--gridGap);
+			}
+
+			.topBarContent {
+				gap: 12px;
+			}
+
+			.windowTitle {
+				height: 28px;
+				line-height: 28px;
+				margin: 13px 0 12px 0;
+				font-size: 13px;
+				font-weight: 600;
+			}
+
+			.appMenu {
+				.appMenuBtn {
+					height: 28px;
+					padding: 0 12px;
+					margin: 13px 0;
+					border-radius: 6px;
+				}
+
+				.menuContent {
+					gap: 4px;
+					padding: 4px 0;
+					border-radius: 8px;
+					backdrop-filter: blur(40px);
+					box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+
+					button {
+						height: 28px;
+						margin: 0 4px;
+						padding: 0 12px;
+						border-radius: 4px;
+						font-size: 14px;
+					}
+				}
+			}
+
+			.select {
+				&:hover {
+					.optionContainer { display: flex; }
+				}
+
+				.selectBtn {
+					height: 28px;
+					margin: 13px 0;
+					padding: 0 12px;
+					border-radius: 6px;
+					color: var(--text);
+					background-color: transparent;
+					border: 1px solid var(--hover);
+
+					&:hover {
+						background-color: var(--hover);
+					}
+				}
+
+				.optionContainer {
+					display: none;
+					position: absolute;
+					flex-direction: column;
+					padding: 4px 0;
+					gap: 4px;
+					border-radius: 8px;
+					background-color: var(--appMenuContentBG);
+					backdrop-filter: blur(40px);
+					box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+
+					button {
+						height: 28px;
+						margin: 0 4px;
+						padding: 0 12px;
+						border-radius: 4px;
+						font-size: 14px;
+						text-align: left;
+						color: var(--text);
+						background-color: transparent;
+
+						&:hover {
+							background-color: var(--hover);
+						}
+
+						&.selected {
+							background-color: var(--hover2);
+						}
+					}
+				}
+			}
+
+			.topBarButton {
+				height: 28px;
+				width: 40px;
+				margin: 14px 0 13px 0;
+				padding: 0;
+				border-radius: 6px;
+
+				img {
+					margin: 0;
+				}
+			}
+
+			.topBarGroup {
+				height: 28px;
+				margin: 13px 0 12px 0;
+				border-radius: 6px;
+			}
+		}
+
+		&.buttonBar {
+			.topBarContainer {
+				background-color: var(--topBarBG);
+				border-bottom: 1px solid rgb(65, 65, 65);
+				border-bottom: 1px solid var(--gridGap);
+			}
+
+            .topBarContent {
+                gap: 9px;
+                
+                .appMenu {
+                    .appMenuBtn {
+                        height: 22px;
+                        padding: 0 8px;
+                        margin: 9px 0;
+                        border-radius: 6px;
+                    }
+    
+                    .menuContent {
+                        gap: 4px;
+                        padding: 4px 0;
+                        border-radius: 8px;
+                        backdrop-filter: blur(40px);
+                        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+    
+                        button {
+                            height: 28px;
+                            margin: 0 4px;
+                            padding: 0 12px;
+                            border-radius: 4px;
+                            font-size: 14px;
+                        }
+                    }
+                }
+    
+                .tabContainer {
+                    height: 22px;
+                    margin: 9px 0px;
+                    border: solid 1px var(--hover);
+                    border-radius: 6px;
+    
+                    button {
+                        height: 20px;
+                        padding: 0 5px;
+                        border-radius: 5px;
+                    }
+                }
+    
+                .topBarButton {
+                    height: 22px;
+                    width: 30px;
+                    margin: 9px 0;
+                    border-radius: 5px;
+                }
+    
+                .topBarGroup {
+                    height: 22px;
+                    margin: 9px 9px;
+                    border-radius: 5px;
+    
+                    .topBarButton {
+                        margin: 0;
+                    }
+                }
+            }
+		}
+	}
+}

@@ -43,7 +43,7 @@
 
 <button
 	bind:this={self}
-	class={topBarType}
+	class="topBarButton"
 	on:click={() => {!disabled ? active = !active : active = active}}
 	disabled={disabled}
 	style={`background-color: ${active ? activeColor : 'none'};`}

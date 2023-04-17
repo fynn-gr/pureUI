@@ -1,0 +1,184 @@
+main.win {
+    .topBar {
+        &.toolBar {
+			
+			.topBarContainer {
+				background-color: var(--topBarBG);
+				border-bottom: 1px solid rgb(65, 65, 65);
+				border-radius: 9px 9px 0px 0px;
+			}
+
+			.topBarContent {
+				gap: 9px;
+
+				.appMenu {
+					.appMenuBtn {
+						height: 36px;
+						padding: 0 12px;
+						margin: 9px 0;
+						border-radius: 5px;
+					}
+	
+					.menuContent {
+						gap: 4px;
+						padding: 4px 0;
+						border-radius: 8px;
+						border: 1px solid rgb(26, 26, 26);
+	
+						button {
+							height: 28px;
+							margin: 0 4px;
+							padding: 0 12px;
+							border-radius: 5px;
+							font-size: 14px;
+						}
+					}
+				}
+
+				.windowTitle {
+					color: var(--text);
+					height: 28px;
+					line-height: 28px;
+					margin: 13px 0 12px 0;
+					font-size: 13px;
+					font-weight: 600;
+				}
+
+				.select {
+					&:hover {
+						.optionContainer { display: flex; }
+					}
+
+					.selectBtn {
+						height: 36px;
+						margin: 9px 0;
+						padding: 0 12px;
+						border-radius: 5px;
+						color: var(--text);
+						background-color: transparent;
+
+						&:hover {
+							background-color: var(--hover);
+						}
+					}
+
+					.optionContainer {
+						display: none;
+						position: absolute;
+						flex-direction: column;
+						padding: 4px 0;
+						gap: 4px;
+						border-radius: 8px;
+						border: 1px solid rgb(26, 26, 26);
+						background-color: var(--appMenuContentBG);
+
+						button {
+							height: 28px;
+							margin: 0 4px;
+							padding: 0 12px;
+							border-radius: 4px;
+							font-size: 14px;
+							text-align: left;
+							color: var(--text);
+							background-color: transparent;
+
+							&:hover {
+								background-color: var(--hover);
+							}
+
+							&.selected {
+								background-color: var(--hover2);
+							}
+						}
+					}
+				}
+	
+				.topBarButton {
+					height: 36px;
+					width: 40px;
+					margin: 9px 0 9px 0;
+					border-radius: 5px;
+	
+					img {
+						margin: 0px;
+					}
+				}
+	
+				.topBarGroup {
+					height: 36px;
+					margin: 9px 0;
+					border-radius: 5px;
+				}
+			}
+		}
+
+		&.buttonBar {
+			.topBarContainer {
+				background-color: var(--topBarBG);
+				border-bottom: 1px solid rgb(65, 65, 65);
+				border-radius: 9px 9px 0px 0px;
+			}
+
+            .topBarContent {
+                gap: 6px;
+                
+                .appMenu {
+                    .appMenuBtn {
+                        height: 28px;
+                        padding: 0 12px;
+                        margin: 6px 0;
+                        border-radius: 5px;
+                    }
+    
+                    .menuContent {
+                        gap: 4px;
+                        padding: 4px 0;
+                        border-radius: 8px;
+                        border: 1px solid rgb(26, 26, 26);
+    
+                        button {
+                            height: 28px;
+                            margin: 0 4px;
+                            padding: 0 12px;
+                            border-radius: 5px;
+                            font-size: 14px;
+                        }
+                    }
+                }
+    
+                .topBarButton {
+                    width: 30px;
+                    height: 28px;
+                    margin: 6px 0;
+                    border-radius: 5px;
+                }
+    
+                .topBarGroup {
+                    height: 28px;
+                    margin: 6px;
+                    border-radius: 5px;
+    
+                    .topBarButton {
+                        margin: 0;
+                    }
+                }
+    
+                .tabContainer {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 6px;
+                    margin: 6px 0;
+                    border: none;
+                    height: 28px;
+    
+                    button {
+                        height: 28px;
+                        width: 80px;
+                        background-color: rgb(41, 41, 41);
+                        border-radius: 5px;
+                    }
+                }
+            }
+		}
+	}
+}
