@@ -35,7 +35,7 @@
 </script>
 
 
-<div class="toolBarSwitch">
+<div class="topBarGroup">
 
 	{#each buttons as b, i}
 	<button

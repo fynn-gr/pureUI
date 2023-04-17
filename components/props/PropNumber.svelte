@@ -6,6 +6,7 @@
     export let softMin: number = null;
     export let softMax: number = null;
     export let float = false;
+    export let unit = "";
     export let inactive = false;
 
 </script>
@@ -15,4 +16,5 @@
     type="number"
     {value}
     max={max}
-    min={min}/>
+    min={min}
+/>
