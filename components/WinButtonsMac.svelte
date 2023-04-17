@@ -1,27 +1,28 @@
 <script lang="ts">
-  import { invoke } from "@tauri-apps/api/tauri"
-  import { appWindow } from '@tauri-apps/api/window'
-  
+  export let min = () => {}
+  export let max = () => {}
+  export let close = () => {}
   let hover = false;
+
 </script>
 
 <div class="winButtonsMac" data-tauri-drag-region>
   <button
     on:mouseenter={() => {hover = true}}
     on:mouseleave={() => {hover = false}}
-    on:click={() => {appWindow.close()}}>
-    <object data="./pureUI/icons/winButtonsMacClose.svg" aria-label="">
+    on:click={close}>
+    <img src="./pureUI/icons/winButtonsMacClose.svg" alt="">
   </button>
   <button 
     on:mouseenter={() => {hover = true}}
     on:mouseleave={() => {hover = false}}
-    on:click={() => {appWindow.minimize()}}>
-    <object data="./pureUI/icons/winButtonsMacMin.svg" aria-label="">
+    on:click={min}>
+    <img src="./pureUI/icons/winButtonsMacMin.svg" alt="">
   </button>
   <button
     on:mouseenter={() => {hover = true}}
     on:mouseleave={() => {hover = false}}
-    on:click={() => {appWindow.toggleMaximize()}}>
-    <object data="./pureUI/icons/winButtonsMacMax.svg" aria-label="">
+    on:click={max}>
+    <img src="./pureUI/icons/winButtonsMacMax.svg" alt="">
   </button>
 </div>

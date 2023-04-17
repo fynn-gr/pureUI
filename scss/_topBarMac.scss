@@ -97,5 +97,48 @@ main.mac {
                 }
             }
         }
+
+		.winButtonsMac {
+			top: 0;
+			left: 0;
+			display: flex;
+		
+			button {
+				width: 12px;
+				height: 12px;
+				box-sizing: border-box;
+				border: none;
+				border-width: 1px;
+				border-radius: 50%;
+		
+				img {
+					display: none;
+					position: relative;
+				}
+			}
+		
+			&:hover {
+				img {
+					display: block;
+				}
+			}
+		
+			&> :nth-child(1) {
+				background-color: rgb(254, 95, 87);
+				border-color: rgb(127, 47, 43);
+				margin-right: 8px;
+			}
+		
+			&> :nth-child(2) {
+				background-color: rgb(255, 188, 46);
+				border-color: rgb(128, 94, 23);
+				margin-right: 8px;
+			}
+		
+			&> :nth-child(3) {
+				background-color: rgb(40, 200, 65);
+				border-color: rgb(20, 100, 33);
+			}
+		}
 	}
 }
