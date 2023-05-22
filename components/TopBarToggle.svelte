@@ -18,7 +18,7 @@
     onMount(() => {
         let cls = self;
         while (cls.parentElement) {
-            console.log(cls, cls.classList.contains("buttonBar"))
+            //console.log(cls, cls.classList.contains("buttonBar"))
             cls = cls.parentElement;
 
             if (cls.classList.contains("toolBar")) {
