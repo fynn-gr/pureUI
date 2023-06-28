@@ -14,7 +14,7 @@
 <input
     class="prop"
     type="number"
-    {value}
+    bind:value={value}
     max={max}
     min={min}
 />

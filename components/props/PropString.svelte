@@ -8,4 +8,4 @@
 <input
     class="prop"
     type="text"
-    {value} />
+    bind:value={value} />
