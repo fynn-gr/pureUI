@@ -2,7 +2,7 @@
   import { appWindow } from "@tauri-apps/api/window";
 </script>
 
-<div class="winButtonsMS" data-tauri-drag-region>
+<div class="win-buttons-ms" data-tauri-drag-region>
   <button
     on:click={() => {appWindow.minimize()}}>
     <object data="./pureUI/icons/winButtonsMSMin.svg">

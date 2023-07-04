@@ -2,25 +2,18 @@
 @use '../scss/variables' as v;
 @use '../scss/_mixins' as mix;
 
-.topBar {
+.topbar {
 	//26px default
 	//38px buttonBar
 	//54px toolBar
 	grid-area: topBar;
-	height: var(--topBarHeight);
+	height: var(--topbar-height);
 	top: 0;
 	right: 0;
 	display: flex;
 	flex-direction: row;
 	justify-content: right;
-	background-color: var(--topBarBG);
-
-	.topBarContainer {
-		position: fixed;
-		width: 100vw;
-		height: inherit;
-		display: flex;
-	}
+	background-color: var(--topbar-BG);
 
 	&.default {
 		.winButtonsMac {
@@ -28,15 +21,14 @@
 			padding: 7px;
 		}
 
-		.topBarContent {
-			height: 26px;
+		.topbar-content {
 			flex: 1;
-
+			height: 26px;
 			display: flex;
 			flex-direction: row;
 			flex-wrap: nowrap;
 
-			.windowTitle {
+			.window-title {
 				height: 26px;
 				margin: 0px auto;
 				line-height: 26px;
@@ -45,33 +37,33 @@
 		}
 	}
 
-	&.toolBar {
-		height: var(--topBarHeight);
+	&.toolbar {
+		height: var(--topbar-height);
 		min-height: 54px;
 
-		.topBarContent {
-			height: var(--topBarHeight);
+		.topbar-container {
+			height: var(--topbar-height);
 			flex: 1;
 			display: flex;
 			flex-direction: row;
 			flex-wrap: nowrap;
 
-			.appMenu {
+			.app-menu {
 				&:hover {
-					.menuContent { display: flex; }
+					.menu-content { display: flex; }
 				}
 
-				.appMenuBtn {
+				.app-menu-btn {
 					color: var(--text);
 					background-color: var(--hover);
 				}
 
-				.menuContent {
+				.menu-content {
 					position: absolute;
 					display: none;
 					z-index: 400;
 					flex-direction: column;
-					background-color: var(--appMenuContentBG);
+					background-color: var(--app-menu-content-BG);
 
 					button {
 						text-align: left;
@@ -83,8 +75,8 @@
 						}
 					}
 
-					.subMenu {
-						.subMenuContent {
+					.sub-menu {
+						.sub-menu-content {
 							position: absolute;
 						}
 					}
@@ -97,11 +89,11 @@
 				}
 			}
 
-			.topBarButton {
+			.topbar-button {
 				background-color: transparent;
 
 				img {
-					filter: var(--toolIconColor);
+					filter: var(--tool-icon-color);
 				}
 
 				&:hover {
@@ -109,14 +101,14 @@
 				}
 			}
 
-			.topBarGroup {
+			.topbar-group {
 				display: flex;
 
 				&:hover {
 					background-color: var(--hover2);
 				}
 
-				.topBarButton {
+				.topbar-button {
 					margin: 0;
 
 					&:hover {
@@ -130,33 +122,34 @@
 
 			.spacer { flex: 10;	}
 
-			.spacerFix { flex: 1; }
+			.spacer-fix { flex: 1; }
 		}
 	}
 
-	&.buttonBar {
-		.topBarContent {
-			flex: 1;
+	&.buttonbar {
+		.topbar-container {
+			position: fixed;
+			width: 100vw;
 			display: flex;
 			flex-direction: row;
 			flex-wrap: nowrap;
 
-			.appMenu {
+			.app-menu {
 				&:hover {
 					.menuContent { display: flex; }
 				}
 
-				.appMenuBtn {
+				.app-menu-btn {
 					color: var(--text);
 					background-color: var(--hover);
 				}
 
-				.menuContent {
+				.menu-content {
 					position: absolute;
 					display: none;
 					z-index: 400;
 					flex-direction: column;
-					background-color: var(--appMenuContentBG);
+					background-color: var(--app-menu-content-BG);
 
 					button {
 						text-align: left;
@@ -168,8 +161,8 @@
 						}
 					}
 
-					.subMenu {
-						.subMenuContent {
+					.sub-menu {
+						.sub-menu-content {
 							position: absolute;
 						}
 					}
@@ -182,7 +175,7 @@
 				}
 			}
 
-			.tabContainer {
+			.tab-container {
 				display: flex;
 				flex-direction: row;
 
@@ -200,11 +193,11 @@
 				}
 			}
 
-			.topBarButton {
+			.topbar-button {
 				background-color: transparent;
 
 				img {
-					filter: var(--toolIconColor);
+					filter: var(--tool-icon-color);
 				}
 
 				&:hover {
@@ -212,13 +205,13 @@
 				}
 			}
 
-			.topBarGroup {
+			.topbar-group {
 
 				&:hover {
 					background-color: var(--hover2);
 				}
 
-				.topBarButton {
+				.topbar-button {
 					margin: 0;
 
 					&:hover {
@@ -234,7 +227,7 @@
 	}
 }
 
-.winButtonsMS {
+.win-buttons-ms {
 	top: 0px;
 	right: 0px;
 	display: flex;

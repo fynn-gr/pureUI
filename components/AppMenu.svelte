@@ -4,9 +4,9 @@
 
 </script>
 
-<div class="appMenu">
-    <button class="appMenuBtn">{name}</button>
-    <div class="menuContent">
+<div class="app-menu">
+    <button class="app-menu-btn">{name}</button>
+    <div class="menu-content">
       <slot />
     </div>
   </div>

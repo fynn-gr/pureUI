@@ -4,7 +4,7 @@
 @use '../scss/variables' as v;
 @use '../scss/_mixins' as mix;
 
-.windowBody {
+.window-body {
 	position: fixed;
 	width: 100vw;
 	height: 100vh;
@@ -13,36 +13,18 @@
 	background-color: transparent;
 }
 
-.viewTopBar {
-	display: flex;
-	flex-direction: column;
-	flex: 1;
-}
-
-.viewSplitHorizontal {
-	display: flex;
-	flex-direction: row;
-	flex: 1;
-}
-
-.viewSplitVertical {
-	display: flex;
-	flex-direction: column;
-	flex: 1;
-}
-
-.sideBar {
-	padding: var(--topBarHeight) 0 0 0;
+.navbar {
+	padding: var(--topbar-Height) 0 0 0;
 	grid-area: sideBar;
 	background-color: transparent;
-	border-right: 1rem solid var(--gridGap);
+	border-right: 1rem solid var(--grid-gap);
 }
 
 .properties {
-	background-color: var(--propertiesBG);
+	background-color: var(--properties-BG);
 }
 
-.statusBar {
+.status-bar {
 	grid-area: statusBar;
 	display: flex;
 	height: 25px;
@@ -65,7 +47,7 @@
 	background-color: transparent;
 }
 
-.windowRim {
+.window-rim {
 	position: fixed;
 	z-index: 500;
 	width: 100vw;
@@ -79,17 +61,17 @@
 }
 
 main.light {
-	.windowBody {
+	.window-body {
 		border-radius: 9px;
 	}
 
-	.windowRim {
+	.window-rim {
 		display: none;
 	}
 }
 
 main.win {
-	&.customDecorations.windowBody {
+	&.custom-decorations.window-body {
 		border-radius: 9px;
 	}
 
@@ -102,11 +84,11 @@ main.win {
 		}
 	}
 
-	.sideBar {
-		background-color: var(--sideBarBG);
+	.navbar {
+		background-color: var(--navbar-BG);
 	}
 
-	.windowRim {
+	.window-rim {
 		border-color: rgb(83, 83, 83);
 
 		&::after {
@@ -116,12 +98,12 @@ main.win {
 }
 
 main.web {
-	.windowBody {
+	.window-body {
 		border-radius: 0;
 	}
 	
-	.sideBar {
-		background-color: var(--sideBarBG);
+	.navbar {
+		background-color: var(--navbar-BG);
 	}
 
 	

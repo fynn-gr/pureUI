@@ -6,7 +6,7 @@
 
 </script>
 
-<div class="winButtonsMac" data-tauri-drag-region>
+<div class="win-buttons-mac" data-tauri-drag-region>
   <button
     on:mouseenter={() => {hover = true}}
     on:mouseleave={() => {hover = false}}

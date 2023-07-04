@@ -1,13 +1,18 @@
 main.mac {
-	.topBar {
-		border-bottom: 1px solid var(--gridGap);
+	.topbar {
+		border-bottom: 1px solid var(--grid-gap);
 		border-radius: 0 8px 0 0;
 
-		&.toolBar {
-			.topBarContent {
+		&.toolbar {
+			.topbar-container {
 				gap: 12px;
 
-				.windowTitle {
+				.win-buttons-mac {
+					height: 54px;
+					padding: 21px;
+				}
+
+				.window-title {
 					height: 28px;
 					line-height: 28px;
 					margin: 13px 0 12px 0;
@@ -31,7 +36,7 @@ main.mac {
 					}
 				}
 	
-				.topBarButton {
+				.topbar-button {
 					height: 28px;
 					width: 40px;
 					margin: 14px 0 13px 0;
@@ -43,62 +48,45 @@ main.mac {
 					}
 				}
 	
-				.topBarGroup {
+				.topbar-group {
 					height: 28px;
 					margin: 13px 0 12px 0;
 					border-radius: 6px;
 				}
 			}
-
-			.winButtonsMac {
-				height: 54px;
-				padding: 21px;
-			}
 		}
 
-        &.buttonBar {
-            .winButtonsMac {
-                height: 40px;
-                padding: 14px;
-            }
-
-            .topBarContent {
-                height: 40px;
+        &.buttonbar {
+			
+			.topbar-container {
+				height: 40px;
                 gap: 9px;
 
-                .tabContainer {
-                    height: 22px;
-                    margin: 9px 0px;
-                    border: solid 1px var(--hover);
-                    border-radius: 6px;
-    
-                    button {
-                        height: 20px;
-                        padding: 0 5px;
-                        border-radius: 5px;
-                    }
-                }
+				.win-buttons-mac {
+					height: 40px;
+					padding: 14px;
+				}
 
-                .topBarButton {
+                .topbar-button {
                     height: 22px;
                     width: 30px;
                     margin: 9px 0;
                     border-radius: 5px;
                 }
 
-                .topBarGroup {
+                .topbar-group {
                     height: 22px;
                     margin: 9px 0;
                     border-radius: 5px;
 
-                    .topBarButton {
+                    .topbar-button {
                         margin: 0;
                     }
                 }
             }
         }
 
-		.winButtonsMac {
+		.win-buttons-mac {
 			top: 0;
 			left: 0;
 			display: flex;

@@ -1,17 +1,13 @@
 main.win {
-    .topBar {
-        &.toolBar {
+    .topbar {
+        &.toolbar {
 			
-			.topBarContainer {
-				background-color: var(--topBarBG);
+			.topbar-container {
+				background-color: var(--topbar-BG);
 				border-bottom: 1px solid rgb(65, 65, 65);
 				border-radius: 9px 9px 0px 0px;
-			}
 
-			.topBarContent {
-				gap: 9px;
-
-				.appMenu {
+				.app-menu {
 					.appMenuBtn {
 						height: 36px;
 						padding: 0 12px;
@@ -35,7 +31,7 @@ main.win {
 					}
 				}
 
-				.windowTitle {
+				.window-title {
 					color: var(--text);
 					height: 28px;
 					line-height: 28px;
@@ -93,7 +89,7 @@ main.win {
 					}
 				}
 	
-				.topBarButton {
+				.topbar-button {
 					height: 36px;
 					width: 40px;
 					margin: 9px 0 9px 0;
@@ -104,7 +100,7 @@ main.win {
 					}
 				}
 	
-				.topBarGroup {
+				.topbar-group {
 					height: 36px;
 					margin: 9px 0;
 					border-radius: 5px;
@@ -112,25 +108,22 @@ main.win {
 			}
 		}
 
-		&.buttonBar {
-			.topBarContainer {
-				background-color: var(--topBarBG);
+		&.buttonbar {
+			.topbar-container {
+				background-color: var(--topbar-BG);
 				border-bottom: 1px solid rgb(65, 65, 65);
 				border-radius: 9px 9px 0px 0px;
-			}
-
-            .topBarContent {
                 gap: 6px;
                 
-                .appMenu {
-                    .appMenuBtn {
+                .app-menu {
+                    .app-menu-btn {
                         height: 28px;
                         padding: 0 12px;
                         margin: 6px 0;
                         border-radius: 5px;
                     }
     
-                    .menuContent {
+                    .menu-content {
                         gap: 4px;
                         padding: 4px 0;
                         border-radius: 8px;
@@ -146,24 +139,24 @@ main.win {
                     }
                 }
     
-                .topBarButton {
+                .topbar-button {
                     width: 30px;
                     height: 28px;
                     margin: 6px 0;
                     border-radius: 5px;
                 }
     
-                .topBarGroup {
+                .topbar-group {
                     height: 28px;
                     margin: 6px;
                     border-radius: 5px;
     
-                    .topBarButton {
+                    .topbar-button {
                         margin: 0;
                     }
                 }
     
-                .tabContainer {
+                .tab-container {
                     display: flex;
                     flex-direction: row;
                     gap: 6px;
