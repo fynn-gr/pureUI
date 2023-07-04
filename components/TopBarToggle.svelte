@@ -21,11 +21,11 @@
             //console.log(cls, cls.classList.contains("buttonBar"))
             cls = cls.parentElement;
 
-            if (cls.classList.contains("toolBar")) {
-                topBarType = "toolBarButton"
+            if (cls.classList.contains("toolbar")) {
+                topBarType = "toolbar-button"
                 topBarShort = "tb"
-            } else if (cls.classList.contains("buttonBar")) {
-                topBarType = "buttonBarButton"
+            } else if (cls.classList.contains("buttonbar")) {
+                topBarType = "buttonbar-button"
                 topBarShort = "bb"
             }
         }
@@ -43,7 +43,7 @@
 
 <button
 	bind:this={self}
-	class="topBarButton"
+	class="topbar-button"
 	on:click={() => {!disabled ? active = !active : active = active}}
 	disabled={disabled}
 	style={`background-color: ${active ? activeColor : 'none'};`}
