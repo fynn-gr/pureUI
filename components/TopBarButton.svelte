@@ -1,7 +1,7 @@
 <script lang="ts">
     import { onMount } from "svelte";
+    import { uiPlatform } from "@/stores";
 
-    export let uiPlatform: string;
     export let icon: string;
     export let onClick: Function
     export let toolTip: string;
@@ -37,6 +37,6 @@
     disabled={disabled}
 >
 
-    <img src={`../pureUI/icons/${topBarShort}_${uiPlatform}/${icon}.svg`} alt={toolTip}>
+    <img src={`../src/pureUI/icons/${topBarShort}_${$uiPlatform}/${icon}.svg`} alt={toolTip}>
 
 </button>

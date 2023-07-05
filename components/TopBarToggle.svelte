@@ -1,7 +1,7 @@
 <script lang="ts">
     import { onMount } from "svelte";
+	import { uiPlatform } from "@/stores";
 
-	export let uiPlatform: string;
 	export let icon: string;
 	export let iconActive: string = null;
 	export let active: boolean;
@@ -30,12 +30,12 @@
             }
         }
 
-		iconPath = `../pureUI/icons/${topBarShort}_${uiPlatform}/${icon}.svg`
+		iconPath = `../src/pureUI/icons/${topBarShort}_${$uiPlatform}/${icon}.svg`
 
 		if (iconActive == null) {
 			iconPathActive = iconPath;
 		} else {
-			iconPathActive = `../pureUI/icons/${topBarShort}_${uiPlatform}/${iconActive}.svg`
+			iconPathActive = `../src/pureUI/icons/${topBarShort}_${$uiPlatform}/${iconActive}.svg`
 		}
     })
 	
