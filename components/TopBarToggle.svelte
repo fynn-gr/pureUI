@@ -5,6 +5,7 @@
 	export let icon: string;
 	export let iconActive: string = null;
 	export let active: boolean;
+	export let onChange = (active: boolean) => {};
 	export let activeColor: string = null;
 	export let toolTip: string;
 	export let disabled = false;
@@ -44,7 +45,10 @@
 <button
 	bind:this={self}
 	class="topbar-button"
-	on:click={() => {!disabled ? active = !active : active = active}}
+	on:click={() => {
+		!disabled ? active = !active : active = active;
+		onChange(active);
+	}}
 	disabled={disabled}
 	style={`background-color: ${active ? activeColor : 'none'};`}
 >
