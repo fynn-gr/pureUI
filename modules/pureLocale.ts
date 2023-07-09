@@ -1,3 +1,5 @@
+import { locale } from "@/stores";
+
 export class pureLocale {
     language :string;
     path :string;
@@ -10,14 +12,14 @@ export class pureLocale {
         fetch(`/locale/${language}.json`)
         .then((res) => {
             this.obj = res;
+            locale.set(res);
         })
     }
 
-    _(key :string) {
-        try {
-            return this.obj.key;
-        } catch (error) {
+    _(key :string): string {
 
+        if (key in this.obj) {
+            return this.obj[key];
         }
     } 
 }
