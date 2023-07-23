@@ -1,4 +1,3 @@
-import { locale } from "@/stores";
 
 export class pureLocale {
     language :string;
@@ -12,7 +11,6 @@ export class pureLocale {
         fetch(`/locale/${language}.json`)
         .then((res) => {
             this.obj = res;
-            locale.set(res);
         })
     }
 
