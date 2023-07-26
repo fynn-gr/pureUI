@@ -31,12 +31,12 @@
             }
         }
 
-		iconPath = `../src/pureUI/icons/${topBarShort}_${$uiPlatform}/${icon}.svg`
+		iconPath = `./icons/${topBarShort}_${$uiPlatform}/${icon}.svg`
 
 		if (iconActive == null) {
 			iconPathActive = iconPath;
 		} else {
-			iconPathActive = `../src/pureUI/icons/${topBarShort}_${$uiPlatform}/${iconActive}.svg`
+			iconPathActive = `./icons/${topBarShort}_${$uiPlatform}/${iconActive}.svg`
 		}
     })
 	

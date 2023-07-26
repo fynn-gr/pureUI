@@ -2,4 +2,6 @@
 $gridGap: 1px;
 
 //round corders
-$cBase: 4px;
+:root {
+    --win-corner: 8px;
+}

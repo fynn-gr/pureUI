@@ -40,11 +40,11 @@
         }
 
         :first-child {
-            border-radius: v.$cBase v.$cBase 0 0;
+            border-radius: var(--win-corner) var(--win-corner) 0 0;
         }
 
         :last-child {
-            border-radius: 0 0 v.$cBase v.$cBase;
+            border-radius: 0 0 var(--win-corner) var(--win-corner);
         }
     }
 
@@ -86,7 +86,7 @@
         background-color: var(--inputField);
         outline: none;
         border: none;
-        border-radius: v.$cBase;
+        border-radius: var(--win-corner);
 
         &[type=number] {
             border: solid 1rem var(--inputBorder);
@@ -122,7 +122,7 @@
         background-color: var(--button);
         outline: none;
         border: solid 1rem var(--inputBorder);
-        border-radius: v.$cBase;
+        border-radius: var(--win-corner);
     }
 }
 
