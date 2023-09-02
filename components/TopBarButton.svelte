@@ -37,6 +37,6 @@
     disabled={disabled}
 >
 
-    <img src={`./icons/${topBarShort}_${$uiPlatform}/${icon}.svg`} alt={toolTip}>
+    <img src={topBarShort ? `./icons/${topBarShort}_${$uiPlatform}/${icon}.svg` : ''} alt={toolTip}>
 
 </button>
