@@ -225,6 +225,19 @@
 			}
 		}
 	}
+
+	&.tabbar {
+
+		.spacer {
+			flex: 1;
+		}
+
+		.tab {
+			height: 45px;
+			min-width: 45px;
+			border-radius: 6px;
+		}
+	}
 }
 
 .win-buttons-ms {
