@@ -44,6 +44,7 @@
 <button
 	bind:this={self}
 	class="topbar-button"
+	class:disabled={disabled}
 	on:click={() => {
 		!disabled ? active = !active : active = active;
 		onChange(active);

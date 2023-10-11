@@ -25,7 +25,6 @@
                 topBarShort = "bb"
             }
         }
-
     })
 
 </script>
@@ -33,6 +32,7 @@
 <button
     bind:this={self}
     class="topbar-button"
+    class:disabled={disabled}
     on:click={!disabled ? onClick() : null}
     disabled={disabled}
 >
