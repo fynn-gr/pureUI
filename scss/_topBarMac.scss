@@ -88,7 +88,7 @@ main.mac {
 
 		&.tabbar {
 			height: 80px;
-			gap: 9px;
+			gap: 1px;
 
 			.title {
 				position: fixed;
@@ -101,19 +101,24 @@ main.mac {
 			}
 
 			.win-buttons-mac {
+				height: 28px;
 				padding: 8px;
 			}
 
 			.tab {
 				margin: auto auto 7px auto;
+				display: flex;
+				flex-direction: column;
 
 				&:hover {
 					background-color: var(--hover);
 				}
 
 				&.active {
-					.icon {
-						border-color: var(--secondary);
+					background-color: var(--hover);
+
+					img {
+						filter: var(--secondary-filter);
 					}
 
 					p {
@@ -123,18 +128,14 @@ main.mac {
 
 				img, .icon {
 					height: 22px;
-					width: 23px;
+					width: 22px;
 					margin: 3px auto 0 auto;
-				}
-
-				.icon {
-					border: 2px solid var(--text);
-					border-radius: 4px;
+					filter: invert(90%);
 				}
 
 				p {
 					margin-bottom: 3px;
-					padding: 0 6px;
+					padding: 0 8px;
 					line-height: 14px;
 					font-size: 11px;
 					font-weight: 700;
@@ -182,6 +183,15 @@ main.mac {
 			&> :nth-child(3) {
 				background-color: rgb(40, 200, 65);
 				border-color: rgb(20, 100, 33);
+			}
+
+			& > .disabled {
+				background-color: var(--traffic-light-disabled);
+				border-color: var(--traffic-light-disabled-border);
+
+				img {
+					display: none;
+				}
 			}
 		}
 	}

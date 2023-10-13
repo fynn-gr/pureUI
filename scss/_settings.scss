@@ -1,68 +1,86 @@
 .keymap-frame {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
 }
 
 .keymap {
-    box-sizing: border-box;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+	box-sizing: border-box;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
 
-    .row {
-        display: flex;
-        gap: 4px;
+	.row {
+		display: flex;
+		gap: 4px;
 
-        .key {
-            z-index: 1;
-            position: relative;
-            width: 36px;
-            height: 36px;
-            border: 2px solid white;
-            border-radius: 4px;	
-            font-size: 12px;
-            padding: 0 3px;
+		.key {
+			z-index: 1;
+			position: relative;
+			height: 36px;
+			border: 2px solid white;
+			border-radius: 4px;	
+			line-height: 32px;
+			text-align: center;
+			font-size: 12px;
+			font-weight: 700;
+			padding: 0 3px;
 
-            &.active {
-                background-color: var(--secondary);
-            }
+			&.binded {
+				background-color: var(--secondary);
+			}
 
-            &:hover {
-                .operator {
-                    display: block;
-                }
-            }
+			&.selected {
 
-            .operator {
-                z-index: 20;
-                display: none;
-                position: absolute;
-                inset: 0px auto auto 36px;
-                padding: 2px 6px;
-                color: var(--secondary);
-                background-color: white;
-                font-weight: 800;
-                border-radius: 3px;
-            }
-        }
+			}
 
-        .arrows {
-            width: 116px;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            gap: 4px;
+			&.modifier {
+				color: var(--properties-BG);
+				background-color: white;
+			}
 
-            .key {
-                height: 16px;
+			&:hover {
+				.operator {
+					display: block;
+				}
+			}
 
-                &:nth-child(1) {
-                    margin: 0 40px;
-                }
-            }
-        }
-    }
+			.operator {
+				z-index: 20;
+				display: none;
+				position: absolute;
+				inset: 0px auto auto 36px;
+				padding: 2px 6px;
+				color: var(--secondary);
+				background-color: white;
+				font-weight: 800;
+				border-radius: 3px;
+			}
+		}
+	}
+
+	.active-selection {
+		height: 36px;
+		width: 100%;
+		margin-top: 12px;
+		padding: 0 12px;
+		color: var(--properties-BG);
+		font-size: 14px;
+		line-height: 36px;
+		background-color: white;
+		border-radius: 4px;
+
+		.key-name {
+			display: inline;
+			font-weight: 800;
+			color: var(--secondary);
+		}
+
+		.key-function {
+			display: inline;
+			font-weight: 500;
+		}
+	}
 }

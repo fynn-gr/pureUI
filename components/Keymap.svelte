@@ -2,101 +2,173 @@
 	import { onMount } from "svelte";
 	import KeymapKey from "./KeymapKey.svelte";
 
-
-	export let keySize: number;
 	export let configStandart: any;
 	export let configCmd: any;
 	export let configAlt: any;
-	export let modifier: string;
-	let config: any;
+	export let configCtrl: any;
+	let modifier: string = "standart";
+	let selectedKey: any = {code: "", name: ""};
+	let config: any = configStandart;
+	let layout = [
+		[
+			{code: "Escape", name: "esc", width: 50},
+			{code: "F1", name: "F1"},
+			{code: "F2", name: "F2"},
+			{code: "F3", name: "F3"},
+			{code: "F4", name: "F4"},
+			{code: "F5", name: "F5"},
+			{code: "F6", name: "F6"},
+			{code: "F7", name: "F7"},
+			{code: "F8", name: "F8"},
+			{code: "F9", name: "F9"},
+			{code: "F10", name: "F10"},
+			{code: "F11", name: "F11"},
+			{code: "F12", name: "F12"},
+			{code: "F13", name: "F13"},
+			{code: "F14", name: "F14"},
+			{code: "Delete", name: "DEL"},
+		],
+		[
+			{code: "IntlBackslash", name: "^"},
+			{code: "Digit1", name: "1"},
+			{code: "Digit2", name: "2"},
+			{code: "Digit3", name: "3"},
+			{code: "Digit4", name: "4"},
+			{code: "Digit5", name: "5"},
+			{code: "Digit6", name: "6"},
+			{code: "Digit7", name: "7"},
+			{code: "Digit8", name: "8"},
+			{code: "Digit9", name: "9"},
+			{code: "Digit0", name: "0"},
+			{code: "Minus", name: "ß"},
+			{code: "Equal", name: "´"},
+			{code: "Backspace", name: "Back", width: 90},
+			{code: "PageUp", name: "UP"},
+		],
+		[
+			{code: "Tab", name: "Tab", width: 56},
+			{code: "KeyQ", name: "Q"},
+			{code: "KeyW", name: "W"},
+			{code: "KeyE", name: "E"},
+			{code: "KeyR", name: "R"},
+			{code: "KeyT", name: "T"},
+			{code: "KeyY", name: "Z"},
+			{code: "KeyU", name: "U"},
+			{code: "KeyI", name: "I"},
+			{code: "KeyO", name: "O"},
+			{code: "KeyP", name: "P"},
+			{code: "BracketLeft", name: "Ü"},
+			{code: "BracketRight", name: "+"},
+			{code: "Backslash", name: "#", width: 70},
+			{code: "PageDown", name: "DN"},
+		],
+		[
+			{code: "CapsLock", name: "Caps", width: 70},
+			{code: "KeyA", name: "A"},
+			{code: "KeyS", name: "S"},
+			{code: "KeyD", name: "D"},
+			{code: "KeyF", name: "F"},
+			{code: "KeyG", name: "G"},
+			{code: "KeyH", name: "H"},
+			{code: "KeyJ", name: "J"},
+			{code: "KeyK", name: "K"},
+			{code: "KeyL", name: "L"},
+			{code: "Semicolon", name: "Ö"},
+			{code: "Quote", name: "Ä"},
+			{code: "Enter", name: "Enter", width: 96},
+			{code: "Home", name: "HO"},
+		],
+		[
+			{code: "ShiftLeft", name: "Shift", width: 52},
+			{code: "Backquote", name: "<"},
+			{code: "KeyZ", name: "Y"},
+			{code: "KeyX", name: "X"},
+			{code: "KeyC", name: "C"},
+			{code: "KeyV", name: "V"},
+			{code: "KeyB", name: "B"},
+			{code: "KeyN", name: "N"},
+			{code: "KeyM", name: "M"},
+			{code: "Comma", name: ","},
+			{code: "Period", name: "."},
+			{code: "Slash", name: "-"},
+			{code: "ShiftRight", name: "Shift", width: 74},
+			{code: "ArrowUp", name: ""},
+			{code: "END", name: "END"},
+		],
+		[
+			{code: "ControlLeft", name: "CTRL", width: 48},
+			{code: "AltLeft", name: "ALT", width: 48},
+			{code: "MetaLeft", name: "CMD", width: 48},
+			{code: "Space", name: "", width: 218},
+			{code: "MetaRight", name: "CMD", width: 48},
+			{code: "AltRight", name: "ALT", width: 48},
+			{code: "ControlRight", name: "CTRL", width: 48},
+			{code: "ArrowLeft", name: ""},
+			{code: "ArrowDown", name: ""},
+			{code: "ArrowRight", name: ""},
+		]
+	];
+	let modifierKeys = [
+        "MetaLeft", "MetaRight", "ControlLeft", "ControlRight", "AltLeft", "AltRight"
+    ]
 
 	onMount(() => {
-
+		document.addEventListener("keydown", e => {
+			console.log(e.code)
+			if (e.code == "MetaRight" || e.code == "MetaLeft") {
+				config = configCmd
+			} else if (e.code == "ControlRight" || e.code == "ControlLeft") {
+				config = configCtrl
+			} else if (e.code == "AltRight" || e.code == "AltLeft") {
+				config = configAlt
+			} else {
+				config = configStandart;
+			}
+		})
+		document.addEventListener("keydown", e => {
+			if (modifierKeys.includes(e.code)) {
+				config = configStandart;
+			}
+		})
 	})
 
-	$: if (modifier == "standart") config = configStandart;
-		else if (modifier == "cmd") config = configCmd;
-		else if (modifier == "alt") config = configAlt;
+	$:configChange(modifier);
+
+	function configChange (modifier) {
+		if (modifier == "MetaRight" || modifier == "MetaLeft") {
+			console.log(modifier)
+			config = configCmd;
+		} else if (modifier == "ControlRight" || modifier == "ControllLeft") {
+			config = configCtrl;
+		} else if (modifier == "AltRight" || modifier == "AltLeft") {
+			config = configAlt;
+		} else {
+			config = configStandart;
+		}
+	}
 
 </script>
 
 <div
 	class="keymap"
-	>
-	<div class="row">
-		<div class="key">^</div>
-		<div class="key">1</div>
-		<div class="key">2</div>
-		<div class="key">3</div>
-		<div class="key">4</div>
-		<div class="key">5</div>
-		<div class="key">6</div>
-		<div class="key">7</div>
-		<div class="key">8</div>
-		<div class="key">9</div>
-		<div class="key">0</div>
-		<div class="key">ß</div>
-		<div class="key">´</div>
-		<div class="key" style="width: 56px;">Back</div>
-	</div>
-	<div class="row">
-		<div class="key" style="width: 56px;">Tab</div>
-		<KeymapKey key="Q" operator=""/>
-		<KeymapKey key="W" operator={config.W || ""}/>
-		<div class="key">E</div>
-		<div class="key">R</div>
-		<div class="key">T</div>
-		<div class="key">Z</div>
-		<div class="key">U</div>
-		<div class="key">I</div>
-		<KeymapKey key="O" operator={config.O || ""}/>
-		<KeymapKey key="P" operator={config.P || ""}/>
-		<div class="key">Ü</div>
-		<div class="key">+</div>
-		<div class="key" style="">#</div>
-	</div>
-	<div class="row">
-		<div class="key" style="width: 68px;">Caps</div>
-		<KeymapKey key="A" operator={config.A || ""}/>
-		<KeymapKey key="S" operator={config.S || ""}/>
-		<KeymapKey key="D" operator={config.D || ""}/>
-		<div class="key">F</div>
-		<div class="key">G</div>
-		<div class="key">H</div>
-		<div class="key">J</div>
-		<div class="key">K</div>
-		<div class="key">L</div>
-		<div class="key">Ö</div>
-		<div class="key">Ä</div>
-		<div class="key" style="width: 64px;">Enter</div>
-	</div>
-	<div class="row">
-		<div class="key" style="width: 46px;">Shift</div>
-		<div class="key">{`<`}</div>
-		<div class="key">Y</div>
-		<div class="key">X</div>
-		<div class="key">C</div>
-		<KeymapKey key="V" operator={config.V || ""}/>
-		<div class="key">B</div>
-		<div class="key">N</div>
-		<div class="key">M</div>
-		<div class="key">,</div>
-		<div class="key">.</div>
-		<div class="key">-</div>
-		<div class="key" style="width: 86px;">Shift</div>
-	</div>
-	<div class="row">
-		<div class="key" style="width: 42px;">ctrl</div>
-		<div class="key" style="width: 42px;">alt</div>
-		<div class="key" style="width: 42px;">cmd</div>
-		<div class="key" style="width: 228px;"> </div>
-		<div class="key" style="width: 40px;">cmd</div>
-		<div class="key" style="width: 40px;">alt</div>
-		<div class="arrows">
-			<KeymapKey key="" operator={config.ArrowUp || ""}/>
-			<KeymapKey key="" operator={config.ArrowLeft || ""}/>
-			<KeymapKey key="" operator={config.ArrowDown || ""}/>
-			<KeymapKey key="" operator={config.ArrowRight || ""}/>
+>
+	{#each layout as row}
+		<div class="row">
+			{#each row as key}
+				<KeymapKey
+					code={key.code}
+					name={key.name}
+					width={key.width ? key.width : undefined}
+					binded={config[key.code] != undefined}
+					bind:modifier={modifier}
+					bind:selected={selectedKey}
+				/>
+			{/each}
 		</div>
+	{/each}
+
+	<div class="active-selection">
+		<p class="key-name">{selectedKey.name || "No key selected"}</p>
+		<p class="key-function">{config[selectedKey.code] || ""}</p>
 	</div>
 </div>

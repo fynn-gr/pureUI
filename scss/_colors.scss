@@ -41,6 +41,9 @@ main.dark {
     --sys-yellow: rgb(245, 194, 0);
     --sys-green: rgb(30, 195, 55);
     --sys-gray: rgb(132, 132, 137);
+
+    --traffic-light-disabled: rgb(92,92,92);
+    --traffic-light-disabled-border: rgb(92,92,92);
 }
 
 main.light {
@@ -86,4 +89,7 @@ main.light {
     --sys-yellow: rgb(245, 194, 0);
     --sys-green: rgb(30, 195, 55);
     --sys-gray: rgb(132, 132, 137);
+
+    --traffic-light-disabled: rgb(225, 225,225);
+    --traffic-light-disabled-border: rgb(193,193,193);
 }
