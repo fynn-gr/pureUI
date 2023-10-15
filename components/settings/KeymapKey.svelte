@@ -2,6 +2,8 @@
 
     export let code: string;
     export let name: string;
+    export let icon: string;
+    export let shape: string = "";
     export let width: number;
     export let selected: any;
     export let binded: boolean;
@@ -33,4 +35,9 @@
     }}
 >
     {name}
+    {#if icon}
+        <img class="icon" src={`./icons/keys/${icon}.svg`} alt="" draggable="false">
+    {:else if shape}
+        <img class="shape" src={`./icons/keys/shape_${shape}.svg`} alt="" draggable="false">
+    {/if}
 </div>

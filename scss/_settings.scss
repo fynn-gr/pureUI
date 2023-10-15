@@ -26,7 +26,6 @@
 			text-align: center;
 			font-size: 12px;
 			font-weight: 700;
-			padding: 0 3px;
 
 			&.binded {
 				background-color: var(--secondary);
@@ -47,16 +46,21 @@
 				}
 			}
 
-			.operator {
-				z-index: 20;
-				display: none;
+			&:has(.shape) {
+				border-color: transparent;
+			}
+
+			.icon {
+				margin: 4px;
+				width: 24px;
+				height: 24px;
+				filter: invert(1);
+			}
+
+			.shape {
 				position: absolute;
-				inset: 0px auto auto 36px;
-				padding: 2px 6px;
-				color: var(--secondary);
-				background-color: white;
-				font-weight: 800;
-				border-radius: 3px;
+				inset: auto -2px -2px auto;
+				filter: invert(1);
 			}
 		}
 	}

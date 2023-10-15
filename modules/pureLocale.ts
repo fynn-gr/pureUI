@@ -1,3 +1,5 @@
+import { get } from "svelte/store";
+import { lang } from "@/stores"
 
 export class pureLocale {
     language :string;
@@ -10,14 +12,18 @@ export class pureLocale {
 
         fetch(`/locale/${language}.json`)
         .then((res) => {
-            this.obj = res;
+            this.obj = res.json();
+            console.log(this.obj)
         })
     }
+}
 
-    _(key :string): string {
-
-        if (key in this.obj) {
-            return this.obj[key];
-        }
-    } 
+export function locale(key: string) {
+    try {
+        console.log(get(lang).obj)
+        return get(lang).obj[key];
+    } catch {
+        console.log("cant find", key)
+        return "";
+    }
 }
