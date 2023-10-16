@@ -18,7 +18,7 @@
 		</button>
 		<button
 			on:click={onMax}
-			class:disabled={CanMinimize == false}
+			class:disabled={CanMaximise == false}
 		>
 			<img src="./icons/winButtonsMSMax.svg" alt="" draggable="false">
 		</button>
