@@ -235,50 +235,6 @@
 		.spacer {
 			flex: 1;
 		}
-
-		.tab {
-			height: 45px;
-			min-width: 45px;
-			border-radius: 6px;
-		}
-	}
-}
-
-.win-buttons-ms {
-	top: 0px;
-	right: 0px;
-	display: flex;
-
-	button {
-		width: 45px;
-		height: 30px;
-		color: white;
-		background-color: transparent;
-
-		object {
-			width: 10px;
-			height: 10px;
-		}
-	}
-
-	&> :nth-child(1) {
-		&:hover {
-			background-color: rgba(100, 100, 100, 0.4);
-		}
-	}
-
-	&> :nth-child(2) {
-		&:hover {
-			background-color: rgba(100, 100, 100, 0.4);
-		}
-	}
-
-	&> :nth-child(3) {
-		border-top-right-radius: 9px;
-
-		&:hover {
-			background-color: rgb(255, 0, 0);
-		}
 	}
 }
 

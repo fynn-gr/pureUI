@@ -173,5 +173,102 @@ main.win {
                 }
             }
 		}
+
+		&.tabbar {
+			height: 80px;
+			gap: 1px;
+
+			.title {
+				position: fixed;
+				inset: 0 0 auto 0;
+				height: 36px;
+				line-height: 36px;
+				text-align: center;
+				font-size: 14px;
+				font-weight: 700;
+			}
+
+			.win-buttons-ms {
+
+			}
+
+			.tab {
+				display: flex;
+				flex-direction: row;
+				gap: 6px;
+				height: 36px;
+				margin: auto auto 7px auto;
+				padding: 0 7px;
+				border-radius: 6px;
+
+				&:hover {
+					background-color: var(--hover);
+				}
+
+				&.active {
+					background-color: var(--hover);
+
+					img {
+						filter: var(--secondary-filter);
+					}
+
+					p {
+						color: var(--secondary);
+					}
+				}
+
+				img {
+					height: 22px;
+					width: 22px;
+					margin: 7px 0;
+					filter: invert(90%);
+				}
+
+				p {
+					line-height: 36px;
+					font-size: 12px;
+					font-weight: 600;
+				}
+			}
+		}
+
+		.win-buttons-ms {
+			top: 0;
+			right: 0;
+			display: flex;
+		
+			button {
+				width: 45px;
+				height: 30px;
+				color: white;
+				background-color: transparent;
+
+				&:hover {
+					background-color: rgba(100, 100, 100, 0.4);
+				}
+		
+				img {
+					width: 10px;
+					height: 10px;
+				}
+			}
+		
+			.close {
+				border-top-right-radius: 9px;
+		
+				&:hover {
+					background-color: rgb(255, 0, 0);
+				}
+			}
+
+			.disabled {
+				&:hover {
+					background: transparent;
+				}
+				img {
+					filter: opacity(50%);
+				}
+			}
+		}
 	}
 }

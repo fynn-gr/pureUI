@@ -1,18 +1,33 @@
 <script lang="ts">
-  import { appWindow } from "@tauri-apps/api/window";
+	export let onMin = () => {}
+	export let onMax = () => {}
+	export let onClose = () => {}
+	export let CanMaximise = true;
+	export let CanMinimize = true;
+	export let CanClose = true;
+	export let CloseOnly = false;
 </script>
 
 <div class="win-buttons-ms" data-tauri-drag-region>
-  <button
-    on:click={() => {appWindow.minimize()}}>
-    <object data="./pureUI/icons/winButtonsMSMin.svg">
-  </button>
-  <button
-    on:click={() => {appWindow.toggleMaximize()}}>
-    <object data="./pureUI/icons/winButtonsMSMax.svg">
-  </button>
-  <button
-    on:click={() => {appWindow.close()}}>
-    <object data="./pureUI/icons/winButtonsMSClose.svg">
-  </button>
+	{#if !CloseOnly}
+		<button
+			on:click={onMin}
+			class:disabled={CanMinimize == false}
+		>
+			<img src="./icons/winButtonsMSMin.svg" alt="" draggable="false">
+		</button>
+		<button
+			on:click={onMax}
+			class:disabled={CanMinimize == false}
+		>
+			<img src="./icons/winButtonsMSMax.svg" alt="" draggable="false">
+		</button>
+	{/if}
+	<button
+		on:click={onClose}
+		class="close"
+		class:disabled={CanClose == false}
+	>
+		<img src="./icons/winButtonsMSClose.svg" alt="" draggable="false">
+	</button>
 </div>

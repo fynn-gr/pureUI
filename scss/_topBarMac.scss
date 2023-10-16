@@ -106,6 +106,9 @@ main.mac {
 			}
 
 			.tab {
+				height: 45px;
+				min-width: 45px;
+				border-radius: 6px;
 				margin: auto auto 7px auto;
 				display: flex;
 				flex-direction: column;
