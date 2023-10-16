@@ -46,48 +46,7 @@
 			flex: 1;
 			display: flex;
 			flex-direction: row;
-			flex-wrap: nowrap;
-
-			.app-menu {
-				&:hover {
-					.menu-content { display: flex; }
-				}
-
-				.app-menu-btn {
-					color: var(--text);
-					background-color: var(--hover);
-				}
-
-				.menu-content {
-					position: absolute;
-					display: none;
-					z-index: 400;
-					flex-direction: column;
-					background-color: var(--app-menu-content-BG);
-
-					button {
-						text-align: left;
-						color: var(--text);
-						background-color: transparent;
-
-						&:hover {
-							background-color: var(--hover);
-						}
-					}
-
-					.sub-menu {
-						.sub-menu-content {
-							position: absolute;
-						}
-					}
-
-					.seperator {
-						margin: 0;
-						height: 1px;
-						background-color: var(--hover);
-					}
-				}
-			}
+			flex-wrap: nowrap;			
 
 			.topbar-button {
 				background-color: transparent;
@@ -137,47 +96,6 @@
 			display: flex;
 			flex-direction: row;
 			flex-wrap: nowrap;
-
-			.app-menu {
-				&:hover {
-					.menuContent { display: flex; }
-				}
-
-				.app-menu-btn {
-					color: var(--text);
-					background-color: var(--hover);
-				}
-
-				.menu-content {
-					position: absolute;
-					display: none;
-					z-index: 400;
-					flex-direction: column;
-					background-color: var(--app-menu-content-BG);
-
-					button {
-						text-align: left;
-						color: var(--text);
-						background-color: transparent;
-
-						&:hover {
-							background-color: var(--hover);
-						}
-					}
-
-					.sub-menu {
-						.sub-menu-content {
-							position: absolute;
-						}
-					}
-
-					.seperator {
-						margin: 0;
-						height: 1px;
-						background-color: var(--hover);
-					}
-				}
-			}
 
 			.tab-container {
 				display: flex;
@@ -234,6 +152,57 @@
 
 		.spacer {
 			flex: 1;
+		}
+	}
+}
+
+.app-menu {
+	&:hover {
+		.menu-content { display: flex; }
+	}
+
+	.app-menu-btn {
+		color: var(--text);
+		background-color: var(--hover);
+	}
+
+	.menu-content {
+		position: absolute;
+		display: none;
+		z-index: 400;
+		flex-direction: column;
+		background-color: var(--app-menu-content-BG);
+
+		.app-menu-item {
+			display: flex;
+			flex-direction: row;
+			text-align: left;
+			color: var(--text);
+			background-color: transparent;
+
+			&:hover {
+				background-color: var(--hover);
+			}
+
+			.name {
+				display: block;
+			}
+
+			.accelerator {
+				display: block;
+			}
+		}
+
+		.sub-menu {
+			.sub-menu-content {
+				position: absolute;
+			}
+		}
+
+		.seperator {
+			margin: 0;
+			height: 1px;
+			background-color: var(--hover);
 		}
 	}
 }

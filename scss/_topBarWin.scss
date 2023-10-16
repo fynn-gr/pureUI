@@ -3,30 +3,46 @@ main.win {
         &.toolbar {
 			
 			.topbar-container {
+				gap: 9px;
 				background-color: var(--topbar-BG);
 				border-bottom: 1px solid rgb(65, 65, 65);
 				border-radius: 9px 9px 0px 0px;
 
 				.app-menu {
-					.appMenuBtn {
+					.app-menu-btn {
 						height: 36px;
 						padding: 0 12px;
 						margin: 9px 0;
 						border-radius: 5px;
 					}
 	
-					.menuContent {
+					.menu-content {
 						gap: 4px;
 						padding: 4px 0;
 						border-radius: 8px;
 						border: 1px solid rgb(26, 26, 26);
+						box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 	
-						button {
+						.app-menu-item {
+							display: flex;
+							flex-direction: row;
+							justify-content: space-between;
+							gap: 8px;
 							height: 28px;
 							margin: 0 4px;
 							padding: 0 12px;
 							border-radius: 5px;
 							font-size: 14px;
+
+							.name {
+								line-height: 28px;
+								font-weight: 500;
+							}
+
+							.accelerator {
+								line-height: 28px;
+								font-weight: 700;
+							}
 						}
 					}
 				}
