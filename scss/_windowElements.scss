@@ -1,8 +1,8 @@
 // Window common elements for all Operating systems
 
-@use '../scss/_colors' as c;
-@use '../scss/variables' as v;
-@use '../scss/_mixins' as mix;
+@use "../scss/_colors" as c;
+@use "../scss/variables" as v;
+@use "../scss/_mixins" as mix;
 
 .window-body {
 	position: fixed;
@@ -101,10 +101,8 @@ main.web {
 	.window-body {
 		border-radius: 0;
 	}
-	
+
 	.navbar {
 		background-color: var(--navbar-BG);
 	}
-
-	
 }

@@ -1,95 +1,95 @@
 main.dark {
-    //window
-    --topbar-BG:     rgb(54, 54, 54);
-    --navbar-BG:    rgb(36, 36, 36);
-    --properties-BG: rgb(48, 48, 48);
-    --grid-gap:      rgb(0, 0, 0);
+	//window
+	--topbar-BG: rgb(54, 54, 54);
+	--navbar-BG: rgb(36, 36, 36);
+	--properties-BG: rgb(48, 48, 48);
+	--grid-gap: rgb(0, 0, 0);
 
-    --tool-icon-color: invert(100%);
-    
-    //area
-    --panel:        rgb(60, 60, 60);
-    --panel2:       rgb(45, 45, 45);
-    --panel3:       rgb(30, 30, 30);
-    
-    --text:         rgb(238, 238, 238);
-    --text-shadow:   rgb(20, 20, 20);
-    
-    --app-menu-content-BG: rgb(44, 44, 44);
+	--tool-icon-color: invert(100%);
 
-    //elements
-    --input-field:   rgb(84, 84, 84);
-    --input-border:  rgb(61, 61, 61);
-    --button:       rgb(40, 40, 40);
-    --hover:        rgba(111, 111, 111, 0.3);
-    --hover2:       rgba(93, 93, 93, 0.4);
+	//area
+	--panel: rgb(60, 60, 60);
+	--panel2: rgb(45, 45, 45);
+	--panel3: rgb(30, 30, 30);
 
-    &.win {
-        --topbar-BG: rgb(29, 29, 29);
-    }
+	--text: rgb(238, 238, 238);
+	--text-shadow: rgb(20, 20, 20);
 
-    &.web {
-        --topbar-BG: rgb(29, 29, 29);
-        --app-menu-contentcBG: rgba(44, 44, 44, 0.8);
-    }
+	--app-menu-content-BG: rgb(44, 44, 44);
 
-    --sys-blue: rgb(0, 112, 245);
-    --sys-purple: rgb(159, 75, 201);
-    --sys-pink: rgb(245, 35, 75);
-    --sys-red: rgb(255, 49, 38);
-    --sys-orange: rgb(245, 139, 0);
-    --sys-yellow: rgb(245, 194, 0);
-    --sys-green: rgb(30, 195, 55);
-    --sys-gray: rgb(132, 132, 137);
+	//elements
+	--input-field: rgb(84, 84, 84);
+	--input-border: rgb(61, 61, 61);
+	--button: rgb(40, 40, 40);
+	--hover: rgba(111, 111, 111, 0.3);
+	--hover2: rgba(93, 93, 93, 0.4);
 
-    --traffic-light-disabled: rgb(92,92,92);
-    --traffic-light-disabled-border: rgb(92,92,92);
+	&.win {
+		--topbar-BG: rgb(29, 29, 29);
+	}
+
+	&.web {
+		--topbar-BG: rgb(29, 29, 29);
+		--app-menu-contentcBG: rgba(44, 44, 44, 0.8);
+	}
+
+	--sys-blue: rgb(0, 112, 245);
+	--sys-purple: rgb(159, 75, 201);
+	--sys-pink: rgb(245, 35, 75);
+	--sys-red: rgb(255, 49, 38);
+	--sys-orange: rgb(245, 139, 0);
+	--sys-yellow: rgb(245, 194, 0);
+	--sys-green: rgb(30, 195, 55);
+	--sys-gray: rgb(132, 132, 137);
+
+	--traffic-light-disabled: rgb(92, 92, 92);
+	--traffic-light-disabled-border: rgb(92, 92, 92);
 }
 
 main.light {
-    //window
-    --topbar-BG:     rgb(250, 250, 250);
-    --sidebar-BG:    rgb(146, 146, 146);
-    --properties-BG: rgb(255, 255, 255);
-    --grid-gap:      rgb(161, 161, 161);
+	//window
+	--topbar-BG: rgb(250, 250, 250);
+	--sidebar-BG: rgb(146, 146, 146);
+	--properties-BG: rgb(255, 255, 255);
+	--grid-gap: rgb(161, 161, 161);
 
-    --tool-icon-color: invert(30%);
-    
-    //area
-    --panel:        rgb(60, 60, 60);
-    --panel2:       rgb(41, 41, 41);
-    --panel3:       rgb(30, 30, 30);
-    
-    --text:         rgb(22, 22, 22);
-    --text-shadow:   rgba(20, 20, 20, 0);
+	--tool-icon-color: invert(30%);
 
-    --app-menu-content-BG: rgb(44, 44, 44);
-    
-    //elements
-    --input-field:   rgb(84, 84, 84);
-    --input-border:  rgb(61, 61, 61);
-    --button:       rgb(40, 40, 40);
-    --hover:        rgba(148, 148, 148, 0.3);
-    --hover2:       rgba(130, 130, 130, 0.3);
+	//area
+	--panel: rgb(60, 60, 60);
+	--panel2: rgb(41, 41, 41);
+	--panel3: rgb(30, 30, 30);
 
-    &.win {
-        --topbar-BG: rgb(255, 255, 255);
-    }
+	--text: rgb(22, 22, 22);
+	--text-shadow: rgba(20, 20, 20, 0);
 
-    &.web {
-        --topbar-BG: rgb(255, 255, 255);
-        --app-menu-content-BG: rgba(44, 44, 44, 0.6);
-    }
+	--app-menu-content-BG: rgb(44, 44, 44);
 
-    --sys-blue: rgb(0, 112, 245);
-    --sys-purple: rgb(159, 75, 201);
-    --sys-pink: rgb(245, 35, 75);
-    --sys-red: rgb(255, 49, 38);
-    --sys-orange: rgb(245, 139, 0);
-    --sys-yellow: rgb(245, 194, 0);
-    --sys-green: rgb(30, 195, 55);
-    --sys-gray: rgb(132, 132, 137);
+	//elements
+	--input-field: rgb(84, 84, 84);
+	--input-border: rgb(61, 61, 61);
+	--button: rgb(40, 40, 40);
+	--hover: rgba(148, 148, 148, 0.3);
+	--hover2: rgba(130, 130, 130, 0.3);
 
-    --traffic-light-disabled: rgb(225, 225,225);
-    --traffic-light-disabled-border: rgb(193,193,193);
+	&.win {
+		--topbar-BG: rgb(255, 255, 255);
+	}
+
+	&.web {
+		--topbar-BG: rgb(255, 255, 255);
+		--app-menu-content-BG: rgba(44, 44, 44, 0.6);
+	}
+
+	--sys-blue: rgb(0, 112, 245);
+	--sys-purple: rgb(159, 75, 201);
+	--sys-pink: rgb(245, 35, 75);
+	--sys-red: rgb(255, 49, 38);
+	--sys-orange: rgb(245, 139, 0);
+	--sys-yellow: rgb(245, 194, 0);
+	--sys-green: rgb(30, 195, 55);
+	--sys-gray: rgb(132, 132, 137);
+
+	--traffic-light-disabled: rgb(225, 225, 225);
+	--traffic-light-disabled-border: rgb(193, 193, 193);
 }

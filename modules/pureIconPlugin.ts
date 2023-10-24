@@ -1,11 +1,11 @@
 import * as path from "path";
-import * as fs from 'fs';
+import * as fs from "fs";
 
-const sourceDir = './src/pureUI/icons/';
-const targetDir = './public/icons/';
-const configFile: any = fs.readFileSync('./pureIcons.config.json');
+const sourceDir = "./src/pureUI/icons/";
+const targetDir = "./public/icons/";
+const configFile: any = fs.readFileSync("./pureIcons.config.json");
 
-export function processIcons()  {
+export function processIcons() {
 	let config = JSON.parse(configFile);
 	let subdirs: Array<string> = config.folders;
 
@@ -16,13 +16,13 @@ export function processIcons()  {
 				fs.rmSync(targetDir, { recursive: true, force: true });
 			}
 			fs.mkdirSync(targetDir, { recursive: true });
-		
+
 			const files = fs.readdirSync(sourceDir);
-		
+
 			for (const file of files) {
 				const filePath = path.join(sourceDir, file);
 				const fileStat = fs.statSync(filePath);
-		
+
 				if (fileStat.isDirectory()) {
 					// Recursively call the function for subdirectories
 
@@ -30,8 +30,7 @@ export function processIcons()  {
 						const newTargetDir = path.join(targetDir, file);
 						findIconFiles(filePath, newTargetDir);
 					}
-
-				} else if (path.extname(file) === '.svg') {
+				} else if (path.extname(file) === ".svg") {
 					// Copy the SVG files to the target directory preserving the subdirectories
 					const targetFile = path.join(targetDir, file);
 					fs.copyFileSync(filePath, targetFile);
@@ -39,10 +38,9 @@ export function processIcons()  {
 				}
 			}
 		} catch (err) {
-			console.error('Error:', err);
+			console.error("Error:", err);
 		}
 	}
-	
-	findIconFiles(sourceDir, targetDir);
 
+	findIconFiles(sourceDir, targetDir);
 }

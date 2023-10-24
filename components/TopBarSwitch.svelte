@@ -6,16 +6,15 @@
 	export let state: string;
 
 	interface button {
-		icon: string,
-		value: string,
-		toolTip: string,
-		disabled?: boolean,
+		icon: string;
+		value: string;
+		toolTip: string;
+		disabled?: boolean;
 	}
 
 	let self: HTMLElement;
 	let topBarType;
 	let topBarShort;
-
 
 	onMount(() => {
 		let cls = self;
@@ -23,38 +22,35 @@
 			cls = cls.parentElement;
 
 			if (cls.classList.contains("toolBar")) {
-				topBarType = "toolBarButton"
-				topBarShort = "tb"
+				topBarType = "toolBarButton";
+				topBarShort = "tb";
 			} else if (cls.classList.contains("buttonBar")) {
-				topBarType = "buttonBarButton"
-				topBarShort = "bb"
+				topBarType = "buttonBarButton";
+				topBarShort = "bb";
 			}
 		}
-	})
-
+	});
 </script>
 
-
 <div class="topBarGroup">
-
 	{#each buttons as b, i}
-	<button
-		bind:this={self}
-		class="topBarButton"
-		class:active={state === b.value}
-		disabled={b.disabled}
-		on:click={() => {
-			if (state === b.value) {
-				state = ""
-			} else {
-				state = b.value
-			}
-		}}
-	>
-	
-		<img src={`../pureUI/icons/${topBarShort}_${uiPlatform}/${b.icon}.svg`} alt={b.toolTip}>
-	
-	</button>
+		<button
+			bind:this={self}
+			class="topBarButton"
+			class:active={state === b.value}
+			disabled={b.disabled}
+			on:click={() => {
+				if (state === b.value) {
+					state = "";
+				} else {
+					state = b.value;
+				}
+			}}
+		>
+			<img
+				src={`../pureUI/icons/${topBarShort}_${uiPlatform}/${b.icon}.svg`}
+				alt={b.toolTip}
+			/>
+		</button>
 	{/each}
-
 </div>

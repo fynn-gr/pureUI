@@ -1,9 +1,9 @@
-@use '../scss/_colors' as c;
-@use '../scss/variables' as v;
-@use '../scss/_mixins' as mix;
+@use "../scss/_colors" as c;
+@use "../scss/variables" as v;
+@use "../scss/_mixins" as mix;
 
 .topbar {
-	//26px default
+	//28px default
 	//38px buttonBar
 	//54px toolBar
 	grid-area: topBar;
@@ -16,23 +16,33 @@
 	background-color: var(--topbar-BG);
 
 	&.default {
-		.winButtonsMac {
-			height: 26px;
+		.win-buttons-mac {
+			height: 28px;
 			padding: 7px;
 		}
 
-		.topbar-content {
+		.topbar-container {
 			flex: 1;
-			height: 26px;
+			height: 28px;
 			display: flex;
 			flex-direction: row;
 			flex-wrap: nowrap;
 
 			.window-title {
-				height: 26px;
+				height: 28px;
 				margin: 0px auto;
-				line-height: 26px;
+				line-height: 28px;
 				font-size: 12px;
+			}
+
+			.spacer {
+				flex: 10;
+				pointer-events: none;
+			}
+
+			.spacer-fix {
+				flex: 1;
+				pointer-events: none;
 			}
 		}
 	}
@@ -46,7 +56,7 @@
 			flex: 1;
 			display: flex;
 			flex-direction: row;
-			flex-wrap: nowrap;			
+			flex-wrap: nowrap;
 
 			.topbar-button {
 				background-color: transparent;
@@ -83,9 +93,13 @@
 				}
 			}
 
-			.spacer { flex: 10;	}
+			.spacer {
+				flex: 10;
+			}
 
-			.spacer-fix { flex: 1; }
+			.spacer-fix {
+				flex: 1;
+			}
 		}
 	}
 
@@ -128,7 +142,6 @@
 			}
 
 			.topbar-group {
-
 				&:hover {
 					background-color: var(--hover2);
 				}
@@ -149,7 +162,6 @@
 	}
 
 	&.tabbar {
-
 		.spacer {
 			flex: 1;
 		}
@@ -158,7 +170,9 @@
 
 .app-menu {
 	&:hover {
-		.menu-content { display: flex; }
+		.menu-content {
+			display: flex;
+		}
 	}
 
 	.app-menu-btn {

@@ -1,64 +1,64 @@
 //Main css File
 
 //variables
-@forward '../scss/_colors';
-@forward '../scss/_fonts';
-@forward '../scss/_layout';
-@forward '../scss/_mixins';
+@forward "../scss/_colors";
+@forward "../scss/_fonts";
+@forward "../scss/_layout";
+@forward "../scss/_mixins";
 
 //components
-@forward '../scss/_windowElements';
-@forward '../scss/_areaElements';
-@forward '../scss/_topBar';
-@forward '../scss/_topBarMac';
-@forward '../scss/_topBarWin';
-@forward '../scss/_topBarWeb';
-@forward '../scss/settings';
+@forward "../scss/_windowElements";
+@forward "../scss/_areaElements";
+@forward "../scss/_topBar";
+@forward "../scss/_topBarMac";
+@forward "../scss/_topBarWin";
+@forward "../scss/_topBarWeb";
+@forward "../scss/settings";
 
 //base
 :root {
-    font-family: Inter, Arial, Helvetica, sans-serif;
-    font-size: 1px;
+	font-family: Inter, Arial, Helvetica, sans-serif;
+	font-size: 1px;
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    border: none;
-    outline: none;
-    user-select: none;
-    -webkit-user-select: none;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+	user-select: none;
+	-webkit-user-select: none;
 }
 
 body {
-    position: fixed;
-    overflow: hidden;
-    background-color: transparent;
-    color: var(--text);
-    font-size: 12rem;
+	position: fixed;
+	overflow: hidden;
+	background-color: transparent;
+	color: var(--text);
+	font-size: 12rem;
 }
 
 .debug-menu {
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    background-color: darkviolet;
-    border-radius: 8px;
+	position: absolute;
+	width: 5px;
+	height: 5px;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	background-color: darkviolet;
+	border-radius: 8px;
 
-    &:hover {
-        width: auto;
-        height: auto;
-    }
+	&:hover {
+		width: auto;
+		height: auto;
+	}
 
-    button {
-        margin: 5px;
-        padding: 3px 12px;
-        border-radius: 4px;
-    }
+	button {
+		margin: 5px;
+		padding: 3px 12px;
+		border-radius: 4px;
+	}
 }
 
 //z-index layer

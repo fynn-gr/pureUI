@@ -1,7 +1,6 @@
 main.web {
-    .topBar {
-        &.toolBar {
-
+	.topBar {
+		&.toolBar {
 			.topBarContainer {
 				background-color: var(--topBarBG);
 				border-bottom: 1px solid rgb(65, 65, 65);
@@ -47,7 +46,9 @@ main.web {
 
 			.select {
 				&:hover {
-					.optionContainer { display: flex; }
+					.optionContainer {
+						display: flex;
+					}
 				}
 
 				.selectBtn {
@@ -122,64 +123,64 @@ main.web {
 				border-bottom: 1px solid var(--gridGap);
 			}
 
-            .topBarContent {
-                gap: 9px;
-                
-                .appMenu {
-                    .appMenuBtn {
-                        height: 22px;
-                        padding: 0 8px;
-                        margin: 9px 0;
-                        border-radius: 6px;
-                    }
-    
-                    .menuContent {
-                        gap: 4px;
-                        padding: 4px 0;
-                        border-radius: 8px;
-                        backdrop-filter: blur(40px);
-                        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
-    
-                        button {
-                            height: 28px;
-                            margin: 0 4px;
-                            padding: 0 12px;
-                            border-radius: 4px;
-                            font-size: 14px;
-                        }
-                    }
-                }
-    
-                .tabContainer {
-                    height: 22px;
-                    margin: 9px 0px;
-                    border: solid 1px var(--hover);
-                    border-radius: 6px;
-    
-                    button {
-                        height: 20px;
-                        padding: 0 5px;
-                        border-radius: 5px;
-                    }
-                }
-    
-                .topBarButton {
-                    height: 22px;
-                    width: 30px;
-                    margin: 9px 0;
-                    border-radius: 5px;
-                }
-    
-                .topBarGroup {
-                    height: 22px;
-                    margin: 9px 9px;
-                    border-radius: 5px;
-    
-                    .topBarButton {
-                        margin: 0;
-                    }
-                }
-            }
+			.topBarContent {
+				gap: 9px;
+
+				.appMenu {
+					.appMenuBtn {
+						height: 22px;
+						padding: 0 8px;
+						margin: 9px 0;
+						border-radius: 6px;
+					}
+
+					.menuContent {
+						gap: 4px;
+						padding: 4px 0;
+						border-radius: 8px;
+						backdrop-filter: blur(40px);
+						box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+
+						button {
+							height: 28px;
+							margin: 0 4px;
+							padding: 0 12px;
+							border-radius: 4px;
+							font-size: 14px;
+						}
+					}
+				}
+
+				.tabContainer {
+					height: 22px;
+					margin: 9px 0px;
+					border: solid 1px var(--hover);
+					border-radius: 6px;
+
+					button {
+						height: 20px;
+						padding: 0 5px;
+						border-radius: 5px;
+					}
+				}
+
+				.topBarButton {
+					height: 22px;
+					width: 30px;
+					margin: 9px 0;
+					border-radius: 5px;
+				}
+
+				.topBarGroup {
+					height: 22px;
+					margin: 9px 9px;
+					border-radius: 5px;
+
+					.topBarButton {
+						margin: 0;
+					}
+				}
+			}
 		}
 	}
 }

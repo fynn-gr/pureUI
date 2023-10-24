@@ -1,7 +1,6 @@
 main.win {
-    .topbar {
-        &.toolbar {
-			
+	.topbar {
+		&.toolbar {
 			.topbar-container {
 				gap: 9px;
 				background-color: var(--topbar-BG);
@@ -15,14 +14,14 @@ main.win {
 						margin: 9px 0;
 						border-radius: 5px;
 					}
-	
+
 					.menu-content {
 						gap: 4px;
 						padding: 4px 0;
 						border-radius: 8px;
 						border: 1px solid rgb(26, 26, 26);
 						box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-	
+
 						.app-menu-item {
 							display: flex;
 							flex-direction: row;
@@ -58,7 +57,9 @@ main.win {
 
 				.select {
 					&:hover {
-						.optionContainer { display: flex; }
+						.optionContainer {
+							display: flex;
+						}
 					}
 
 					.selectBtn {
@@ -104,18 +105,18 @@ main.win {
 						}
 					}
 				}
-	
+
 				.topbar-button {
 					height: 36px;
 					width: 40px;
 					margin: 9px 0 9px 0;
 					border-radius: 5px;
-	
+
 					img {
 						margin: 0px;
 					}
 				}
-	
+
 				.topbar-group {
 					height: 36px;
 					margin: 9px 0;
@@ -129,65 +130,65 @@ main.win {
 				background-color: var(--topbar-BG);
 				border-bottom: 1px solid rgb(65, 65, 65);
 				border-radius: 9px 9px 0px 0px;
-                gap: 6px;
-                
-                .app-menu {
-                    .app-menu-btn {
-                        height: 28px;
-                        padding: 0 12px;
-                        margin: 6px 0;
-                        border-radius: 5px;
-                    }
-    
-                    .menu-content {
-                        gap: 4px;
-                        padding: 4px 0;
-                        border-radius: 8px;
-                        border: 1px solid rgb(26, 26, 26);
-    
-                        button {
-                            height: 28px;
-                            margin: 0 4px;
-                            padding: 0 12px;
-                            border-radius: 5px;
-                            font-size: 14px;
-                        }
-                    }
-                }
-    
-                .topbar-button {
-                    width: 30px;
-                    height: 28px;
-                    margin: 6px 0;
-                    border-radius: 5px;
-                }
-    
-                .topbar-group {
-                    height: 28px;
-                    margin: 6px;
-                    border-radius: 5px;
-    
-                    .topbar-button {
-                        margin: 0;
-                    }
-                }
-    
-                .tab-container {
-                    display: flex;
-                    flex-direction: row;
-                    gap: 6px;
-                    margin: 6px 0;
-                    border: none;
-                    height: 28px;
-    
-                    button {
-                        height: 28px;
-                        width: 80px;
-                        background-color: rgb(41, 41, 41);
-                        border-radius: 5px;
-                    }
-                }
-            }
+				gap: 6px;
+
+				.app-menu {
+					.app-menu-btn {
+						height: 28px;
+						padding: 0 12px;
+						margin: 6px 0;
+						border-radius: 5px;
+					}
+
+					.menu-content {
+						gap: 4px;
+						padding: 4px 0;
+						border-radius: 8px;
+						border: 1px solid rgb(26, 26, 26);
+
+						button {
+							height: 28px;
+							margin: 0 4px;
+							padding: 0 12px;
+							border-radius: 5px;
+							font-size: 14px;
+						}
+					}
+				}
+
+				.topbar-button {
+					width: 30px;
+					height: 28px;
+					margin: 6px 0;
+					border-radius: 5px;
+				}
+
+				.topbar-group {
+					height: 28px;
+					margin: 6px;
+					border-radius: 5px;
+
+					.topbar-button {
+						margin: 0;
+					}
+				}
+
+				.tab-container {
+					display: flex;
+					flex-direction: row;
+					gap: 6px;
+					margin: 6px 0;
+					border: none;
+					height: 28px;
+
+					button {
+						height: 28px;
+						width: 80px;
+						background-color: rgb(41, 41, 41);
+						border-radius: 5px;
+					}
+				}
+			}
 		}
 
 		&.tabbar {
@@ -205,7 +206,6 @@ main.win {
 			}
 
 			.win-buttons-ms {
-
 			}
 
 			.tab {
@@ -252,7 +252,7 @@ main.win {
 			top: 0;
 			right: 0;
 			display: flex;
-		
+
 			button {
 				width: 45px;
 				height: 30px;
@@ -262,16 +262,16 @@ main.win {
 				&:hover {
 					background-color: rgba(100, 100, 100, 0.4);
 				}
-		
+
 				img {
 					width: 10px;
 					height: 10px;
 				}
 			}
-		
+
 			.close {
 				border-top-right-radius: 9px;
-		
+
 				&:hover {
 					background-color: rgb(255, 0, 0);
 				}
