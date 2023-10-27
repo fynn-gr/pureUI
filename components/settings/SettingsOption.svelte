@@ -16,7 +16,7 @@
 		<input type="checkbox" bind:checked={value} on:change={onChange} />
 		<p class="checkbox-name">{checkboxName}</p>
 	{:else if type == "select"}
-		<select bind:value>
+		<select bind:value on:change={onChange}>
 			{#each options as option}
 				<option value={option.value}>{option.name}</option>
 			{/each}
