@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from "svelte";
 	import KeymapKey from "./KeymapKey.svelte";
+	import { settings } from "@/stores";
 
 	export let configStandart: any;
 	export let configCmd: any;
@@ -215,19 +216,11 @@
 		"AltLeft",
 		"AltRight",
 	];
+	console.log($settings)
 
 	onMount(() => {
 		document.addEventListener("keydown", e => {
-			console.log(e.code);
-			if (e.code == "MetaRight" || e.code == "MetaLeft") {
-				config = configCmd;
-			} else if (e.code == "ControlRight" || e.code == "ControlLeft") {
-				config = configCtrl;
-			} else if (e.code == "AltRight" || e.code == "AltLeft") {
-				config = configAlt;
-			} else {
-				config = configStandart;
-			}
+
 		});
 		document.addEventListener("keydown", e => {
 			if (modifierKeys.includes(e.code)) {
@@ -239,16 +232,7 @@
 	$: configChange(modifier);
 
 	function configChange(modifier) {
-		if (modifier == "MetaRight" || modifier == "MetaLeft") {
-			console.log(modifier);
-			config = configCmd;
-		} else if (modifier == "ControlRight" || modifier == "ControllLeft") {
-			config = configCtrl;
-		} else if (modifier == "AltRight" || modifier == "AltLeft") {
-			config = configAlt;
-		} else {
-			config = configStandart;
-		}
+		
 	}
 </script>
 
@@ -265,7 +249,6 @@
 						icon={key.icon ? key.icon : undefined}
 						shape={key.shape ? key.shape : undefined}
 						width={key.width ? key.width : undefined}
-						binded={config[key.code] != undefined}
 						bind:modifier
 						bind:selected={selectedKey}
 					/>
@@ -274,8 +257,24 @@
 		</div>
 	{/each}
 
-	<div class="active-selection">
-		<p class="key-name">{selectedKey.name || "No key selected"}</p>
-		<p class="key-function">{config[selectedKey.code] || ""}</p>
+	<div class="operator-list">
+		{#each $settings.keymap as operator}
+			<div class="operator">
+				<p class="operator-name">{operator.name}</p>
+				<p class="operator-key">{operator.key}</p>
+				<button
+					on:click={() => {operator.ctrl = !operator.ctrl}}
+					class:active={operator.ctrl}
+				>ctrl</button>
+				<button
+					on:click={() => {operator.alt = !operator.alt}}
+					class:active={operator.alt}
+				>alt</button>
+				<button
+					on:click={() => {operator.meta = !operator.meta}}
+					class:active={operator.meta}
+				>cmd</button>
+			</div>
+		{/each}
 	</div>
 </div>

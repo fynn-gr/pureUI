@@ -1,11 +1,12 @@
 <script lang="ts">
+	import { settings } from "@/stores";
+
 	export let code: string;
 	export let name: string;
 	export let icon: string;
 	export let shape: string = "";
 	export let width: number;
 	export let selected: any;
-	export let binded: boolean;
 	export let modifier: string;
 	let modifierKeys = [
 		"MetaLeft",
@@ -14,7 +15,8 @@
 		"ControlRight",
 		"AltLeft",
 		"AltRight",
-	];
+	]
+	let binded = $settings.keymap.find(e => {               })
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
