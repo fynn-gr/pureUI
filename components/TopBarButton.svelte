@@ -35,9 +35,7 @@
 	{disabled}
 >
 	<img
-		src={topBarShort
-			? `./icons/${topBarShort}_${$uiPlatform}/${icon}.svg`
-			: ""}
+		src={topBarShort ? `./icons/${topBarShort}_${$uiPlatform}/${icon}.svg` : ""}
 		alt={toolTip}
 	/>
 </button>

@@ -15,8 +15,8 @@
 		"ControlRight",
 		"AltLeft",
 		"AltRight",
-	]
-	let binded = $settings.keymap.find(e => {               })
+	];
+	let binded = $settings.keymap.find(e => {});
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->

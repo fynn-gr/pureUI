@@ -216,12 +216,10 @@
 		"AltLeft",
 		"AltRight",
 	];
-	console.log($settings)
+	console.log($settings);
 
 	onMount(() => {
-		document.addEventListener("keydown", e => {
-
-		});
+		document.addEventListener("keydown", e => {});
 		document.addEventListener("keydown", e => {
 			if (modifierKeys.includes(e.code)) {
 				config = configStandart;
@@ -231,9 +229,7 @@
 
 	$: configChange(modifier);
 
-	function configChange(modifier) {
-		
-	}
+	function configChange(modifier) {}
 </script>
 
 <div class="keymap">
@@ -241,7 +237,7 @@
 		<div class="row">
 			{#each row as key}
 				{#if key.code == "spacer"}
-					<div style={`width: ${key.width}px;`}></div>
+					<div style={`width: ${key.width}px;`} />
 				{:else}
 					<KeymapKey
 						code={key.code}
@@ -263,17 +259,23 @@
 				<p class="operator-name">{operator.name}</p>
 				<p class="operator-key">{operator.key}</p>
 				<button
-					on:click={() => {operator.ctrl = !operator.ctrl}}
-					class:active={operator.ctrl}
-				>ctrl</button>
+					on:click={() => {
+						operator.ctrl = !operator.ctrl;
+					}}
+					class:active={operator.ctrl}>ctrl</button
+				>
 				<button
-					on:click={() => {operator.alt = !operator.alt}}
-					class:active={operator.alt}
-				>alt</button>
+					on:click={() => {
+						operator.alt = !operator.alt;
+					}}
+					class:active={operator.alt}>alt</button
+				>
 				<button
-					on:click={() => {operator.meta = !operator.meta}}
-					class:active={operator.meta}
-				>cmd</button>
+					on:click={() => {
+						operator.meta = !operator.meta;
+					}}
+					class:active={operator.meta}>cmd</button
+				>
 			</div>
 		{/each}
 	</div>
