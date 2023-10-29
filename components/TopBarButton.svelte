@@ -33,9 +33,11 @@
 	class:disabled
 	on:click={!disabled ? onClick() : null}
 	{disabled}
+	title={toolTip}
 >
 	<img
 		src={topBarShort ? `./icons/${topBarShort}_${$uiPlatform}/${icon}.svg` : ""}
 		alt={toolTip}
 	/>
+	<!--<div class="tooltip">{toolTip}</div>-->
 </button>

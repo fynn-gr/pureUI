@@ -39,6 +39,8 @@ main.win {
 							}
 
 							.accelerator {
+								margin-left: 8px;
+								opacity: 50%;
 								line-height: 28px;
 								font-weight: 700;
 							}
@@ -246,6 +248,14 @@ main.win {
 					font-weight: 600;
 				}
 			}
+		}
+
+		.tooltip {
+			height: 28px;
+			line-height: 28px;
+			padding: 0 12px;
+			color: var(--text);
+			background-color: var(--topbar-BG);
 		}
 
 		.win-buttons-ms {

@@ -221,6 +221,16 @@
 	}
 }
 
+.topbar-button:hover {
+	.tooltip { display: block;}
+}
+
+.tooltip {
+	display: none;
+	position: absolute;
+	z-index: 1;
+}
+
 .logo {
 	font-family: pure;
 	height: 40px;
