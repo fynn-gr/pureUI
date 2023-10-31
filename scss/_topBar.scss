@@ -187,6 +187,16 @@
 		flex-direction: column;
 		background-color: var(--app-menu-content-BG);
 
+		&:has(.app-menu-item > img) {
+			.app-menu-item:not(:has(img)) {
+				&::before {
+					content: "";
+					width: 28px;
+					margin-right: -12px;
+				}
+			}
+		}
+
 		.app-menu-item {
 			display: flex;
 			flex-direction: row;
@@ -196,6 +206,15 @@
 
 			&:hover {
 				background-color: var(--hover);
+			}
+
+			&.disabled {
+				opacity: 50%;
+			}
+
+			img {
+				display: block;
+				margin-right: -12px;
 			}
 
 			.name {

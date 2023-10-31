@@ -25,21 +25,28 @@ main.win {
 						.app-menu-item {
 							display: flex;
 							flex-direction: row;
-							justify-content: space-between;
+							justify-content: left;
 							gap: 8px;
 							height: 28px;
 							margin: 0 4px;
-							padding: 0 12px;
 							border-radius: 5px;
 							font-size: 14px;
 
+							img {
+								width: 28px;
+								height: 28px;
+								filter: invert(1);
+							}
+
 							.name {
+								margin: 0 12px;
+								flex: 1;
 								line-height: 28px;
 								font-weight: 500;
 							}
 
 							.accelerator {
-								margin-left: 8px;
+								margin-right: 12px;
 								opacity: 50%;
 								line-height: 28px;
 								font-weight: 700;
