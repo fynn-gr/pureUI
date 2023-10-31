@@ -1,0 +1,28 @@
+.context-menu {
+	z-index: 1000;
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+}
+
+main.win .context-menu {
+	padding: 4px;
+	gap: 4px;
+	border-radius: 8px;
+	background-color: var(--properties-BG);
+
+	.item {
+		height: 28px;
+		line-height: 28px;
+		padding: 0 8px;
+		font-size: 14px;
+		font-weight: 500;
+		color: var(--text);
+		background-color: transparent;
+		border-radius: 4px;
+
+		&:hover {
+			background-color: var(--hover);
+		}
+	}
+}
