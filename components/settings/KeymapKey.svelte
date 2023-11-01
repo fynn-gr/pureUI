@@ -16,7 +16,7 @@
 		"AltLeft",
 		"AltRight",
 	];
-	let binded = $settings.keymap.find(e => {});
+	let binded = $settings.keymap.find(e => {e.key == code});
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->

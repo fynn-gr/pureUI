@@ -2,15 +2,11 @@
 	import { onMount } from "svelte";
 	import KeymapKey from "./KeymapKey.svelte";
 	import { settings } from "@/stores";
+	import { keyFromCode } from "@/pureUI/modules/utils";
 
-	export let configStandart: any;
-	export let configCmd: any;
-	export let configAlt: any;
-	export let configCtrl: any;
 	let modifier: string = "standart";
 	let selectedKey: any = { code: "", name: "" };
-	let config: any = configStandart;
-	let layoutISO = [
+	let layoutISODE = [
 		[
 			{ code: "Escape", name: "esc", width: 50 },
 			{ code: "F1", name: "F1" },
@@ -219,10 +215,9 @@
 	console.log($settings);
 
 	onMount(() => {
-		document.addEventListener("keydown", e => {});
 		document.addEventListener("keydown", e => {
 			if (modifierKeys.includes(e.code)) {
-				config = configStandart;
+
 			}
 		});
 	});
@@ -233,6 +228,7 @@
 </script>
 
 <div class="keymap">
+	<!--
 	{#each layoutANSI as row}
 		<div class="row">
 			{#each row as key}
@@ -252,12 +248,13 @@
 			{/each}
 		</div>
 	{/each}
+	-->
 
 	<div class="operator-list">
 		{#each $settings.keymap as operator}
 			<div class="operator">
 				<p class="operator-name">{operator.name}</p>
-				<p class="operator-key">{operator.key}</p>
+				<p class="operator-key">{keyFromCode(operator.key)}</p>
 				<button
 					on:click={() => {
 						operator.ctrl = !operator.ctrl;
