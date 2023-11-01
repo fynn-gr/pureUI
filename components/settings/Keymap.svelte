@@ -217,7 +217,6 @@
 	onMount(() => {
 		document.addEventListener("keydown", e => {
 			if (modifierKeys.includes(e.code)) {
-
 			}
 		});
 	});
