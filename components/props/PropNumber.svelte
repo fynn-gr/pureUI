@@ -17,9 +17,7 @@
 	function handleChange() {}
 </script>
 
-<div
-	class="prop-number"
->
+<div class="prop-number">
 	<p class="display">{Math.round(value)}{unit}</p>
 	<input
 		type="number"
