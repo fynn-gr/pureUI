@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from "svelte";
 	import KeymapKey from "./KeymapKey.svelte";
-	import { settings } from "@/stores";
+	import { keymap } from "@/stores";
 	import { keyFromCode } from "@/pureUI/modules/utils";
 
 	let modifier: string = "standart";
@@ -212,7 +212,6 @@
 		"AltLeft",
 		"AltRight",
 	];
-	console.log($settings);
 
 	onMount(() => {
 		document.addEventListener("keydown", e => {
@@ -250,7 +249,7 @@
 	-->
 
 	<div class="operator-list">
-		{#each $settings.keymap as operator}
+		{#each $keymap as operator}
 			<div class="operator">
 				<p class="operator-name">{operator.name}</p>
 				<p class="operator-key">{keyFromCode(operator.key)}</p>
