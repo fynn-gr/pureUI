@@ -34,7 +34,7 @@
 		{#if item.name}
 			<button class="item" on:click={item.action}>
 				{#if item.icon}
-					<img src={item.icon} alt="" />
+					<img src={item.icon} alt="" style={item.iconColor ? "" : "filter: invert(1);"}/>
 				{/if}
 				<p class="name">{item.name}</p>
 				{#if item.accelerator != null}
