@@ -242,6 +242,28 @@
 	}
 }
 
+.topbar-popover {
+
+	.topbar-button {
+		color: var(--text);
+		background-color: var(--hover);
+	}
+
+	.popover {
+		position: absolute;
+		display: none;
+		z-index: 400;
+		display: flex;
+		flex-direction: column;
+		background-color: var(--app-menu-content-BG);
+
+		span {
+			display: flex;
+			flex-direction: row;
+		}
+	}
+}
+
 .topbar-button:hover {
 	.tooltip {
 		display: block;

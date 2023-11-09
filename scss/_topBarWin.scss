@@ -120,6 +120,31 @@ main.win {
 					}
 				}
 
+				.topbar-popover {
+					&.exposed {
+						.topbar-button {
+							background-color: var(--hover);
+						}
+					}
+
+					.popover {
+						padding: 8px 14px;
+						border-radius: 8px;
+						border: 1px solid rgb(26, 26, 26);
+						box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+
+						span {
+							height: 28px;
+
+							p {
+								line-height: 28px;
+								padding: 0 6px;
+								font-size: 13px;
+							}
+						}
+					}
+				}
+
 				.topbar-group {
 					height: 32px;
 					margin: 6px 0;
