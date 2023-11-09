@@ -1,17 +1,20 @@
 main.win {
 	.topbar {
 		&.toolbar {
+			height: 44px;
+
 			.topbar-container {
-				gap: 9px;
+				height: 44px;
+				gap: 6px;
 				background-color: var(--topbar-BG);
 				border-bottom: 1px solid rgb(65, 65, 65);
 				border-radius: 9px 9px 0px 0px;
 
 				.app-menu {
 					.app-menu-btn {
-						height: 36px;
+						height: 32px;
 						padding: 0 12px;
-						margin: 9px 0;
+						margin: 6px 0;
 						border-radius: 5px;
 					}
 
@@ -55,15 +58,6 @@ main.win {
 					}
 				}
 
-				.window-title {
-					color: var(--text);
-					height: 28px;
-					line-height: 28px;
-					margin: 13px 0 12px 0;
-					font-size: 13px;
-					font-weight: 600;
-				}
-
 				.select {
 					&:hover {
 						.optionContainer {
@@ -72,8 +66,8 @@ main.win {
 					}
 
 					.selectBtn {
-						height: 36px;
-						margin: 9px 0;
+						height: 32px;
+						margin: 6px 0;
 						padding: 0 12px;
 						border-radius: 5px;
 						color: var(--text);
@@ -116,20 +110,39 @@ main.win {
 				}
 
 				.topbar-button {
-					height: 36px;
-					width: 40px;
-					margin: 9px 0 9px 0;
+					height: 32px;
+					width: 32px;
+					margin: 6px 0 6px 0;
 					border-radius: 5px;
 
 					img {
-						margin: 0px;
+						margin: -2px -4px;
 					}
 				}
 
 				.topbar-group {
-					height: 36px;
-					margin: 9px 0;
+					height: 32px;
+					margin: 6px 0;
 					border-radius: 5px;
+
+					.topbar-button {
+						margin: 0;
+						border-radius: 0;
+
+						&:first-child {
+							border-radius: 5px 0 0 5px;
+						}
+
+						&:last-child {
+							border-radius: 0 5px 5px 0;
+						}
+					}
+				}
+			}
+
+			.win-buttons-ms {
+				button {
+					height: 44px;
 				}
 			}
 		}
