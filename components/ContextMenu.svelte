@@ -31,8 +31,18 @@
 	}}
 >
 	{#each $contextMenu.content as item}
-		<button class="item" on:click={item.action}>
-			{item.name}
-		</button>
+		{#if item.name}
+			<button class="item" on:click={item.action}>
+				{#if item.icon}
+					<img src={item.icon} alt="" />
+				{/if}
+				<p class="name">{item.name}</p>
+				{#if item.accelerator != null}
+					<p class="accelerator">{item.accelerator}</p>
+				{/if}
+			</button>
+		{:else}
+			<div class="seperator" />
+		{/if}
 	{/each}
 </div>
