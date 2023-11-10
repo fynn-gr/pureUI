@@ -59,6 +59,10 @@ main.mac {
 					height: 28px;
 					margin: 13px 0 12px 0;
 					border-radius: 6px;
+
+					.topbar-button {
+						margin: 0;
+					}
 				}
 			}
 		}
