@@ -157,6 +157,31 @@ main.mac {
 			}
 		}
 
+		.topbar-popover {
+			.popover {
+				padding: 14px;
+				border-radius: 6px;
+				gap: 12px;
+				-webkit-backdrop-filter: blur(80px);
+				background-color: rgba(21, 21, 21, 0.6);
+				border: 1px solid rgba(128, 128, 128, 0.504);
+
+				span {
+					height: 14px;
+					line-height: 14px;
+
+					input {
+						margin-right: 8px;
+					}
+
+					p {
+						font-size: 14px;
+
+					}
+				}
+			}
+		}
+
 		.win-buttons-mac {
 			top: 0;
 			left: 0;
