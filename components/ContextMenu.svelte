@@ -1,8 +1,6 @@
 <script lang="ts">
 	import { contextMenu } from "@/stores";
 	import { clickOutside } from "@/utils";
-
-
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -21,7 +19,11 @@
 		{#if item.name}
 			<button class="item" on:click={item.action}>
 				{#if item.icon}
-					<img src={item.icon} alt="" style={item.iconColor ? "" : "filter: invert(1);"}/>
+					<img
+						src={item.icon}
+						alt=""
+						style={item.iconColor ? "" : "filter: invert(1);"}
+					/>
 				{/if}
 				<p class="name">{item.name}</p>
 				{#if item.accelerator != null}
