@@ -90,7 +90,8 @@ main.mac .context-menu {
 	gap: 0;
 	border: 1px solid rgba(128, 128, 128, 0.437);
 	border-radius: 6px;
-	-webkit-backdrop-filter: blur(30px);
+	backdrop-filter: blur(44px);
+	-webkit-backdrop-filter: blur(40px);
 	background-color: rgba(21, 21, 21, 0.6);
 	box-shadow: 0 0 6px rgba(0, 0, 0, 0.367);
 
