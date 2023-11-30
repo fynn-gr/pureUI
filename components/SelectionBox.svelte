@@ -1,11 +1,14 @@
 <script lang="ts">
-	export let uiPlatform = "win";
-	export let options: Array<string>;
-	export let optionNames = options;
+	import { uiPlatform } from "@/stores";
+
+	export let options :Array<string>;
+	export let optionNames: Array<string> = options;
 	export let selected: string;
 </script>
 
-{#if uiPlatform == "mac"}
+
+{#if $uiPlatform == "mac"}
+
 	<!--default html selection box used on macOS-->
 	<select bind:value={selected}>
 		{#each options as option}
