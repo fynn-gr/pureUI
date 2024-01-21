@@ -9,7 +9,7 @@ export function keyFromCode(code: string): string {
 		KeyU: "U",
 		KeyI: "I",
 		KeyO: "O",
-		KeyP: "E",
+		KeyP: "P",
 		KeyA: "A",
 		KeyS: "S",
 		KeyD: "D",

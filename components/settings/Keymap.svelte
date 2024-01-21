@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from "svelte";
 	import KeymapKey from "./KeymapKey.svelte";
-	import { keymap } from "@/stores";
+	import { keymap, uiPlatform } from "@/stores";
 	import { keyFromCode } from "@/pureUI/modules/utils";
 
 	let modifier: string = "standart";
@@ -257,19 +257,13 @@
 					on:click={() => {
 						operator.ctrl = !operator.ctrl;
 					}}
-					class:active={operator.ctrl}>ctrl</button
+					class:active={operator.ctrl}>{$uiPlatform == "mac" ? "cmd" : "ctrl"}</button
 				>
 				<button
 					on:click={() => {
 						operator.alt = !operator.alt;
 					}}
 					class:active={operator.alt}>alt</button
-				>
-				<button
-					on:click={() => {
-						operator.meta = !operator.meta;
-					}}
-					class:active={operator.meta}>cmd</button
 				>
 			</div>
 		{/each}
