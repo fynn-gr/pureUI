@@ -77,7 +77,9 @@ main.win {
 
 	select {
 		height: 30px;
-		background-color: transparent;
+		color: var(--text);
+		background-color: var(--hover);
+		border-radius: 6px;
 
 		&:hover {
 			background-color: var(--hover);

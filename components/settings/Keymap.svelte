@@ -252,19 +252,17 @@
 		{#each $keymap as operator}
 			<div class="operator">
 				<p class="operator-name">{operator.name}</p>
+				{#if operator.ctrl}
+					<button
+						class:active={operator.ctrl}>{$uiPlatform == "mac" ? "cmd" : "ctrl"}</button
+					>
+				{/if}
+				{#if operator.alt}
+					<button
+						class:active={operator.alt}>alt</button
+					>
+				{/if}
 				<p class="operator-key">{keyFromCode(operator.key)}</p>
-				<button
-					on:click={() => {
-						operator.ctrl = !operator.ctrl;
-					}}
-					class:active={operator.ctrl}>{$uiPlatform == "mac" ? "cmd" : "ctrl"}</button
-				>
-				<button
-					on:click={() => {
-						operator.alt = !operator.alt;
-					}}
-					class:active={operator.alt}>alt</button
-				>
 			</div>
 		{/each}
 	</div>

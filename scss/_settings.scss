@@ -68,6 +68,7 @@
 		.operator {
 			display: flex;
 			flex-direction: row;
+			justify-content: space-between;
 			height: 36px;
 			width: 100%;
 			margin-top: 6px;
@@ -79,13 +80,12 @@
 			background-color: rgb(37, 37, 37);
 
 			.operator-name {
-				width: 200px;
+				width: 300px;
 				font-weight: 800;
 				color: var(--secondary);
 			}
 
 			.operator-key {
-				width: 200px;
 				font-weight: 500;
 			}
 
