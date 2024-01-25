@@ -124,6 +124,14 @@
 			height: 28px;
 			padding: 7px;
 		}
+
+		.win-buttons-ms {
+			height: 32px;
+
+			button {
+				height: 32px;
+			}
+		}
 	}
 
 	.tabs {
@@ -157,6 +165,7 @@ main.mac.settings {
 	}
 
 	.window-title {
+		pointer-events: none;
 		position: fixed;
 		inset: 0 0 auto 0;
 		height: 26px;
