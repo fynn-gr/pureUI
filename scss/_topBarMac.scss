@@ -106,67 +106,6 @@ main.mac {
 			}
 		}
 
-		&.tabbar {
-			height: 80px;
-			gap: 1px;
-
-			.title {
-				position: fixed;
-				inset: 0 0 auto 0;
-				height: 26px;
-				line-height: 26px;
-				text-align: center;
-				font-size: 13px;
-				font-weight: 700;
-			}
-
-			.win-buttons-mac {
-				height: 28px;
-				padding: 8px;
-			}
-
-			.tab {
-				height: 45px;
-				min-width: 45px;
-				border-radius: 6px;
-				margin: auto auto 7px auto;
-				display: flex;
-				flex-direction: column;
-
-				&:hover {
-					background-color: var(--hover);
-				}
-
-				&.active {
-					background-color: var(--hover);
-
-					img {
-						filter: var(--secondary-filter);
-					}
-
-					p {
-						color: var(--secondary);
-					}
-				}
-
-				img,
-				.icon {
-					height: 22px;
-					width: 22px;
-					margin: 3px auto 0 auto;
-					filter: invert(90%);
-				}
-
-				p {
-					margin-bottom: 3px;
-					padding: 0 8px;
-					line-height: 14px;
-					font-size: 11px;
-					font-weight: 700;
-				}
-			}
-		}
-
 		.topbar-popover {
 			.popover {
 				padding: 14px;

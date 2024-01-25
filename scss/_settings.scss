@@ -1,7 +1,6 @@
 .keymap-frame {
 	display: flex;
 	width: 100%;
-	height: 100%;
 	justify-content: center;
 }
 
@@ -68,6 +67,7 @@
 		.operator {
 			display: flex;
 			flex-direction: row;
+			justify-content: space-between;
 			height: 36px;
 			width: 100%;
 			margin-top: 6px;
@@ -79,13 +79,12 @@
 			background-color: rgb(37, 37, 37);
 
 			.operator-name {
-				width: 200px;
+				width: 300px;
 				font-weight: 800;
 				color: var(--secondary);
 			}
 
 			.operator-key {
-				width: 200px;
 				font-weight: 500;
 			}
 
@@ -103,6 +102,261 @@
 					color: rgb(50, 50, 50);
 					background-color: var(--text);
 				}
+			}
+		}
+	}
+}
+
+.window-body.settings {
+	border-radius: var(--win-corner);
+
+	.title-bar {
+		grid-area: title;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		border-radius: var(--win-corner) var(--win-corner) 0 0 !important;
+
+		.win-buttons-mac {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 28px;
+			padding: 7px;
+		}
+
+		.win-buttons-ms {
+			height: 32px;
+
+			button {
+				height: 32px;
+			}
+		}
+	}
+
+	.tabs {
+		grid-area: tabs;
+		display: flex;
+	}
+
+	.content-wrapper {
+		grid-area: content;
+
+		.content {
+			display: flex;
+
+			&::-webkit-scrollbar {
+				display: none;
+			}
+		}
+	}
+}
+
+main.mac.settings {
+	grid-template-columns: 1fr;
+	grid-template-rows: 28px 52px auto;
+	grid-template-areas: 
+		'title'
+		'tabs'
+		'content';
+
+	.title-bar {
+		border: none;
+	}
+
+	.window-title {
+		pointer-events: none ;
+		position: fixed;
+		inset: 0 0 auto 0;
+		height: 26px;
+		line-height: 26px;
+		text-align: center;
+		font-size: 13px;
+		font-weight: 700;
+	}
+
+	.tabs {
+		flex-direction: row;
+		justify-content: center;
+		gap: 1px;
+		background-color: var(--topbar-BG);
+		border-bottom: 1px solid var(--grid-gap);
+
+		.tab {
+			height: 45px;
+			min-width: 45px;
+			border-radius: 6px;
+			margin: auto 0 7px 0;
+			display: flex;
+			flex-direction: column;
+
+			&:hover {
+				background-color: var(--hover);
+			}
+
+			&.active {
+				background-color: var(--hover);
+
+				img {
+					filter: var(--secondary-filter);
+				}
+
+				p {
+					color: var(--secondary);
+				}
+			}
+
+			img,
+			.icon {
+				height: 22px;
+				width: 22px;
+				margin: 3px auto 0 auto;
+				filter: invert(90%);
+			}
+
+			p {
+				margin-bottom: 3px;
+				padding: 0 8px;
+				line-height: 14px;
+				font-size: 11px;
+				font-weight: 700;
+			}
+		}
+	}
+
+	.content-wrapper {
+		max-height: 600px;
+
+		.content {
+			max-height: 600px;
+			overflow-y: scroll;
+			background-color: var(--properties-BG);
+		}
+	}
+
+	.content:has(.option) {
+		display: flex;
+		flex-direction: column;
+		padding-bottom: 20px;
+	
+		.option {
+			display: flex;
+			flex-direction: row;
+			font-size: 13px;
+			font-weight: 500;
+			margin: 20px 0 0 0;
+	
+			.name {
+				width: 282px;
+				margin-right: 8px;
+				text-align: right;
+			}
+	
+			input[type="checkbox"] {
+				margin: 2px 8px 2px 0;
+			}
+	
+			select {
+				width: 280px;
+			}
+		}
+	}
+}
+
+main.win.settings {
+	grid-template-columns: 200px 1fr;
+	grid-template-rows: 32px auto;
+	grid-template-areas: 
+	'title title'
+	'tabs content';
+	background-color: var(--properties-BG);
+
+	.title-bar {
+		justify-content: space-between;
+		background-color: var(--properties-BG);
+	}
+
+	.window-title {
+		line-height: 32px;
+		padding-left: 8px;
+		font-size: 12px;
+	}
+
+	.tabs {
+		flex-direction: column;
+		gap: 4px;
+
+		.tab {
+			margin: 0 4px;
+			height: 36px;
+			border-radius: 6px;
+			display: flex;
+			flex-direction: row;
+			justify-content: left;
+
+			&:hover {
+				background-color: var(--hover);
+			}
+
+			&.active {
+				background-color: var(--hover);
+
+				img {
+					filter: var(--secondary-filter);
+				}
+
+				p {
+					color: var(--secondary);
+				}
+			}
+
+			img,
+			.icon {
+				height: 22px;
+				width: 22px;
+				margin: 7px;
+				filter: invert(90%);
+			}
+
+			p {
+				line-height: 36px;
+				font-size: 13px;
+			}
+		}
+	}
+
+	.content {
+		height: calc(100vh - 33px);
+		overflow-y: scroll;
+		background-color: var(--topbar-BG);
+		border-radius: 8px 0 0 0;
+		border: 1px solid var(--hover);
+	}
+
+	.content:has(.option) {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	
+		.option {
+			display: flex;
+			flex-direction: row;
+			font-size: 13px;
+			font-weight: 500;
+			margin: 20px 0 0 0;
+	
+			.name {
+				width: 202px;
+				margin-right: 8px;
+				text-align: right;
+			}
+	
+			input[type="checkbox"] {
+				margin: 2px 8px 2px 0;
+			}
+	
+			select {
+				width: 280px;
 			}
 		}
 	}
