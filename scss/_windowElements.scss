@@ -17,7 +17,6 @@
 	padding: var(--topbar-Height) 0 0 0;
 	grid-area: sideBar;
 	background-color: transparent;
-	border-right: 1rem solid var(--grid-gap);
 }
 
 .properties {
@@ -67,6 +66,12 @@ main.light {
 
 	.window-rim {
 		display: none;
+	}
+}
+
+main.mac {
+	.navbar {
+		border-right: 1rem solid var(--grid-gap);
 	}
 }
 

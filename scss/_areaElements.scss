@@ -69,8 +69,6 @@
 .nav-list {
 	display: flex;
 	flex-direction: column;
-	padding: 10px;
-	padding-top: var(--topbar-height);
 
 	.category {
 		height: 20px;
@@ -82,14 +80,9 @@
 	button.nav-item {
 		z-index: 10;
 		display: flex;
-		height: 28px;
 		color: var(--text);
 		background-color: transparent;
 		border-radius: 6px;
-
-		&.active {
-			background-color: var(--accent);
-		}
 
 		object {
 			width: 30px;
@@ -105,8 +98,6 @@
 		}
 
 		p {
-			margin: 3px 0 3px 6px;
-			line-height: 24px;
 			color: var(--text);
 			text-align: left;
 		}
@@ -135,9 +126,58 @@ main.mac {
 	.header {
 		height: 34px;
 	}
+
+	.nav-list {
+		padding: 10px;
+		padding-top: var(--topbar-height);
+
+		button.nav-item {
+			height: 28px;
+
+			&.active {
+				background-color: var(--accent);
+			}
+
+			p {
+				margin: 0 0 0 6px;
+				line-height: 28px;
+				font-size: 13px;
+			}
+		}
+	}
 }
 
 main.win {
+	.nav-list {
+		padding: 4px;
+		padding-top: var(--topbar-height);
+
+		button.nav-item {
+			position: relative;
+			height: 36px;
+
+			&.active {
+				background-color: var(--hover);
+
+				&::after {
+					content: '';
+					position: absolute;
+					left: 0;
+					top: 5px;
+					width: 2px;
+					height: 26px;
+					background-color: var(--accent);
+					border-radius: 1px;
+				}
+			}
+
+			p {
+				margin: 0 0 0 10px;
+				line-height: 36px;
+				font-size: 14px;
+			}
+		}
+	}
 }
 
 main.web {
@@ -145,4 +185,6 @@ main.web {
 		height: 34px;
 		background-color: rgb(77, 77, 77);
 	}
+
+	
 }
