@@ -22,37 +22,38 @@
 			cls = cls.parentElement;
 
 			if (cls.classList.contains("toolbar")) {
-				topBarType = "toolbar-button"
-				topBarShort = "tb"
+				topBarType = "toolbar-button";
+				topBarShort = "tb";
 			} else if (cls.classList.contains("buttonbar")) {
-				topBarType = "buttonbar-button"
-				topBarShort = "bb"
+				topBarType = "buttonbar-button";
+				topBarShort = "bb";
 			}
 		}
 	});
 </script>
 
-
 <div class="topbar-group">
-
 	{#each buttons as b, i}
-	<button
-		bind:this={self}
-		class="topbar-button"
-		class:active={state === b.value}
-		class:disabled={b.disabled}
-		disabled={b.disabled}
-		on:click={() => {
-			if (state === b.value) {
-				state = ""
-			} else {
-				state = b.value
-			}
-		}}
-	>
-	
-		<img src={topBarShort ? `./icons/${topBarShort}_${$uiPlatform}/${b.icon}.svg` : ''} alt={b.toolTip}>
-	
-	</button>
+		<button
+			bind:this={self}
+			class="topbar-button"
+			class:active={state === b.value}
+			class:disabled={b.disabled}
+			disabled={b.disabled}
+			on:click={() => {
+				if (state === b.value) {
+					state = "";
+				} else {
+					state = b.value;
+				}
+			}}
+		>
+			<img
+				src={topBarShort
+					? `./icons/${topBarShort}_${$uiPlatform}/${b.icon}.svg`
+					: ""}
+				alt={b.toolTip}
+			/>
+		</button>
 	{/each}
 </div>

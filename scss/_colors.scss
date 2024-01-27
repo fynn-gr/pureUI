@@ -1,10 +1,10 @@
 main.dark {
-    //window
-    --topbar-BG:     rgb(54, 54, 54);
-    --topbar-BG-transparent:rgb(54, 54, 54, 0.7);
-    --navbar-BG:    rgb(36, 36, 36);
-    --properties-BG: rgb(48, 48, 48);
-    --grid-gap:      rgb(0, 0, 0);
+	//window
+	--topbar-BG: rgb(54, 54, 54);
+	--topbar-BG-transparent: rgb(54, 54, 54, 0.7);
+	--navbar-BG: rgb(36, 36, 36);
+	--properties-BG: rgb(48, 48, 48);
+	--grid-gap: rgb(0, 0, 0);
 
 	--tool-icon-color: invert(100%);
 
@@ -48,12 +48,12 @@ main.dark {
 }
 
 main.light {
-    //window
-    --topbar-BG:     rgb(250, 250, 250);
-    --topbar-BG-transparent:rgba(255, 255, 255, 0.7);
-    --sidebar-BG:    rgb(146, 146, 146);
-    --properties-BG: rgb(255, 255, 255);
-    --grid-gap:      rgb(161, 161, 161);
+	//window
+	--topbar-BG: rgb(250, 250, 250);
+	--topbar-BG-transparent: rgba(255, 255, 255, 0.7);
+	--sidebar-BG: rgb(146, 146, 146);
+	--properties-BG: rgb(255, 255, 255);
+	--grid-gap: rgb(161, 161, 161);
 
 	--tool-icon-color: invert(30%);
 

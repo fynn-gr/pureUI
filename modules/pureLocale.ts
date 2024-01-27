@@ -10,7 +10,7 @@ export class pureLocale {
 		this.language = language;
 		this.path = path;
 
-		fetch(`/locale/${language}.json`).then(res => {
+		fetch(`/locale/${language}.json`).then((res) => {
 			this.obj = res.json();
 			console.log(this.obj);
 		});

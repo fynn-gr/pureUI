@@ -155,17 +155,17 @@
 main.mac.settings {
 	grid-template-columns: 1fr;
 	grid-template-rows: 28px 52px auto;
-	grid-template-areas: 
-		'title'
-		'tabs'
-		'content';
+	grid-template-areas:
+		"title"
+		"tabs"
+		"content";
 
 	.title-bar {
 		border: none;
 	}
 
 	.window-title {
-		pointer-events: none ;
+		pointer-events: none;
 		position: fixed;
 		inset: 0 0 auto 0;
 		height: 26px;
@@ -238,24 +238,24 @@ main.mac.settings {
 		display: flex;
 		flex-direction: column;
 		padding-bottom: 20px;
-	
+
 		.option {
 			display: flex;
 			flex-direction: row;
 			font-size: 13px;
 			font-weight: 500;
 			margin: 20px 0 0 0;
-	
+
 			.name {
 				width: 282px;
 				margin-right: 8px;
 				text-align: right;
 			}
-	
+
 			input[type="checkbox"] {
 				margin: 2px 8px 2px 0;
 			}
-	
+
 			select {
 				width: 280px;
 			}
@@ -266,9 +266,9 @@ main.mac.settings {
 main.win.settings {
 	grid-template-columns: 200px 1fr;
 	grid-template-rows: 32px auto;
-	grid-template-areas: 
-	'title title'
-	'tabs content';
+	grid-template-areas:
+		"title title"
+		"tabs content";
 	background-color: var(--properties-BG);
 
 	.title-bar {
@@ -337,24 +337,24 @@ main.win.settings {
 		display: flex;
 		flex-direction: column;
 		height: 100%;
-	
+
 		.option {
 			display: flex;
 			flex-direction: row;
 			font-size: 13px;
 			font-weight: 500;
 			margin: 20px 0 0 0;
-	
+
 			.name {
 				width: 202px;
 				margin-right: 8px;
 				text-align: right;
 			}
-	
+
 			input[type="checkbox"] {
 				margin: 2px 8px 2px 0;
 			}
-	
+
 			select {
 				width: 280px;
 			}

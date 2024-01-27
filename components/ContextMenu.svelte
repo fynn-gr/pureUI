@@ -11,7 +11,7 @@
 	on:click_outside={() => {
 		$contextMenu = null;
 	}}
-	on:click={e => {
+	on:click={(e) => {
 		$contextMenu = null;
 	}}
 >

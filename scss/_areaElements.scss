@@ -160,7 +160,7 @@ main.win {
 				background-color: var(--hover);
 
 				&::after {
-					content: '';
+					content: "";
 					position: absolute;
 					left: 0;
 					top: 10px;
@@ -185,6 +185,4 @@ main.web {
 		height: 34px;
 		background-color: rgb(77, 77, 77);
 	}
-
-	
 }

@@ -30,11 +30,12 @@
 <button
 	bind:this={self}
 	class="topbar-button"
-	class:disabled={disabled}
+	class:disabled
 	on:click={!disabled ? onClick() : null}
-	disabled={disabled}
+	{disabled}
 >
-
-	<img src={topBarShort ? `./icons/${topBarShort}_${$uiPlatform}/${icon}.svg` : ''} alt={toolTip}>
-
+	<img
+		src={topBarShort ? `./icons/${topBarShort}_${$uiPlatform}/${icon}.svg` : ""}
+		alt={toolTip}
+	/>
 </button>

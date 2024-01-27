@@ -214,7 +214,7 @@
 	];
 
 	onMount(() => {
-		document.addEventListener("keydown", e => {
+		document.addEventListener("keydown", (e) => {
 			if (modifierKeys.includes(e.code)) {
 			}
 		});
@@ -253,14 +253,12 @@
 			<div class="operator">
 				<p class="operator-name">{operator.name}</p>
 				{#if operator.ctrl}
-					<button
-						class:active={operator.ctrl}>{$uiPlatform == "mac" ? "cmd" : "ctrl"}</button
+					<button class:active={operator.ctrl}
+						>{$uiPlatform == "mac" ? "cmd" : "ctrl"}</button
 					>
 				{/if}
 				{#if operator.alt}
-					<button
-						class:active={operator.alt}>alt</button
-					>
+					<button class:active={operator.alt}>alt</button>
 				{/if}
 				<p class="operator-key">{keyFromCode(operator.key)}</p>
 			</div>
