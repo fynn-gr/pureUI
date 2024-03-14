@@ -16,11 +16,6 @@
 	background-color: var(--topbar-BG);
 
 	&.default {
-		.win-buttons-mac {
-			height: 28px;
-			padding: 7px;
-		}
-
 		.topbar-container {
 			flex: 1;
 			height: 28px;

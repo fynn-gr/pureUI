@@ -1,4 +1,4 @@
-.propRow {
+.prop-row {
 	display: flex;
 	flex-direction: row;
 	justify-content: right;
@@ -9,7 +9,7 @@
 		opacity: 0.4;
 	}
 
-	.propName {
+	.prop-name {
 		margin: 0px;
 		padding: 0px 8px 0px 0px;
 		text-align: right;
@@ -18,7 +18,7 @@
 		text-shadow: 1px 1px 2px var(--textShadow);
 	}
 
-	.propCol {
+	.prop-col {
 		width: 60%;
 		margin: 0;
 		padding: 0;
@@ -64,7 +64,7 @@
 		display: flex;
 		flex-direction: row;
 
-		.checkboxDesc {
+		.checkbox-desc {
 			margin: 0 0 0 4rem;
 			font-size: 12rem;
 			line-height: 20rem;

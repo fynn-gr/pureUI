@@ -41,7 +41,7 @@
 		bind:this={self}
 		class="topbar-button"
 		class:disabled
-		on:click={(e) => {
+		on:click={e => {
 			exposed = !exposed;
 		}}
 		{disabled}

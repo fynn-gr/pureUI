@@ -5,7 +5,7 @@
 
 <div class="panel" class:collapsed>
 	<button
-		class="panelName"
+		class="panel-name"
 		on:click={() => {
 			collapsed = !collapsed;
 		}}
