@@ -256,8 +256,35 @@ main.mac.settings {
 				margin: 2px 8px 2px 0;
 			}
 
-			select {
-				width: 280px;
+			.select-container {
+				position: relative;
+
+				select {
+					appearance: none;
+					-webkit-appearance: none;
+					width: 280px;
+					height: 22px;
+					border-radius: 5px;
+					font-size: 13px;
+					line-height: 16px;
+					padding-left: 6px;
+				}
+				
+				.arrow {
+					position: absolute;
+					inset: 3px 3px 3px auto;
+					width: 16px;
+					height: 16px;
+					background-color: var(--secondary);
+					box-shadow: 0 1px 3px color-mix(in hsl, var(--secondary), transparent);
+					border-radius: 4px;
+
+					img {
+						width: 16px;
+						height: 16px;
+						filter: invert(100%);
+					}
+				}
 			}
 		}
 	}

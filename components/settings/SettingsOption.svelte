@@ -16,10 +16,15 @@
 		<input type="checkbox" bind:checked={value} on:change={onChange} />
 		<p class="checkbox-name">{checkboxName}</p>
 	{:else if type == "select"}
-		<select bind:value on:change={onChange}>
-			{#each options as option}
-				<option value={option.value}>{option.name}</option>
-			{/each}
-		</select>
+		<div class="select-container">
+			<select bind:value on:change={onChange}>
+				{#each options as option}
+					<option value={option.value}>{option.name}</option>
+				{/each}
+			</select>
+			<div class="arrow">
+				<img src="./icons/std/select_arrow.svg" alt="">
+			</div>
+		</div>
 	{/if}
 </div>
