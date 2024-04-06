@@ -1,14 +1,13 @@
 <script lang="ts">
 	import { contextMenu } from "@/stores";
-	import { clickOutside } from "@/utils";
+	import { clickOutside } from "@/pureUI/modules/utils";
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
 	class="context-menu"
 	style={`inset: ${$contextMenu.position.y}px auto auto ${$contextMenu.position.x}px;`}
-	use:clickOutside
-	on:click_outside={() => {
+	use:clickOutside={() => {
 		$contextMenu = null;
 	}}
 	on:click={e => {

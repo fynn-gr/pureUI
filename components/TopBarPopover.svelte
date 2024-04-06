@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from "svelte";
 	import { uiPlatform } from "@/stores";
-	import { clickOutside } from "@/utils";
+	import { clickOutside } from "@/pureUI/modules/utils";
 
 	export let icon: string;
 	export let toolTip: string;
@@ -31,8 +31,7 @@
 <div
 	class="topbar-popover"
 	class:exposed
-	use:clickOutside
-	on:clickOutside={() => {
+	use:clickOutside={() => {
 		exposed = false;
 		console.log("clicked outside");
 	}}
