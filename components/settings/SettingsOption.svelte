@@ -23,7 +23,7 @@
 				{/each}
 			</select>
 			<div class="arrow">
-				<img src="./icons/std/select_arrow.svg" alt="">
+				<img src="./icons/std/select_arrow.svg" alt="" />
 			</div>
 		</div>
 	{/if}
