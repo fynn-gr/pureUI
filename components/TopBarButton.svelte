@@ -18,10 +18,10 @@
 
 			if (cls.classList.contains("toolbar")) {
 				topBarType = "toolbar-button";
-				topBarShort = "tb";
+				topBarShort = "tool_bar";
 			} else if (cls.classList.contains("buttonbar")) {
 				topBarType = "buttonbar-button";
-				topBarShort = "bb";
+				topBarShort = "button_bar";
 			}
 		}
 	});
@@ -35,7 +35,7 @@
 	{disabled}
 >
 	<img
-		src={topBarShort ? `./icons/${topBarShort}_${$uiPlatform}/${icon}.svg` : ""}
+		src={topBarShort ? `./icons/${topBarShort}/${icon}.svg` : ""}
 		alt={toolTip}
 	/>
 </button>
