@@ -47,9 +47,7 @@
 		title={toolTip}
 	>
 		<img
-			src={topBarShort
-				? `./icons/${topBarShort}/${icon}.svg`
-				: ""}
+			src={topBarShort ? `./icons/${topBarShort}/${icon}.svg` : ""}
 			alt={toolTip}
 		/>
 	</button>
