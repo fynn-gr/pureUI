@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from "svelte";
 	import KeymapKey from "./KeymapKey.svelte";
-	import { keymap, uiPlatform } from "@/stores";
+	import { keymap, uiPlatform } from "@/ts/Stores";
 	import { keyFromCode } from "@/pureUI/modules/utils";
 
 	let modifier: string = "standart";

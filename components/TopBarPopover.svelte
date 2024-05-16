@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from "svelte";
-	import { uiPlatform } from "@/stores";
+	import { uiPlatform } from "@/ts/Stores";
 	import { clickOutside } from "@/pureUI/modules/utils";
 
 	export let icon: string;

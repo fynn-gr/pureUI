@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { contextMenu } from "@/stores";
+	import { contextMenu } from "@/ts/Stores";
 	import { clickOutside } from "@/pureUI/modules/utils";
 </script>
 

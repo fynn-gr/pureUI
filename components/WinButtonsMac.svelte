@@ -19,7 +19,7 @@
 		on:click={onClose}
 		class:disabled={CanClose == false}
 	>
-		<img src="./icons/winButtonsMacClose.svg" alt="" />
+		<img src="./icons/native/winButtonsMacClose.svg" alt="" />
 	</button>
 	<button
 		on:mouseenter={() => {
@@ -31,7 +31,7 @@
 		on:click={onMin}
 		class:disabled={CanMinimize == false}
 	>
-		<img src="./icons/winButtonsMacMin.svg" alt="" />
+		<img src="./icons/native/winButtonsMacMin.svg" alt="" />
 	</button>
 	<button
 		on:mouseenter={() => {
@@ -43,6 +43,6 @@
 		on:click={onMax}
 		class:disabled={CanMaximise == false}
 	>
-		<img src="./icons/winButtonsMacMax.svg" alt="" />
+		<img src="./icons/native/winButtonsMacMax.svg" alt="" />
 	</button>
 </div>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { isEditing } from "@/stores";
+	import { isEditing } from "@/ts/Stores";
 
 	export let value: number;
 	export let min: number;

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { uiPlatform } from "@/stores";
+	import { uiPlatform } from "@/ts/Stores";
 	import { onMount } from "svelte";
 
 	export let buttons: Array<button>;

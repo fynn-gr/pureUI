@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { uiPlatform } from "@/stores";
+	import { uiPlatform } from "@/ts/Stores";
 
 	export let type: optionType;
 	export let name: string;
