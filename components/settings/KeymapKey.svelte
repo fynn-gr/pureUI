@@ -1,24 +1,24 @@
 <script lang="ts">
-	import { settings } from "@/ts/Stores";
+import { settings } from "@/ts/Stores";
 
-	export let code: string;
-	export let name: string;
-	export let icon: string;
-	export let shape: string = "";
-	export let width: number;
-	export let selected: any;
-	export let modifier: string;
-	let modifierKeys = [
-		"MetaLeft",
-		"MetaRight",
-		"ControlLeft",
-		"ControlRight",
-		"AltLeft",
-		"AltRight",
-	];
-	let binded = $settings.keymap.find(e => {
-		e.key == code;
-	});
+export let code: string;
+export let name: string;
+export let icon: string;
+export let shape: string = "";
+export let width: number;
+export let selected: any;
+export let modifier: string;
+let modifierKeys = [
+	"MetaLeft",
+	"MetaRight",
+	"ControlLeft",
+	"ControlRight",
+	"AltLeft",
+	"AltRight",
+];
+let binded = $settings.keymap.find(e => {
+	e.key == code;
+});
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->

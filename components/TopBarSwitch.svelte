@@ -1,35 +1,35 @@
 <script lang="ts">
-	import { uiPlatform } from "@/ts/Stores";
-	import { onMount } from "svelte";
+import { uiPlatform } from "@/ts/Stores";
+import { onMount } from "svelte";
 
-	export let buttons: Array<button>;
-	export let state: string;
+export let buttons: Array<button>;
+export let state: string;
 
-	interface button {
-		icon: string;
-		value: string;
-		toolTip: string;
-		disabled?: boolean;
-	}
+interface button {
+	icon: string;
+	value: string;
+	toolTip: string;
+	disabled?: boolean;
+}
 
-	let self: HTMLElement;
-	let topBarType;
-	let topBarShort;
+let self: HTMLElement;
+let topBarType;
+let topBarShort;
 
-	onMount(() => {
-		let cls = self;
-		while (cls.parentElement) {
-			cls = cls.parentElement;
+onMount(() => {
+	let cls = self;
+	while (cls.parentElement) {
+		cls = cls.parentElement;
 
-			if (cls.classList.contains("toolbar")) {
-				topBarType = "toolbar-button";
-				topBarShort = "tb";
-			} else if (cls.classList.contains("buttonbar")) {
-				topBarType = "buttonbar-button";
-				topBarShort = "bb";
-			}
+		if (cls.classList.contains("toolbar")) {
+			topBarType = "toolbar-button";
+			topBarShort = "tb";
+		} else if (cls.classList.contains("buttonbar")) {
+			topBarType = "buttonbar-button";
+			topBarShort = "bb";
 		}
-	});
+	}
+});
 </script>
 
 <div class="topbar-group">

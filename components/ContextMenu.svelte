@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { contextMenu } from "@/ts/Stores";
-	import { clickOutside } from "@/pureUI/modules/utils";
+import { contextMenu } from "@/ts/Stores";
+import { clickOutside } from "@/pureUI/modules/utils";
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->

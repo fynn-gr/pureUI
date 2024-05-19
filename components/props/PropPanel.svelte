@@ -1,6 +1,6 @@
 <script lang="ts">
-	export let name: string;
-	export let collapsed = false;
+export let name: string;
+export let collapsed = false;
 </script>
 
 <div class="panel" class:collapsed>

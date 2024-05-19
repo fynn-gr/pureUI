@@ -1,16 +1,16 @@
 <script lang="ts">
-	import { uiPlatform } from "@/ts/Stores";
+import { uiPlatform } from "@/ts/Stores";
 
-	export let type: optionType;
-	export let name: string;
-	export let value: any = null;
-	export let checked: boolean = false;
-	export let checkboxName: string = "";
-	export let options: Array<selectionOption> = [];
-	export let onChange = () => {};
+export let type: optionType;
+export let name: string;
+export let value: any = null;
+export let checked: boolean = false;
+export let checkboxName: string = "";
+export let options: Array<selectionOption> = [];
+export let onChange = () => {};
 
-	type optionType = "checkbox" | "select";
-	type selectionOption = { value: any; name: string };
+type optionType = "checkbox" | "select";
+type selectionOption = { value: any; name: string };
 </script>
 
 <div class="option">

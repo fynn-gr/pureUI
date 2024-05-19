@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { uiPlatform, theme } from "@/ts/Stores";
-	import AppMenu from "./AppMenu.svelte";
+import { uiPlatform, theme } from "@/ts/Stores";
+import AppMenu from "./AppMenu.svelte";
 </script>
 
 <AppMenu name="Dev">

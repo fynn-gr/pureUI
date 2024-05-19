@@ -1,11 +1,11 @@
 <script lang="ts">
-	export let onMin = () => {};
-	export let onMax = () => {};
-	export let onClose = () => {};
-	export let CanMaximise = true;
-	export let CanMinimize = true;
-	export let CanClose = true;
-	let hover = false;
+export let onMin = () => {};
+export let onMax = () => {};
+export let onClose = () => {};
+export let CanMaximise = true;
+export let CanMinimize = true;
+export let CanClose = true;
+let hover = false;
 </script>
 
 <div class="win-buttons-mac" data-tauri-drag-region>

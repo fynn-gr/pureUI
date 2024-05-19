@@ -1,31 +1,31 @@
 <script lang="ts">
-	import { onMount } from "svelte";
-	import { uiPlatform } from "@/ts/Stores";
-	import { clickOutside } from "@/pureUI/modules/utils";
+import { onMount } from "svelte";
+import { uiPlatform } from "@/ts/Stores";
+import { clickOutside } from "@/pureUI/modules/utils";
 
-	export let icon: string;
-	export let toolTip: string;
-	export let disabled = false;
+export let icon: string;
+export let toolTip: string;
+export let disabled = false;
 
-	let self: HTMLElement;
-	let topBarType;
-	let topBarShort;
-	let exposed = false;
+let self: HTMLElement;
+let topBarType;
+let topBarShort;
+let exposed = false;
 
-	onMount(() => {
-		let cls = self;
-		while (cls.parentElement) {
-			cls = cls.parentElement;
+onMount(() => {
+	let cls = self;
+	while (cls.parentElement) {
+		cls = cls.parentElement;
 
-			if (cls.classList.contains("toolbar")) {
-				topBarType = "toolbar-button";
-				topBarShort = "tool_bar";
-			} else if (cls.classList.contains("buttonbar")) {
-				topBarType = "buttonbar-button";
-				topBarShort = "button_bar";
-			}
+		if (cls.classList.contains("toolbar")) {
+			topBarType = "toolbar-button";
+			topBarShort = "tool_bar";
+		} else if (cls.classList.contains("buttonbar")) {
+			topBarType = "buttonbar-button";
+			topBarShort = "button_bar";
 		}
-	});
+	}
+});
 </script>
 
 <div

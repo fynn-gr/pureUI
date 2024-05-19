@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { emit } from "@tauri-apps/api/event";
+import { emit } from "@tauri-apps/api/event";
 
-	export let id: string;
-	export let name: string;
-	export let accelerator: string = null;
-	export let disabled: boolean = false;
-	export let icon: string = null;
-	export let checked: string = null;
+export let id: string;
+export let name: string;
+export let accelerator: string = null;
+export let disabled: boolean = false;
+export let icon: string = null;
+export let checked: string = null;
 </script>
 
 <button

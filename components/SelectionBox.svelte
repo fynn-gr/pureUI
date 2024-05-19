@@ -1,34 +1,34 @@
 <script lang="ts">
-	import { uiPlatform } from "@/ts/Stores";
+import { uiPlatform } from "@/ts/Stores";
 
-	type option = { name: string; value: any };
+type option = { name: string; value: any };
 
-	export let options: Array<option>;
-	export let onChange = () => {};
-	export let selected: any;
-	let selectedObj: option | undefined;
-	let selectedName: string = "";
-	selectionChange(selected);
+export let options: Array<option>;
+export let onChange = () => {};
+export let selected: any;
+let selectedObj: option | undefined;
+let selectedName: string = "";
+selectionChange(selected);
 
-	let exposed = false;
+let exposed = false;
 
-	function selectionChange(sel: any) {
-		if (selected) {
-			selectedObj = options.find(x => x.value == selected);
-			console.log(selectedObj);
-			selectedName = selectedObj.name;
-		}
-		console.log("change selected");
+function selectionChange(sel: any) {
+	if (selected) {
+		selectedObj = options.find(x => x.value == selected);
+		console.log(selectedObj);
+		selectedName = selectedObj.name;
 	}
-	$: selectionChange(selected);
+	console.log("change selected");
+}
+$: selectionChange(selected);
 
-	function selectionObjChange(sel: any) {
-		if (selectedObj) {
-			selected = selectedObj.value;
-			selectedName = selectedObj.name;
-		}
+function selectionObjChange(sel: any) {
+	if (selectedObj) {
+		selected = selectedObj.value;
+		selectedName = selectedObj.name;
 	}
-	$: selectionObjChange(selectedObj);
+}
+$: selectionObjChange(selectedObj);
 </script>
 
 {#if $uiPlatform == "mac"}
