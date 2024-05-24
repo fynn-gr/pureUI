@@ -1,13 +1,12 @@
 <script lang="ts">
 import { uiPlatform } from "@/ts/Stores";
 
-type option = { name: string; value: any };
-
-export let options: Array<option>;
+export let options: Array<{ name: string; value: any }>;
 export let onChange = () => {};
-export let selected: any;
-let selectedObj: option | undefined;
-let selectedName: string = "";
+export let selected: any; //selected Value
+
+let selectedObj: { name: string; value: any };
+let selectedName: string;
 selectionChange(selected);
 
 let exposed = false;

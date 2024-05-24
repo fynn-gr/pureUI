@@ -23,10 +23,10 @@ onMount(() => {
 
 		if (cls.classList.contains("toolbar")) {
 			topBarType = "toolbar-button";
-			topBarShort = "tb";
+			topBarShort = "tool_bar";
 		} else if (cls.classList.contains("buttonbar")) {
 			topBarType = "buttonbar-button";
-			topBarShort = "bb";
+			topBarShort = "button_bar";
 		}
 	}
 });
@@ -50,7 +50,7 @@ onMount(() => {
 		>
 			<img
 				src={topBarShort
-					? `./icons/${topBarShort}_${$uiPlatform}/${b.icon}.svg`
+					? `./icons/${topBarShort}/${b.icon}.svg`
 					: ""}
 				alt={b.toolTip}
 			/>
