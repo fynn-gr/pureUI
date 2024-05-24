@@ -49,9 +49,7 @@ onMount(() => {
 			}}
 		>
 			<img
-				src={topBarShort
-					? `./icons/${topBarShort}/${b.icon}.svg`
-					: ""}
+				src={topBarShort ? `./icons/${topBarShort}/${b.icon}.svg` : ""}
 				alt={b.toolTip}
 			/>
 		</button>
