@@ -13,9 +13,11 @@ Scss and svelte component libary for desctop and web applications
 ## Usage
 
 Add polychrome UI as submodule to your project in the src directory
+
 ```
 git submodule add https://github.com/fynn-g/pureUI.git
 ```
+
 Add `pureIcons.config.json` to the root dir of the project. In an array you can specify witch icon categorys to include
 
 ```
@@ -27,6 +29,7 @@ Add `pureIcons.config.json` to the root dir of the project. In an array you can 
     ]
 }
 ```
+
 Include the plugin into the vite plugin section in `vite.config.ts`
 
 ```
@@ -46,6 +49,7 @@ plugins: [
 ```
 
 Run the Vite build process to bundle icons to pulbic folder
+
 ```
 pnpm vite build
 ```
