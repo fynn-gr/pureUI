@@ -5,9 +5,7 @@ import { clickOutside } from "@/pureUI/modules/utils";
 let self: HTMLElement;
 let exposed = false;
 
-onMount(() => {
-
-});
+onMount(() => {});
 </script>
 
 <div
@@ -31,7 +29,7 @@ onMount(() => {
 	{#if exposed}
 		<div class="popover">
 			<a href="">Home</a>
-            <a href="">Fairytale</a>
+			<a href="">Fairytale</a>
 		</div>
 	{/if}
 </div>

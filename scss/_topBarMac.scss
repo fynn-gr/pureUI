@@ -1,131 +1,132 @@
-main.mac {
-	.topbar {
-		border-bottom: 1px solid var(--grid-gap);
-		border-radius: 0 8px 0 0;
+main.mac .topbar {
+	border-bottom: 1px solid var(--grid-gap);
+	border-radius: 0 8px 0 0;
 
-		&.default {
+	&.default {
+		height: 28px;
+
+		.win-buttons-mac {
 			height: 28px;
+			padding: 7px;
+		}
+
+		.window-title {
+			height: 28px;
+			line-height: 28px;
+			font-size: 13px;
+			font-weight: 600;
+		}
+	}
+
+	&.buttonbar {
+		height: 38px;
+
+		.topbar-container {
+			height: 38px;
+			gap: 9px;
+			padding-right: 9px;
 
 			.win-buttons-mac {
-				height: 28px;
-				padding: 7px;
+				height: 38px;
+				padding: 14px;
 			}
 
 			.window-title {
-				height: 28px;
-				line-height: 28px;
+				height: 38px;
+				line-height: 39px;
 				font-size: 13px;
 				font-weight: 600;
 			}
-		}
 
-		&.toolbar {
-			height: 28px;
+			.topbar-button {
+				height: 22px;
+				width: 30px;
+				margin: 9px 0;
+				border-radius: 5px;
+			}
 
-			.topbar-container {
-				gap: 12px;
-
-				.win-buttons-mac {
-					height: 54px;
-					padding: 21px 9px 21px 21px;
-				}
-
-				.app-menu {
-					.app-menu-btn {
-						height: 28px;
-						width: 40px;
-						margin: 14px 0 13px 0;
-						padding: 0;
-						border-radius: 6px;
-					}
-				}
-
-				.window-title {
-					height: 28px;
-					line-height: 28px;
-					margin: 13px 0 12px 0;
-					font-size: 13px;
-					font-weight: 600;
-				}
-
-				select {
-					height: 22px;
-					margin: 16px 0 15px 0;
-					padding: 0 10px;
-					line-height: 22px;
-					appearance: none;
-					color: var(--text);
-					background-color: transparent;
-					border: 1px solid rgb(108, 108, 108);
-					border-radius: 6px;
-
-					option {
-						color: black;
-					}
-				}
+			.topbar-group {
+				height: 22px;
+				margin: 9px 0;
+				border-radius: 5px;
 
 				.topbar-button {
+					margin: 0;
+				}
+			}
+		}
+	}
+
+	&.toolbar {
+		height: 28px;
+
+		.topbar-container {
+			gap: 12px;
+
+			.win-buttons-mac {
+				height: 54px;
+				padding: 21px 9px 21px 21px;
+			}
+
+			.app-menu {
+				.app-menu-btn {
 					height: 28px;
 					width: 40px;
 					margin: 14px 0 13px 0;
 					padding: 0;
 					border-radius: 6px;
-
-					img {
-						margin: -1px 2px;
-					}
-				}
-
-				.topbar-group {
-					height: 28px;
-					margin: 13px 0 12px 0;
-					border-radius: 6px;
-
-					.topbar-button {
-						margin: 0;
-					}
 				}
 			}
-		}
 
-		&.buttonbar {
-			height: 38px;
+			.window-title {
+				height: 28px;
+				line-height: 28px;
+				margin: 13px 0 12px 0;
+				font-size: 13px;
+				font-weight: 600;
+			}
 
-			.topbar-container {
-				height: 38px;
-				gap: 9px;
+			select {
+				height: 22px;
+				margin: 16px 0 15px 0;
+				padding: 0 10px;
+				line-height: 22px;
+				appearance: none;
+				color: var(--text);
+				background-color: transparent;
+				border: 1px solid rgb(108, 108, 108);
+				border-radius: 6px;
 
-				.win-buttons-mac {
-					height: 38px;
-					padding: 14px;
+				option {
+					color: black;
 				}
+			}
 
-				.window-title {
-					height: 38px;
-					line-height: 39px;
-					font-size: 13px;
-					font-weight: 600;
+			.topbar-button {
+				height: 28px;
+				width: 40px;
+				margin: 14px 0 13px 0;
+				padding: 0;
+				border-radius: 6px;
+
+				img {
+					margin: -1px 2px;
 				}
+			}
+
+			.topbar-group {
+				height: 28px;
+				margin: 13px 0 12px 0;
+				border-radius: 6px;
 
 				.topbar-button {
-					height: 22px;
-					width: 30px;
-					margin: 9px 0;
-					border-radius: 5px;
-				}
-
-				.topbar-group {
-					height: 22px;
-					margin: 9px 0;
-					border-radius: 5px;
-
-					.topbar-button {
-						margin: 0;
-					}
+					margin: 0;
 				}
 			}
 		}
+	}
 
+	.topbar-container {
 		.topbar-popover {
 			.popover {
 				padding: 14px;
