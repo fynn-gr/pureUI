@@ -1,5 +1,16 @@
 main.win {
 	.topbar {
+		&.default {
+			height: 32px;
+
+			.window-title {
+				height: 32px;
+				line-height: 32px;
+				font-size: 12px;
+				font-weight: 400;
+			}
+		}
+
 		&.toolbar {
 			height: 44px;
 
@@ -173,6 +184,8 @@ main.win {
 		}
 
 		&.buttonbar {
+			height: 32px;
+
 			.topbar-container {
 				background-color: var(--topbar-BG);
 				border-bottom: 1px solid rgb(65, 65, 65);
@@ -181,7 +194,7 @@ main.win {
 
 				.app-menu {
 					.app-menu-btn {
-						height: 28px;
+						height: 32px;
 						padding: 0 12px;
 						margin: 6px 0;
 						border-radius: 5px;
@@ -194,7 +207,7 @@ main.win {
 						border: 1px solid rgb(26, 26, 26);
 
 						button {
-							height: 28px;
+							height: 32px;
 							margin: 0 4px;
 							padding: 0 12px;
 							border-radius: 5px;
@@ -203,15 +216,22 @@ main.win {
 					}
 				}
 
+				.window-title {
+					height: 32px;
+					line-height: 32px;
+					font-size: 12px;
+					font-weight: 400;
+				}
+
 				.topbar-button {
-					width: 30px;
-					height: 28px;
+					width: 32px;
+					height: 32px;
 					margin: 6px 0;
 					border-radius: 5px;
 				}
 
 				.topbar-group {
-					height: 28px;
+					height: 32px;
 					margin: 6px;
 					border-radius: 5px;
 
@@ -226,10 +246,10 @@ main.win {
 					gap: 6px;
 					margin: 6px 0;
 					border: none;
-					height: 28px;
+					height: 32px;
 
 					button {
-						height: 28px;
+						height: 32px;
 						width: 80px;
 						background-color: rgb(41, 41, 41);
 						border-radius: 5px;

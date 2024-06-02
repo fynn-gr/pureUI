@@ -7,7 +7,6 @@
 	//38px buttonBar
 	//54px toolBar
 	grid-area: topBar;
-	height: var(--topbar-height);
 	top: 0;
 	right: 0;
 	display: flex;
@@ -18,15 +17,12 @@
 	&.default {
 		.topbar-container {
 			flex: 1;
-			height: 28px;
 			display: flex;
 			flex-direction: row;
 			flex-wrap: nowrap;
 
 			.window-title {
-				height: 28px;
 				margin: 0px auto;
-				line-height: 28px;
 				font-size: 12px;
 			}
 

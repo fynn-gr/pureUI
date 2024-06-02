@@ -4,13 +4,24 @@ main.mac {
 		border-radius: 0 8px 0 0;
 
 		&.default {
+			height: 28px;
+
 			.win-buttons-mac {
 				height: 28px;
 				padding: 7px;
 			}
+
+			.window-title {
+				height: 28px;
+				line-height: 28px;
+				font-size: 13px;
+				font-weight: 600;
+			}
 		}
 
 		&.toolbar {
+			height: 28px;
+
 			.topbar-container {
 				gap: 12px;
 
@@ -78,13 +89,22 @@ main.mac {
 		}
 
 		&.buttonbar {
+			height: 38px;
+
 			.topbar-container {
-				height: 40px;
+				height: 38px;
 				gap: 9px;
 
 				.win-buttons-mac {
-					height: 40px;
+					height: 38px;
 					padding: 14px;
+				}
+
+				.window-title {
+					height: 38px;
+					line-height: 39px;
+					font-size: 13px;
+					font-weight: 600;
 				}
 
 				.topbar-button {
