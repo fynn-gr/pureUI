@@ -264,6 +264,15 @@ main.web {
 					}
 				}
 			}
+
+			.theme-toggle {
+				position: relative;
+				
+				img {
+					position: absolute;
+					inset: 0;
+				}
+			}
 		}
 	}
 }
