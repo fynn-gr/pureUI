@@ -234,7 +234,8 @@ main.web {
 						flex-direction: row;
 						text-decoration: none;
 
-						&:hover, &.active{
+						&:hover,
+						&.active {
 							p {
 								font-weight: 700;
 							}

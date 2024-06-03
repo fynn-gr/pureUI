@@ -3,10 +3,10 @@ import { emit } from "@tauri-apps/api/event";
 
 export let id: string;
 export let name: string;
-export let accelerator: string = null;
+export let accelerator: string | null = null;
 export let disabled: boolean = false;
-export let icon: string = null;
-export let checked: string = null;
+export let icon: string | null = null;
+export let checked: string | null = null;
 </script>
 
 <button
