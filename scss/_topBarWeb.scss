@@ -267,10 +267,31 @@ main.web {
 
 			.theme-toggle {
 				position: relative;
-				
+
+				&.dark {
+					#sun {
+						opacity: 0%;
+						rotate: 0deg;
+					}
+
+					#moon {
+						opacity: 100%;
+						rotate: 0deg;
+					}
+				}
+
 				img {
 					position: absolute;
+					inset: 0 3px !important;
+					margin: 0 3px;
+					opacity: 100%;
+					rotate: 180deg;
 					inset: 0;
+					transition: 300ms;
+				}
+
+				#moon {
+					opacity: 0%;
 				}
 			}
 		}
