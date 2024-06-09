@@ -20,27 +20,50 @@ main.web {
 					font-weight: 600;
 				}
 
-				.appMenu {
+				.app-menu {
 					.app-menu-btn {
-						height: 28px;
-						padding: 0 12px;
-						margin: 13px 0;
-						border-radius: 6px;
+						height: 22px;
+						padding: 0 8px;
+						margin: 9px 0;
+						border-radius: 5px;
 					}
-
+	
 					.menu-content {
 						gap: 4px;
 						padding: 4px 0;
 						border-radius: 8px;
-						backdrop-filter: blur(40px);
-						box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
-
-						button {
+						border: 1px solid rgb(26, 26, 26);
+						box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+	
+						.app-menu-item {
+							display: flex;
+							flex-direction: row;
+							justify-content: left;
+							gap: 8px;
 							height: 28px;
 							margin: 0 4px;
-							padding: 0 12px;
-							border-radius: 4px;
+							border-radius: 5px;
 							font-size: 14px;
+	
+							img {
+								width: 28px;
+								height: 28px;
+								filter: invert(1);
+							}
+	
+							.name {
+								margin: 0 12px;
+								flex: 1;
+								line-height: 28px;
+								font-weight: 500;
+							}
+	
+							.accelerator {
+								margin-right: 12px;
+								opacity: 50%;
+								line-height: 28px;
+								font-weight: 700;
+							}
 						}
 					}
 				}
@@ -287,7 +310,7 @@ main.web {
 					opacity: 100%;
 					rotate: 180deg;
 					inset: 0;
-					transition: 300ms;
+					transition: 500ms;
 				}
 
 				#moon {

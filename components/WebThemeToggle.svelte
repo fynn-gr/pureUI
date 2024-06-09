@@ -27,7 +27,7 @@ onMount(() => {
 	class="topbar-button theme-toggle"
 	class:dark={$theme == "dark"}
 	on:click={() => {
-		$theme == "dark" ? $theme = "light" : $theme = "dark";
+		$theme == "dark" ? ($theme = "light") : ($theme = "dark");
 	}}
 >
 	<img
