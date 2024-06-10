@@ -8,7 +8,6 @@ main.web {
 				height: 40px;
 				gap: 9px;
 				padding-right: 9px;
-				background-color: var(--topBarBG);
 				border-bottom: 1px solid rgb(65, 65, 65);
 				border-bottom: 1px solid var(--gridGap);
 
@@ -27,14 +26,14 @@ main.web {
 						margin: 9px 0;
 						border-radius: 5px;
 					}
-	
+
 					.menu-content {
 						gap: 4px;
 						padding: 4px 0;
 						border-radius: 8px;
 						border: 1px solid rgb(26, 26, 26);
 						box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-	
+
 						.app-menu-item {
 							display: flex;
 							flex-direction: row;
@@ -44,20 +43,20 @@ main.web {
 							margin: 0 4px;
 							border-radius: 5px;
 							font-size: 14px;
-	
+
 							img {
 								width: 28px;
 								height: 28px;
 								filter: invert(1);
 							}
-	
+
 							.name {
 								margin: 0 12px;
 								flex: 1;
 								line-height: 28px;
 								font-weight: 500;
 							}
-	
+
 							.accelerator {
 								margin-right: 12px;
 								opacity: 50%;
