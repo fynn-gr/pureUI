@@ -1,0 +1,65 @@
+dialog {
+	z-index: 1000;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	translate: -50% -50%;
+	height: 400px;
+	width: 800px;
+	border-radius: var(--win-corner);
+	box-shadow: 0 4px 32px black;
+	background-color: var(--properties-BG);
+	overflow: hidden;
+	&::backdrop {
+		backdrop-filter: blur(1px) saturate(0%);
+		-webkit-backdrop-filter: blur(1px) saturate(0%);
+	}
+
+	.topbar.web-settings {
+		grid-area: title;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		border-radius: var(--win-corner) var(--win-corner) 0 0 !important;
+
+		.win-buttons-web {
+			position: absolute;
+			height: 32px;
+			width: 32px;
+			top: 0;
+			right: 0;
+
+			button {
+				height: 32px;
+				width: 32px;
+				background-color: transparent;
+				border-radius: var(--win-corner);
+
+				&:hover {
+					background-color: var(--hover);
+				}
+
+				img {
+					filter: invert(90%);
+				}
+			}
+		}
+	}
+
+	.tabs {
+		grid-area: tabs;
+		display: flex;
+	}
+
+	.content-wrapper {
+		grid-area: content;
+
+		.content {
+			display: flex;
+
+			&::-webkit-scrollbar {
+				display: none;
+			}
+		}
+	}
+}

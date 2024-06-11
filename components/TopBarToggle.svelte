@@ -12,9 +12,9 @@ export let disabled = false;
 
 let self: HTMLElement;
 let topBarType;
-let topBarShort;
-let iconPath;
-let iconPathActive;
+let topBarShort: string;
+let iconPath: string;
+let iconPathActive: string;
 
 onMount(() => {
 	let cls = self;
