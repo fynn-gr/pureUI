@@ -10,9 +10,14 @@ dialog {
 	box-shadow: 0 4px 32px black;
 	background-color: var(--properties-BG);
 	overflow: hidden;
+
 	&::backdrop {
-		backdrop-filter: blur(1px) saturate(0%);
-		-webkit-backdrop-filter: blur(1px) saturate(0%);
+		backdrop-filter: blur(2px);
+		-webkit-backdrop-filter: blur(1px);
+	}
+
+	&[open] {
+		display: grid;
 	}
 
 	.topbar.web-settings {

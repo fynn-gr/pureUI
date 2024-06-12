@@ -1,3 +1,5 @@
+import { emit } from "@tauri-apps/api/event";
+
 export function keyFromCode(code: string): string {
 	let table = {
 		KeyQ: "Q",
@@ -57,8 +59,8 @@ export function keyFromCode(code: string): string {
 	return table[code] ? table[code] : "-" + code + "-";
 }
 
-export function clickOutside(element, callbackFunction) {
-	function onClick(event) {
+export function clickOutside(element: HTMLElement, callbackFunction: Function) {
+	function onClick(event: any) {
 		if (!element.contains(event.target)) {
 			callbackFunction();
 		}
@@ -67,11 +69,15 @@ export function clickOutside(element, callbackFunction) {
 	document.body.addEventListener("click", onClick);
 
 	return {
-		update(newCallbackFunction) {
+		update(newCallbackFunction: Function) {
 			callbackFunction = newCallbackFunction;
 		},
 		destroy() {
 			document.body.removeEventListener("click", onClick);
 		},
 	};
+}
+
+export function usingTauri(): boolean {
+    return typeof window !== "undefined" && typeof window.__TAURI__ !== "undefined";
 }

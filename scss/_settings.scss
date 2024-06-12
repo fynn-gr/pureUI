@@ -400,7 +400,6 @@ main.win.settings {
 }
 
 main.web dialog.settings {
-	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: 28px 40px auto;
 	grid-template-areas:
