@@ -19,6 +19,15 @@ main.web {
 					font-weight: 600;
 				}
 
+				.save-indicator {
+					height: 40px;
+					line-height: 40px;
+					margin: 0;
+					font-size: 13px;
+					font-weight: 400;
+					opacity: 60%;
+				}
+
 				.app-menu {
 					.app-menu-btn {
 						height: 22px;

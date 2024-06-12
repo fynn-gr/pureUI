@@ -13,7 +13,7 @@ export let checked: string | null = null;
 	class="app-menu-item"
 	class:disabled
 	on:click={() => {
-		$Menu.handle(id)
+		$Menu.handle(id);
 	}}
 >
 	{#if checked == "true"}
