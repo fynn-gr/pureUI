@@ -27,7 +27,7 @@
 			font-weight: 700;
 
 			&.binded {
-				background-color: var(--secondary);
+				background-color: var(--accent);
 			}
 
 			&.selected {
@@ -81,7 +81,7 @@
 			.operator-name {
 				width: 300px;
 				font-weight: 800;
-				color: var(--secondary);
+				color: var(--accent);
 			}
 
 			.operator-key {
@@ -208,11 +208,11 @@ main.mac.settings {
 				background-color: var(--hover);
 
 				img {
-					filter: var(--secondary-filter);
+					filter: var(--accent-filter);
 				}
 
 				p {
-					color: var(--secondary);
+					color: var(--accent);
 				}
 			}
 
@@ -285,8 +285,8 @@ main.mac.settings {
 					inset: 3px 3px 3px auto;
 					width: 16px;
 					height: 16px;
-					background-color: var(--secondary);
-					box-shadow: 0 1px 3px color-mix(in hsl, var(--secondary), transparent);
+					background-color: var(--accent);
+					box-shadow: 0 1px 3px color-mix(in hsl, var(--accent), transparent);
 					border-radius: 4px;
 
 					img {
@@ -339,11 +339,11 @@ main.win.settings {
 				background-color: var(--hover);
 
 				img {
-					filter: var(--secondary-filter);
+					filter: var(--accent-filter);
 				}
 
 				p {
-					color: var(--secondary);
+					color: var(--accent);
 				}
 			}
 
@@ -445,11 +445,11 @@ main.web dialog.settings {
 				background-color: var(--hover);
 
 				img {
-					filter: var(--secondary-filter);
+					filter: var(--accent-filter);
 				}
 
 				p {
-					color: var(--secondary);
+					color: var(--accent);
 				}
 			}
 
@@ -521,8 +521,8 @@ main.web dialog.settings {
 					inset: 3px 3px 3px auto;
 					width: 16px;
 					height: 16px;
-					background-color: var(--secondary);
-					box-shadow: 0 1px 3px color-mix(in hsl, var(--secondary), transparent);
+					background-color: var(--accent);
+					box-shadow: 0 1px 3px color-mix(in hsl, var(--accent), transparent);
 					border-radius: 4px;
 
 					img {

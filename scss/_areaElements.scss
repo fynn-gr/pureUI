@@ -142,7 +142,6 @@ main.mac {
 
 	.nav-list {
 		padding: 10px;
-		padding-top: var(--topbar-height);
 
 		button.nav-item {
 			height: 28px;
@@ -163,7 +162,6 @@ main.mac {
 main.win {
 	.nav-list {
 		padding: 4px;
-		padding-top: var(--topbar-height);
 
 		button.nav-item {
 			position: relative;

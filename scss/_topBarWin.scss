@@ -116,6 +116,7 @@ main.win .topbar {
 		.topbar-container {
 			height: 44px;
 			gap: 6px;
+			padding-left: 6px;
 			background-color: var(--topbar-BG);
 			border-bottom: 1px solid rgb(65, 65, 65);
 			border-radius: 9px 9px 0px 0px;
@@ -316,11 +317,11 @@ main.win .topbar {
 				background-color: var(--hover);
 
 				img {
-					filter: var(--secondary-filter);
+					filter: var(--accent-filter);
 				}
 
 				p {
-					color: var(--secondary);
+					color: var(--accent);
 				}
 			}
 
