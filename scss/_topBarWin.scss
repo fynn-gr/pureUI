@@ -326,11 +326,25 @@ main.win .topbar {
 			&.attached {
 				.topbar-button {
 					width: 16px;
+
+					.arrow {
+						margin: 0;
+					}
 				}
 			}
 
 			.topbar-button {
-				
+				width: 48px;
+
+				img {
+					margin: 1px 1px;
+				}
+
+				.arrow {
+					width: 16px;
+					height: 30px;
+					margin: 0 0 0 -3px;
+				}
 			}
 
 			.dropdown {

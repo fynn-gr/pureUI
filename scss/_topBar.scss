@@ -212,12 +212,13 @@
 
 		.topbar-dropdown {
 			&.attached {
-				
 			}
 
 			.topbar-button {
 				color: var(--text);
 				//background-color: var(--hover);
+				display: flex;
+				flex-direction: row;
 			}
 
 			.dropdown {
