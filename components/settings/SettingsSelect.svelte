@@ -7,7 +7,6 @@ export let options: Array<selectionOption>;
 export let onChange = () => {};
 
 type selectionOption = { value: any; name: string };
-
 </script>
 
 <div class="option">

@@ -231,31 +231,6 @@ main.win .topbar {
 				}
 			}
 
-			.topbar-popover {
-				&.exposed {
-					.topbar-button {
-						background-color: var(--hover);
-					}
-				}
-
-				.popover {
-					padding: 8px 14px;
-					border-radius: 8px;
-					border: 1px solid rgb(26, 26, 26);
-					box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-
-					span {
-						height: 28px;
-
-						p {
-							line-height: 28px;
-							padding: 0 6px;
-							font-size: 13px;
-						}
-					}
-				}
-			}
-
 			.topbar-group {
 				height: 32px;
 				margin: 6px 0;
@@ -336,6 +311,58 @@ main.win .topbar {
 				line-height: 36px;
 				font-size: 12px;
 				font-weight: 600;
+			}
+		}
+	}
+
+	.topbar-container {
+		.topbar-dropdown {
+			&.exposed {
+				.topbar-button {
+					background-color: var(--hover);
+				}
+			}
+
+			&.attached {
+				.topbar-button {
+					width: 16px;
+				}
+			}
+
+			.topbar-button {
+				
+			}
+
+			.dropdown {
+				gap: 4px;
+				padding: 4px 0;
+				border-radius: 8px;
+				border: 1px solid rgb(26, 26, 26);
+				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+
+				.item {
+					display: flex;
+					flex-direction: row;
+					justify-content: left;
+					gap: 8px;
+					height: 28px;
+					margin: 0 4px;
+					border-radius: 5px;
+					font-size: 14px;
+
+					img {
+						width: 28px;
+						height: 28px;
+						filter: invert(1);
+					}
+
+					.name {
+						margin: 0 12px;
+						flex: 1;
+						line-height: 28px;
+						font-weight: 500;
+					}
+				}
 			}
 		}
 	}

@@ -1,15 +1,14 @@
 <script lang="ts">
 import { onMount } from "svelte";
-import { uiPlatform } from "@/ts/Stores";
 import { clickOutside } from "@/pureUI/modules/utils";
 
-export let icon: string;
+export let icon: string | null;
 export let toolTip: string;
 export let disabled = false;
 
 let self: HTMLElement;
 let topBarType;
-let topBarShort;
+let topBarShort: string;
 let exposed = false;
 
 onMount(() => {
@@ -29,7 +28,8 @@ onMount(() => {
 </script>
 
 <div
-	class="topbar-popover"
+	class="topbar-dropdown"
+	class:attached={icon == null}
 	class:exposed
 	use:clickOutside={() => {
 		exposed = false;
@@ -46,14 +46,17 @@ onMount(() => {
 		{disabled}
 		title={toolTip}
 	>
-		<img
-			src={topBarShort ? `./icons/${topBarShort}/${icon}.svg` : ""}
-			alt={toolTip}
-		/>
+		{#if icon != null}
+			<img
+				src={topBarShort ? `./icons/${topBarShort}/${icon}.svg` : ""}
+				alt={toolTip}
+			/>
+		{/if}
+		<img src="./icons/std/dropdown_arrow.svg" alt="" class="arrow" />
 	</button>
 
 	{#if exposed}
-		<div class="popover">
+		<div class="dropdown">
 			<slot />
 		</div>
 	{/if}

@@ -1,12 +1,11 @@
 <script lang="ts">
 import { onMount } from "svelte";
-import { uiPlatform } from "@/ts/Stores";
 
 export let icon: string;
-export let iconActive: string = null;
+export let iconActive: string | null = null;
 export let active: boolean;
 export let onChange = (active: boolean) => {};
-export let activeColor: string = null;
+export let activeColor: string | null = null;
 export let toolTip: string;
 export let disabled = false;
 
