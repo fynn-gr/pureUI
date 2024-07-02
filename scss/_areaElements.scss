@@ -76,16 +76,6 @@
 		color: var(--text);
 		background-color: transparent;
 
-		&.active img {
-			filter: var(--icon-filter);
-			-webkit-filter: var(--icon-filter);
-		}
-
-		img {
-			filter: var(--icon-filter-muted);
-			-webkit-filter: var(--icon-filter-muted);
-		}
-
 		p {
 			color: var(--text);
 			text-align: left;
@@ -163,6 +153,10 @@ main.mac {
 			padding-left: 4px;
 			font-weight: 400;
 			opacity: 60%;
+
+			&:first-of-type {
+				margin-top: 0;
+			}
 		}
 
 		.nav-item {
@@ -171,6 +165,16 @@ main.mac {
 
 			&.active {
 				background-color: var(--accent);
+
+				img {
+					filter: var(--icon-filter);
+					-webkit-filter: var(--icon-filter);
+				}
+			}
+	
+			img {
+				filter: var(--icon-filter-muted);
+				-webkit-filter: var(--icon-filter-muted);
 			}
 
 			.icon {
@@ -180,7 +184,7 @@ main.mac {
 			}
 
 			p {
-				margin: 0 0 0 6px;
+				margin: 0 0 0 0px;
 				line-height: 28px;
 				font-size: 13px;
 				font-weight: 500;
@@ -209,6 +213,10 @@ main.mac {
 			.content {
 				.nav-item {
 					padding-left: 14px;
+
+					.icon {
+						margin-left: 15px;
+					}
 				}
 			}
 		}
@@ -219,29 +227,91 @@ main.win {
 	.nav-list {
 		padding: 4px;
 
-		button.nav-item {
+		.category {
+			height: 11px;
+			margin: 18px 0 4px 0;
+			line-height: 11px;
+			font-size: 11rem;
+			padding-left: 4px;
+			font-weight: 400;
+			opacity: 60%;
+
+			&:first-of-type {
+				margin-top: 0;
+			}
+		}
+
+		.nav-item {
 			position: relative;
-			height: 36px;
+			height: 28px;
+			border-radius: 6px;
 
 			&.active {
 				background-color: var(--hover);
 
 				&::after {
-					content: "";
+					//content: "";
 					position: absolute;
 					left: 0;
-					top: 10px;
+					top: 6px;
 					width: 3px;
 					height: 16px;
 					background-color: var(--accent);
 					border-radius: 1.5px;
 				}
+
+				.icon {
+					filter: var(--accent-filter);
+					-webkit-filter: var(--accent-filter);
+				}
+			}
+	
+			img {
+				filter: var(--icon-filter-muted);
+				-webkit-filter: var(--icon-filter-muted);
+			}
+
+			.icon {
+				width: 30px;
+				height: 30px;
+				margin: -1px;
 			}
 
 			p {
-				margin: 0 0 0 10px;
-				line-height: 36px;
+				margin: 0 0 0 0px;
+				line-height: 28px;
 				font-size: 14px;
+				font-weight: 400;
+			}
+		}
+
+		.nav-folder {
+			&.exposed {
+				.nav-item .expander img {
+					rotate: 0deg;
+				}
+			}
+
+			.nav-item {
+				.expander {
+					width: 28px;
+					height: 28px;
+					background-color: transparent;
+
+					img {
+						rotate: -90deg;
+					}
+				}
+			}
+
+			.content {
+				.nav-item {
+					padding-left: 14px;
+
+					.icon {
+						margin-left: 15px;
+					}
+				}
 			}
 		}
 	}
