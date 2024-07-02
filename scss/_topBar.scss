@@ -47,7 +47,7 @@
 				background-color: transparent;
 
 				img {
-					filter: var(--tool-icon-color);
+					filter: var(--icon-filter);
 				}
 
 				&:hover {
@@ -81,7 +81,7 @@
 				background-color: transparent;
 
 				img {
-					filter: var(--tool-icon-color);
+					filter: var(--icon-filter);
 				}
 
 				&:hover {
