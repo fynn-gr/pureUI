@@ -211,6 +211,8 @@
 		}
 
 		.topbar-dropdown {
+			position: relative;
+
 			&.attached {
 			}
 
@@ -223,6 +225,7 @@
 
 			.dropdown {
 				position: absolute;
+				right: 0;
 				z-index: 400;
 				display: flex;
 				flex-direction: column;
@@ -241,11 +244,12 @@
 
 					img {
 						display: block;
-						margin-right: -12px;
 					}
 
 					.name {
 						display: block;
+						overflow: hidden;
+						width: max-content;
 					}
 				}
 			}

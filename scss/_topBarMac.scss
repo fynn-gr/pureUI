@@ -162,10 +162,7 @@ main.mac .topbar {
 				border: 1px solid rgba(128, 128, 128, 0.504);
 
 				.item {
-					display: flex;
-					flex-direction: row;
 					justify-content: left;
-					gap: 8px;
 					height: 22px;
 					line-height: 22px;
 					padding: 0 5px;
@@ -177,8 +174,16 @@ main.mac .topbar {
 					}
 
 					img {
-						width: 28px;
-						height: 28px;
+						width: 22px;
+						height: 22px;
+						margin-left: -5px;
+						filter: var(--icon-filter);
+						-webkit-filter: var(--icon-filter);
+					}
+
+					.name {
+						line-height: 22px;
+						height: 22px;
 					}
 				}
 			}

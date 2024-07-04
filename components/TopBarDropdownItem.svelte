@@ -7,7 +7,7 @@ export let onChange;
 <button
 	class="item"
 	on:click={() => {
-		checked = !checked;
+		//checked = !checked;
 		onChange();
 	}}
 >
