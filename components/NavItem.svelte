@@ -10,7 +10,7 @@ export let active: boolean;
 	class:active
 	on:click={() => {
 		active = !active;
-        onClick();
+		onClick();
 	}}
 >
 	{#if icon}

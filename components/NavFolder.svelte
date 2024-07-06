@@ -7,14 +7,18 @@ export let exposed: boolean = false;
 </script>
 
 <div class="nav-folder" class:exposed>
-	<button class="nav-item" class:active on:click={() => {
-        active = !active;
-        onClick();
-    }}>
+	<button
+		class="nav-item"
+		class:active
+		on:click={() => {
+			active = !active;
+			onClick();
+		}}
+	>
 		<button
 			class="expander"
 			on:click={e => {
-                e.stopPropagation();
+				e.stopPropagation();
 				exposed = !exposed;
 			}}
 		>

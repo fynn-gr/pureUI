@@ -311,12 +311,15 @@ main.win.settings {
 	.title-bar {
 		justify-content: space-between;
 		background-color: var(--properties-BG);
-	}
 
-	.window-title {
-		line-height: 32px;
-		padding-left: 8px;
-		font-size: 12px;
+		.topbar-container {
+			.window-title {
+				line-height: 32px;
+				flex: 1;
+				padding-left: 8px;
+				font-size: 12px;
+			}
+		}
 	}
 
 	.tabs {
