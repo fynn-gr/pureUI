@@ -30,15 +30,15 @@ onMount(() => {});
 	{#if exposed}
 		<div class="popover">
 			<a href="https://github.com/Fynn-G">
-				<img src="./icons/web/home.svg" alt="" />
+				<img class="svg-icon" src="./icons/web/home.svg" alt="" />
 				<p>Fynn Gr.</p>
 			</a>
 			<a href="">
-				<img src="./icons/web/apps.svg" alt="" />
+				<img class="svg-icon" src="./icons/web/apps.svg" alt="" />
 				<p>All Tools</p>
 			</a>
 			<a href="" class:active={active == "stagetune"}>
-				<img src="./icons/web/stagetune.svg" alt="" />
+				<img src="./icons/web/stagetune.png" alt="" />
 				<p>Stragetune</p>
 				<p class="tag" style="background-color: #FF2D55;">Beta</p>
 			</a>

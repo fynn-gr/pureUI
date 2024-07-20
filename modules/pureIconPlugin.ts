@@ -30,7 +30,10 @@ export function processIcons() {
 						const newTargetDir = path.join(targetDir, file);
 						findIconFiles(filePath, newTargetDir);
 					}
-				} else if (path.extname(file) === ".svg") {
+				} else if (
+					path.extname(file) === ".svg" ||
+					path.extname(file) === ".png"
+				) {
 					// Copy the SVG files to the target directory preserving the subdirectories
 					const targetFile = path.join(targetDir, file);
 					fs.copyFileSync(filePath, targetFile);
