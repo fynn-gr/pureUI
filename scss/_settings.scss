@@ -163,6 +163,7 @@
 }
 
 main.mac.settings {
+	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: 28px 52px auto;
 	grid-template-areas:
@@ -221,12 +222,13 @@ main.mac.settings {
 				height: 22px;
 				width: 22px;
 				margin: 3px auto 0 auto;
-				filter: invert(90%);
+				filter: var(--icon-filter-muted);
 			}
 
 			p {
 				margin-bottom: 3px;
 				padding: 0 8px;
+				color: var(--text-muted);
 				line-height: 14px;
 				font-size: 11px;
 				font-weight: 700;
@@ -420,6 +422,7 @@ main.web dialog.settings {
 		inset: 0 0 auto 0;
 		height: 26px;
 		line-height: 26px;
+		color: var(--text);
 		text-align: center;
 		font-size: 13px;
 		font-weight: 700;
@@ -461,12 +464,13 @@ main.web dialog.settings {
 				height: 22px;
 				width: 22px;
 				margin: 4px;
-				filter: invert(90%);
+				filter: var(--icon-filter);
 			}
 
 			p {
 				padding: 0 8px 0 0;
 				line-height: 30px;
+				color: var(--text-muted);
 				font-size: 11px;
 				font-weight: 700;
 			}
@@ -477,6 +481,7 @@ main.web dialog.settings {
 		max-height: 600px;
 
 		.content {
+			color: var(--text);
 			max-height: 600px;
 			overflow-y: scroll;
 			background-color: var(--properties-BG);

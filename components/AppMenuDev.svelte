@@ -10,6 +10,9 @@ import AppMenu from "./AppMenu.svelte";
 			$uiPlatform = "mac";
 		}}
 	>
+		{#if $uiPlatform == "mac"}
+			<img src="./icons/menu_win/checked.svg" alt="" />
+		{/if}
 		<p class="name">mac</p>
 	</button>
 	<button
@@ -18,6 +21,9 @@ import AppMenu from "./AppMenu.svelte";
 			$uiPlatform = "win";
 		}}
 	>
+		{#if $uiPlatform == "win"}
+			<img src="./icons/menu_win/checked.svg" alt="" />
+		{/if}
 		<p class="name">win</p>
 	</button>
 	<button
@@ -26,6 +32,9 @@ import AppMenu from "./AppMenu.svelte";
 			$uiPlatform = "web";
 		}}
 	>
+		{#if $uiPlatform == "web"}
+			<img src="./icons/menu_win/checked.svg" alt="" />
+		{/if}
 		<p class="name">web</p>
 	</button>
 	<div class="seperator" />
@@ -35,6 +44,9 @@ import AppMenu from "./AppMenu.svelte";
 			$theme = "dark";
 		}}
 	>
+		{#if $theme == "dark"}
+			<img src="./icons/menu_win/checked.svg" alt="" />
+		{/if}
 		<p class="name">dark</p>
 	</button>
 	<button
@@ -43,6 +55,11 @@ import AppMenu from "./AppMenu.svelte";
 			$theme = "light";
 		}}
 	>
+		{#if $theme == "light"}
+			<img src="./icons/menu_win/checked.svg" alt="" />
+		{/if}
 		<p class="name">light</p>
 	</button>
+
+	<slot />
 </AppMenu>
