@@ -33,7 +33,6 @@ main.dark {
 
 	&.web {
 		--topbar-BG: rgb(29, 29, 29);
-		--app-menu-contentcBG: rgba(44, 44, 44, 0.8);
 	}
 
 	--sys-blue: rgb(0, 112, 245);
@@ -69,7 +68,7 @@ main.light {
 	--text-muted: rgb(37, 37, 37);
 	--text-shadow: rgba(20, 20, 20, 0);
 
-	--app-menu-content-BG: rgb(44, 44, 44);
+	--app-menu-content-BG: rgb(248, 248, 248);
 
 	//elements
 	--input-field: rgb(84, 84, 84);
@@ -84,7 +83,6 @@ main.light {
 
 	&.web {
 		--topbar-BG: rgb(255, 255, 255);
-		--app-menu-content-BG: rgba(44, 44, 44, 0.6);
 	}
 
 	--sys-blue: rgb(0, 112, 245);

@@ -31,11 +31,30 @@ main.mac .topbar {
 				padding: 14px;
 			}
 
+			.app-menu {
+				.app-menu-btn {
+					height: 22px;
+					width: 40px;
+					margin: 8px 0 8px 0;
+					padding: 0;
+					border-radius: 6px;
+				}
+			}
+
 			.window-title {
 				height: 38px;
 				line-height: 39px;
 				font-size: 13px;
 				font-weight: 600;
+			}
+
+			.save-indicator {
+				height: 38px;
+				line-height: 38px;
+				margin: 0;
+				font-size: 13px;
+				font-weight: 400;
+				opacity: 60%;
 			}
 
 			.topbar-button {
@@ -193,9 +212,7 @@ main.mac .topbar {
 			.menu-content {
 				padding: 5px;
 				border-radius: 6px;
-				backdrop-filter: blur(40px);
-				-webkit-backdrop-filter: blur(40px);
-				background-color: rgba(21, 21, 21, 0.6);
+				background-color: var(--app-menu-content-BG);
 				border: 1px solid rgba(128, 128, 128, 0.504);
 
 				.app-menu-item {
@@ -205,12 +222,19 @@ main.mac .topbar {
 					gap: 8px;
 					height: 22px;
 					line-height: 22px;
-					padding: 0 5px;
+					padding: 0 6px 0 0;
 					border-radius: 5px;
 					font-size: 14px;
 
 					&:hover {
 						background-color: var(--accent);
+					}
+
+					img {
+						width: 22px;
+						height: 22px;
+						margin-right: -6px;
+						filter: var(--icon-filter);
 					}
 				}
 
