@@ -303,6 +303,7 @@ main.mac.settings {
 }
 
 main.win.settings {
+	display: grid;
 	grid-template-columns: 200px 1fr;
 	grid-template-rows: 32px auto;
 	grid-template-areas:
