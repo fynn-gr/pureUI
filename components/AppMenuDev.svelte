@@ -1,6 +1,7 @@
 <script lang="ts">
 import { uiPlatform, theme } from "@/ts/Stores";
 import AppMenu from "./AppMenu.svelte";
+import { saveSettings } from "@/ts/SaveLoad";
 </script>
 
 <AppMenu name="Dev">
@@ -8,6 +9,7 @@ import AppMenu from "./AppMenu.svelte";
 		class="app-menu-item"
 		on:click={() => {
 			$uiPlatform = "mac";
+			saveSettings();
 		}}
 	>
 		{#if $uiPlatform == "mac"}
@@ -19,6 +21,7 @@ import AppMenu from "./AppMenu.svelte";
 		class="app-menu-item"
 		on:click={() => {
 			$uiPlatform = "win";
+			saveSettings();
 		}}
 	>
 		{#if $uiPlatform == "win"}
@@ -30,6 +33,7 @@ import AppMenu from "./AppMenu.svelte";
 		class="app-menu-item"
 		on:click={() => {
 			$uiPlatform = "web";
+			saveSettings();
 		}}
 	>
 		{#if $uiPlatform == "web"}
