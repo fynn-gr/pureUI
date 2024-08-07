@@ -8,6 +8,7 @@ main.dark {
 
 	--icon-filter: invert(100%);
 	--icon-filter-muted: invert(70%);
+	--icon-filter-invert: invert(10%);
 
 	//area
 	--panel: rgb(60, 60, 60);
@@ -58,6 +59,7 @@ main.light {
 
 	--icon-filter: invert(10%);
 	--icon-filter-muted: invert(20%);
+	--icon-filter-invert: invert(100%);
 
 	//area
 	--panel: rgb(60, 60, 60);
