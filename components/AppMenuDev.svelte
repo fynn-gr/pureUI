@@ -5,7 +5,6 @@ import { saveSettings } from "@/ts/SaveLoad";
 
 export let platforms = ["mac", "win", "web"];
 export let themes = true;
-
 </script>
 
 <AppMenu name="Dev">

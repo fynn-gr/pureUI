@@ -49,7 +49,7 @@ onMount(() => {
 	}}
 	{disabled}
 	title={toolTip}
-	style={`background-color: ${active ? activeColor : "none"};`}
+	style={`background-color: ${active ? activeColor : "transparent"};`}
 >
 	<img src={active ? iconPathActive : iconPath} alt={toolTip} />
 </button>

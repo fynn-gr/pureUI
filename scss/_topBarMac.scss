@@ -147,6 +147,10 @@ main.mac .topbar {
 	}
 
 	.topbar-container {
+		.topbar-group {
+			gap: 1px;
+		}
+
 		.topbar-dropdown {
 			&.attached {
 				.topbar-button {
