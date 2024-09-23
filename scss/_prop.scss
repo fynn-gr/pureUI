@@ -123,9 +123,10 @@
 
 .prop-number {
 	position: relative;
-	height: 24px;
-	min-width: 50px;
-	border-radius: 5px;
+	display: flex;
+	flex-direction: row;
+	gap: 2px;
+	height: 20px;
 
 	&:has(:focus) {
 		input {
@@ -141,13 +142,13 @@
 		-webkit-appearance: none;
 		appearance: none;
 		opacity: 0%;
-		position: absolute;
-		inset: 0;
 		color: var(--text);
 		background-color: transparent;
-		line-height: 24px;
+		line-height: 20px;
 		font-size: 14px;
 		text-align: center;
+		border-radius: 6px;
+		border: 1px solid gray;
 	}
 
 	input::-webkit-outer-spin-button,
@@ -158,12 +159,42 @@
 
 	.display {
 		pointer-events: none;
-		opacity: 100%;
 		position: absolute;
-		inset: 0;
+		opacity: 100%;
+		inset: 0 17px 0 0;
 		color: var(--text);
-		line-height: 24px;
+		color: blue;
+		line-height: 20px;
 		font-size: 14px;
 		text-align: center;
+		border-radius: 6px;
+		border: 1px solid gray;
+	}
+
+	span {
+		height: 20px;
+		margin: auto 2px auto auto;
+		display: flex;
+		flex-direction: column;
+
+		button {
+			height: 10px;
+			width: 13px;
+			background: linear-gradient(to bottom, rgb(128, 128, 128) 100%, rgb(46, 46, 46) 80%);
+			border-radius: 6px 6px 0 0;
+
+			.arrow-icon {
+				pointer-events: none;
+				width: 13px;
+				height: 10px;
+				margin: 0;
+				filter: invert(1);
+			}
+
+			&:last-child {
+				background: linear-gradient(to bottom, rgb(46, 46, 46) 0%, rgb(128, 128, 128) 20%);
+				border-radius: 0 0 6px 6px;
+			}
+		}
 	}
 }
