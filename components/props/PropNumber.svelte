@@ -11,10 +11,15 @@ export let disabled = false;
 export let onFocus = () => {};
 export let onBlur = () => {};
 export let title: string;
+let dispValue: number = 0;
 
 function handleChange() {}
 
-$: dispValue = Math.round(value * decimalDisplay) / decimalDisplay
+$: if (decimalDisplay == 0) {
+	dispValue = Math.round(value);
+} else {
+	dispValue = Math.round(value * decimalDisplay) / decimalDisplay;
+}
 </script>
 
 <div class="prop-number">
