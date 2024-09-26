@@ -39,16 +39,16 @@ $: if (decimalDisplay == 0) {
 		<button
 			on:click={() => {
 				value = value + step;
-			}}>
-				<img class="arrow-icon" src="./icons/std/number_arrow_up.svg" alt="">
-			</button
+			}}
 		>
+			<img class="arrow-icon" src="./icons/std/number_arrow_up.svg" alt="" />
+		</button>
 		<button
 			on:click={() => {
 				value = value - step;
-			}}>
-				<img class="arrow-icon" src="./icons/std/number_arrow_down.svg" alt="">
-			</button
+			}}
 		>
+			<img class="arrow-icon" src="./icons/std/number_arrow_down.svg" alt="" />
+		</button>
 	</span>
 </div>
