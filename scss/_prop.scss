@@ -178,6 +178,7 @@
 		flex-direction: column;
 
 		button {
+			position: relative;
 			height: 10px;
 			width: 13px;
 			background: linear-gradient(
@@ -188,6 +189,8 @@
 			border-radius: 6px 6px 0 0;
 
 			.arrow-icon {
+				position: absolute;
+				inset: 0;
 				pointer-events: none;
 				width: 13px;
 				height: 10px;
