@@ -1,6 +1,7 @@
 <script lang="ts">
 import { onMount } from "svelte";
 
+export let id: string = "btn";
 export let icon: string;
 export let iconActive: string | null = null;
 export let active: boolean;
@@ -41,6 +42,7 @@ onMount(() => {
 
 <button
 	bind:this={self}
+	id={`btn-${id}`}
 	class="topbar-button"
 	class:disabled
 	on:click={() => {

@@ -1,6 +1,7 @@
 <script lang="ts">
 import { onMount } from "svelte";
 
+export let id: string = "btn";
 export let icon: string;
 export let onClick: Function;
 export let toolTip: string;
@@ -8,7 +9,7 @@ export let disabled = false;
 
 let self: HTMLElement;
 let topBarType;
-let topBarShort;
+let topBarShort: string;
 
 onMount(() => {
 	let cls = self;
@@ -27,6 +28,7 @@ onMount(() => {
 </script>
 
 <button
+	id={`btn-${id}`}
 	bind:this={self}
 	class="topbar-button"
 	class:disabled
