@@ -316,6 +316,8 @@ main.win.settings {
 		background-color: var(--properties-BG);
 
 		.topbar-container {
+			width: 100%;
+			
 			.window-title {
 				line-height: 32px;
 				flex: 1;
