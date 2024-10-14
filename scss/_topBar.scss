@@ -100,12 +100,6 @@
 		}
 
 		.app-menu {
-			&:hover {
-				.menu-content {
-					display: flex;
-				}
-			}
-
 			.app-menu-btn {
 				color: var(--text);
 				background-color: var(--hover);
@@ -113,7 +107,7 @@
 
 			.menu-content {
 				position: absolute;
-				display: none;
+				display: flex;
 				z-index: 400;
 				flex-direction: column;
 				background-color: var(--app-menu-content-BG);
