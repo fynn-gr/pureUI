@@ -11,9 +11,9 @@ let exposed = false;
 	on:click={e => {
 		exposed = !exposed;
 	}}
-  use:clickOutside={() => {
-    exposed = false;
-  }}
+	use:clickOutside={() => {
+		exposed = false;
+	}}
 >
 	<slot />
 </div>

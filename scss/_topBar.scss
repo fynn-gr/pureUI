@@ -99,73 +99,74 @@
 			pointer-events: none;
 		}
 
-		.menu-container {
-			display: flex;
-			flex-direction: row;
-
-			.app-menu {
-				.app-menu-btn {
-					color: var(--text);
-					background-color: var(--hover);
-				}
-
+		.app-menu {
+			&:hover {
 				.menu-content {
-					position: absolute;
-					display: none;
-					z-index: 400;
-					flex-direction: column;
-					background-color: var(--app-menu-content-BG);
+					display: flex;
+				}
+			}
 
-					&:has(.app-menu-item > img) {
-						.app-menu-item:not(:has(img)) {
-							&::before {
-								content: "";
-								width: 28px;
-								margin-right: -12px;
-							}
-						}
-					}
+			.app-menu-btn {
+				color: var(--text);
+				background-color: var(--hover);
+			}
 
-					.app-menu-item {
-						display: flex;
-						flex-direction: row;
-						text-align: left;
-						color: var(--text);
-						background-color: transparent;
+			.menu-content {
+				position: absolute;
+				display: none;
+				z-index: 400;
+				flex-direction: column;
+				background-color: var(--app-menu-content-BG);
 
-						&:hover {
-							background-color: var(--hover);
-						}
-
-						&.disabled {
-							opacity: 50%;
-						}
-
-						img {
-							display: block;
+				&:has(.app-menu-item > img) {
+					.app-menu-item:not(:has(img)) {
+						&::before {
+							content: "";
+							width: 28px;
 							margin-right: -12px;
 						}
-
-						.name {
-							display: block;
-						}
-
-						.accelerator {
-							display: block;
-						}
 					}
+				}
 
-					.sub-menu {
-						.sub-menu-content {
-							position: absolute;
-						}
-					}
+				.app-menu-item {
+					display: flex;
+					flex-direction: row;
+					text-align: left;
+					color: var(--text);
+					background-color: transparent;
 
-					.seperator {
-						margin: 0;
-						height: 1px;
+					&:hover {
 						background-color: var(--hover);
 					}
+
+					&.disabled {
+						opacity: 50%;
+					}
+
+					img {
+						display: block;
+						margin-right: -12px;
+					}
+
+					.name {
+						display: block;
+					}
+
+					.accelerator {
+						display: block;
+					}
+				}
+
+				.sub-menu {
+					.sub-menu-content {
+						position: absolute;
+					}
+				}
+
+				.seperator {
+					margin: 0;
+					height: 1px;
+					background-color: var(--hover);
 				}
 			}
 		}
