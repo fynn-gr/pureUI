@@ -1,5 +1,5 @@
 <script lang="ts">
-import { menuHandler } from "@/ts/Stores";
+import { Menu } from "@/ts/Stores";
 
 export let id: string;
 export let name: string;
@@ -13,7 +13,7 @@ export let checked: string | null = null;
 	class="app-menu-item"
 	class:disabled
 	on:click={() => {
-		$menuHandler.handle(id);
+		$Menu.handle(id);
 	}}
 >
 	{#if checked == "true"}
