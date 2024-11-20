@@ -3,6 +3,7 @@ import { onMount } from "svelte";
 import { clickOutside } from "@/pureUI/modules/utils";
 
 export let active: string;
+export let name: string;
 let self: HTMLElement;
 let exposed = false;
 
@@ -24,21 +25,21 @@ onMount(() => {});
 		}}
 		title={"Main Menu"}
 	>
-		<p>snug<b>Refsheet</b></p>
+		<p>snug<b>{name}</b></p>
 	</button>
 
 	{#if exposed}
 		<div class="popover">
 			<a href="https://github.com/Fynn-G">
-				<img src="./icons/web/home.svg" alt="" />
+				<img class="svg-icon" src="./icons/web/home.svg" alt="" />
 				<p>Fynn Gr.</p>
 			</a>
-			<a href="">
-				<img src="./icons/web/apps.svg" alt="" />
+			<a href="https://github.com/Fynn-gr">
+				<img class="svg-icon" src="./icons/web/apps.svg" alt="" />
 				<p>All Tools</p>
 			</a>
 			<a href="" class:active={active == "stagetune"}>
-				<img src="./icons/web/stagetune.svg" alt="" />
+				<img src="./icons/web/stagetune.png" alt="" />
 				<p>Stragetune</p>
 				<p class="tag" style="background-color: #FF2D55;">Beta</p>
 			</a>
@@ -51,6 +52,11 @@ onMount(() => {});
 				<img src="./icons/web/refsheet.svg" alt="" />
 				<p>Refsheet</p>
 				<p class="tag" style="background-color: #4F4F4F;">Alpha</p>
+			</a>
+			<a href="" class:active={active == "timeless"}>
+				<img src="./icons/web/timeless.svg" alt="" />
+				<p>Timeless</p>
+				<p class="tag" style="background-color: #00C7BE;">Alpha</p>
 			</a>
 		</div>
 	{/if}

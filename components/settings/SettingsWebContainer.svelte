@@ -1,6 +1,9 @@
 <script lang="ts">
 import SettingsContent from "@/lib/SettingsContent.svelte";
 import "@/pureUI/scss/_settingsWebContainer.scss";
+import { settings } from "@/ts/Stores";
+
+function onChange() {}
 </script>
 
 <dialog class="settings">
@@ -17,5 +20,5 @@ import "@/pureUI/scss/_settingsWebContainer.scss";
 		</div>
 	</div>
 
-	<SettingsContent />
+	<SettingsContent {settings} {onChange} />
 </dialog>

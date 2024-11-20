@@ -27,45 +27,6 @@ main.win .topbar {
 					margin: 5px 0;
 					border-radius: 5px;
 				}
-
-				.menu-content {
-					gap: 4px;
-					padding: 4px 0;
-					border-radius: 8px;
-					border: 1px solid rgb(26, 26, 26);
-					box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-
-					.app-menu-item {
-						display: flex;
-						flex-direction: row;
-						justify-content: left;
-						gap: 8px;
-						height: 28px;
-						margin: 0 4px;
-						border-radius: 5px;
-						font-size: 14px;
-
-						img {
-							width: 28px;
-							height: 28px;
-							filter: invert(1);
-						}
-
-						.name {
-							margin: 0 12px;
-							flex: 1;
-							line-height: 28px;
-							font-weight: 500;
-						}
-
-						.accelerator {
-							margin-right: 12px;
-							opacity: 50%;
-							line-height: 28px;
-							font-weight: 700;
-						}
-					}
-				}
 			}
 
 			.window-title {
@@ -73,6 +34,15 @@ main.win .topbar {
 				line-height: 32px;
 				font-size: 12px;
 				font-weight: 400;
+			}
+
+			.save-indicator {
+				height: 32px;
+				line-height: 32px;
+				margin: 0;
+				font-size: 12px;
+				font-weight: 400;
+				opacity: 60%;
 			}
 
 			.topbar-button {
@@ -127,45 +97,6 @@ main.win .topbar {
 					padding: 0 12px;
 					margin: 6px 0;
 					border-radius: 5px;
-				}
-
-				.menu-content {
-					gap: 4px;
-					padding: 4px 0;
-					border-radius: 8px;
-					border: 1px solid rgb(26, 26, 26);
-					box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-
-					.app-menu-item {
-						display: flex;
-						flex-direction: row;
-						justify-content: left;
-						gap: 8px;
-						height: 28px;
-						margin: 0 4px;
-						border-radius: 5px;
-						font-size: 14px;
-
-						img {
-							width: 28px;
-							height: 28px;
-							filter: invert(1);
-						}
-
-						.name {
-							margin: 0 12px;
-							flex: 1;
-							line-height: 28px;
-							font-weight: 500;
-						}
-
-						.accelerator {
-							margin-right: 12px;
-							opacity: 50%;
-							line-height: 28px;
-							font-weight: 700;
-						}
-					}
 				}
 			}
 
@@ -258,61 +189,46 @@ main.win .topbar {
 		}
 	}
 
-	// &.tabbar {
-	// 	height: 80px;
-	// 	gap: 1px;
-
-	// 	.title {
-	// 		position: fixed;
-	// 		inset: 0 0 auto 0;
-	// 		height: 36px;
-	// 		line-height: 36px;
-	// 		text-align: center;
-	// 		font-size: 14px;
-	// 		font-weight: 700;
-	// 	}
-
-	// 	.tab {
-	// 		display: flex;
-	// 		flex-direction: row;
-	// 		gap: 6px;
-	// 		height: 36px;
-	// 		margin: auto auto 7px auto;
-	// 		padding: 0 7px;
-	// 		border-radius: 6px;
-
-	// 		&:hover {
-	// 			background-color: var(--hover);
-	// 		}
-
-	// 		&.active {
-	// 			background-color: var(--hover);
-
-	// 			img {
-	// 				filter: var(--accent-filter);
-	// 			}
-
-	// 			p {
-	// 				color: var(--accent);
-	// 			}
-	// 		}
-
-	// 		img {
-	// 			height: 22px;
-	// 			width: 22px;
-	// 			margin: 7px 0;
-	// 			filter: invert(90%);
-	// 		}
-
-	// 		p {
-	// 			line-height: 36px;
-	// 			font-size: 12px;
-	// 			font-weight: 600;
-	// 		}
-	// 	}
-	// }
-
 	.topbar-container {
+		.menu-content {
+			gap: 4px;
+			padding: 4px 0;
+			border-radius: 8px;
+			border: 1px solid rgb(26, 26, 26);
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+
+			.app-menu-item {
+				display: flex;
+				flex-direction: row;
+				justify-content: left;
+				gap: 8px;
+				height: 28px;
+				margin: 0 4px;
+				border-radius: 5px;
+				font-size: 14px;
+
+				img {
+					width: 28px;
+					height: 28px;
+					filter: var(--icon-filter);
+				}
+
+				.name {
+					margin: 0 12px;
+					flex: 1;
+					line-height: 28px;
+					font-weight: 500;
+				}
+
+				.accelerator {
+					margin-right: 12px;
+					opacity: 50%;
+					line-height: 28px;
+					font-weight: 700;
+				}
+			}
+		}
+
 		.topbar-dropdown {
 			&.exposed {
 				.topbar-button {

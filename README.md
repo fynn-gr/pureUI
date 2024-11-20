@@ -1,18 +1,18 @@
-# polychrome UI
+# pureUI
 
-Scss and svelte component libary for desctop and web applications
+Scss and svelte component libary for desktop and web applications
 
 ## Contents
 
 - Svelte components for native window elements and common ui elements
 - Scss styles for macOS, Windows and for website usage
-- Icon libary with svg's for different usecases
-- Vite plugin to build icons into public folder
+- Icon libary with svg's
+- Vite plugin to build icons
 - Font files
 
 ## Usage
 
-Add polychrome UI as submodule to your project in the src directory
+Add pureUI as submodule to your project in the src directory
 
 ```
 git submodule add https://github.com/fynn-g/pureUI.git

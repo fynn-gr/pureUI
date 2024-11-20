@@ -8,6 +8,7 @@ main.dark {
 
 	--icon-filter: invert(100%);
 	--icon-filter-muted: invert(70%);
+	--icon-filter-invert: invert(10%);
 
 	//area
 	--panel: rgb(60, 60, 60);
@@ -15,6 +16,7 @@ main.dark {
 	--panel3: rgb(30, 30, 30);
 
 	--text: rgb(238, 238, 238);
+	--text-muted: rgb(182, 182, 182);
 	--text-shadow: rgb(20, 20, 20);
 
 	--app-menu-content-BG: rgb(44, 44, 44);
@@ -32,7 +34,6 @@ main.dark {
 
 	&.web {
 		--topbar-BG: rgb(29, 29, 29);
-		--app-menu-contentcBG: rgba(44, 44, 44, 0.8);
 	}
 
 	--sys-blue: rgb(0, 112, 245);
@@ -56,8 +57,9 @@ main.light {
 	--properties-BG: rgb(255, 255, 255);
 	--grid-gap: rgb(161, 161, 161);
 
-	--icon-filter: invert(30%);
-	--icon-filter-muted: invert(40%);
+	--icon-filter: invert(10%);
+	--icon-filter-muted: invert(20%);
+	--icon-filter-invert: invert(100%);
 
 	//area
 	--panel: rgb(60, 60, 60);
@@ -65,9 +67,10 @@ main.light {
 	--panel3: rgb(30, 30, 30);
 
 	--text: rgb(22, 22, 22);
+	--text-muted: rgb(37, 37, 37);
 	--text-shadow: rgba(20, 20, 20, 0);
 
-	--app-menu-content-BG: rgb(44, 44, 44);
+	--app-menu-content-BG: rgb(248, 248, 248);
 
 	//elements
 	--input-field: rgb(84, 84, 84);
@@ -82,7 +85,6 @@ main.light {
 
 	&.web {
 		--topbar-BG: rgb(255, 255, 255);
-		--app-menu-content-BG: rgba(44, 44, 44, 0.6);
 	}
 
 	--sys-blue: rgb(0, 112, 245);

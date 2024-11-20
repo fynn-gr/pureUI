@@ -1,6 +1,7 @@
 <script lang="ts">
 import { onMount } from "svelte";
 
+export let id: string = "btn";
 export let icon: string;
 export let iconActive: string | null = null;
 export let active: boolean;
@@ -41,6 +42,7 @@ onMount(() => {
 
 <button
 	bind:this={self}
+	id={`btn-${id}`}
 	class="topbar-button"
 	class:disabled
 	on:click={() => {
@@ -49,7 +51,7 @@ onMount(() => {
 	}}
 	{disabled}
 	title={toolTip}
-	style={`background-color: ${active ? activeColor : "none"};`}
+	style={`background-color: ${active ? activeColor : "transparent"};`}
 >
 	<img src={active ? iconPathActive : iconPath} alt={toolTip} />
 </button>
