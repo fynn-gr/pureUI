@@ -6,8 +6,10 @@ export let active: boolean;
 export let exposed: boolean = false;
 </script>
 
+<!-- svelte-ignore a11y_no_static_element_interactions -->
+<!-- svelte-ignore a11y_click_events_have_key_events -->
 <div class="nav-folder" class:exposed>
-	<button
+	<div
 		class="nav-item"
 		class:active
 		on:click={() => {
@@ -28,7 +30,7 @@ export let exposed: boolean = false;
 			<img src={`./icons/tool_bar/${icon}.svg`} alt="" class="icon" />
 		{/if}
 		<p>{name}</p>
-	</button>
+	</div>
 
 	{#if exposed}
 		<div class="content">
