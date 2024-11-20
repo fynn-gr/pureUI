@@ -20,5 +20,5 @@ function onChange() {}
 		</div>
 	</div>
 
-	<SettingsContent {settings} {onChange}/>
+	<SettingsContent {settings} {onChange} />
 </dialog>
