@@ -1,5 +1,4 @@
 <script lang="ts">
-import { uiPlatform } from "@/ts/Stores";
 import { onMount } from "svelte";
 
 export let buttons: Array<button>;
@@ -13,23 +12,8 @@ interface button {
 }
 
 let self: HTMLElement;
-let topBarType;
-let topBarShort;
 
-onMount(() => {
-	let cls = self;
-	while (cls.parentElement) {
-		cls = cls.parentElement;
-
-		if (cls.classList.contains("toolbar")) {
-			topBarType = "toolbar-button";
-			topBarShort = "tool_bar";
-		} else if (cls.classList.contains("buttonbar")) {
-			topBarType = "buttonbar-button";
-			topBarShort = "button_bar";
-		}
-	}
-});
+onMount(() => {});
 </script>
 
 <div class="topbar-group">
@@ -48,10 +32,7 @@ onMount(() => {
 				}
 			}}
 		>
-			<img
-				src={topBarShort ? `./icons/${topBarShort}/${b.icon}.svg` : ""}
-				alt={b.toolTip}
-			/>
+			<img src={`./icons/top_bar/${b.icon}.svg`} alt={b.toolTip} />
 		</button>
 	{/each}
 </div>

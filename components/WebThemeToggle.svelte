@@ -3,23 +3,8 @@ import { theme } from "@/ts/Stores";
 import { onMount } from "svelte";
 
 let self: HTMLElement;
-let topBarType;
-let topBarShort;
 
-onMount(() => {
-	let cls = self;
-	while (cls.parentElement) {
-		cls = cls.parentElement;
-
-		if (cls.classList.contains("toolbar")) {
-			topBarType = "toolbar-button";
-			topBarShort = "tool_bar";
-		} else if (cls.classList.contains("buttonbar")) {
-			topBarType = "buttonbar-button";
-			topBarShort = "button_bar";
-		}
-	}
-});
+onMount(() => {});
 </script>
 
 <button
@@ -30,14 +15,6 @@ onMount(() => {
 		$theme == "dark" ? ($theme = "light") : ($theme = "dark");
 	}}
 >
-	<img
-		src={topBarShort ? `./icons/${topBarShort}/sun.svg` : ""}
-		alt={"toggle Theme"}
-		id="sun"
-	/>
-	<img
-		src={topBarShort ? `./icons/${topBarShort}/moon.svg` : ""}
-		alt={"toggle Theme"}
-		id="moon"
-	/>
+	<img src={`./icons/top_bar/sun.svg`} alt={"toggle Theme"} id="sun" />
+	<img src={`./icons/top_bar/moon.svg`} alt={"toggle Theme"} id="moon" />
 </button>
