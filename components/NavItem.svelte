@@ -14,7 +14,7 @@ export let active: boolean;
 	}}
 >
 	{#if icon}
-		<img src={`./icons/tool_bar/${icon}.svg`} alt="" class="icon" />
+		<img src={`./icons/top_bar/${icon}.svg`} alt="" class="icon" />
 	{/if}
 	<p>{name}</p>
 </button>

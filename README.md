@@ -23,7 +23,7 @@ Add `pureIcons.config.json` to the root dir of the project. In an array you can 
 ```
 {
     "folders": [
-        "tool_bar",
+        "top_bar",
         "settings_tabs",
         "native"
     ]
