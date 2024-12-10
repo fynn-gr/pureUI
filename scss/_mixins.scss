@@ -1,8 +1,0 @@
-@mixin noSelect {
-	-webkit-touch-callout: none; /*Safari ios*/
-	-webkit-user-select: none; /*Safari */
-	-khtml-user-select: none; /*Konqueror HTML */
-	-moz-user-select: none; /*Old Firefox */
-	-ms-user-select: none; /*IE/Edge */
-	user-select: none; /*Non-prefixed version */
-}
