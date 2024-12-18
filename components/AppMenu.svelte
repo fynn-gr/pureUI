@@ -1,5 +1,7 @@
 <script lang="ts">
-interface Props { name: string };
+interface Props {
+	name: string;
+}
 let { name }: Props = $props();
 </script>
 

@@ -2,13 +2,13 @@
 import { uiPlatform } from "@/ts/Stores";
 
 interface Props {
-	name: string,
-	value: any,
-	options: Array<selectionOption>,
-	onChange: Function
+	name: string;
+	value: any;
+	options: Array<selectionOption>;
+	onChange: Function;
 }
 
-let { name, value, options, onChange}: Props = $props();
+let { name, value, options, onChange }: Props = $props();
 
 type selectionOption = { value: any; name: string };
 </script>

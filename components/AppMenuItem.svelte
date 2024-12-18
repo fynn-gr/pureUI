@@ -2,17 +2,15 @@
 import { menuHandler } from "@/ts/Stores";
 
 interface Props {
-	id: string,
-	name: string,
-	accelerator?: string | null,
-	disabled?: boolean,
-	icon?: string | null,
-	checked?: string | null,
+	id: string;
+	name: string;
+	accelerator?: string | null;
+	disabled?: boolean;
+	icon?: string | null;
+	checked?: string | null;
 }
 
-let {
-	id, name, accelerator, disabled, icon, checked
-}: Props = $props();
+let { id, name, accelerator, disabled, icon, checked }: Props = $props();
 </script>
 
 <button

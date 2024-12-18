@@ -1,16 +1,12 @@
 <script lang="ts">
-
 interface Props {
-	name: string,
-	checked: boolean,
-	checkboxName: string,
-	onChange: Function,
+	name: string;
+	checked: boolean;
+	checkboxName: string;
+	onChange: Function;
 }
 
-let {
-	name, checked, checkboxName, onChange
-}: Props = $props();
-
+let { name, checked, checkboxName, onChange }: Props = $props();
 </script>
 
 <!-- svelte-ignore a11y_click_events_have_key_events -->
