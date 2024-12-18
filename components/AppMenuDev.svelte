@@ -3,15 +3,24 @@ import { uiPlatform, theme } from "@/ts/Stores";
 import AppMenu from "./AppMenu.svelte";
 import { saveSettings } from "@/ts/SaveLoad";
 
-export let platforms = ["mac", "win", "web"];
-export let themes = true;
+interface Props {
+	platforms: "mac" | "win" | "web",
+	themes: boolean,
+}
+
+let {
+	platforms,
+	themes
+}: Props = $props();
+
+let state = $state()
 </script>
 
 <AppMenu name="Dev">
 	{#if platforms.includes("mac")}
 		<button
 			class="app-menu-item"
-			on:click={() => {
+			onclick={() => {
 				$uiPlatform = "mac";
 				saveSettings();
 			}}
@@ -25,7 +34,7 @@ export let themes = true;
 	{#if platforms.includes("win")}
 		<button
 			class="app-menu-item"
-			on:click={() => {
+			onclick={() => {
 				$uiPlatform = "win";
 				saveSettings();
 			}}
@@ -39,7 +48,7 @@ export let themes = true;
 	{#if platforms.includes("web")}
 		<button
 			class="app-menu-item"
-			on:click={() => {
+			onclick={() => {
 				$uiPlatform = "web";
 				saveSettings();
 			}}
@@ -54,7 +63,7 @@ export let themes = true;
 		<div class="seperator" />
 		<button
 			class="app-menu-item"
-			on:click={() => {
+			onclick={() => {
 				$theme = "dark";
 			}}
 		>
@@ -65,7 +74,7 @@ export let themes = true;
 		</button>
 		<button
 			class="app-menu-item"
-			on:click={() => {
+			onclick={() => {
 				$theme = "light";
 			}}
 		>

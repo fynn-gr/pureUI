@@ -1,10 +1,14 @@
 <script lang="ts">
 import { uiPlatform } from "@/ts/Stores";
 
-export let name: string;
-export let value: any;
-export let options: Array<selectionOption>;
-export let onChange = () => {};
+interface Props {
+	name: string,
+	value: any,
+	options: Array<selectionOption>,
+	onChange: Function
+}
+
+let { name, value, options, onChange}: Props = $props();
 
 type selectionOption = { value: any; name: string };
 </script>
@@ -12,7 +16,7 @@ type selectionOption = { value: any; name: string };
 <div class="option">
 	<p class="name">{name}</p>
 	<div class="select-container">
-		<select bind:value on:change={onChange}>
+		<select bind:value onchange={onChange}>
 			{#each options as option}
 				<option value={option.value}>{option.name}</option>
 			{/each}

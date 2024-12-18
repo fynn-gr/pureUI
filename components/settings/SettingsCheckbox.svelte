@@ -1,19 +1,27 @@
 <script lang="ts">
-export let name: string;
-export let checked: boolean;
-export let checkboxName: string;
-export let onChange = () => {};
+
+interface Props {
+	name: string,
+	checked: boolean,
+	checkboxName: string,
+	onChange: Function,
+}
+
+let {
+	name, checked, checkboxName, onChange
+}: Props = $props();
+
 </script>
 
-<!-- svelte-ignore a11y-click-events-have-key-events -->
-<!-- svelte-ignore a11y-no-static-element-interactions -->
-<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+<!-- svelte-ignore a11y_click_events_have_key_events -->
+<!-- svelte-ignore a11y_click_events_have_key_events -->
+<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 <div class="option">
 	<p class="name">{name}</p>
-	<input type="checkbox" bind:checked on:change={onChange} />
+	<input type="checkbox" bind:checked onchange={onChange} />
 	<p
 		class="checkbox-name"
-		on:click={() => {
+		onclick={() => {
 			checked = !checked;
 			onChange();
 		}}

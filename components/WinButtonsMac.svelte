@@ -1,46 +1,54 @@
 <script lang="ts">
-export let onMin = () => {};
-export let onMax = () => {};
-export let onClose = () => {};
-export let CanMaximise = true;
-export let CanMinimize = true;
-export let CanClose = true;
 let hover = false;
+
+interface Props {
+	onMin: Function,
+	onMax: Function,
+	onClose: Function,
+	CanMaximise?: boolean,
+	CanMinimize?: boolean,
+	CanClose?: boolean,
+	CloseOnly?: boolean,
+}
+
+let {
+	onMin, onMax, onClose, CanMaximise, CanMinimize, CanClose, CloseOnly
+}: Props = $props();
 </script>
 
 <div class="win-buttons-mac" data-tauri-drag-region>
 	<button
-		on:mouseenter={() => {
+		onmouseenter={() => {
 			hover = true;
 		}}
-		on:mouseleave={() => {
+		onmouseleave={() => {
 			hover = false;
 		}}
-		on:click={onClose}
+		onclick={onClose}
 		class:disabled={CanClose == false}
 	>
 		<img src="./icons/native/winButtonsMacClose.svg" alt="" />
 	</button>
 	<button
-		on:mouseenter={() => {
+		onmouseenter={() => {
 			hover = true;
 		}}
-		on:mouseleave={() => {
+		onmouseleave={() => {
 			hover = false;
 		}}
-		on:click={onMin}
+		onclick={onMin}
 		class:disabled={CanMinimize == false}
 	>
 		<img src="./icons/native/winButtonsMacMin.svg" alt="" />
 	</button>
 	<button
-		on:mouseenter={() => {
+		onmouseenter={() => {
 			hover = true;
 		}}
-		on:mouseleave={() => {
+		onmouseleave={() => {
 			hover = false;
 		}}
-		on:click={onMax}
+		onclick={onMax}
 		class:disabled={CanMaximise == false}
 	>
 		<img src="./icons/native/winButtonsMacMax.svg" alt="" />

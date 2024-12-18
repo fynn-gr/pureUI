@@ -1,18 +1,24 @@
 <script lang="ts">
 import { menuHandler } from "@/ts/Stores";
 
-export let id: string;
-export let name: string;
-export let accelerator: string | null = null;
-export let disabled: boolean = false;
-export let icon: string | null = null;
-export let checked: string | null = null;
+interface Props {
+	id: string,
+	name: string,
+	accelerator?: string | null,
+	disabled?: boolean,
+	icon?: string | null,
+	checked?: string | null,
+}
+
+let {
+	id, name, accelerator, disabled, icon, checked
+}: Props = $props();
 </script>
 
 <button
 	class="app-menu-item"
 	class:disabled
-	on:click={() => {
+	onclick={() => {
 		$menuHandler.handle(id);
 	}}
 >
