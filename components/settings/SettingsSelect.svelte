@@ -8,7 +8,7 @@ interface Props {
 	onChange: Function;
 }
 
-let { name, value, options, onChange }: Props = $props();
+let { name, value = $bindable(), options, onChange }: Props = $props();
 
 type selectionOption = { value: any; name: string };
 </script>

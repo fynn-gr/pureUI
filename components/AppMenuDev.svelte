@@ -4,13 +4,11 @@ import AppMenu from "./AppMenu.svelte";
 import { saveSettings } from "@/ts/SaveLoad";
 
 interface Props {
-	platforms: "mac" | "win" | "web";
-	themes: boolean;
+	platforms?: Array<"mac" | "win" | "web">;
+	themes?: boolean;
 }
 
-let { platforms, themes }: Props = $props();
-
-let state = $state();
+let { platforms = ["mac", "win", "web"], themes = true }: Props = $props();
 </script>
 
 <AppMenu name="Dev">

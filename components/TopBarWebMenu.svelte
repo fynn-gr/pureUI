@@ -2,8 +2,13 @@
 import { onMount } from "svelte";
 import { clickOutside } from "@/pureUI/modules/utils";
 
-export let active: string;
-export let name: string;
+interface Props {
+	active: string;
+	name: string;
+}
+
+let { active, name }: Props = $props();
+
 let self: HTMLElement;
 let exposed = false;
 
@@ -20,7 +25,7 @@ onMount(() => {});
 	<button
 		class="webmenu-btn"
 		bind:this={self}
-		on:click={e => {
+		onclick={e => {
 			exposed = !exposed;
 		}}
 		title={"Main Menu"}

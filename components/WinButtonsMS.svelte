@@ -1,8 +1,10 @@
 <script lang="ts">
+import type { MouseEventHandler } from "svelte/elements";
+
 interface Props {
-	onMin: Function;
-	onMax: Function;
-	onClose: Function;
+	onMin?: MouseEventHandler<HTMLElement>;
+	onMax?: MouseEventHandler<HTMLElement>;
+	onClose?: MouseEventHandler<HTMLElement>;
 	CanMaximise?: boolean;
 	CanMinimize?: boolean;
 	CanClose?: boolean;
@@ -10,13 +12,13 @@ interface Props {
 }
 
 let {
-	onMin,
-	onMax,
-	onClose,
-	CanMaximise,
-	CanMinimize,
-	CanClose,
-	CloseOnly,
+	onMin = () => {},
+	onMax = () => {},
+	onClose = () => {},
+	CanMaximise = true,
+	CanMinimize = true,
+	CanClose = true,
+	CloseOnly = true,
 }: Props = $props();
 </script>
 

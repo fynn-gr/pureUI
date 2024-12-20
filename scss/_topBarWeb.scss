@@ -98,7 +98,7 @@ main.web {
 					border-radius: 6px;
 
 					img {
-						margin: 0;
+						margin: 4px 3px;
 					}
 				}
 
@@ -323,11 +323,9 @@ main.web {
 
 				img {
 					position: absolute;
-					inset: 0 3px !important;
-					margin: 0 3px;
+					inset: -4px 3px !important;
 					opacity: 100%;
 					rotate: 180deg;
-					inset: 0;
 					transition: 500ms;
 				}
 
