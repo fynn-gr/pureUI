@@ -1,12 +1,14 @@
 <script lang="ts">
+import type { ChangeEventHandler } from "svelte/elements";
+
 interface Props {
 	name: string;
 	checked: boolean;
 	checkboxName: string;
-	onChange: Function;
+	onChange: ChangeEventHandler<HTMLInputElement>;
 }
 
-let { name, checked, checkboxName, onChange }: Props = $props();
+let { name, checked = $bindable(), checkboxName, onChange }: Props = $props();
 </script>
 
 <!-- svelte-ignore a11y_click_events_have_key_events -->
@@ -17,9 +19,9 @@ let { name, checked, checkboxName, onChange }: Props = $props();
 	<input type="checkbox" bind:checked onchange={onChange} />
 	<p
 		class="checkbox-name"
-		onclick={() => {
+		onclick={(e: MouseEvent) => {
 			checked = !checked;
-			onChange();
+			onChange(e);
 		}}
 	>
 		{checkboxName}

@@ -1,11 +1,12 @@
 <script lang="ts">
 import { uiPlatform } from "@/ts/Stores";
+import type { ChangeEventHandler } from "svelte/elements";
 
 interface Props {
 	name: string;
 	value: any;
 	options: Array<selectionOption>;
-	onChange: Function;
+	onChange: ChangeEventHandler<HTMLSelectElement>;
 }
 
 let { name, value = $bindable(), options, onChange }: Props = $props();
