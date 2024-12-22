@@ -18,7 +18,7 @@ let {
 	CanMaximise = true,
 	CanMinimize = true,
 	CanClose = true,
-	CloseOnly = true,
+	CloseOnly = false,
 }: Props = $props();
 </script>
 
