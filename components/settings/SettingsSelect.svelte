@@ -6,7 +6,7 @@ interface Props {
 	name: string;
 	value: any;
 	options: Array<selectionOption>;
-	onChange: ChangeEventHandler<HTMLSelectElement>;
+	onChange: Function;
 }
 
 let { name, value = $bindable(), options, onChange }: Props = $props();
@@ -17,7 +17,12 @@ type selectionOption = { value: any; name: string };
 <div class="option">
 	<p class="name">{name}</p>
 	<div class="select-container">
-		<select bind:value onchange={onChange}>
+		<select
+			bind:value
+			onchange={() => {
+				onChange();
+			}}
+		>
 			{#each options as option}
 				<option value={option.value}>{option.name}</option>
 			{/each}

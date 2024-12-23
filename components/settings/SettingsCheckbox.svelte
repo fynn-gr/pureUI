@@ -5,7 +5,7 @@ interface Props {
 	name: string;
 	checked: boolean;
 	checkboxName: string;
-	onChange: ChangeEventHandler<HTMLInputElement>;
+	onChange: Function;
 }
 
 let { name, checked = $bindable(), checkboxName, onChange }: Props = $props();
@@ -16,7 +16,13 @@ let { name, checked = $bindable(), checkboxName, onChange }: Props = $props();
 <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 <div class="option">
 	<p class="name">{name}</p>
-	<input type="checkbox" bind:checked onchange={onChange} />
+	<input
+		type="checkbox"
+		bind:checked
+		onchange={() => {
+			onChange();
+		}}
+	/>
 	<p
 		class="checkbox-name"
 		onclick={(e: MouseEvent) => {
