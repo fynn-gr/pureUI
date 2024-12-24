@@ -1,9 +1,12 @@
 <script lang="ts">
 import { uiPlatform } from "@/ts/Stores";
 
-export let options: Array<{ name: string; value: any }>;
-export let onChange = () => {};
-export let selected: any; //selected Value
+interface Props {
+	options: Array<{ name: string; value: any }>,
+	onChange?: Function,
+	selected: any,
+}
+let { options, onChange = () => {}, selected }: Props = $props();
 
 let selectedObj: { name: string; value: any };
 let selectedName: string;
@@ -19,7 +22,7 @@ function selectionChange(sel: any) {
 	}
 	console.log("change selected");
 }
-$: selectionChange(selected);
+$effect(() => { selectionChange(selected)});
 
 function selectionObjChange(sel: any) {
 	if (selectedObj) {
@@ -27,7 +30,7 @@ function selectionObjChange(sel: any) {
 		selectedName = selectedObj.name;
 	}
 }
-$: selectionObjChange(selectedObj);
+$effect(() => { selectionObjChange(selectedObj)});
 </script>
 
 {#if $uiPlatform == "mac"}
@@ -42,7 +45,7 @@ $: selectionObjChange(selectedObj);
 	<div class="select">
 		<button
 			class="select-btn"
-			on:click={() => {
+			onclick={() => {
 				exposed = true;
 			}}>{selectedName}</button
 		>
@@ -50,7 +53,7 @@ $: selectionObjChange(selectedObj);
 			{#each options as option}
 				<button
 					class:selected={selected == option}
-					on:click={() => {
+					onclick={() => {
 						selectedObj = option;
 					}}
 				>

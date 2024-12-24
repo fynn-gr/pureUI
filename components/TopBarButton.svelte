@@ -6,7 +6,7 @@ interface Props {
 	icon: string;
 	onClick: Function;
 	toolTip: string;
-	disabled: boolean;
+	disabled?: boolean;
 }
 
 let { id = "btn", icon, onClick, toolTip, disabled = false }: Props = $props();

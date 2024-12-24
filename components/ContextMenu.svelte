@@ -3,8 +3,9 @@ import { contextMenu } from "@/ts/Stores";
 import { clickOutside } from "@/pureUI/modules/utils";
 </script>
 
-<!-- svelte-ignore a11y-click-events-have-key-events -->
-<!-- svelte-ignore a11y-no-static-element-interactions -->
+
+<!-- svelte-ignore a11y_no_static_element_interactions -->
+<!-- svelte-ignore a11y_click_events_have_key_events -->
 {#if $contextMenu != null}
 	<div
 		class="context-menu"
@@ -12,13 +13,13 @@ import { clickOutside } from "@/pureUI/modules/utils";
 		use:clickOutside={() => {
 			$contextMenu = null;
 		}}
-		on:click={e => {
+		onclick={e => {
 			$contextMenu = null;
 		}}
 	>
 		{#each $contextMenu.content as item}
 			{#if item.name}
-				<button class="item" on:click={item.action}>
+				<button class="item" onclick={item.action}>
 					{#if item.icon}
 						<img
 							src={item.icon}
@@ -32,7 +33,7 @@ import { clickOutside } from "@/pureUI/modules/utils";
 					{/if}
 				</button>
 			{:else}
-				<div class="seperator" />
+				<div class="seperator"></div>
 			{/if}
 		{/each}
 	</div>

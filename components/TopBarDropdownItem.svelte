@@ -1,12 +1,15 @@
 <script lang="ts">
-export let name: string;
-export let checked: boolean = false;
-export let onChange;
+interface Props {
+	name: string;
+	checked?: boolean;
+	onChange?: Function;
+}
+let { name, checked = $bindable(), onChange = () => {} }: Props = $props();
 </script>
 
 <button
 	class="item"
-	on:click={() => {
+	onclick={() => {
 		//checked = !checked;
 		onChange();
 	}}
