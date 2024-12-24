@@ -1,25 +1,44 @@
 <script lang="ts">
-export let value: number;
-export let min: number;
-export let max: number;
-export let softMin: number = min;
-export let softMax: number = max;
-export let decimalDisplay: number = 2;
-export let step: number = 1;
-export let unit = "";
-export let disabled = false;
-export let onFocus = () => {};
-export let onBlur = () => {};
-export let title: string;
-let dispValue: number = 0;
+interface Props {
+	value: number;
+	min: number;
+	max: number;
+	softMin?: number;
+	softMax?: number;
+	decimalDisplay?: number;
+	step?: number;
+	unit?: string;
+	disabled?: boolean;
+	onFocus?: Function;
+	onBlur?: Function;
+	title: string;
+}
+let {
+	value = $bindable(),
+	min,
+	max,
+	softMin = min,
+	softMax = max,
+	decimalDisplay = 2,
+	step = 1,
+	unit = "",
+	disabled = false,
+	onFocus = () => {},
+	onBlur = () => {},
+	title,
+}: Props = $props();
+
+let dispValue: number = $state(0);
 
 function handleChange() {}
 
-$: if (decimalDisplay == 0) {
-	dispValue = Math.round(value);
-} else {
-	dispValue = Math.round(value * decimalDisplay) / decimalDisplay;
-}
+$effect(() => {
+	if (decimalDisplay == 0) {
+		dispValue = Math.round(value);
+	} else {
+		dispValue = Math.round(value * decimalDisplay) / decimalDisplay;
+	}
+});
 </script>
 
 <div class="prop-number">
@@ -27,24 +46,24 @@ $: if (decimalDisplay == 0) {
 	<input
 		type="number"
 		{disabled}
-		on:change={handleChange}
+		onchange={handleChange}
 		bind:value
 		{step}
 		{max}
 		{min}
-		on:focus={onFocus}
-		on:blur={onBlur}
+		onfocus={() => {onFocus}}
+		onblur={() =>{onBlur}}
 	/>
 	<span>
 		<button
-			on:click={() => {
+			onclick={() => {
 				value = value + step;
 			}}
 		>
 			<img class="arrow-icon" src="./icons/std/number_arrow_up.svg" alt="" />
 		</button>
 		<button
-			on:click={() => {
+			onclick={() => {
 				value = value - step;
 			}}
 		>

@@ -1,12 +1,17 @@
 <script lang="ts">
-export let name: string;
-export let collapsed = false;
+
+interface Props {
+	name: string,
+	collapsed: boolean
+}
+let { name, collapsed }: Props = $props();
+
 </script>
 
 <div class="panel" class:collapsed>
 	<button
 		class="panel-name"
-		on:click={() => {
+		onclick={() => {
 			collapsed = !collapsed;
 		}}
 	>

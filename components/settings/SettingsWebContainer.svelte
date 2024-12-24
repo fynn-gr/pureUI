@@ -11,7 +11,7 @@ function onChange() {}
 		<p class="window-title" data-tauri-drag-region>Settings</p>
 		<div class="win-buttons-web">
 			<button
-				on:click={() => {
+				onclick={() => {
 					document.querySelector("dialog")?.close();
 				}}
 			>

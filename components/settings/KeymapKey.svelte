@@ -1,13 +1,25 @@
 <script lang="ts">
 import { settings } from "@/ts/Stores";
 
-export let code: string;
-export let name: string;
-export let icon: string;
-export let shape: string = "";
-export let width: number;
-export let selected: any;
-export let modifier: string;
+interface Props {
+	code: string,
+	name: string,
+	icon: string,
+	shape?: string,
+	width: number,
+	selected: any,
+	modifier: string,
+}
+let {
+	code,
+	name,
+	icon,
+	shape = "",
+	width,
+	selected,
+	modifier
+}:Props = $props();
+
 let modifierKeys = [
 	"MetaLeft",
 	"MetaRight",
@@ -21,14 +33,16 @@ let binded = $settings.keymap.find(e => {
 });
 </script>
 
-<!-- svelte-ignore a11y-click-events-have-key-events -->
+
+<!-- svelte-ignore a11y_no_static_element_interactions -->
+<!-- svelte-ignore a11y_click_events_have_key_events -->
 <div
 	class="key"
 	class:binded
 	class:selected={selected == code}
 	class:modifier={modifier == code}
 	style={`width: ${width || 36}px;`}
-	on:click={() => {
+	onclick={() => {
 		if (modifierKeys.includes(code)) {
 			if (modifier == code) {
 				modifier = "standart";
