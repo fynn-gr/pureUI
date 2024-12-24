@@ -2,12 +2,11 @@
 interface Props {
 	name: string;
 	icon: string | null;
-	onClick: Function;
+	onClick?: Function;
 	active: boolean;
 	exposed: boolean;
 }
-
-let { name, icon, onClick, active, exposed }: Props = $props();
+let { name, icon, onClick = () => {}, active, exposed }: Props = $props();
 </script>
 
 <!-- svelte-ignore a11y_no_static_element_interactions -->
