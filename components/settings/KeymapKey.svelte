@@ -2,13 +2,13 @@
 import { settings } from "@/ts/Stores";
 
 interface Props {
-	code: string,
-	name: string,
-	icon: string,
-	shape?: string,
-	width: number,
-	selected: any,
-	modifier: string,
+	code: string;
+	name: string;
+	icon: string;
+	shape?: string;
+	width: number;
+	selected: any;
+	modifier: string;
 }
 let {
 	code,
@@ -17,8 +17,8 @@ let {
 	shape = "",
 	width,
 	selected,
-	modifier
-}:Props = $props();
+	modifier,
+}: Props = $props();
 
 let modifierKeys = [
 	"MetaLeft",
@@ -32,7 +32,6 @@ let binded = $settings.keymap.find(e => {
 	e.key == code;
 });
 </script>
-
 
 <!-- svelte-ignore a11y_no_static_element_interactions -->
 <!-- svelte-ignore a11y_click_events_have_key_events -->

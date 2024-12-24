@@ -1,11 +1,9 @@
 <script lang="ts">
-
 interface Props {
-	name: string,
-	collapsed: boolean
+	name: string;
+	collapsed: boolean;
 }
 let { name, collapsed }: Props = $props();
-
 </script>
 
 <div class="panel" class:collapsed>

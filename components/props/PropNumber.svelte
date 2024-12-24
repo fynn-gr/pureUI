@@ -51,8 +51,12 @@ $effect(() => {
 		{step}
 		{max}
 		{min}
-		onfocus={() => {onFocus}}
-		onblur={() =>{onBlur}}
+		onfocus={() => {
+			onFocus;
+		}}
+		onblur={() => {
+			onBlur;
+		}}
 	/>
 	<span>
 		<button

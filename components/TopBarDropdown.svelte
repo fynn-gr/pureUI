@@ -4,10 +4,10 @@ import { clickOutside } from "@/pureUI/modules/utils";
 
 interface Props {
 	icon: string | null;
-	toolTip: string,
-	disabled?: boolean,
+	toolTip: string;
+	disabled?: boolean;
 }
-let { icon, toolTip, disabled = false}: Props = $props();
+let { icon, toolTip, disabled = false }: Props = $props();
 
 let self: HTMLElement;
 let exposed = $state(false);

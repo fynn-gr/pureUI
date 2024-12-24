@@ -2,7 +2,7 @@
 import { onMount } from "svelte";
 
 interface Props {
-	id: string
+	id: string;
 	icon: string;
 	iconActive?: string | null;
 	active?: boolean;
@@ -38,7 +38,7 @@ if (iconActive == null) {
 
 <button
 	bind:this={self}
-	id={id}
+	{id}
 	class="topbar-button"
 	class:disabled
 	onclick={() => {

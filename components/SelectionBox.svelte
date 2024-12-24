@@ -2,9 +2,9 @@
 import { uiPlatform } from "@/ts/Stores";
 
 interface Props {
-	options: Array<{ name: string; value: any }>,
-	onChange?: Function,
-	selected: any,
+	options: Array<{ name: string; value: any }>;
+	onChange?: Function;
+	selected: any;
 }
 let { options, onChange = () => {}, selected }: Props = $props();
 
@@ -22,7 +22,9 @@ function selectionChange(sel: any) {
 	}
 	console.log("change selected");
 }
-$effect(() => { selectionChange(selected)});
+$effect(() => {
+	selectionChange(selected);
+});
 
 function selectionObjChange(sel: any) {
 	if (selectedObj) {
@@ -30,7 +32,9 @@ function selectionObjChange(sel: any) {
 		selectedName = selectedObj.name;
 	}
 }
-$effect(() => { selectionObjChange(selectedObj)});
+$effect(() => {
+	selectionObjChange(selectedObj);
+});
 </script>
 
 {#if $uiPlatform == "mac"}
