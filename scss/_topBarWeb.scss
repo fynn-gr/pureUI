@@ -10,6 +10,7 @@ main.web {
 				padding-right: 9px;
 				border-bottom: 1px solid rgb(65, 65, 65);
 				border-bottom: 1px solid var(--gridGap);
+				background-color: var(--topbar-BG);
 
 				.window-title {
 					height: 40px;
@@ -98,7 +99,7 @@ main.web {
 					border-radius: 6px;
 
 					img {
-						margin: 4px 3px;
+						margin: -4px 3px;
 					}
 				}
 
@@ -122,9 +123,6 @@ main.web {
 				background-color: var(--topBarBG);
 				border-bottom: 1px solid rgb(65, 65, 65);
 				border-bottom: 1px solid var(--gridGap);
-			}
-
-			.topbar-container {
 				gap: 9px;
 
 				.app-menu {
