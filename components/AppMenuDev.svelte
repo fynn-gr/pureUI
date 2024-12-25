@@ -1,14 +1,15 @@
 <script lang="ts">
-import { uiPlatform, theme } from "@/ts/Stores";
+import { uiPlatform, theme, settings } from "@/ts/Stores";
 import AppMenu from "./AppMenu.svelte";
 import { saveSettings } from "@/ts/SaveLoad";
 
 interface Props {
 	platforms?: Array<"mac" | "win" | "web">;
 	themes?: boolean;
+	appName: string;
 }
 
-let { platforms = ["mac", "win", "web"], themes = true }: Props = $props();
+let { platforms = ["mac", "win", "web"], themes = true, appName }: Props = $props();
 </script>
 
 <AppMenu name="Dev">
@@ -17,7 +18,7 @@ let { platforms = ["mac", "win", "web"], themes = true }: Props = $props();
 			class="app-menu-item"
 			onclick={() => {
 				$uiPlatform = "mac";
-				saveSettings();
+				saveSettings($settings, $uiPlatform, appName);
 			}}
 		>
 			{#if $uiPlatform == "mac"}
@@ -31,7 +32,7 @@ let { platforms = ["mac", "win", "web"], themes = true }: Props = $props();
 			class="app-menu-item"
 			onclick={() => {
 				$uiPlatform = "win";
-				saveSettings();
+				saveSettings($settings, $uiPlatform, appName);
 			}}
 		>
 			{#if $uiPlatform == "win"}
@@ -45,7 +46,7 @@ let { platforms = ["mac", "win", "web"], themes = true }: Props = $props();
 			class="app-menu-item"
 			onclick={() => {
 				$uiPlatform = "web";
-				saveSettings();
+				saveSettings($settings, $uiPlatform, appName);
 			}}
 		>
 			{#if $uiPlatform == "web"}
