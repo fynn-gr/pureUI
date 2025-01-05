@@ -7,9 +7,15 @@ interface Props {
 	platforms?: Array<"mac" | "win" | "web">;
 	themes?: boolean;
 	appName: string;
+	children?: any;
 }
 
-let { platforms = ["mac", "win", "web"], themes = true, appName }: Props = $props();
+let {
+	platforms = ["mac", "win", "web"],
+	themes = true,
+	appName,
+	children,
+}: Props = $props();
 </script>
 
 <AppMenu name="Dev">
@@ -56,7 +62,7 @@ let { platforms = ["mac", "win", "web"], themes = true, appName }: Props = $prop
 		</button>
 	{/if}
 	{#if themes}
-		<div class="seperator" />
+		<div class="seperator"></div>
 		<button
 			class="app-menu-item"
 			onclick={() => {
@@ -81,5 +87,5 @@ let { platforms = ["mac", "win", "web"], themes = true, appName }: Props = $prop
 		</button>
 	{/if}
 
-	<slot />
+	{@render children?.()}
 </AppMenu>
