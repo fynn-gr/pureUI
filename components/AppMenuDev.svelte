@@ -28,7 +28,7 @@ let {
 			}}
 		>
 			{#if $uiPlatform == "mac"}
-				<img src="./icons/menu_win/checked.svg" alt="" />
+				<img src="./icons/app_menu/checked.svg" alt="" />
 			{/if}
 			<p class="name">mac</p>
 		</button>
@@ -42,7 +42,7 @@ let {
 			}}
 		>
 			{#if $uiPlatform == "win"}
-				<img src="./icons/menu_win/checked.svg" alt="" />
+				<img src="./icons/app_menu/checked.svg" alt="" />
 			{/if}
 			<p class="name">win</p>
 		</button>
@@ -56,7 +56,7 @@ let {
 			}}
 		>
 			{#if $uiPlatform == "web"}
-				<img src="./icons/menu_win/checked.svg" alt="" />
+				<img src="./icons/app_menu/checked.svg" alt="" />
 			{/if}
 			<p class="name">web</p>
 		</button>
@@ -70,7 +70,7 @@ let {
 			}}
 		>
 			{#if $theme == "dark"}
-				<img src="./icons/menu_win/checked.svg" alt="" />
+				<img src="./icons/app_menu/checked.svg" alt="" />
 			{/if}
 			<p class="name">dark</p>
 		</button>
@@ -81,7 +81,7 @@ let {
 			}}
 		>
 			{#if $theme == "light"}
-				<img src="./icons/menu_win/checked.svg" alt="" />
+				<img src="./icons/app_menu/checked.svg" alt="" />
 			{/if}
 			<p class="name">light</p>
 		</button>

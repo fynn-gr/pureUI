@@ -21,7 +21,7 @@ let { id, name, accelerator, disabled, icon, checked }: Props = $props();
 	}}
 >
 	{#if checked == "true"}
-		<img src="./icons/menu_win/checked.svg" alt="" />
+		<img src="./icons/app_menu/checked.svg" alt="" />
 	{:else if checked == "false"}
 		<img src="" alt="" style="visibility: hidden;" />
 	{:else if icon != null}
