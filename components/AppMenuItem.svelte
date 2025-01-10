@@ -1,5 +1,5 @@
 <script lang="ts">
-import { menuHandler } from "@/ts/Stores";
+import { menuHandler } from "@/ts/Stores.svelte";
 
 interface Props {
 	id: string;

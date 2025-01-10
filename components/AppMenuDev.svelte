@@ -1,5 +1,5 @@
 <script lang="ts">
-import { uiPlatform, theme, settings } from "@/ts/Stores";
+import { uiPlatform, theme, settings } from "@/ts/Stores.svelte";
 import AppMenu from "./AppMenu.svelte";
 import { saveSettings } from "@/ts/SaveLoad";
 

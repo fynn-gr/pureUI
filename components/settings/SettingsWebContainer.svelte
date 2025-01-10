@@ -1,7 +1,7 @@
 <script lang="ts">
 import SettingsContent from "@/lib/SettingsContent.svelte";
 import "@/pureUI/scss/_settingsWebContainer.scss";
-import { settings } from "@/ts/Stores";
+import { settings } from "@/ts/Stores.svelte";
 
 function onChange() {}
 </script>

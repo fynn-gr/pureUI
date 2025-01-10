@@ -1,5 +1,5 @@
 <script lang="ts">
-import { uiPlatform } from "@/ts/Stores";
+import { uiPlatform } from "@/ts/Stores.svelte";
 import type { ChangeEventHandler } from "svelte/elements";
 
 interface Props {

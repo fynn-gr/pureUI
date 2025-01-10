@@ -1,5 +1,5 @@
 <script lang="ts">
-import { theme } from "@/ts/Stores";
+import { theme } from "@/ts/Stores.svelte";
 import { onMount } from "svelte";
 
 let self: HTMLElement;

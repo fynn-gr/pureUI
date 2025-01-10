@@ -1,5 +1,5 @@
 import { get } from "svelte/store";
-import { lang } from "@/ts/Stores";
+import { lang } from "@/ts/Stores.svelte";
 
 export class pureLocale {
 	language: string;

@@ -1,5 +1,5 @@
 <script lang="ts">
-import { settings } from "@/ts/Stores";
+import { settings } from "@/ts/Stores.svelte";
 
 interface Props {
 	code: string;

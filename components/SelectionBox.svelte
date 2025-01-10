@@ -1,5 +1,5 @@
 <script lang="ts">
-import { uiPlatform } from "@/ts/Stores";
+import { uiPlatform } from "@/ts/Stores.svelte";
 
 interface Props {
 	options: Array<{ name: string; value: any }>;
