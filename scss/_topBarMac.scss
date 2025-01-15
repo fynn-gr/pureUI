@@ -41,6 +41,10 @@ main.mac .topbar {
 				}
 			}
 
+			.select {
+				margin: 9px 0 9px 0;
+			}
+
 			.window-title {
 				height: 38px;
 				line-height: 39px;
@@ -77,6 +81,22 @@ main.mac .topbar {
 					margin: 0;
 				}
 			}
+
+			.topbar-dropdown {
+				.topbar-button {
+					width: 46px;
+
+					img {
+						margin: -4px 2px;
+					}
+
+					.arrow {
+						width: 16px;
+						height: 22px;
+						margin: 0 0 0 -6px;
+					}
+				}
+			}
 		}
 	}
 
@@ -102,28 +122,16 @@ main.mac .topbar {
 				}
 			}
 
+			.select {
+				margin: 16px 0 15px 0;
+			}
+
 			.window-title {
 				height: 28px;
 				line-height: 28px;
 				margin: 13px 0 12px 0;
 				font-size: 13px;
 				font-weight: 600;
-			}
-
-			select {
-				height: 22px;
-				margin: 16px 0 15px 0;
-				padding: 0 10px;
-				line-height: 22px;
-				appearance: none;
-				color: var(--text);
-				background-color: transparent;
-				border: 1px solid rgb(108, 108, 108);
-				border-radius: 6px;
-
-				option {
-					color: black;
-				}
 			}
 
 			.topbar-button {
@@ -252,6 +260,57 @@ main.mac .topbar {
 
 				.seperator {
 					margin: 4px 0;
+				}
+			}
+		}
+
+		.select {
+			line-height: 22px;
+			color: var(--text);
+			background-color: transparent;
+
+			.select-btn {
+				height: 22px;
+				padding: 0 10px;
+				color: var(--text);
+				background-color: transparent;
+				border: 1px solid var(--hover);
+				border-radius: 6px;
+
+				&:hover {
+					background-color: var(--hover);
+				}
+			}
+
+			.option-container {
+				top: -6px;
+				left: -6px;
+				padding: 5px;
+				gap: 0;
+				border: 1px solid rgba(128, 128, 128, 0.437);
+				border-radius: 6px;
+				backdrop-filter: blur(44px);
+				-webkit-backdrop-filter: blur(40px);
+				background-color: rgba(21, 21, 21, 0.6);
+				box-shadow: 0 0 6px rgba(0, 0, 0, 0.367);
+
+				button {
+					height: 22px;
+					padding: 0 6px;
+					text-align: left;
+					line-height: 22px;
+					font-size: 13px;
+					color: var(--text);
+					background-color: transparent;
+					border-radius: 5px;
+
+					&.selected {
+						background-color: var(--accent);
+					}
+
+					&:hover {
+						background-color: var(--accent);
+					}
 				}
 			}
 		}

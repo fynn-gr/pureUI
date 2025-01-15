@@ -118,57 +118,6 @@ main.win .topbar {
 				}
 			}
 
-			.select {
-				&:hover {
-					.optionContainer {
-						display: flex;
-					}
-				}
-
-				.selectBtn {
-					height: 32px;
-					margin: 6px 0;
-					padding: 0 12px;
-					border-radius: 5px;
-					color: var(--text);
-					background-color: transparent;
-
-					&:hover {
-						background-color: var(--hover);
-					}
-				}
-
-				.optionContainer {
-					display: none;
-					position: absolute;
-					flex-direction: column;
-					padding: 4px 0;
-					gap: 4px;
-					border-radius: 8px;
-					border: 1px solid rgb(26, 26, 26);
-					background-color: var(--appMenuContentBG);
-
-					button {
-						height: 28px;
-						margin: 0 4px;
-						padding: 0 12px;
-						border-radius: 4px;
-						font-size: 14px;
-						text-align: left;
-						color: var(--text);
-						background-color: transparent;
-
-						&:hover {
-							background-color: var(--hover);
-						}
-
-						&.selected {
-							background-color: var(--hover2);
-						}
-					}
-				}
-			}
-
 			.topbar-button {
 				height: 28px;
 				width: 28px;
@@ -243,6 +192,48 @@ main.win .topbar {
 					opacity: 50%;
 					line-height: 28px;
 					font-weight: 700;
+				}
+			}
+		}
+
+		.select {
+			.selectBtn {
+				height: 32px;
+				margin: 6px 0;
+				padding: 0 12px;
+				border-radius: 5px;
+				color: var(--text);
+				background-color: transparent;
+
+				&:hover {
+					background-color: var(--hover);
+				}
+			}
+
+			.option-container {
+				padding: 4px 0;
+				gap: 4px;
+				border-radius: 8px;
+				border: 1px solid rgb(26, 26, 26);
+				background-color: var(--app-menu-content-BG);
+
+				button {
+					height: 28px;
+					margin: 0 4px;
+					padding: 0 12px;
+					border-radius: 4px;
+					font-size: 14px;
+					text-align: left;
+					color: var(--text);
+					background-color: transparent;
+
+					&:hover {
+						background-color: var(--hover);
+					}
+
+					&.selected {
+						background-color: var(--hover2);
+					}
 				}
 			}
 		}
