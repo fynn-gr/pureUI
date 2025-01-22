@@ -1,14 +1,14 @@
 <script lang="ts">
 import { clickOutside } from "../modules/utils";
 
-let exposed = false;
+let exposed = $state(false);
 </script>
 
-<!-- svelte-ignore a11y-no-static-element-interactions -->
-<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y_no_static_element_interactions -->
+<!-- svelte-ignore a11y_click_events_have_key_events -->
 <div
 	class="menu-container"
-	on:click={e => {
+	onclick={e => {
 		exposed = !exposed;
 	}}
 	use:clickOutside={() => {

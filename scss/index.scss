@@ -4,11 +4,11 @@
 @forward "../scss/_colors";
 @forward "../scss/_fonts";
 @forward "../scss/_layout";
-@forward "../scss/_mixins";
 
 //components
 @forward "../scss/_windowElements";
 @forward "../scss/_areaElements";
+@forward "../scss/_navList";
 @forward "../scss/_topBar";
 @forward "../scss/_topBarMac";
 @forward "../scss/_topBarWin";
@@ -63,6 +63,3 @@ body {
 		border-radius: 4px;
 	}
 }
-
-//z-index layer
-//500 - window rim

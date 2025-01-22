@@ -1,7 +1,7 @@
 <script lang="ts">
 import { onMount } from "svelte";
 import KeymapKey from "./KeymapKey.svelte";
-import { keymap, uiPlatform } from "@/ts/Stores";
+import { keymap, uiPlatform } from "@/ts/Stores.svelte";
 import { keyFromCode } from "@/pureUI/modules/utils";
 
 let modifier: string = "standart";
@@ -220,7 +220,9 @@ onMount(() => {
 	});
 });
 
-$: configChange(modifier);
+$effect(() => {
+	configChange(modifier);
+});
 
 function configChange(modifier) {}
 </script>

@@ -1,23 +1,37 @@
 <script lang="ts">
-export let onMin = () => {};
-export let onMax = () => {};
-export let onClose = () => {};
-export let CanMaximise = true;
-export let CanMinimize = true;
-export let CanClose = true;
-export let CloseOnly = false;
+import type { MouseEventHandler } from "svelte/elements";
+
+interface Props {
+	onMin?: MouseEventHandler<HTMLElement>;
+	onMax?: MouseEventHandler<HTMLElement>;
+	onClose?: MouseEventHandler<HTMLElement>;
+	CanMaximise?: boolean;
+	CanMinimize?: boolean;
+	CanClose?: boolean;
+	CloseOnly?: boolean;
+}
+
+let {
+	onMin = () => {},
+	onMax = () => {},
+	onClose = () => {},
+	CanMaximise = true,
+	CanMinimize = true,
+	CanClose = true,
+	CloseOnly = false,
+}: Props = $props();
 </script>
 
 <div class="win-buttons-ms" data-tauri-drag-region>
 	{#if !CloseOnly}
-		<button on:click={onMin} class:disabled={CanMinimize == false}>
+		<button onclick={onMin} class:disabled={CanMinimize == false}>
 			<img src="./icons/native/winButtonsMSMin.svg" alt="" draggable="false" />
 		</button>
-		<button on:click={onMax} class:disabled={CanMaximise == false}>
+		<button onclick={onMax} class:disabled={CanMaximise == false}>
 			<img src="./icons/native/winButtonsMSMax.svg" alt="" draggable="false" />
 		</button>
 	{/if}
-	<button on:click={onClose} class="close" class:disabled={CanClose == false}>
+	<button onclick={onClose} class="close" class:disabled={CanClose == false}>
 		<img src="./icons/native/winButtonsMSClose.svg" alt="" draggable="false" />
 	</button>
 </div>

@@ -1,23 +1,27 @@
 <script lang="ts">
-import { menuHandler } from "@/ts/Stores";
+import { menuHandler } from "@/ts/Stores.svelte";
 
-export let id: string;
-export let name: string;
-export let accelerator: string | null = null;
-export let disabled: boolean = false;
-export let icon: string | null = null;
-export let checked: string | null = null;
+interface Props {
+	id: string;
+	name: string;
+	accelerator?: string | null;
+	disabled?: boolean;
+	icon?: string | null;
+	checked?: string | null;
+}
+
+let { id, name, accelerator, disabled, icon, checked }: Props = $props();
 </script>
 
 <button
 	class="app-menu-item"
 	class:disabled
-	on:click={() => {
+	onclick={() => {
 		$menuHandler.handle(id);
 	}}
 >
 	{#if checked == "true"}
-		<img src="./icons/menu_win/checked.svg" alt="" />
+		<img src="./icons/app_menu/checked.svg" alt="" />
 	{:else if checked == "false"}
 		<img src="" alt="" style="visibility: hidden;" />
 	{:else if icon != null}

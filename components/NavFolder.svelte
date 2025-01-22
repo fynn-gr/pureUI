@@ -1,9 +1,12 @@
 <script lang="ts">
-export let name: string;
-export let icon: string | null = null;
-export let onClick: Function = () => {};
-export let active: boolean;
-export let exposed: boolean = false;
+interface Props {
+	name: string;
+	icon: string | null;
+	onClick?: Function;
+	active: boolean;
+	exposed: boolean;
+}
+let { name, icon, onClick = () => {}, active, exposed }: Props = $props();
 </script>
 
 <!-- svelte-ignore a11y_no_static_element_interactions -->
@@ -12,14 +15,14 @@ export let exposed: boolean = false;
 	<div
 		class="nav-item"
 		class:active
-		on:click={() => {
+		onclick={() => {
 			active = !active;
 			onClick();
 		}}
 	>
 		<button
 			class="expander"
-			on:click={e => {
+			onclick={e => {
 				e.stopPropagation();
 				exposed = !exposed;
 			}}

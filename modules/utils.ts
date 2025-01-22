@@ -1,7 +1,7 @@
 import { emit } from "@tauri-apps/api/event";
 
 export function keyFromCode(code: string): string {
-	let table = {
+	const table: Record<string, string> = {
 		KeyQ: "Q",
 		KeyW: "W",
 		KeyE: "E",
@@ -24,7 +24,7 @@ export function keyFromCode(code: string): string {
 		KeyY: "Y",
 		KeyX: "X",
 		KeyC: "C",
-		KeyV: "V",
+		KeyV: "C",
 		KeyB: "B",
 		KeyN: "N",
 		KeyM: "M",
@@ -34,10 +34,10 @@ export function keyFromCode(code: string): string {
 		Enter: "Enter",
 		ShiftLeft: "Shift",
 		ShiftRight: "Shift",
-		ControllLeft: "Ctrl",
-		ControllRight: "Ctrl",
+		ControlLeft: "Ctrl", // Fixed typo (was "ControllLeft")
+		ControlRight: "Ctrl", // Fixed typo (was "ControllRight")
 		AltRight: "Alt",
-		AltLeft: "Alt", //18
+		AltLeft: "Alt",
 		Spacebar: "Spacebar",
 		Digit1: "1",
 		Digit2: "2",
@@ -50,13 +50,13 @@ export function keyFromCode(code: string): string {
 		Digit9: "9",
 		Digit0: "0",
 		Comma: ",",
-		arrowUp: "Arrow Up",
-		arrowDown: "Arrow Down",
-		arrowLeft: "Arrow Left",
-		arrowRight: "Arrow Right",
+		ArrowUp: "Arrow Up", // Fixed capitalization (was "arrowUp")
+		ArrowDown: "Arrow Down", // Fixed capitalization (was "arrowDown")
+		ArrowLeft: "Arrow Left", // Fixed capitalization (was "arrowLeft")
+		ArrowRight: "Arrow Right", // Fixed capitalization (was "arrowRight")
 	};
 
-	return table[code] ? table[code] : "-" + code + "-";
+	return table[code] ?? `-${code}-`;
 }
 
 export function clickOutside(element: HTMLElement, callbackFunction: Function) {

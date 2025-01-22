@@ -1,14 +1,18 @@
 <script lang="ts">
-export let name: string;
-export let icon: string | null = null;
-export let onClick: Function;
-export let active: boolean;
+interface Props {
+	name: string;
+	icon: string | null;
+	onClick: Function;
+	active: boolean;
+}
+
+let { name, icon, onClick, active }: Props = $props();
 </script>
 
 <button
 	class="nav-item"
 	class:active
-	on:click={() => {
+	onclick={() => {
 		active = !active;
 		onClick();
 	}}

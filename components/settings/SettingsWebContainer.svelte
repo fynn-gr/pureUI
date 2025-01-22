@@ -1,7 +1,7 @@
 <script lang="ts">
 import SettingsContent from "@/lib/SettingsContent.svelte";
 import "@/pureUI/scss/_settingsWebContainer.scss";
-import { settings } from "@/ts/Stores";
+import { settings } from "@/ts/Stores.svelte";
 
 function onChange() {}
 </script>
@@ -11,7 +11,7 @@ function onChange() {}
 		<p class="window-title" data-tauri-drag-region>Settings</p>
 		<div class="win-buttons-web">
 			<button
-				on:click={() => {
+				onclick={() => {
 					document.querySelector("dialog")?.close();
 				}}
 			>
@@ -20,5 +20,5 @@ function onChange() {}
 		</div>
 	</div>
 
-	<SettingsContent {settings} {onChange} />
+	<SettingsContent {settings} {onChange} version={"0.1"} />
 </dialog>

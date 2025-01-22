@@ -1,23 +1,34 @@
 <script lang="ts">
-import { uiPlatform, theme } from "@/ts/Stores";
+import { uiPlatform, theme, settings } from "@/ts/Stores.svelte";
 import AppMenu from "./AppMenu.svelte";
 import { saveSettings } from "@/ts/SaveLoad";
 
-export let platforms = ["mac", "win", "web"];
-export let themes = true;
+interface Props {
+	platforms?: Array<"mac" | "win" | "web">;
+	themes?: boolean;
+	appName: string;
+	children?: any;
+}
+
+let {
+	platforms = ["mac", "win", "web"],
+	themes = true,
+	appName,
+	children,
+}: Props = $props();
 </script>
 
 <AppMenu name="Dev">
 	{#if platforms.includes("mac")}
 		<button
 			class="app-menu-item"
-			on:click={() => {
+			onclick={() => {
 				$uiPlatform = "mac";
-				saveSettings();
+				saveSettings($settings, $uiPlatform, appName);
 			}}
 		>
 			{#if $uiPlatform == "mac"}
-				<img src="./icons/menu_win/checked.svg" alt="" />
+				<img src="./icons/app_menu/checked.svg" alt="" />
 			{/if}
 			<p class="name">mac</p>
 		</button>
@@ -25,13 +36,13 @@ export let themes = true;
 	{#if platforms.includes("win")}
 		<button
 			class="app-menu-item"
-			on:click={() => {
+			onclick={() => {
 				$uiPlatform = "win";
-				saveSettings();
+				saveSettings($settings, $uiPlatform, appName);
 			}}
 		>
 			{#if $uiPlatform == "win"}
-				<img src="./icons/menu_win/checked.svg" alt="" />
+				<img src="./icons/app_menu/checked.svg" alt="" />
 			{/if}
 			<p class="name">win</p>
 		</button>
@@ -39,42 +50,42 @@ export let themes = true;
 	{#if platforms.includes("web")}
 		<button
 			class="app-menu-item"
-			on:click={() => {
+			onclick={() => {
 				$uiPlatform = "web";
-				saveSettings();
+				saveSettings($settings, $uiPlatform, appName);
 			}}
 		>
 			{#if $uiPlatform == "web"}
-				<img src="./icons/menu_win/checked.svg" alt="" />
+				<img src="./icons/app_menu/checked.svg" alt="" />
 			{/if}
 			<p class="name">web</p>
 		</button>
 	{/if}
 	{#if themes}
-		<div class="seperator" />
+		<div class="seperator"></div>
 		<button
 			class="app-menu-item"
-			on:click={() => {
+			onclick={() => {
 				$theme = "dark";
 			}}
 		>
 			{#if $theme == "dark"}
-				<img src="./icons/menu_win/checked.svg" alt="" />
+				<img src="./icons/app_menu/checked.svg" alt="" />
 			{/if}
 			<p class="name">dark</p>
 		</button>
 		<button
 			class="app-menu-item"
-			on:click={() => {
+			onclick={() => {
 				$theme = "light";
 			}}
 		>
 			{#if $theme == "light"}
-				<img src="./icons/menu_win/checked.svg" alt="" />
+				<img src="./icons/app_menu/checked.svg" alt="" />
 			{/if}
 			<p class="name">light</p>
 		</button>
 	{/if}
 
-	<slot />
+	{@render children?.()}
 </AppMenu>

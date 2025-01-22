@@ -2,12 +2,15 @@
 import { onMount } from "svelte";
 import { clickOutside } from "@/pureUI/modules/utils";
 
-export let icon: string | null;
-export let toolTip: string;
-export let disabled = false;
+interface Props {
+	icon: string | null;
+	toolTip: string;
+	disabled?: boolean;
+}
+let { icon, toolTip, disabled = false }: Props = $props();
 
 let self: HTMLElement;
-let exposed = false;
+let exposed = $state(false);
 
 onMount(() => {});
 </script>
@@ -25,7 +28,7 @@ onMount(() => {});
 		bind:this={self}
 		class="topbar-button"
 		class:disabled
-		on:click={e => {
+		onclick={e => {
 			exposed = !exposed;
 		}}
 		{disabled}

@@ -1,5 +1,5 @@
 <script lang="ts">
-import { theme } from "@/ts/Stores";
+import { theme } from "@/ts/Stores.svelte";
 import { onMount } from "svelte";
 
 let self: HTMLElement;
@@ -11,7 +11,7 @@ onMount(() => {});
 	bind:this={self}
 	class="topbar-button theme-toggle"
 	class:dark={$theme == "dark"}
-	on:click={() => {
+	onclick={() => {
 		$theme == "dark" ? ($theme = "light") : ($theme = "dark");
 	}}
 >

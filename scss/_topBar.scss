@@ -1,6 +1,5 @@
 @use "../scss/_colors" as c;
 @use "../scss/variables" as v;
-@use "../scss/_mixins" as mix;
 
 .topbar {
 	//28px default
@@ -114,7 +113,7 @@
 			.menu-content {
 				position: absolute;
 				display: none;
-				z-index: 400;
+				z-index: 999;
 				flex-direction: column;
 				background-color: var(--app-menu-content-BG);
 
@@ -212,6 +211,27 @@
 						overflow: hidden;
 						width: max-content;
 					}
+				}
+			}
+		}
+
+		.select {
+			position: relative;
+
+			.select-btn {
+			}
+
+			.option-container {
+				display: none;
+				flex-direction: column;
+				position: absolute;
+				top: 0;
+
+				&.exposed {
+					display: flex;
+				}
+
+				button {
 				}
 			}
 		}

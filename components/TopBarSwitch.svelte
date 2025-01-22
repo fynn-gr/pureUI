@@ -1,8 +1,11 @@
 <script lang="ts">
 import { onMount } from "svelte";
 
-export let buttons: Array<button>;
-export let state: string;
+interface Props {
+	buttons: Array<button>;
+	state: string;
+}
+let { buttons, state }: Props = $props();
 
 interface button {
 	icon: string;
@@ -24,7 +27,7 @@ onMount(() => {});
 			class:active={state === b.value}
 			class:disabled={b.disabled}
 			disabled={b.disabled}
-			on:click={() => {
+			onclick={() => {
 				if (state === b.value) {
 					state = "";
 				} else {

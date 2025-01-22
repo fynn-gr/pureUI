@@ -1,62 +1,39 @@
 <script lang="ts">
-import { uiPlatform } from "@/ts/Stores";
+import { uiPlatform } from "@/ts/Stores.svelte";
 
-export let options: Array<{ name: string; value: any }>;
-export let onChange = () => {};
-export let selected: any; //selected Value
-
-let selectedObj: { name: string; value: any };
-let selectedName: string;
-selectionChange(selected);
-
-let exposed = false;
-
-function selectionChange(sel: any) {
-	if (selected) {
-		selectedObj = options.find(x => x.value == selected);
-		console.log(selectedObj);
-		selectedName = selectedObj.name;
-	}
-	console.log("change selected");
+interface Props {
+	options: Array<{ name: string; value: any }>;
+	onChange?: Function;
+	selected: any;
 }
-$: selectionChange(selected);
+let { options, onChange = () => {}, selected = $bindable() }: Props = $props();
 
-function selectionObjChange(sel: any) {
-	if (selectedObj) {
-		selected = selectedObj.value;
-		selectedName = selectedObj.name;
-	}
-}
-$: selectionObjChange(selectedObj);
+let selectedObj: { name: string; value: any } = $state.raw(options[0]);
+let exposed: boolean = $state(false);
+
+$inspect(selectedObj);
 </script>
 
-{#if $uiPlatform == "mac"}
-	<!--default html selection box used on macOS-->
-	<select bind:value={selected}>
+<!--custom selection box used on windows and web-->
+<div class="select">
+	<button
+		class="select-btn"
+		onclick={() => {
+			exposed = !exposed;
+			onChange();
+		}}>{selectedObj.name}</button
+	>
+	<div class="option-container" class:exposed>
 		{#each options as option}
-			<option value={option.value}>{option.name}</option>
+			<button
+				class:selected={selectedObj == option}
+				onclick={() => {
+					selectedObj = option;
+					exposed = false;
+				}}
+			>
+				{option.name}
+			</button>
 		{/each}
-	</select>
-{:else}
-	<!--custom selection box used on windows and web-->
-	<div class="select">
-		<button
-			class="select-btn"
-			on:click={() => {
-				exposed = true;
-			}}>{selectedName}</button
-		>
-		<div class="option-container" class:exposed>
-			{#each options as option}
-				<button
-					class:selected={selected == option}
-					on:click={() => {
-						selectedObj = option;
-					}}
-				>
-					{option.name}
-				</button>
-			{/each}
-		</div>
 	</div>
-{/if}
+</div>
