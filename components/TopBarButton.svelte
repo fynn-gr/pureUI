@@ -26,5 +26,5 @@ onMount(() => {});
 	}}
 	{disabled}
 >
-	<img src={`./icons/top_bar/${icon}.svg`} alt={toolTip} />
+	<img src={`./icons/topbar/${icon}.svg`} alt={toolTip} />
 </button>

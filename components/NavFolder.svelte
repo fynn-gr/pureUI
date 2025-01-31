@@ -30,7 +30,7 @@ let { name, icon, onClick = () => {}, active, exposed }: Props = $props();
 			<img src="./icons/std/dropdown_arrow.svg" alt="" />
 		</button>
 		{#if icon}
-			<img src={`./icons/top_bar/${icon}.svg`} alt="" class="icon" />
+			<img src={`./icons/topbar/${icon}.svg`} alt="" class="icon" />
 		{/if}
 		<p>{name}</p>
 	</div>

@@ -3,6 +3,7 @@
 	flex-direction: column;
 
 	.nav-item {
+		position: relative;
 		display: flex;
 		flex-direction: row;
 		color: var(--text);
@@ -55,9 +56,6 @@ main.mac {
 
 				p {
 					line-height: 22px;
-					overflow: hidden;
-					white-space: nowrap;
-					text-overflow: ellipsis;
 				}
 			}
 
@@ -103,6 +101,10 @@ main.mac {
 					filter: var(--icon-filter);
 					-webkit-filter: var(--icon-filter);
 				}
+			}
+
+			&:not(:has(.icon)) {
+				padding-left: 6px;
 			}
 
 			img {
@@ -207,7 +209,7 @@ main.win {
 				background-color: var(--hover);
 
 				&::after {
-					//content: "";
+					content: "";
 					position: absolute;
 					left: 0;
 					top: 6px;
@@ -221,6 +223,10 @@ main.win {
 					filter: var(--accent-filter);
 					-webkit-filter: var(--accent-filter);
 				}
+			}
+
+			&:not(:has(.icon)) {
+				padding-left: 8px;
 			}
 
 			img {

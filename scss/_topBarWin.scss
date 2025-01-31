@@ -1,12 +1,199 @@
 main.win .topbar {
+	.topbar-container {
+		.menu-content {
+			gap: 4px;
+			padding: 4px 0;
+			border-radius: 8px;
+			border: 1px solid rgb(26, 26, 26);
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+
+			.app-menu-item {
+				display: flex;
+				flex-direction: row;
+				justify-content: left;
+				gap: 8px;
+				height: 28px;
+				margin: 0 4px;
+				border-radius: 5px;
+				font-size: 14px;
+
+				img {
+					width: 28px;
+					height: 28px;
+					filter: var(--icon-filter);
+				}
+
+				.name {
+					margin: 0 12px;
+					flex: 1;
+					line-height: 28px;
+					font-weight: 500;
+				}
+
+				.accelerator {
+					margin-right: 12px;
+					opacity: 50%;
+					line-height: 28px;
+					font-weight: 700;
+				}
+			}
+		}
+
+		.window-title {
+			font-size: 12px;
+			font-weight: 400;
+		}
+
+		.topbar-dropdown {
+			&.exposed {
+				.topbar-button {
+					background-color: var(--hover);
+				}
+			}
+
+			&.attached {
+				.topbar-button {
+					width: 16px;
+
+					.arrow {
+						margin: 0;
+					}
+				}
+			}
+
+			.topbar-button {
+				width: 48px;
+
+				img {
+					margin: 1px 1px;
+				}
+
+				.arrow {
+					width: 16px;
+					height: 30px;
+					margin: 0 0 0 -3px;
+				}
+			}
+
+			.dropdown {
+				gap: 4px;
+				padding: 4px 0;
+				border-radius: 8px;
+				border: 1px solid rgb(26, 26, 26);
+				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+
+				.item {
+					justify-content: left;
+					height: 28px;
+					margin: 0 4px;
+					padding: 0 6px;
+					border-radius: 5px;
+					font-size: 14px;
+
+					img {
+						width: 28px;
+						height: 28px;
+						margin-left: -6px;
+						filter: var(--icon-filter);
+						-webkit-filter: var(--icon-filter);
+					}
+
+					.name {
+						line-height: 28px;
+						font-weight: 500;
+					}
+				}
+			}
+		}
+
+		.select {
+			.selectBtn {
+				height: 32px;
+				margin: 6px 0;
+				padding: 0 12px;
+				border-radius: 5px;
+				color: var(--text);
+				background-color: transparent;
+
+				&:hover {
+					background-color: var(--hover);
+				}
+			}
+
+			.option-container {
+				padding: 4px 0;
+				gap: 4px;
+				border-radius: 8px;
+				border: 1px solid rgb(26, 26, 26);
+				background-color: var(--app-menu-content-BG);
+
+				button {
+					height: 28px;
+					margin: 0 4px;
+					padding: 0 12px;
+					border-radius: 4px;
+					font-size: 14px;
+					text-align: left;
+					color: var(--text);
+					background-color: transparent;
+
+					&:hover {
+						background-color: var(--hover);
+					}
+
+					&.selected {
+						background-color: var(--hover2);
+					}
+				}
+			}
+		}
+
+		.win-buttons-ms {
+			top: 0;
+			right: 0;
+			display: flex;
+
+			button {
+				width: 45px;
+				height: 32px;
+				color: white;
+				background-color: transparent;
+
+				&:hover {
+					background-color: rgba(100, 100, 100, 0.4);
+				}
+
+				img {
+					width: 10px;
+					height: 10px;
+				}
+			}
+
+			.close {
+				border-top-right-radius: 9px;
+
+				&:hover {
+					background-color: rgb(255, 0, 0);
+				}
+			}
+
+			.disabled {
+				&:hover {
+					background: transparent;
+				}
+				img {
+					filter: opacity(50%);
+				}
+			}
+		}
+	}
+
 	&.default {
 		height: 32px;
 
 		.window-title {
 			height: 32px;
 			line-height: 32px;
-			font-size: 12px;
-			font-weight: 400;
 		}
 	}
 
@@ -56,16 +243,6 @@ main.win .topbar {
 				}
 			}
 
-			.topbar-group {
-				height: 32px;
-				margin: 6px;
-				border-radius: 5px;
-
-				.topbar-button {
-					margin: 0;
-				}
-			}
-
 			.tab-container {
 				display: flex;
 				flex-direction: row;
@@ -79,6 +256,16 @@ main.win .topbar {
 					width: 80px;
 					background-color: rgb(41, 41, 41);
 					border-radius: 5px;
+				}
+			}
+
+			.topbar-group {
+				height: 32px;
+				margin: 6px;
+				border-radius: 5px;
+
+				.topbar-button {
+					margin: 0;
 				}
 			}
 		}
@@ -147,155 +334,10 @@ main.win .topbar {
 					}
 				}
 			}
-		}
 
-		.win-buttons-ms {
-			button {
-				height: 44px;
-			}
-		}
-	}
-
-	.topbar-container {
-		.menu-content {
-			gap: 4px;
-			padding: 4px 0;
-			border-radius: 8px;
-			border: 1px solid rgb(26, 26, 26);
-			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-
-			.app-menu-item {
-				display: flex;
-				flex-direction: row;
-				justify-content: left;
-				gap: 8px;
-				height: 28px;
-				margin: 0 4px;
-				border-radius: 5px;
-				font-size: 14px;
-
-				img {
-					width: 28px;
-					height: 28px;
-					filter: var(--icon-filter);
-				}
-
-				.name {
-					margin: 0 12px;
-					flex: 1;
-					line-height: 28px;
-					font-weight: 500;
-				}
-
-				.accelerator {
-					margin-right: 12px;
-					opacity: 50%;
-					line-height: 28px;
-					font-weight: 700;
-				}
-			}
-		}
-
-		.select {
-			.selectBtn {
-				height: 32px;
-				margin: 6px 0;
-				padding: 0 12px;
-				border-radius: 5px;
-				color: var(--text);
-				background-color: transparent;
-
-				&:hover {
-					background-color: var(--hover);
-				}
-			}
-
-			.option-container {
-				padding: 4px 0;
-				gap: 4px;
-				border-radius: 8px;
-				border: 1px solid rgb(26, 26, 26);
-				background-color: var(--app-menu-content-BG);
-
+			.win-buttons-ms {
 				button {
-					height: 28px;
-					margin: 0 4px;
-					padding: 0 12px;
-					border-radius: 4px;
-					font-size: 14px;
-					text-align: left;
-					color: var(--text);
-					background-color: transparent;
-
-					&:hover {
-						background-color: var(--hover);
-					}
-
-					&.selected {
-						background-color: var(--hover2);
-					}
-				}
-			}
-		}
-
-		.topbar-dropdown {
-			&.exposed {
-				.topbar-button {
-					background-color: var(--hover);
-				}
-			}
-
-			&.attached {
-				.topbar-button {
-					width: 16px;
-
-					.arrow {
-						margin: 0;
-					}
-				}
-			}
-
-			.topbar-button {
-				width: 48px;
-
-				img {
-					margin: 1px 1px;
-				}
-
-				.arrow {
-					width: 16px;
-					height: 30px;
-					margin: 0 0 0 -3px;
-				}
-			}
-
-			.dropdown {
-				gap: 4px;
-				padding: 4px 0;
-				border-radius: 8px;
-				border: 1px solid rgb(26, 26, 26);
-				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-
-				.item {
-					justify-content: left;
-					height: 28px;
-					margin: 0 4px;
-					padding: 0 6px;
-					border-radius: 5px;
-					font-size: 14px;
-
-					img {
-						width: 28px;
-						height: 28px;
-						margin-left: -6px;
-						filter: var(--icon-filter);
-						-webkit-filter: var(--icon-filter);
-					}
-
-					.name {
-						line-height: 28px;
-						font-weight: 500;
-					}
+					height: 44px;
 				}
 			}
 		}
@@ -307,44 +349,5 @@ main.win .topbar {
 		padding: 0 12px;
 		color: var(--text);
 		background-color: var(--topbar-BG);
-	}
-
-	.win-buttons-ms {
-		top: 0;
-		right: 0;
-		display: flex;
-
-		button {
-			width: 45px;
-			height: 32px;
-			color: white;
-			background-color: transparent;
-
-			&:hover {
-				background-color: rgba(100, 100, 100, 0.4);
-			}
-
-			img {
-				width: 10px;
-				height: 10px;
-			}
-		}
-
-		.close {
-			border-top-right-radius: 9px;
-
-			&:hover {
-				background-color: rgb(255, 0, 0);
-			}
-		}
-
-		.disabled {
-			&:hover {
-				background: transparent;
-			}
-			img {
-				filter: opacity(50%);
-			}
-		}
 	}
 }

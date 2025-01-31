@@ -18,7 +18,7 @@ let { name, icon, onClick, active }: Props = $props();
 	}}
 >
 	{#if icon}
-		<img src={`./icons/top_bar/${icon}.svg`} alt="" class="icon" />
+		<img src={`./icons/topbar/${icon}.svg`} alt="" class="icon" />
 	{/if}
 	<p>{name}</p>
 </button>

@@ -35,7 +35,7 @@ onMount(() => {});
 				}
 			}}
 		>
-			<img src={`./icons/top_bar/${b.icon}.svg`} alt={b.toolTip} />
+			<img src={`./icons/topbar/${b.icon}.svg`} alt={b.toolTip} />
 		</button>
 	{/each}
 </div>

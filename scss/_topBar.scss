@@ -1,7 +1,7 @@
 @use "../scss/_colors" as c;
 @use "../scss/variables" as v;
 
-.topbar {
+main .topbar {
 	//28px default
 	//38px buttonBar
 	//54px toolBar
@@ -9,78 +9,6 @@
 	top: 0;
 	right: 0;
 	background-color: var(--topbar-BG);
-
-	&.default {
-		.topbar-container {
-			.window-title {
-				margin: 0px auto;
-				font-size: 12px;
-			}
-		}
-	}
-
-	&.buttonbar {
-		.topbar-container {
-			position: fixed;
-			width: 100vw;
-
-			.tab-container {
-				display: flex;
-				flex-direction: row;
-
-				button {
-					color: var(--text);
-					background-color: transparent;
-
-					&:hover {
-						background-color: var(--hover2);
-					}
-
-					&.active {
-						background-color: var(--hover);
-					}
-				}
-			}
-
-			.topbar-button {
-				background-color: transparent;
-
-				img {
-					filter: var(--icon-filter);
-				}
-
-				&:hover {
-					background-color: var(--hover);
-				}
-			}
-		}
-	}
-
-	&.toolbar {
-		.topbar-container {
-			.topbar-button {
-				background-color: transparent;
-
-				img {
-					filter: var(--icon-filter);
-				}
-
-				&:hover {
-					background-color: var(--hover);
-				}
-
-				&.disabled {
-					opacity: 50%;
-				}
-			}
-		}
-	}
-
-	&.tabbar {
-		.spacer {
-			flex: 1;
-		}
-	}
 
 	.topbar-container {
 		display: flex;
@@ -167,6 +95,28 @@
 					height: 1px;
 					background-color: var(--hover);
 				}
+			}
+		}
+
+		.topbar-button {
+			background-color: transparent;
+
+			img {
+				filter: var(--icon-filter);
+			}
+
+			&:hover {
+				background-color: var(--hover);
+			}
+
+			&.disabled {
+				opacity: 50%;
+			}
+		}
+
+		.topbar-button:hover {
+			.tooltip {
+				display: block;
 			}
 		}
 
@@ -257,16 +207,50 @@
 			}
 		}
 
-		.topbar-button:hover {
-			.tooltip {
-				display: block;
-			}
-		}
-
 		.tooltip {
 			display: none;
 			position: absolute;
 			z-index: 1;
+		}
+	}
+
+	&.default {
+		.topbar-container {
+			.window-title {
+				margin: 0px auto;
+				font-size: 12px;
+			}
+		}
+	}
+
+	&.buttonbar {
+		.topbar-container {
+			.tab-container {
+				display: flex;
+				flex-direction: row;
+
+				button {
+					color: var(--text);
+					background-color: transparent;
+
+					&:hover {
+						background-color: var(--hover2);
+					}
+
+					&.active {
+						background-color: var(--hover);
+					}
+				}
+			}
+		}
+	}
+
+	&.toolbar {
+	}
+
+	&.tabbar {
+		.spacer {
+			flex: 1;
 		}
 	}
 }

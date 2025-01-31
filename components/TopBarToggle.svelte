@@ -27,12 +27,12 @@ let self: HTMLElement;
 let iconPath: string;
 let iconPathActive: string;
 
-iconPath = `./icons/top_bar/${icon}.svg`;
+iconPath = `./icons/topbar/${icon}.svg`;
 
 if (iconActive == null) {
 	iconPathActive = iconPath;
 } else {
-	iconPathActive = `./icons/top_bar/${iconActive}.svg`;
+	iconPathActive = `./icons/topbar/${iconActive}.svg`;
 }
 </script>
 

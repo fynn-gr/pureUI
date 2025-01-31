@@ -35,7 +35,7 @@ onMount(() => {});
 		title={toolTip}
 	>
 		{#if icon != null}
-			<img src={`./icons/top_bar/${icon}.svg`} alt={toolTip} />
+			<img src={`./icons/topbar/${icon}.svg`} alt={toolTip} />
 		{/if}
 		<img src="./icons/std/dropdown_arrow.svg" alt="" class="arrow" />
 	</button>

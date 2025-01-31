@@ -15,6 +15,6 @@ onMount(() => {});
 		$theme == "dark" ? ($theme = "light") : ($theme = "dark");
 	}}
 >
-	<img src={`./icons/top_bar/sun.svg`} alt={"toggle Theme"} id="sun" />
-	<img src={`./icons/top_bar/moon.svg`} alt={"toggle Theme"} id="moon" />
+	<img src={`./icons/topbar/sun.svg`} alt={"toggle Theme"} id="sun" />
+	<img src={`./icons/topbar/moon.svg`} alt={"toggle Theme"} id="moon" />
 </button>
