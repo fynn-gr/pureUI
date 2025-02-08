@@ -156,6 +156,12 @@ main.win {
 			.nav-item {
 				height: 22px;
 
+				&.active {
+					&::after {
+						content: none;
+					}
+				}
+
 				.icon {
 					width: 30px;
 					height: 30px;
