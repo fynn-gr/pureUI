@@ -5,13 +5,22 @@ interface Props {
 	onChange?: Function;
 	disabled?: boolean;
 }
-let { name, checked = $bindable(), onChange = () => {}, disabled = false}: Props = $props();
+let {
+	name,
+	checked = $bindable(),
+	onChange = () => {},
+	disabled = false,
+}: Props = $props();
 </script>
 
-<button class="item" class:disabled={disabled} onclick={() => {
+<button
+	class="item"
+	class:disabled
+	onclick={() => {
 		//checked = !checked;
 		onChange();
-	}}>
+	}}
+>
 	{#if checked == undefined}
 		<img src="" alt="" style="visibility: hidden;" />
 	{:else if checked == true}
