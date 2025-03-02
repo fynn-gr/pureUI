@@ -11,6 +11,7 @@ interface Props {
 	disabled?: boolean;
 	onFocus?: Function;
 	onBlur?: Function;
+	onChange?: Function;
 	title: string;
 }
 let {
@@ -25,18 +26,22 @@ let {
 	disabled = false,
 	onFocus = () => {},
 	onBlur = () => {},
+	onChange = () => {},
 	title,
 }: Props = $props();
 
 let dispValue: number = $state(0);
 
-function handleChange() {}
+function handleChange() {
+	onChange(value);
+}
 
 $effect(() => {
 	if (decimalDisplay == 0) {
 		dispValue = Math.round(value);
 	} else {
-		dispValue = Math.round(value * decimalDisplay) / decimalDisplay;
+		const factor = Math.pow(10, decimalDisplay);
+		dispValue = Math.round(value * factor) / factor;
 	}
 });
 </script>
