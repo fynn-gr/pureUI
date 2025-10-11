@@ -137,7 +137,7 @@ main.mac .topbar {
 				border-radius: 6px;
 				backdrop-filter: blur(40px);
 				-webkit-backdrop-filter: blur(40px);
-				background-color: rgba(21, 21, 21, 0.6);
+				background-color: rgb(21, 21, 21);
 				border: 1px solid rgba(128, 128, 128, 0.504);
 
 				.item {
@@ -164,6 +164,11 @@ main.mac .topbar {
 						line-height: 22px;
 						height: 22px;
 					}
+				}
+
+				.seperator {
+					margin: 4px 0;
+					border-top: 1px solid rgba(128, 128, 128, 0.2);
 				}
 			}
 		}
