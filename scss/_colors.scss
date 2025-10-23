@@ -2,7 +2,7 @@ main.dark {
 	//window
 	--topbar-BG: rgb(54, 54, 54);
 	--topbar-BG-transparent: rgb(54, 54, 54, 0.7);
-	--navbar-BG: rgb(36, 36, 36);
+	--navbar-BG: rgb(36, 36, 36, 0.84);
 	--properties-BG: rgb(48, 48, 48);
 	--grid-gap: rgb(26, 26, 26);
 
@@ -27,7 +27,7 @@ main.dark {
 	--input-border: rgb(61, 61, 61);
 	--button: rgb(40, 40, 40);
 	--hover: rgba(111, 111, 111, 0.3);
-	--hover2: rgba(93, 93, 93, 0.4);
+	--hover2: rgba(93, 93, 93, 0.84);
 
 	&.win {
 		--topbar-BG: rgb(29, 29, 29);
@@ -54,7 +54,7 @@ main.light {
 	//window
 	--topbar-BG: rgb(250, 250, 250);
 	--topbar-BG-transparent: rgba(255, 255, 255, 0.7);
-	--navbar-BG: rgb(146, 146, 146);
+	--navbar-BG: rgba(246, 246, 246, 0.84);
 	--properties-BG: rgb(255, 255, 255);
 	--grid-gap: rgb(196, 196, 196);
 

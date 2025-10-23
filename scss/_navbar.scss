@@ -1,0 +1,16 @@
+.sidebar {
+	grid-area: sidebar;
+	background-color: var(--navbar-BG);
+}
+
+main.tahoe {
+  .sidebar {
+    padding: 8px;
+
+    .sidebar-inner {
+      border-radius: var(--win-corner);
+      background: transparent;
+      box-shadow: 0 0 16px rgba(0, 0, 0, 0.434);
+    }
+  }
+}
