@@ -8,6 +8,7 @@ main .topbar {
 	grid-area: topbar;
 	top: 0;
 	right: 0;
+	z-index: 600;
 	background-color: var(--topbar-BG);
 
 	.topbar-container {
@@ -166,6 +167,17 @@ main .topbar {
 						width: max-content;
 					}
 				}
+			}
+		}
+
+		.window-title {
+			text-align: center;
+
+			&.static {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
 			}
 		}
 

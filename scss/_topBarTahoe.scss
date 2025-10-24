@@ -2,7 +2,13 @@ main.tahoe .topbar {
 	border-bottom: 1px solid var(--grid-gap);
 	border-radius: 0 8px 0 0;
 
+	&.buttonbar, &.toolbar {
+		background-color: transparent;
+		border-bottom: none;
+	}
+
 	.topbar-container {
+
 		.win-buttons-mac {
 			top: 0;
 			left: 0;
@@ -352,11 +358,13 @@ main.tahoe .topbar {
 			}
 
 			.topbar-button {
-				height: 28px;
-				width: 40px;
+				height: 36px;
+				width: 36px;
 				margin: 14px 0 13px 0;
 				padding: 0;
-				border-radius: 6px;
+				border-radius: 18px;
+				background-color: transparent;
+				box-shadow: 0 2px 16px rgba(0, 0, 0, 0.399);
 
 				img {
 					margin: -1px 2px;

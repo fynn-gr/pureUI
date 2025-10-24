@@ -5,11 +5,16 @@
 
 main.tahoe {
   .sidebar {
-    padding: 8px;
+    position: relative;
+    background-color: transparent;
 
     .sidebar-inner {
+      z-index: 1;
+      inset: 8px;
+      position: absolute;
       border-radius: var(--win-corner);
-      background: transparent;
+      background: var(--navbar-BG);
+      backdrop-filter: blur(16px);
       box-shadow: 0 0 16px rgba(0, 0, 0, 0.434);
     }
   }

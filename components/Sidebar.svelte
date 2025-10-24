@@ -8,7 +8,7 @@ let { width, show }: Props = $props();
 </script>
 
 <div class="sidebar" style={`width: ${show ? width : 0}px;`}>
-  <div class="siebar-inner">
+  <div class="sidebar-inner">
     <slot />
   </div>
 </div>

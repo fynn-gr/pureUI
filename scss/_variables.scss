@@ -2,6 +2,19 @@
 $gridGap: 1px;
 
 //round corders
-:root {
+main.mac {
 	--win-corner: 8px;
+}
+
+main.tahoe {
+	--win-corner: 8px;
+	--win-corner-large: 16px;
+}
+
+main.win {
+	--win-corner: 8px;
+}
+
+main.web {
+	--win-corner: 0px;
 }
