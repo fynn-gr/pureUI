@@ -7,9 +7,10 @@ interface Props {
 	onClick: Function;
 	toolTip: string;
 	disabled?: boolean;
+	addClass?: string;
 }
 
-let { id = "btn", icon, onClick, toolTip, disabled = false }: Props = $props();
+let { id = "btn", icon, onClick, toolTip, disabled = false, addClass = ""}: Props = $props();
 
 let self: HTMLElement;
 
@@ -19,7 +20,7 @@ onMount(() => {});
 <button
 	id={`btn-${id}`}
 	bind:this={self}
-	class="topbar-button"
+	class={`topbar-button ${addClass}`}
 	class:disabled
 	onclick={() => {
 		!disabled ? onClick() : console.log("false");

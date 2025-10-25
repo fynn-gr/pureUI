@@ -1,6 +1,14 @@
+@use "../scss/_colors" as colors;
+
 .sidebar {
 	grid-area: sidebar;
 	background-color: var(--navbar-BG);
+}
+
+main.mac {
+  .sidebar {
+    border-right: 1px solid var(--grid-gap);
+  }
 }
 
 main.tahoe {
@@ -13,9 +21,7 @@ main.tahoe {
       inset: 8px;
       position: absolute;
       border-radius: var(--win-corner);
-      background: var(--navbar-BG);
-      backdrop-filter: blur(16px);
-      box-shadow: 0 0 16px rgba(0, 0, 0, 0.434);
+      @include colors.liquid-glass;
     }
   }
 }

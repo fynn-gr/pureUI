@@ -166,6 +166,7 @@ main.win .topbar {
 				img {
 					width: 10px;
 					height: 10px;
+					filter: var(--icon-filter-invert);
 				}
 			}
 

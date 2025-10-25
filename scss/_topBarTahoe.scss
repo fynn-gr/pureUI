@@ -1,3 +1,5 @@
+@use "./colors";
+
 main.tahoe .topbar {
 	border-bottom: 1px solid var(--grid-gap);
 	border-radius: 0 8px 0 0;
@@ -237,6 +239,9 @@ main.tahoe .topbar {
 
 	&.default {
 		height: 28px;
+		background-color: transparent;
+		border-bottom: none;
+		backdrop-filter: blur(16px);
 
 		.win-buttons-mac {
 			height: 28px;
@@ -285,10 +290,16 @@ main.tahoe .topbar {
 			}
 
 			.topbar-button {
-				height: 22px;
-				width: 30px;
+				height: 24px;
+				width: 36px;
 				margin: 9px 0;
-				border-radius: 5px;
+				border-radius: 12px;
+				@include colors.liquid-glass;
+
+				&.over-sidebar {
+					background-color: transparent;
+					box-shadow: none;
+				}
 
 				img {
 					margin: -4px 0;
@@ -352,7 +363,7 @@ main.tahoe .topbar {
 			.window-title {
 				height: 28px;
 				line-height: 28px;
-				margin: 13px 0 12px 0;
+				margin: 13px 0 13px 0;
 				font-size: 13px;
 				font-weight: 600;
 			}
@@ -360,14 +371,22 @@ main.tahoe .topbar {
 			.topbar-button {
 				height: 36px;
 				width: 36px;
-				margin: 14px 0 13px 0;
+				margin: 9px 0 9px 0;
 				padding: 0;
 				border-radius: 18px;
-				background-color: transparent;
-				box-shadow: 0 2px 16px rgba(0, 0, 0, 0.399);
+				@include colors.liquid-glass;
+
+				&:hover {
+					
+				}
+
+				&.over-sidebar {
+					background-color: transparent;
+					box-shadow: none;
+				}
 
 				img {
-					margin: -1px 2px;
+					margin: 3px 3px;
 				}
 			}
 
@@ -376,12 +395,20 @@ main.tahoe .topbar {
 			}
 
 			.topbar-group {
-				height: 28px;
-				margin: 13px 0 12px 0;
-				border-radius: 6px;
+				height: 36px;
+				margin: 9px 0 9px 0;
+				border-radius: 18px;
+				@include colors.liquid-glass;
 
 				.topbar-button {
 					margin: 0;
+					background-color: transparent;
+					box-shadow: none;
+					backdrop-filter: none;
+
+					&:hover {
+						background-color: var(--hover);
+					}
 				}
 			}
 		}
