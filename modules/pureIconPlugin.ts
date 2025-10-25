@@ -6,8 +6,35 @@ const targetDir = "./public/icons/";
 const configFile: any = fs.readFileSync("./pureIcons.config.json");
 
 export function processIcons() {
-	let config = JSON.parse(configFile);
-	let subdirs: Array<string> = config.folders;
+	let subdirs: string[] = [];
+	const configPath = "./pureIcons.config.json";
+
+	if (fs.existsSync(configPath)) {
+		try {
+			const raw = fs.readFileSync(configPath, "utf8");
+			const config = JSON.parse(raw);
+			if (Array.isArray(config.folders)) {
+				subdirs = config.folders;
+			}
+		} catch (err) {
+			console.warn(`Warning: could not read/parse ${configPath}:`, err);
+		}
+	}
+
+	// If config didn't provide folders, collect all subdirectories under sourceDir
+	if (subdirs.length === 0) {
+		try {
+			const entries = fs.readdirSync(sourceDir);
+			for (const entry of entries) {
+				const fullPath = path.join(sourceDir, entry);
+				if (fs.existsSync(fullPath) && fs.statSync(fullPath).isDirectory()) {
+					subdirs.push(entry);
+				}
+			}
+		} catch (err) {
+			console.error("Error while reading sourceDir subfolders:", err);
+		}
+	}
 
 	function findIconFiles(sourceDir: string, targetDir: string): void {
 		try {
