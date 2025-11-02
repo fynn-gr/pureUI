@@ -4,13 +4,13 @@ main.tahoe .topbar {
 	border-bottom: 1px solid var(--grid-gap);
 	border-radius: 0 8px 0 0;
 
-	&.buttonbar, &.toolbar {
+	&.buttonbar,
+	&.toolbar {
 		background-color: transparent;
 		border-bottom: none;
 	}
 
 	.topbar-container {
-
 		.win-buttons-mac {
 			top: 0;
 			left: 0;
@@ -377,7 +377,6 @@ main.tahoe .topbar {
 				@include colors.liquid-glass;
 
 				&:hover {
-					
 				}
 
 				&.over-sidebar {

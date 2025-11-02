@@ -9,7 +9,6 @@ function AppMenuDev(props: {
 }) {
 	return (
 		<AppMenu name="Dev">
-
 			<Show when={props.platforms?.includes("mac")}>
 				<button
 					className="app-menu-item"
@@ -36,7 +35,7 @@ function AppMenuDev(props: {
 					<p className="name">win</p>
 				</button>
 			</Show>
-      <Show when={props.platforms?.includes("web")}>
+			<Show when={props.platforms?.includes("web")}>
 				<button
 					className="app-menu-item"
 					onClick={() => {

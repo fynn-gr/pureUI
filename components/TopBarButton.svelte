@@ -10,7 +10,14 @@ interface Props {
 	addClass?: string;
 }
 
-let { id = "btn", icon, onClick, toolTip, disabled = false, addClass = ""}: Props = $props();
+let {
+	id = "btn",
+	icon,
+	onClick,
+	toolTip,
+	disabled = false,
+	addClass = "",
+}: Props = $props();
 
 let self: HTMLElement;
 

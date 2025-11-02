@@ -6,22 +6,22 @@
 }
 
 main.mac {
-  .sidebar {
-    border-right: 1px solid var(--grid-gap);
-  }
+	.sidebar {
+		border-right: 1px solid var(--grid-gap);
+	}
 }
 
 main.tahoe {
-  .sidebar {
-    position: relative;
-    background-color: transparent;
+	.sidebar {
+		position: relative;
+		background-color: transparent;
 
-    .sidebar-inner {
-      z-index: 1;
-      inset: 8px;
-      position: absolute;
-      border-radius: var(--win-corner);
-      @include colors.liquid-glass;
-    }
-  }
+		.sidebar-inner {
+			z-index: 1;
+			inset: 8px;
+			position: absolute;
+			border-radius: var(--win-corner);
+			@include colors.liquid-glass;
+		}
+	}
 }
