@@ -57,23 +57,33 @@ $effect(() => {
 		{max}
 		{min}
 		onfocus={() => {
-			onFocus;
+			onFocus();
 		}}
 		onblur={() => {
-			onBlur;
+			onBlur();
 		}}
 	/>
 	<span>
 		<button
 			onclick={() => {
-				value = value + step;
+				if (value + step > max) {
+					value = max;
+				} else {
+					value = value + step;
+				}
+				handleChange();
 			}}
 		>
 			<img class="arrow-icon" src="./icons/std/number_arrow_up.svg" alt="" />
 		</button>
 		<button
 			onclick={() => {
-				value = value - step;
+				if (value - step < min) {
+					value = min;
+				} else {
+					value = value - step;
+				}
+				handleChange();
 			}}
 		>
 			<img class="arrow-icon" src="./icons/std/number_arrow_down.svg" alt="" />
