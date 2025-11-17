@@ -53,8 +53,6 @@ main.win .topbar {
 
 			&.attached {
 				.topbar-button {
-					width: 16px;
-
 					.arrow {
 						margin: 0;
 					}
@@ -62,11 +60,6 @@ main.win .topbar {
 			}
 
 			.topbar-button {
-				width: 48px;
-
-				img {
-					margin: 1px 1px;
-				}
 
 				.arrow {
 					width: 16px;
@@ -203,7 +196,7 @@ main.win .topbar {
 
 		.topbar-container {
 			background-color: var(--topbar-BG);
-			border-bottom: 1px solid rgb(65, 65, 65);
+			border-bottom: 1px solid var(--grid-gap);
 			border-radius: 9px 9px 0px 0px;
 			gap: 6px;
 			padding-left: 6px;
@@ -244,16 +237,38 @@ main.win .topbar {
 				}
 			}
 
+			.topbar-dropdown {
+				&.attached {
+					.topbar-button {
+						width: 22px;
+					}
+
+					.arrow {
+						margin: -4px 0 0 3px;
+					}
+				}
+
+				.topbar-button {
+					width: 48px;
+				}
+
+				.arrow {
+					width: 16px;
+					height: 30px;
+					margin: -4px 0 0 0;
+				}
+			}
+
 			.tab-container {
 				display: flex;
 				flex-direction: row;
 				gap: 6px;
 				margin: 6px 0;
 				border: none;
-				height: 32px;
+				height: 22px;
 
 				button {
-					height: 32px;
+					height: 22px;
 					width: 80px;
 					background-color: rgb(41, 41, 41);
 					border-radius: 5px;
@@ -261,7 +276,7 @@ main.win .topbar {
 			}
 
 			.topbar-group {
-				height: 32px;
+				height: 22px;
 				margin: 6px;
 				border-radius: 5px;
 
@@ -280,7 +295,7 @@ main.win .topbar {
 			gap: 8px;
 			padding-left: 6px;
 			background-color: var(--topbar-BG);
-			border-bottom: 1px solid rgb(65, 65, 65);
+			border-bottom: 1px solid var(--grid-gap);
 			border-radius: 9px 9px 0px 0px;
 
 			.app-menu {
@@ -317,6 +332,28 @@ main.win .topbar {
 				}
 			}
 
+			.topbar-dropdown {
+				&.attached {
+					.topbar-button {
+						width: 30px;
+					}
+
+					.arrow {
+						margin: 0 7px;
+					}
+				}
+
+				.topbar-button {
+					width: 48px;
+				}
+
+				.arrow {
+					width: 16px;
+					height: 30px;
+					margin: 0 0 0 0px;
+				}
+			}
+
 			.topbar-group {
 				height: 28px;
 				margin: 8px 0;
@@ -324,15 +361,6 @@ main.win .topbar {
 
 				.topbar-button {
 					margin: 0;
-					border-radius: 0;
-
-					&:first-child {
-						border-radius: 5px 0 0 5px;
-					}
-
-					&:last-child {
-						border-radius: 0 5px 5px 0;
-					}
 				}
 			}
 
