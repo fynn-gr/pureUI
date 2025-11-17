@@ -4,14 +4,14 @@ import AppMenu from "./AppMenu.svelte";
 import { saveSettings } from "@/ts/SaveLoad.svelte";
 
 interface Props {
-	platforms?: Array<"mac" | "win" | "web">;
+	platforms?: Array<"mac" | "win" | "web" | "tahoe">;
 	themes?: boolean;
 	appName: string;
 	children?: any;
 }
 
 let {
-	platforms = ["mac", "win", "web"],
+	platforms = ["mac", "win", "web", "tahoe"],
 	themes = true,
 	appName,
 	children,
@@ -31,6 +31,20 @@ let {
 				<img src="./icons/app_menu/checked.svg" alt="" />
 			{/if}
 			<p class="name">mac</p>
+		</button>
+	{/if}
+	{#if platforms.includes("tahoe")}
+		<button
+			class="app-menu-item"
+			onclick={() => {
+				$uiPlatform = "tahoe";
+				saveSettings($settings, $uiPlatform, appName);
+			}}
+		>
+			{#if $uiPlatform == "tahoe"}
+				<img src="./icons/app_menu/checked.svg" alt="" />
+			{/if}
+			<p class="name">tahoe</p>
 		</button>
 	{/if}
 	{#if platforms.includes("win")}
