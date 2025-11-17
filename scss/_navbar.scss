@@ -20,7 +20,7 @@ main.tahoe {
 			z-index: 1;
 			inset: 8px;
 			position: absolute;
-			border-radius: var(--win-corner);
+			border-radius: 16px;
 			@include colors.liquid-glass;
 		}
 	}

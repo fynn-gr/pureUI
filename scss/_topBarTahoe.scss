@@ -20,7 +20,7 @@ main.tahoe .topbar {
 				width: 12px;
 				height: 12px;
 				box-sizing: border-box;
-				border: none;
+				border: solid;
 				border-width: 1px;
 				border-radius: 50%;
 
@@ -38,19 +38,19 @@ main.tahoe .topbar {
 
 			& > :nth-child(1) {
 				background-color: rgb(254, 95, 87);
-				border-color: rgb(127, 47, 43);
+				border-color: rgb(127, 47, 43, 0.4);
 				margin-right: 8px;
 			}
 
 			& > :nth-child(2) {
 				background-color: rgb(255, 188, 46);
-				border-color: rgb(128, 94, 23);
+				border-color: rgb(128, 94, 23, 0.4);
 				margin-right: 8px;
 			}
 
 			& > :nth-child(3) {
 				background-color: rgb(40, 200, 65);
-				border-color: rgb(20, 100, 33);
+				border-color: rgb(20, 100, 33, 0.4);
 			}
 
 			& > .disabled {
@@ -256,88 +256,105 @@ main.tahoe .topbar {
 		}
 	}
 
-	&.buttonbar {
-		height: 38px;
+	// &.buttonbar {
+	// 	height: 38px;
 
-		.topbar-container {
-			height: 38px;
-			gap: 9px;
-			padding-right: 9px;
+	// 	.topbar-container {
+	// 		height: 38px;
+	// 		gap: 9px;
+	// 		padding-right: 9px;
 
-			.win-buttons-mac {
-				height: 38px;
-				padding: 14px;
-			}
+	// 		.win-buttons-mac {
+	// 			height: 38px;
+	// 			padding: 14px;
+	// 		}
 
-			.app-menu {
-				.app-menu-btn {
-					height: 22px;
-					width: 40px;
-					margin: 8px 0 8px 0;
-					padding: 0;
-					border-radius: 6px;
-				}
-			}
+	// 		.app-menu {
+	// 			.app-menu-btn {
+	// 				height: 22px;
+	// 				width: 40px;
+	// 				margin: 8px 0 8px 0;
+	// 				padding: 0;
+	// 				border-radius: 6px;
+	// 			}
+	// 		}
 
-			.window-title {
-				height: 38px;
-				line-height: 39px;
-			}
+	// 		.window-title {
+	// 			height: 38px;
+	// 			line-height: 39px;
+	// 		}
 
-			.save-indicator {
-				height: 38px;
-				line-height: 38px;
-			}
+	// 		.save-indicator {
+	// 			height: 38px;
+	// 			line-height: 38px;
+	// 		}
 
-			.topbar-button {
-				height: 24px;
-				width: 36px;
-				margin: 9px 0;
-				border-radius: 12px;
-				@include colors.liquid-glass;
+	// 		.topbar-button {
+	// 			height: 24px;
+	// 			width: 36px;
+	// 			margin: 9px 0;
+	// 			border-radius: 12px;
+	// 			@include colors.liquid-glass;
 
-				&.over-sidebar {
-					background-color: transparent;
-					box-shadow: none;
-				}
+	// 			&.over-sidebar {
+	// 				background-color: transparent;
+	// 				box-shadow: none;
+	// 			}
 
-				img {
-					margin: -4px 0;
-				}
-			}
+	// 			img {
+	// 				margin: -4px 0;
+	// 			}
+	// 		}
 
-			.topbar-dropdown {
-				.topbar-button {
-					width: 46px;
+	// 		.topbar-dropdown {
+	// 			&.attached {
+	// 				.topbar-button {
+	// 					width: 20px;
+	// 					border-radius: 0 12px 12px 0;
+	// 				}
+	// 			}
 
-					img {
-						margin: -4px 2px;
-					}
+	// 			.topbar-button {
+	// 				width: 50px;
 
-					.arrow {
-						width: 16px;
-						height: 22px;
-						margin: 0 0 0 -6px;
-					}
-				}
-			}
+	// 				img {
+	// 					margin: -4px 2px;
+	// 				}
 
-			.select {
-				margin: 9px 0 9px 0;
-			}
+	// 				.arrow {
+	// 					width: 16px;
+	// 					height: 22px;
+	// 					margin: 0 0 0 -6px;
+	// 				}
+	// 			}
+	// 		}
 
-			.topbar-group {
-				height: 22px;
-				margin: 9px 0;
-				border-radius: 5px;
+	// 		.select {
+	// 			margin: 9px 0 9px 0;
+	// 		}
 
-				.topbar-button {
-					margin: 0;
-				}
-			}
-		}
-	}
+	// 		.topbar-group {
+	// 			height: 22px;
+	// 			margin: 9px 0;
+	// 			border-radius: 12px;
+	// 			@include colors.liquid-glass;
 
+	// 			.topbar-button {
+	// 				margin: 0;
+	// 				background-color: transparent;
+	// 				backdrop-filter: none;
+	// 				border: none;
+	// 				box-shadow: none;
+
+	// 				&:hover {
+	// 					background-color: var(--hover);
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+	// }
+
+	&.buttonbar,
 	&.toolbar {
 		height: 54px;
 
@@ -386,6 +403,24 @@ main.tahoe .topbar {
 
 				img {
 					margin: 3px 3px;
+				}
+			}
+
+			.topbar-dropdown {
+				&.attached {
+					.topbar-button {
+						width: 24px;
+						border-radius: 0 18px 18px 0;
+					}
+				}
+				.topbar-button {
+					width: 60px;
+
+					.arrow {
+						width: 16px;
+						height: 22px;
+						margin: 7px 0 0 2px;
+					}
 				}
 			}
 
