@@ -1,5 +1,6 @@
 import * as path from "path";
 import * as fs from "fs";
+import { load } from "js-yaml";
 
 const sourceDir = "./src/pureUI/icons/";
 const targetDir = "./public/icons/";
@@ -73,4 +74,55 @@ export function processIcons() {
 	}
 
 	findIconFiles(sourceDir, targetDir);
+}
+
+export function buildI18N() {
+	try {
+		const i18nDir = path.resolve("./i18n");
+		const outDir = path.resolve("./src/lang");
+
+		if (!fs.existsSync(i18nDir)) {
+			console.warn(`i18n directory not found: ${i18nDir}`);
+			return;
+		}
+
+		// Clear and recreate output directory
+		if (fs.existsSync(outDir)) {
+			fs.rmSync(outDir, { recursive: true, force: true });
+		}
+		fs.mkdirSync(outDir, { recursive: true });
+
+		const walk = (dir: string, cb: (file: string) => void) => {
+			const entries = fs.readdirSync(dir);
+			for (const entry of entries) {
+				const full = path.join(dir, entry);
+				const stat = fs.statSync(full);
+				if (stat.isDirectory()) {
+					walk(full, cb);
+				} else {
+					cb(full);
+				}
+			}
+		}
+
+		walk(i18nDir, (file) => {
+			const ext = path.extname(file).toLowerCase();
+			if (ext === ".yaml" || ext === ".yml") {
+				try {
+					const raw = fs.readFileSync(file, "utf8");
+					const data = load(raw);
+					const rel = path.relative(i18nDir, file);
+					const outPath = path.join(outDir, rel).replace(/\.(yaml|yml)$/i, ".json");
+					const outDirPath = path.dirname(outPath);
+					fs.mkdirSync(outDirPath, { recursive: true });
+					fs.writeFileSync(outPath, JSON.stringify(data, null, 2), "utf8");
+					console.log(`Converted: ${file} -> ${outPath}`);
+				} catch (e) {
+					console.error(`Failed to convert ${file}:`, e);
+				}
+			}
+		});
+	} catch (err) {
+		console.error("buildI18N error:", err);
+	}
 }

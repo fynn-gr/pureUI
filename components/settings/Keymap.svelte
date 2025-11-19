@@ -4,6 +4,7 @@ import KeymapKey from "./KeymapKey.svelte";
 import { uiPlatform } from "@/ts/Stores.svelte";
 import { keyFromCode } from "@/pureUI/modules/utils";
 import { keymap } from "@/ts/Keymap.svelte";
+import { _ } from "svelte-i18n";
 
 let modifier: string = "standart";
 let selectedKey: any = { code: "", name: "" };
@@ -225,7 +226,7 @@ $effect(() => {
 	configChange(modifier);
 });
 
-function configChange(modifier) {}
+function configChange() {}
 </script>
 
 <div class="keymap">
@@ -254,7 +255,7 @@ function configChange(modifier) {}
 	<div class="operator-list">
 		{#each $keymap as operator}
 			<div class="operator">
-				<p class="operator-name">{operator.name}</p>
+				<p class="operator-name">{$_(operator.name)}</p>
 				{#if operator.ctrl}
 					<button class:active={operator.ctrl}
 						>{$uiPlatform == "mac" ? "cmd" : "ctrl"}</button
