@@ -29,6 +29,7 @@ onMount(() => {});
 	bind:this={self}
 	class={`topbar-button ${addClass}`}
 	class:disabled
+	title={toolTip}
 	onclick={() => {
 		!disabled ? onClick() : console.log("false");
 	}}
