@@ -1,12 +1,12 @@
 <script lang="ts">
-import { settings } from "@/ts/Stores.svelte";
+import { keymap } from "@/ts/Keymap.svelte";
 
 interface Props {
 	code: string;
 	name: string;
-	icon: string;
+	icon: string | undefined;
 	shape?: string;
-	width: number;
+	width: number | undefined;
 	selected: any;
 	modifier: string;
 }
@@ -16,8 +16,8 @@ let {
 	icon,
 	shape = "",
 	width,
-	selected,
-	modifier,
+	selected = $bindable(),
+	modifier = $bindable(),
 }: Props = $props();
 
 let modifierKeys = [
@@ -28,9 +28,14 @@ let modifierKeys = [
 	"AltLeft",
 	"AltRight",
 ];
-let binded = $settings.keymap.find(e => {
-	e.key == code;
+
+let binded: boolean = $state(
+	$keymap.some(e => e.key === code)
+);
+$effect(() => {
+	binded = $keymap.some(e => e.key === code);
 });
+
 </script>
 
 <!-- svelte-ignore a11y_no_static_element_interactions -->

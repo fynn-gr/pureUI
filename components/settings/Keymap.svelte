@@ -6,8 +6,8 @@ import { keyFromCode } from "@/pureUI/modules/utils";
 import { keymap } from "@/ts/Keymap.svelte";
 import { _ } from "svelte-i18n";
 
-let modifier: string = "standart";
-let selectedKey: any = { code: "", name: "" };
+let modifier: string = $state("standart");
+let selectedKey: any = $state({ code: "", name: "" });
 let layoutISODE = [
 	[
 		{ code: "Escape", name: "esc", width: 50 },
@@ -206,7 +206,8 @@ let layoutANSI = [
 		{ code: "ArrowRight", name: "", icon: "right" },
 	],
 ];
-let modifierKeys = [
+type modifier = "standart" | "ControlLeft" | "ControlRight" | "AltLeft" | "AltRight" | "MetaLeft" | "MetaRight";
+let modifierKeys: modifier[] = [
 	"MetaLeft",
 	"MetaRight",
 	"ControlLeft",
@@ -218,24 +219,24 @@ let modifierKeys = [
 onMount(() => {
 	document.addEventListener("keydown", e => {
 		if (modifierKeys.includes(e.code)) {
+			if (modifier != e.code) {
+				modifier = e.code;
+			} else {
+				modifier = "standart";
+			}
+			console.log("modifier down:", modifier);
 		}
 	});
 });
-
-$effect(() => {
-	configChange(modifier);
-});
-
-function configChange() {}
 </script>
 
 <div class="keymap">
 	<!--
-	{#each layoutANSI as row}
+	{#each layoutISODE as row}
 		<div class="row">
 			{#each row as key}
 				{#if key.code == "spacer"}
-					<div style={`width: ${key.width}px;`} />
+					<div style={`width: ${key.width}px;`}></div>
 				{:else}
 					<KeymapKey
 						code={key.code}
