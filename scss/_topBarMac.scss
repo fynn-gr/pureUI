@@ -100,11 +100,18 @@ main.mac .topbar {
 			font-weight: 600;
 		}
 
-		.save-indicator {
-			margin: 0;
-			font-size: 13px;
-			font-weight: 400;
-			opacity: 60%;
+		.document-title {
+			p {
+				font-size: 13px;
+				font-weight: 600;
+			}
+
+			.save-indicator {
+				margin: 0 0 0 5px;
+				font-size: 13px;
+				font-weight: 400;
+				opacity: 60%;
+			}
 		}
 
 		.topbar-dropdown {
@@ -273,9 +280,15 @@ main.mac .topbar {
 				line-height: 39px;
 			}
 
-			.save-indicator {
-				height: 38px;
-				line-height: 38px;
+			.document-title {
+				p {
+					height: 38px;
+					line-height: 38px;
+				}
+				.save-indicator {
+					height: 38px;
+					line-height: 38px;
+				}
 			}
 
 			.topbar-button {
@@ -349,6 +362,22 @@ main.mac .topbar {
 				margin: 13px 0 12px 0;
 				font-size: 13px;
 				font-weight: 600;
+			}
+
+			.document-title {
+				height: 28px;
+				line-height: 28px;
+				margin: 13px 0 12px 0;
+
+				p {
+					height: 28px;
+					line-height: 28px;
+				}
+
+				.save-indicator {
+					height: 28px;
+					line-height: 28px;
+				}
 			}
 
 			.topbar-button {

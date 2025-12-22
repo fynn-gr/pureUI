@@ -181,6 +181,14 @@ main .topbar {
 			}
 		}
 
+		.document-title {
+			display: flex;
+			flex-direction: row;
+
+			.save-indicator {
+			}
+		}
+
 		.select {
 			position: relative;
 
