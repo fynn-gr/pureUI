@@ -47,7 +47,7 @@ if (iconActive == null) {
 	}}
 	{disabled}
 	title={toolTip}
-	style={`background-color: ${active ? activeColor : "transparent"};`}
+	class:active={active}
 >
 	<img src={active ? iconPathActive : iconPath} alt={toolTip} />
 </button>
