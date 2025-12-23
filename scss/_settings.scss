@@ -1,3 +1,5 @@
+@use "./colors";
+
 .keymap-frame {
 	display: flex;
 	width: 100%;
@@ -207,6 +209,148 @@ main.mac.settings {
 
 			&.active {
 				background-color: var(--hover);
+
+				img {
+					filter: var(--accent-filter);
+				}
+
+				p {
+					color: var(--accent);
+				}
+			}
+
+			img,
+			.icon {
+				height: 22px;
+				width: 22px;
+				margin: 3px auto 0 auto;
+				filter: var(--icon-filter-muted);
+			}
+
+			p {
+				margin-bottom: 3px;
+				padding: 0 8px;
+				color: var(--text-muted);
+				line-height: 14px;
+				font-size: 11px;
+				font-weight: 700;
+			}
+		}
+	}
+
+	.content-wrapper {
+		max-height: 600px;
+
+		.content {
+			max-height: 600px;
+			overflow-y: scroll;
+			background-color: var(--properties-BG);
+		}
+	}
+
+	.content:has(.option) {
+		display: flex;
+		flex-direction: column;
+		padding-bottom: 20px;
+
+		.option {
+			display: flex;
+			flex-direction: row;
+			font-size: 13px;
+			font-weight: 500;
+			margin: 20px 0 0 0;
+
+			.name {
+				width: 282px;
+				margin-right: 8px;
+				text-align: right;
+			}
+
+			input[type="checkbox"] {
+				margin: 2px 8px 2px 0;
+			}
+
+			.select-container {
+				position: relative;
+
+				select {
+					appearance: none;
+					-webkit-appearance: none;
+					width: 280px;
+					height: 22px;
+					border-radius: 5px;
+					font-size: 13px;
+					line-height: 16px;
+					padding-left: 6px;
+				}
+
+				.arrow {
+					position: absolute;
+					inset: 3px 3px 3px auto;
+					width: 16px;
+					height: 16px;
+					background-color: var(--accent);
+					box-shadow: 0 1px 3px color-mix(in hsl, var(--accent), transparent);
+					border-radius: 4px;
+
+					img {
+						width: 16px;
+						height: 16px;
+						filter: invert(100%);
+					}
+				}
+			}
+		}
+	}
+}
+
+main.tahoe.settings {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 28px 52px auto;
+	grid-template-areas:
+		"title"
+		"tabs"
+		"content";
+
+	.title-bar {
+		border: none;
+	}
+
+	.window-title {
+		pointer-events: none;
+		position: fixed;
+		inset: 0 0 auto 0;
+		height: 26px;
+		line-height: 26px;
+		text-align: center;
+		font-size: 13px;
+		font-weight: 700;
+	}
+
+	.tabs {
+		flex-direction: row;
+		justify-content: center;
+		gap: 1px;
+		background-color: var(--topbar-BG);
+		border-bottom: 1px solid var(--grid-gap);
+
+		.tab {
+			height: 45px;
+			min-width: 45px;
+			border-radius: 6px;
+			margin: auto 0 7px 0;
+			display: flex;
+			flex-direction: column;
+			z-index: 1000;
+
+			&:hover {
+				background-color: var(--hover);
+			}
+
+			&.active {
+				//background-color: var(--hover);
+				@include colors.liquid-glass;
 
 				img {
 					filter: var(--accent-filter);
