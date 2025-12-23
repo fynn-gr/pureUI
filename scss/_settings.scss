@@ -150,6 +150,34 @@
 			&::-webkit-scrollbar {
 				display: none;
 			}
+
+			.option {
+				.color-selector {
+					padding: 0 0 0 8px;
+					display: flex;
+					flex-direction: row;
+					gap: 12px;
+					
+					.color {
+						position: relative;
+						width: 24px;
+						height: 24px;
+						margin: 0px;
+						border-radius: 12px;
+
+						&.active::after {
+							content: "";
+							position: absolute;
+							width: 30px;
+							height: 30px;
+							top: -5px;
+							left: -5px;
+							border-radius: 50%;
+							border: 2px solid var(--accent);
+						}
+					}
+				}
+			}
 		}
 
 		.content.update {
