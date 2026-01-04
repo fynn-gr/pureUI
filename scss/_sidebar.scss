@@ -1,0 +1,90 @@
+@use "../scss/_colors" as colors;
+
+.sidebar {
+	background-color: var(--navbar-BG);
+
+	.nav-tabs {
+		display: flex;
+		flex-direction: row;
+
+		button {
+			flex-grow: 1;
+		}
+	}
+}
+
+main.mac {
+	.sidebar {
+		border-right: 1px solid var(--grid-gap);
+
+		.nav-tabs {
+			margin: 0;
+			border-top: 1px solid rgba(128, 128, 128, 0.343);
+			border-bottom: 1px solid rgba(128, 128, 128, 0.343);
+
+			button {
+				height: 28px;
+				padding: 0;
+				background-color: transparent;
+				border-radius: 13px;
+
+				&.active {
+					color: var(--text);
+
+					img {
+						filter: var(--accent-filter);
+					}
+				}
+
+				img {
+					width: 28px;
+					height: 28px;
+					filter: var(--icon-filter);
+				}
+			}
+		}
+	}
+}
+
+main.tahoe {
+	.sidebar {
+		position: relative;
+		background-color: transparent;
+
+		.sidebar-inner {
+			z-index: 1;
+			inset: 8px;
+			position: absolute;
+			border-radius: 16px;
+			@include colors.liquid-glass;
+		}
+
+		.nav-tabs {
+			margin: 0 6px 0 6px;
+			border: 1px solid rgba(128, 128, 128, 0.343);
+			border-radius: 13px;
+
+			button {
+				height: 24px;
+				padding: 0;
+				background-color: transparent;
+				border-radius: 13px;
+
+				&.active {
+					background-color: var(--accent);
+					color: var(--text);
+
+					img {
+						filter: var(--icon-filter);
+					}
+				}
+
+				img {
+					width: 24px;
+					height: 24px;
+					filter: var(--icon-filter);
+				}
+			}
+		}
+	}
+}

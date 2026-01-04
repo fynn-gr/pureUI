@@ -148,6 +148,114 @@ main.mac {
 	}
 }
 
+main.tahoe {
+	.nav-list {
+		padding: 8px;
+
+		&.slim {
+			.nav-item {
+				height: 22px;
+
+				.icon {
+					width: 30px;
+					height: 30px;
+					margin: -4px;
+				}
+
+				p {
+					line-height: 22px;
+				}
+			}
+
+			.nav-folder {
+				.nav-item {
+					.expander {
+						height: 22px;
+
+						img {
+							margin: -4px;
+						}
+					}
+
+					.icon {
+						margin: -4px -4px -4px -6px;
+					}
+				}
+			}
+		}
+
+		.category {
+			height: 11px;
+			margin: 18px 0 4px 0;
+			line-height: 11px;
+			font-size: 11rem;
+			padding-left: 4px;
+			font-weight: 400;
+			opacity: 60%;
+
+			&:first-of-type {
+				margin-top: 0;
+			}
+		}
+
+		.nav-item {
+			height: 28px;
+			border-radius: 6px;
+
+			&.active {
+				background-color: var(--accent);
+
+				img {
+					filter: var(--icon-filter);
+					-webkit-filter: var(--icon-filter);
+				}
+			}
+
+			&:not(:has(.icon)) {
+				padding-left: 6px;
+			}
+
+			img {
+				filter: var(--icon-filter-muted);
+				-webkit-filter: var(--icon-filter-muted);
+			}
+
+			.icon {
+				width: 30px;
+				height: 30px;
+				margin: -1px;
+			}
+
+			p {
+				margin: 0 0 0 0px;
+				line-height: 28px;
+				font-size: 13px;
+				font-weight: 500;
+			}
+		}
+
+		.nav-folder {
+			.nav-item {
+				.expander {
+					width: 16px;
+					height: 28px;
+					background-color: transparent;
+				}
+			}
+
+			.content {
+				.nav-item {
+					padding-left: 14px;
+
+					.icon {
+						margin-left: 15px;
+					}
+				}
+			}
+		}
+	}
+}
+
 main.win {
 	.nav-list {
 		padding: 4px;
