@@ -52,11 +52,12 @@ main.tahoe {
 		background-color: transparent;
 
 		.sidebar-inner {
-			z-index: 1;
+			z-index: 50;
 			inset: 8px;
 			position: absolute;
 			border-radius: 16px;
-			@include colors.liquid-glass;
+			outline: 1px solid rgba(255, 255, 255, 0.1);
+			box-shadow: 0px 0px 8px 2px black;
 		}
 
 		.nav-tabs {

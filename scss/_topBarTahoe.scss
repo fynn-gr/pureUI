@@ -129,7 +129,6 @@ main.tahoe .topbar {
 			}
 		}
 
-
 		.topbar-dropdown {
 			&.attached {
 				.topbar-button {
@@ -192,57 +191,6 @@ main.tahoe .topbar {
 				.seperator {
 					margin: 4px 0;
 					border-top: 1px solid rgba(128, 128, 128, 0.2);
-				}
-			}
-		}
-
-		.select {
-			line-height: 22px;
-			color: var(--text);
-			background-color: transparent;
-
-			.select-btn {
-				height: 22px;
-				padding: 0 10px;
-				color: var(--text);
-				background-color: transparent;
-				border: 1px solid var(--hover);
-				border-radius: 6px;
-
-				&:hover {
-					background-color: var(--hover);
-				}
-			}
-
-			.option-container {
-				top: -6px;
-				left: -6px;
-				padding: 5px;
-				gap: 0;
-				border: 1px solid rgba(128, 128, 128, 0.437);
-				border-radius: 6px;
-				backdrop-filter: blur(44px);
-				-webkit-backdrop-filter: blur(40px);
-				background-color: rgba(21, 21, 21, 0.6);
-				box-shadow: 0 0 6px rgba(0, 0, 0, 0.367);
-
-				button {
-					height: 22px;
-					padding: 0 6px;
-					text-align: left;
-					line-height: 22px;
-					font-size: 13px;
-					color: var(--text);
-					background-color: transparent;
-					border-radius: 5px;
-
-					&.selected {
-						background-color: var(--accent);
-					}
-
-					&:hover {
-						background-color: var(--accent);
-					}
 				}
 			}
 		}
@@ -343,7 +291,54 @@ main.tahoe .topbar {
 			}
 
 			.select {
-				margin: 16px 0 15px 0;
+				line-height: 36px;
+				margin: 9px 0;
+				color: var(--text);
+				background-color: transparent;
+
+				.select-btn {
+					height: 36px;
+					padding: 0 10px;
+					color: var(--text);
+					border-radius: 18px;
+					@include colors.liquid-glass;
+
+					&:hover {
+						background-color: var(--hover);
+					}
+				}
+
+				.option-container {
+					top: -6px;
+					left: -6px;
+					padding: 5px;
+					gap: 0;
+					border: 1px solid rgba(128, 128, 128, 0.437);
+					border-radius: 6px;
+					backdrop-filter: blur(44px);
+					-webkit-backdrop-filter: blur(40px);
+					background-color: rgba(21, 21, 21, 0.6);
+					box-shadow: 0 0 6px rgba(0, 0, 0, 0.367);
+
+					button {
+						height: 22px;
+						padding: 0 6px;
+						text-align: left;
+						line-height: 22px;
+						font-size: 13px;
+						color: var(--text);
+						background-color: transparent;
+						border-radius: 5px;
+
+						&.selected {
+							background-color: var(--accent);
+						}
+
+						&:hover {
+							background-color: var(--accent);
+						}
+					}
+				}
 			}
 
 			.topbar-group {
