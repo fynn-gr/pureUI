@@ -4,12 +4,13 @@ import { load } from "js-yaml";
 
 const sourceDir = "./src/pureUI/icons/";
 const targetDir = "./public/icons/";
-const configFile: any = fs.readFileSync("./pureIcons.config.json");
+//const configFile: any = fs.readFileSync("./pureIcons.config.json");
 
 export function processIcons() {
 	let subdirs: string[] = [];
 	const configPath = "./pureIcons.config.json";
 
+	//read config file if it exists
 	if (fs.existsSync(configPath)) {
 		try {
 			const raw = fs.readFileSync(configPath, "utf8");
@@ -19,6 +20,7 @@ export function processIcons() {
 			}
 		} catch (err) {
 			console.warn(`Warning: could not read/parse ${configPath}:`, err);
+			return;
 		}
 	}
 
@@ -32,12 +34,14 @@ export function processIcons() {
 					subdirs.push(entry);
 				}
 			}
+			console.log(subdirs)
 		} catch (err) {
 			console.error("Error while reading sourceDir subfolders:", err);
 		}
 	}
 
-	function findIconFiles(sourceDir: string, targetDir: string): void {
+	// recursive function to copy all icon files to the target directory
+	const copyIconFiles = (sourceDir: string, targetDir: string): void => {
 		try {
 			// Create the target directory if it doesn't exist
 			if (fs.existsSync(targetDir)) {
@@ -56,7 +60,7 @@ export function processIcons() {
 
 					if (subdirs.includes(file)) {
 						const newTargetDir = path.join(targetDir, file);
-						findIconFiles(filePath, newTargetDir);
+						copyIconFiles(filePath, newTargetDir);
 					}
 				} else if (
 					path.extname(file) === ".svg" ||
@@ -73,7 +77,7 @@ export function processIcons() {
 		}
 	}
 
-	findIconFiles(sourceDir, targetDir);
+	copyIconFiles(sourceDir, targetDir);
 }
 
 export function buildI18N() {
