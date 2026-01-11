@@ -180,13 +180,16 @@ main.web .topbar {
 				font-weight: 600;
 			}
 
-			.save-indicator {
+			.document-title {
 				height: 40px;
 				line-height: 40px;
-				margin: 0;
-				font-size: 13px;
-				font-weight: 400;
-				opacity: 60%;
+
+				.save-indicator {
+					margin: 0 0 0 3px;
+					font-size: 13px;
+					font-weight: 400;
+					opacity: 60%;
+				}
 			}
 
 			.topbar-button {

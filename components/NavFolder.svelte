@@ -1,12 +1,22 @@
 <script lang="ts">
-interface Props {
-	name: string;
-	icon: string | null;
-	onClick?: Function;
-	active: boolean;
-	exposed: boolean;
-}
-let { name, icon, onClick = () => {}, active, exposed }: Props = $props();
+	interface Props {
+		name: string;
+		icon: string | null;
+		onClick?: Function;
+		active: boolean;
+		exposed: boolean;
+		depth?: number;
+		children?: any;
+	}
+	let {
+		name,
+		icon,
+		onClick = () => {},
+		active,
+		exposed,
+		depth = 0,
+		children
+	}: Props = $props();
 </script>
 
 <!-- svelte-ignore a11y_no_static_element_interactions -->
@@ -20,9 +30,12 @@ let { name, icon, onClick = () => {}, active, exposed }: Props = $props();
 			onClick();
 		}}
 	>
+		{#each Array(depth) as _, i}
+			<div class="indent" style={`width: 14px;`}></div>
+		{/each}
 		<button
 			class="expander"
-			onclick={e => {
+			onclick={(e) => {
 				e.stopPropagation();
 				exposed = !exposed;
 			}}
@@ -37,7 +50,7 @@ let { name, icon, onClick = () => {}, active, exposed }: Props = $props();
 
 	{#if exposed}
 		<div class="content">
-			<slot />
+			{@render children()}
 		</div>
 	{/if}
 </div>

@@ -44,35 +44,10 @@ main.mac {
 	.nav-list {
 		padding: 8px;
 
-		&.slim {
-			.nav-item {
-				height: 22px;
-
-				.icon {
-					width: 30px;
-					height: 30px;
-					margin: -4px;
-				}
-
-				p {
-					line-height: 22px;
-				}
-			}
-
-			.nav-folder {
-				.nav-item {
-					.expander {
-						height: 22px;
-
-						img {
-							margin: -4px;
-						}
-					}
-
-					.icon {
-						margin: -4px -4px -4px -6px;
-					}
-				}
+		&:has(.nav-item .expander) {
+			.nav-item:not(:has(.expander))::before {
+				content: "";
+				width: 16px;
 			}
 		}
 
@@ -131,17 +106,8 @@ main.mac {
 				.expander {
 					width: 16px;
 					height: 28px;
+					translate: 3px 0;
 					background-color: transparent;
-				}
-			}
-
-			.content {
-				.nav-item {
-					padding-left: 14px;
-
-					.icon {
-						margin-left: 15px;
-					}
 				}
 			}
 		}
@@ -152,35 +118,10 @@ main.tahoe {
 	.nav-list {
 		padding: 8px;
 
-		&.slim {
-			.nav-item {
-				height: 22px;
-
-				.icon {
-					width: 30px;
-					height: 30px;
-					margin: -4px;
-				}
-
-				p {
-					line-height: 22px;
-				}
-			}
-
-			.nav-folder {
-				.nav-item {
-					.expander {
-						height: 22px;
-
-						img {
-							margin: -4px;
-						}
-					}
-
-					.icon {
-						margin: -4px -4px -4px -6px;
-					}
-				}
+		&:has(.nav-item .expander) {
+			.nav-item:not(:has(.expander))::before {
+				content: "";
+				width: 16px;
 			}
 		}
 
@@ -239,17 +180,8 @@ main.tahoe {
 				.expander {
 					width: 16px;
 					height: 28px;
+					translate: 3px 0;
 					background-color: transparent;
-				}
-			}
-
-			.content {
-				.nav-item {
-					padding-left: 14px;
-
-					.icon {
-						margin-left: 15px;
-					}
 				}
 			}
 		}
@@ -259,47 +191,6 @@ main.tahoe {
 main.win {
 	.nav-list {
 		padding: 4px;
-
-		&.slim {
-			.nav-item {
-				height: 22px;
-
-				&.active {
-					&::after {
-						content: none;
-					}
-				}
-
-				.icon {
-					width: 30px;
-					height: 30px;
-					margin: -4px;
-				}
-
-				p {
-					line-height: 22px;
-					overflow: hidden;
-					white-space: nowrap;
-					text-overflow: ellipsis;
-				}
-			}
-
-			.nav-folder {
-				.nav-item {
-					.expander {
-						height: 22px;
-
-						img {
-							margin: -4px;
-						}
-					}
-
-					.icon {
-						margin: -4px -4px -4px -6px;
-					}
-				}
-			}
-		}
 
 		.category {
 			height: 11px;
@@ -321,17 +212,6 @@ main.win {
 
 			&.active {
 				background-color: var(--hover);
-
-				&::after {
-					content: "";
-					position: absolute;
-					left: 0;
-					top: 6px;
-					width: 3px;
-					height: 16px;
-					background-color: var(--accent);
-					border-radius: 1.5px;
-				}
 
 				.icon {
 					filter: var(--accent-filter);
@@ -385,4 +265,84 @@ main.win {
 }
 
 main.web {
+	.nav-list {
+		padding: 8px;
+
+		&:has(.nav-item .expander) {
+			.nav-item:not(:has(.expander))::before {
+				content: "";
+				width: 16px;
+			}
+		}
+
+		.category {
+			height: 11px;
+			margin: 18px 0 4px 0;
+			line-height: 11px;
+			font-size: 11rem;
+			padding-left: 4px;
+			font-weight: 400;
+			opacity: 60%;
+
+			&:first-of-type {
+				margin-top: 0;
+			}
+		}
+
+		.nav-item {
+			height: 28px;
+			border-radius: 6px;
+
+			&.active {
+				background-color: var(--hover);
+
+				img {
+					filter: var(--accent-filter);
+					-webkit-filter: var(--accent-filter);
+				}
+			}
+
+			&:not(:has(.icon)) {
+				padding-left: 6px;
+			}
+
+			img {
+				filter: var(--icon-filter-muted);
+				-webkit-filter: var(--icon-filter-muted);
+			}
+
+			.icon {
+				width: 30px;
+				height: 30px;
+				margin: -1px;
+			}
+
+			p {
+				margin: 0 0 0 0px;
+				line-height: 28px;
+				font-size: 13px;
+				font-weight: 500;
+			}
+		}
+
+		.nav-folder {
+			&:has(.active) {
+				background-color: rgba(91, 91, 91, 0.2);
+				border-radius: 6px;
+
+				& > .nav-item {
+					background-color: transparent;
+				}
+			}
+
+			.nav-item {
+				.expander {
+					width: 16px;
+					height: 28px;
+					translate: 3px 0;
+					background-color: transparent;
+				}
+			}
+		}
+	}
 }

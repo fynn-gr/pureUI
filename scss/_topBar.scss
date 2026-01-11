@@ -2,9 +2,6 @@
 @use "../scss/variables" as v;
 
 main .topbar {
-	//28px default
-	//38px buttonBar
-	//54px toolBar
 	grid-area: topbar;
 	top: 0;
 	right: 0;

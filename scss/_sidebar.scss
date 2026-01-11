@@ -2,6 +2,9 @@
 
 .sidebar {
 	//background-color: var(--navbar-BG);
+	.sidebar-inner {
+		overflow: hidden;
+	}
 
 	.nav-tabs {
 		display: flex;

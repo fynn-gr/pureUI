@@ -17,8 +17,8 @@ main.tahoe .topbar {
 			display: flex;
 
 			button {
-				width: 12px;
-				height: 12px;
+				width: 14px;
+				height: 14px;
 				box-sizing: border-box;
 				border: solid;
 				border-width: 1px;
@@ -201,19 +201,19 @@ main.tahoe .topbar {
 	}
 
 	&.default {
-		height: 28px;
+		height: 32px;
 		background-color: transparent;
 		border-bottom: none;
 		@include colors.liquid-glass;
 
 		.win-buttons-mac {
-			height: 28px;
-			padding: 7px;
+			height: 32px;
+			padding: 9px;
 		}
 
 		.window-title {
-			height: 28px;
-			line-height: 28px;
+			height: 32px;
+			line-height: 32px;
 			font-size: 13px;
 			font-weight: 600;
 		}
@@ -229,7 +229,7 @@ main.tahoe .topbar {
 
 			.win-buttons-mac {
 				height: 54px;
-				padding: 21px 9px 21px 21px;
+				padding: 20px 9px 20px 20px;
 			}
 
 			.app-menu {
