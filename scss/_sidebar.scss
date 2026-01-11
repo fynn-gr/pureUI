@@ -1,7 +1,7 @@
 @use "../scss/_colors" as colors;
 
 .sidebar {
-	background-color: var(--navbar-BG);
+	//background-color: var(--navbar-BG);
 
 	.nav-tabs {
 		display: flex;
@@ -16,6 +16,7 @@
 main.mac {
 	.sidebar {
 		border-right: 1px solid var(--grid-gap);
+		background-color: var(--navbar-BG);
 
 		.nav-tabs {
 			margin: 0;
@@ -43,6 +44,16 @@ main.mac {
 				}
 			}
 		}
+
+		.nav-list {
+			margin-top: 46px;
+		}
+	}
+
+	&:has(.buttonbar) {
+		.sidebar .nav-list {
+			margin-top: 30px;
+		}
 	}
 }
 
@@ -50,13 +61,14 @@ main.tahoe {
 	.sidebar {
 		position: relative;
 		background-color: transparent;
+		backdrop-filter: none;
 
 		.sidebar-inner {
 			z-index: 50;
 			inset: 8px;
 			position: absolute;
 			border-radius: 16px;
-			outline: 1px solid rgba(255, 255, 255, 0.1);
+			background-color: var(--topbar-BG);
 			box-shadow: 0px 0px 8px 2px black;
 		}
 
@@ -86,6 +98,38 @@ main.tahoe {
 					filter: var(--icon-filter);
 				}
 			}
+		}
+
+		.nav-list {
+			margin-top: 36px;
+		}
+	}
+}
+
+main.win {
+	.sidebar {
+		background-color: var(--topbar-BG);
+	}
+
+	&:has(.buttonbar) {
+		.sidebar .nav-list {
+			margin-top: 30px;
+		}
+	}
+
+	&:has(.toolbar) {
+		.sidebar .nav-list {
+			margin-top: 40px;
+		}
+	}
+}
+
+main.web {
+	.sidebar {
+		background-color: var(--topbar-BG);
+
+		.nav-list {
+			margin-top: 36px;
 		}
 	}
 }

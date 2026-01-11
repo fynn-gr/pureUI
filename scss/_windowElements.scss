@@ -84,10 +84,6 @@ main.win {
 		}
 	}
 
-	.navbar {
-		background-color: var(--navbar-BG);
-	}
-
 	.window-rim {
 		border-color: rgb(83, 83, 83);
 
@@ -100,9 +96,5 @@ main.win {
 main.web {
 	.window-body {
 		border-radius: 0;
-	}
-
-	.navbar {
-		background-color: var(--navbar-BG);
 	}
 }
