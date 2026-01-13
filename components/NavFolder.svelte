@@ -5,7 +5,6 @@
 		onClick?: Function;
 		active: boolean;
 		exposed: boolean;
-		depth?: number;
 		children?: any;
 	}
 	let {
@@ -14,7 +13,6 @@
 		onClick = () => {},
 		active,
 		exposed,
-		depth = 0,
 		children
 	}: Props = $props();
 </script>
@@ -30,9 +28,6 @@
 			onClick();
 		}}
 	>
-		{#each Array(depth) as _, i}
-			<div class="indent" style={`width: 14px;`}></div>
-		{/each}
 		<button
 			class="expander"
 			onclick={(e) => {

@@ -2,8 +2,7 @@ main.dark {
 	//window
 	--topbar-BG: rgb(54, 54, 54);
 	--topbar-BG-transparent: rgb(54, 54, 54, 0.7);
-	--navbar-BG: rgb(36, 36, 36, 0.84);
-	--navbar-inner-BG: rgb(24, 24, 24, 0.6);
+	--navbar-BG: rgb(66, 66, 66);
 	--liquid-glass: rgba(54, 54, 54);
 	--properties-BG: rgb(48, 48, 48);
 	--grid-gap: rgb(26, 26, 26);
@@ -56,14 +55,13 @@ main.light {
 	//window
 	--topbar-BG: rgb(250, 250, 250);
 	--topbar-BG-transparent: rgba(255, 255, 255, 0.7);
-	--navbar-BG: rgba(246, 246, 246, 0.84);
-	--navbar-inner-BG: rgba(246, 246, 246, 0.6);
+	--navbar-BG: rgb(231, 231, 231);
 	--liquid-glass: rgba(255, 255, 255, 1);
 	--properties-BG: rgb(255, 255, 255);
 	--grid-gap: rgb(196, 196, 196);
 
-	--icon-filter: invert(10%);
-	--icon-filter-muted: invert(20%);
+	--icon-filter: invert(20%);
+	--icon-filter-muted: invert(30%);
 	--icon-filter-invert: invert(100%);
 
 	//area
