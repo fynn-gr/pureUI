@@ -113,7 +113,9 @@ main.tahoe .topbar {
 			margin: 9px 0;
 			padding: 0 12px;
 			border-radius: 18px;
-			@include colors.liquid-glass;
+			background-color: var(--topbar-BG);
+			box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4),
+				0px 2px 16px rgba(0, 0, 0, 0.4);
 
 			p {
 				line-height: 36px;
@@ -204,7 +206,8 @@ main.tahoe .topbar {
 		height: 32px;
 		background-color: transparent;
 		border-bottom: none;
-		@include colors.liquid-glass;
+		background-color: var(--topbar-BG);
+		box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4), 0px 2px 16px rgba(0, 0, 0, 0.4);
 
 		.win-buttons-mac {
 			height: 32px;
@@ -239,7 +242,9 @@ main.tahoe .topbar {
 					margin: 9px 0 9px 0;
 					padding: 0;
 					border-radius: 18px;
-					@include colors.liquid-glass;
+					background-color: var(--topbar-BG);
+					box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4),
+						0px 2px 16px rgba(0, 0, 0, 0.4);
 				}
 			}
 
@@ -257,7 +262,9 @@ main.tahoe .topbar {
 				margin: 9px 0 9px 0;
 				padding: 0;
 				border-radius: 18px;
-				@include colors.liquid-glass;
+						background-color: var(--topbar-BG);
+				box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4),
+					0px 2px 16px rgba(0, 0, 0, 0.4);
 
 				&:hover {
 				}
@@ -301,7 +308,9 @@ main.tahoe .topbar {
 					padding: 0 10px;
 					color: var(--text);
 					border-radius: 18px;
-					@include colors.liquid-glass;
+					background-color: var(--topbar-BG);
+					box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4),
+						0px 2px 16px rgba(0, 0, 0, 0.4);
 
 					&:hover {
 						background-color: var(--hover);
@@ -345,7 +354,9 @@ main.tahoe .topbar {
 				height: 36px;
 				margin: 9px 0 9px 0;
 				border-radius: 18px;
-				@include colors.liquid-glass;
+				background-color: var(--topbar-BG);
+				box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4),
+					0px 2px 16px rgba(0, 0, 0, 0.4);
 
 				.topbar-button {
 					margin: 0;
