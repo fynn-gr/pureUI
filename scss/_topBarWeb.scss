@@ -139,6 +139,7 @@ main.web .topbar {
 			img {
 				position: absolute;
 				inset: -4px 3px !important;
+				margin: 0 !important;
 				opacity: 100%;
 				rotate: 180deg;
 				transition: 500ms;
