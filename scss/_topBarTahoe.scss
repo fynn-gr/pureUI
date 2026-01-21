@@ -139,6 +139,7 @@ main.tahoe .topbar {
 			}
 
 			.topbar-button {
+				position: relative;
 				height: 36px;
 				width: 36px;
 				margin: 9px 0 9px 0;
@@ -149,8 +150,12 @@ main.tahoe .topbar {
 					0px 0px 6px rgba(0, 0, 0, 0.4),
 					0px 2px 16px rgba(0, 0, 0, 0.4);
 
-				&:hover {
-					//background-color: var(--hover);
+				&:hover::before {
+					content: "";
+					position: absolute;
+					inset: 3px;
+					background-color: var(--hover);
+					border-radius: 15px;
 				}
 
 				&.over-sidebar {
@@ -190,8 +195,26 @@ main.tahoe .topbar {
 			.topbar-dropdown {
 				&.attached {
 					.topbar-button {
-						width: 24px;
-						border-radius: 6px 18px 18px 6px;
+						width: 28px;
+						margin: 0;
+
+						&::before {
+							border-radius: 6px 15px 15px 6px;
+						}
+
+						&::after {
+							//content: '' !important;
+							position: absolute;
+							left: 1px;
+							top: 9px;
+							width: 1px;
+							height: 18px;
+							background-color: var(--hover);	
+						}
+
+						.arrow {
+							margin: 7px 4px;
+						}
 					}
 				}
 
@@ -205,7 +228,7 @@ main.tahoe .topbar {
 					.arrow {
 						width: 16px;
 						height: 22px;
-						margin: 7px 0 0 2px;
+						margin: 7px -4px;
 					}
 				}
 
@@ -313,14 +336,38 @@ main.tahoe .topbar {
 					0px 0px 6px rgba(0, 0, 0, 0.4),
 					0px 2px 16px rgba(0, 0, 0, 0.4);
 
-				.topbar-button {
+				& > .topbar-button:last-child,
+				& > .topbar-dropdown .topbar-button:last-child {
 					margin: 0;
+				}
+
+				.topbar-button, .topbar-dropdown .topbar-button {
+					margin: 0 -3px 0 0;
 					background-color: transparent;
 					box-shadow: none;
 					backdrop-filter: none;
 
-					&:hover {
+					&::after {
+						content: "";
+						position: absolute;
+						left: 1px;
+						top: 9px;
+						width: 1px;
+						height: 18px;
 						background-color: var(--hover);
+					}
+
+					&:first-child::after {
+						content: none;
+					}
+
+					&:hover {
+						&::after {
+							content: none;
+						}
+						& + ::after {
+							content: none;
+						}
 					}
 				}
 			}
