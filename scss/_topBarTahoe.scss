@@ -1,213 +1,65 @@
 @use "./colors";
 
 main.tahoe .topbar {
-	border-bottom: 1px solid var(--grid-gap);
-	border-radius: 0 8px 0 0;
+	.win-buttons-mac {
+		top: 0;
+		left: 0;
+		display: flex;
 
-	&.buttonbar,
-	&.toolbar {
-		background-color: transparent;
-		border-bottom: none;
-	}
+		button {
+			width: 12px;
+			height: 12px;
+			box-sizing: border-box;
+			border: none;
+			border-width: 1px;
+			border-radius: 50%;
 
-	.topbar-container {
-		.win-buttons-mac {
-			top: 0;
-			left: 0;
-			display: flex;
-
-			button {
-				width: 14px;
-				height: 14px;
-				box-sizing: border-box;
-				border: solid;
-				border-width: 1px;
-				border-radius: 50%;
-
-				img {
-					display: none;
-					position: relative;
-				}
-			}
-
-			&:hover {
-				img {
-					display: block;
-				}
-			}
-
-			& > :nth-child(1) {
-				background-color: rgb(254, 95, 87);
-				border-color: rgb(127, 47, 43, 0.4);
-				margin-right: 8px;
-			}
-
-			& > :nth-child(2) {
-				background-color: rgb(255, 188, 46);
-				border-color: rgb(128, 94, 23, 0.4);
-				margin-right: 8px;
-			}
-
-			& > :nth-child(3) {
-				background-color: rgb(40, 200, 65);
-				border-color: rgb(20, 100, 33, 0.4);
-			}
-
-			& > .disabled {
-				background-color: var(--traffic-light-disabled);
-				border-color: var(--traffic-light-disabled-border);
-
-				img {
-					display: none;
-				}
+			img {
+				display: none;
+				position: relative;
 			}
 		}
 
-		.app-menu {
-			.app-menu-btn {
-				font-weight: 600;
-			}
-
-			.menu-content {
-				padding: 5px;
-				border-radius: 6px;
-				background-color: var(--app-menu-content-BG);
-				border: 1px solid rgba(128, 128, 128, 0.504);
-
-				.app-menu-item {
-					display: flex;
-					flex-direction: row;
-					justify-content: left;
-					gap: 8px;
-					height: 22px;
-					line-height: 22px;
-					padding: 0 6px 0 0;
-					border-radius: 5px;
-					font-size: 14px;
-
-					&:hover {
-						background-color: var(--accent);
-					}
-
-					img {
-						width: 22px;
-						height: 22px;
-						margin-right: -6px;
-						filter: var(--icon-filter);
-					}
-				}
-
-				.seperator {
-					margin: 4px 0;
-				}
+		&:hover {
+			img {
+				display: block;
 			}
 		}
 
-		.window-title {
-			font-size: 13px;
-			font-weight: 600;
+		& > :nth-child(1) {
+			background-color: rgb(254, 95, 87);
+			border-color: rgb(127, 47, 43);
+			margin-right: 8px;
 		}
 
-		.document-title {
-			height: 36px;
-			margin: 9px 0;
-			padding: 0 12px;
-			border-radius: 18px;
-			background-color: var(--topbar-BG);
-			box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4),
-				0px 2px 16px rgba(0, 0, 0, 0.4);
-
-			p {
-				line-height: 36px;
-				font-size: 13px;
-				font-weight: 600;
-			}
-
-			.save-indicator {
-				margin: 0 0 0 6px;
-				font-size: 13px;
-				font-weight: 400;
-				opacity: 60%;
-			}
+		& > :nth-child(2) {
+			background-color: rgb(255, 188, 46);
+			border-color: rgb(128, 94, 23);
+			margin-right: 8px;
 		}
 
-		.topbar-dropdown {
-			&.attached {
-				.topbar-button {
-					width: 16px;
-
-					.arrow {
-						margin: 0;
-					}
-				}
-			}
-
-			.topbar-button {
-				width: 46px;
-
-				img {
-					margin: -1px 2px;
-				}
-
-				.arrow {
-					width: 16px;
-					height: 30px;
-					margin: 0 0 0 -6px;
-				}
-			}
-
-			.dropdown {
-				padding: 5px;
-				border-radius: 6px;
-				backdrop-filter: blur(40px);
-				-webkit-backdrop-filter: blur(40px);
-				background-color: rgb(21, 21, 21);
-				border: 1px solid rgba(128, 128, 128, 0.504);
-
-				.item {
-					justify-content: left;
-					height: 22px;
-					line-height: 22px;
-					padding: 0 5px;
-					border-radius: 5px;
-					font-size: 14px;
-
-					&:hover {
-						background-color: var(--accent);
-					}
-
-					img {
-						width: 22px;
-						height: 22px;
-						margin-left: -5px;
-						filter: var(--icon-filter);
-						-webkit-filter: var(--icon-filter);
-					}
-
-					.name {
-						line-height: 22px;
-						height: 22px;
-					}
-				}
-
-				.seperator {
-					margin: 4px 0;
-					border-top: 1px solid rgba(128, 128, 128, 0.2);
-				}
-			}
+		& > :nth-child(3) {
+			background-color: rgb(40, 200, 65);
+			border-color: rgb(20, 100, 33);
 		}
 
-		.topbar-group {
-			gap: 1px;
+		& > .disabled {
+			background-color: var(--traffic-light-disabled);
+			border-color: var(--traffic-light-disabled-border);
+
+			img {
+				display: none;
+			}
 		}
 	}
 
 	&.default {
 		height: 32px;
-		background-color: transparent;
-		border-bottom: none;
 		background-color: var(--topbar-BG);
-		box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4), 0px 2px 16px rgba(0, 0, 0, 0.4);
+		border-bottom: none;
+		box-shadow:
+			0px 0px 6px rgba(0, 0, 0, 0.4),
+			0px 2px 16px rgba(0, 0, 0, 0.4);
 
 		.win-buttons-mac {
 			height: 32px;
@@ -225,6 +77,8 @@ main.tahoe .topbar {
 	&.buttonbar,
 	&.toolbar {
 		height: 54px;
+		background-color: transparent;
+		border-bottom: none;
 
 		.topbar-container {
 			gap: 12px;
@@ -237,23 +91,51 @@ main.tahoe .topbar {
 
 			.app-menu {
 				.app-menu-btn {
+					font-weight: 600;
 					height: 36px;
 					width: 46px;
 					margin: 9px 0 9px 0;
 					padding: 0;
 					border-radius: 18px;
 					background-color: var(--topbar-BG);
-					box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4),
+					box-shadow:
+						0px 0px 6px rgba(0, 0, 0, 0.4),
 						0px 2px 16px rgba(0, 0, 0, 0.4);
 				}
-			}
 
-			.window-title {
-				height: 28px;
-				line-height: 28px;
-				margin: 13px 0 13px 0;
-				font-size: 13px;
-				font-weight: 600;
+				.menu-content {
+					padding: 5px;
+					border-radius: 6px;
+					background-color: var(--app-menu-content-BG);
+					border: 1px solid rgba(128, 128, 128, 0.504);
+
+					.app-menu-item {
+						display: flex;
+						flex-direction: row;
+						justify-content: left;
+						gap: 8px;
+						height: 22px;
+						line-height: 22px;
+						padding: 0 6px 0 0;
+						border-radius: 5px;
+						font-size: 14px;
+
+						&:hover {
+							background-color: var(--accent);
+						}
+
+						img {
+							width: 22px;
+							height: 22px;
+							margin-right: -6px;
+							filter: var(--icon-filter);
+						}
+					}
+
+					.seperator {
+						margin: 4px 0;
+					}
+				}
 			}
 
 			.topbar-button {
@@ -262,11 +144,13 @@ main.tahoe .topbar {
 				margin: 9px 0 9px 0;
 				padding: 0;
 				border-radius: 18px;
-						background-color: var(--topbar-BG);
-				box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4),
+				background-color: var(--topbar-BG);
+				box-shadow:
+					0px 0px 6px rgba(0, 0, 0, 0.4),
 					0px 2px 16px rgba(0, 0, 0, 0.4);
 
 				&:hover {
+					//background-color: var(--hover);
 				}
 
 				&.over-sidebar {
@@ -279,6 +163,30 @@ main.tahoe .topbar {
 				}
 			}
 
+			.document-title {
+				height: 36px;
+				margin: 9px 0;
+				padding: 0 12px;
+				border-radius: 18px;
+				background-color: var(--topbar-BG);
+				box-shadow:
+					0px 0px 6px rgba(0, 0, 0, 0.4),
+					0px 2px 16px rgba(0, 0, 0, 0.4);
+
+				p {
+					line-height: 36px;
+					font-size: 13px;
+					font-weight: 600;
+				}
+
+				.save-indicator {
+					margin: 0 0 0 6px;
+					font-size: 13px;
+					font-weight: 400;
+					opacity: 60%;
+				}
+			}
+
 			.topbar-dropdown {
 				&.attached {
 					.topbar-button {
@@ -286,13 +194,58 @@ main.tahoe .topbar {
 						border-radius: 6px 18px 18px 6px;
 					}
 				}
+
 				.topbar-button {
 					width: 60px;
+
+					img {
+						margin: -1px 2px;
+					}
 
 					.arrow {
 						width: 16px;
 						height: 22px;
 						margin: 7px 0 0 2px;
+					}
+				}
+
+				.dropdown {
+					padding: 5px;
+					border-radius: 6px;
+					backdrop-filter: blur(40px);
+					-webkit-backdrop-filter: blur(40px);
+					background-color: rgb(21, 21, 21);
+					border: 1px solid rgba(128, 128, 128, 0.504);
+
+					.item {
+						justify-content: left;
+						height: 22px;
+						line-height: 22px;
+						padding: 0 5px;
+						border-radius: 5px;
+						font-size: 14px;
+
+						&:hover {
+							background-color: var(--accent);
+						}
+
+						img {
+							width: 22px;
+							height: 22px;
+							margin-left: -5px;
+							filter: var(--icon-filter);
+							-webkit-filter: var(--icon-filter);
+						}
+
+						.name {
+							line-height: 22px;
+							height: 22px;
+						}
+					}
+
+					.seperator {
+						margin: 4px 0;
+						border-top: 1px solid rgba(128, 128, 128, 0.2);
 					}
 				}
 			}
@@ -309,7 +262,8 @@ main.tahoe .topbar {
 					color: var(--text);
 					border-radius: 18px;
 					background-color: var(--topbar-BG);
-					box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4),
+					box-shadow:
+						0px 0px 6px rgba(0, 0, 0, 0.4),
 						0px 2px 16px rgba(0, 0, 0, 0.4);
 
 					&:hover {
@@ -355,7 +309,8 @@ main.tahoe .topbar {
 				margin: 9px 0 9px 0;
 				border-radius: 18px;
 				background-color: var(--topbar-BG);
-				box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4),
+				box-shadow:
+					0px 0px 6px rgba(0, 0, 0, 0.4),
 					0px 2px 16px rgba(0, 0, 0, 0.4);
 
 				.topbar-button {
