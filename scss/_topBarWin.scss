@@ -1,47 +1,69 @@
 main.win .topbar {
 	.topbar-container {
-		.menu-content {
-			gap: 4px;
-			padding: 4px 0;
-			border-radius: 8px;
-			border: 1px solid rgb(26, 26, 26);
-			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+		background-color: var(--topbar-BG);
+		border-radius: 9px 9px 0px 0px;
 
-			.app-menu-item {
-				display: flex;
-				flex-direction: row;
-				justify-content: left;
-				gap: 8px;
-				height: 28px;
-				margin: 0 4px;
+		.app-menu {
+			.app-menu-btn {
 				border-radius: 5px;
-				font-size: 14px;
+			}
 
-				img {
-					width: 28px;
+			.menu-content {
+				gap: 4px;
+				padding: 4px 0;
+				border-radius: 8px;
+				border: 1px solid rgb(26, 26, 26);
+				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+
+				.app-menu-item {
+					display: flex;
+					flex-direction: row;
+					justify-content: left;
+					gap: 8px;
 					height: 28px;
-					filter: var(--icon-filter);
-				}
+					margin: 0 4px;
+					border-radius: 5px;
+					font-size: 14px;
 
-				.name {
-					margin: 0 12px;
-					flex: 1;
-					line-height: 28px;
-					font-weight: 500;
-				}
+					img {
+						width: 28px;
+						height: 28px;
+						filter: var(--icon-filter);
+					}
 
-				.accelerator {
-					margin-right: 12px;
-					opacity: 50%;
-					line-height: 28px;
-					font-weight: 700;
+					.name {
+						margin: 0 12px;
+						flex: 1;
+						line-height: 28px;
+						font-weight: 500;
+					}
+
+					.accelerator {
+						margin-right: 12px;
+						opacity: 50%;
+						line-height: 28px;
+						font-weight: 700;
+					}
 				}
 			}
+		}
+
+		.topabar-button {
+			border-radius: 5px;
 		}
 
 		.window-title {
 			font-size: 12px;
 			font-weight: 400;
+		}
+
+		.document-title {
+			.save-indicator {
+				margin: 0 0 0 3px;
+				font-size: 12px;
+				font-weight: 400;
+				opacity: 60%;
+			}
 		}
 
 		.topbar-dropdown {
@@ -60,6 +82,8 @@ main.win .topbar {
 			}
 
 			.topbar-button {
+				width: 48px;
+
 				.arrow {
 					width: 16px;
 					height: 30px;
@@ -146,6 +170,10 @@ main.win .topbar {
 			}
 		}
 
+		.topbar-group {
+			border-radius: 5px;
+		}
+
 		.win-buttons-ms {
 			top: 0;
 			right: 0;
@@ -200,45 +228,28 @@ main.win .topbar {
 		height: 32px;
 
 		.topbar-container {
-			background-color: var(--topbar-BG);
-			border-bottom: 1px solid var(--grid-gap);
-			border-radius: 9px 9px 0px 0px;
+			height: 32px;
 			gap: 6px;
 			padding-left: 6px;
+			border-bottom: 1px solid var(--grid-gap);
 
 			.app-menu {
 				.app-menu-btn {
 					height: 22px;
 					padding: 0 8px;
 					margin: 5px 0;
-					border-radius: 5px;
 				}
-			}
-
-			.window-title {
-				height: 32px;
-				line-height: 32px;
-				font-size: 12px;
-				font-weight: 400;
 			}
 
 			.document-title {
 				height: 32px;
 				line-height: 32px;
-
-				.save-indicator {
-					margin: 0 0 0 3px;
-					font-size: 12px;
-					font-weight: 400;
-					opacity: 60%;
-				}
 			}
 
 			.topbar-button {
 				width: 30px;
 				height: 22px;
 				margin: 5px 0;
-				border-radius: 5px;
 
 				img {
 					margin: -4px 0;
@@ -255,38 +266,11 @@ main.win .topbar {
 						margin: -4px 0 0 3px;
 					}
 				}
-
-				.topbar-button {
-					width: 48px;
-				}
-
-				.arrow {
-					width: 16px;
-					height: 30px;
-					margin: -4px 0 0 0;
-				}
-			}
-
-			.tab-container {
-				display: flex;
-				flex-direction: row;
-				gap: 6px;
-				margin: 6px 0;
-				border: none;
-				height: 22px;
-
-				button {
-					height: 22px;
-					width: 80px;
-					background-color: rgb(41, 41, 41);
-					border-radius: 5px;
-				}
 			}
 
 			.topbar-group {
 				height: 22px;
-				margin: 6px;
-				border-radius: 5px;
+				margin: 6px 0;
 
 				.topbar-button {
 					margin: 0;
@@ -301,47 +285,26 @@ main.win .topbar {
 		.topbar-container {
 			height: 44px;
 			gap: 8px;
-			padding-left: 6px;
-			background-color: var(--topbar-BG);
+			padding-left: 8px;
 			border-bottom: 1px solid var(--grid-gap);
-			border-radius: 9px 9px 0px 0px;
 
 			.app-menu {
 				.app-menu-btn {
 					height: 28px;
 					padding: 0 12px;
 					margin: 8px 0;
-					border-radius: 5px;
 				}
-			}
-
-			.window-title {
-				height: 28px;
-				line-height: 28px;
-				padding: 0 8px;
-				margin: 8px 0;
-				font-size: 12px;
-				font-weight: 600;
-				border-radius: 5px;
 			}
 
 			.document-title {
 				height: 44px;
 				line-height: 44px;
-
-				.save-indicator {
-					margin: 0 0 0 3px;
-					font-size: 12px;
-					font-weight: 400;
-					opacity: 60%;
-				}
 			}
 
 			.topbar-button {
 				height: 28px;
 				width: 28px;
-				margin: 8px 0 8px 0;
-				border-radius: 5px;
+				margin: 8px 0;
 
 				img {
 					margin: -1px -1px;
@@ -358,22 +321,11 @@ main.win .topbar {
 						margin: 0 7px;
 					}
 				}
-
-				.topbar-button {
-					width: 48px;
-				}
-
-				.arrow {
-					width: 16px;
-					height: 30px;
-					margin: 0 0 0 0px;
-				}
 			}
 
 			.topbar-group {
 				height: 28px;
 				margin: 8px 0;
-				border-radius: 5px;
 
 				.topbar-button {
 					margin: 0;

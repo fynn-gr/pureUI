@@ -1,5 +1,14 @@
 main.web .topbar {
+	height: 40px;
+
 	.topbar-container {
+		height: 40px;
+		gap: 9px;
+		padding-right: 9px;
+		border-bottom: 1px solid rgb(65, 65, 65);
+		border-bottom: 1px solid var(--gridGap);
+		background-color: var(--topbar-BG);
+
 		.topbar-webmenu {
 			height: 40px;
 			margin: auto 0;
@@ -80,6 +89,13 @@ main.web .topbar {
 		}
 
 		.app-menu {
+			.app-menu-btn {
+				height: 22px;
+				padding: 0 8px;
+				margin: 9px 0;
+				border-radius: 5px;
+			}
+
 			.menu-content {
 				gap: 4px;
 				padding: 4px 0;
@@ -121,6 +137,115 @@ main.web .topbar {
 			}
 		}
 
+		.topbar-button {
+			height: 22px;
+			width: 36px;
+			margin: 9px 0;
+			padding: 0;
+			border-radius: 6px;
+
+			&:hover {
+				background-color: var(--hover);
+			}
+
+			img {
+				margin: -4px 3px;
+			}
+		}
+
+		.topbar-dropdown {
+			.topbar-button {
+				.arrow {
+					width: 16px;
+					height: 22px;
+					margin: 0;
+				}
+			}
+		}
+
+		.window-title {
+			height: 40px;
+			line-height: 40px;
+			margin: 0;
+			font-size: 13px;
+			font-weight: 600;
+		}
+
+		.document-title {
+			height: 40px;
+			line-height: 40px;
+
+			.save-indicator {
+				margin: 0 0 0 3px;
+				font-size: 13px;
+				font-weight: 400;
+				opacity: 60%;
+			}
+		}
+
+		.select {
+			&:hover {
+				.option-container {
+					display: flex;
+				}
+			}
+
+			.select-btn {
+				height: 28px;
+				margin: 13px 0;
+				padding: 0 12px;
+				border-radius: 6px;
+				color: var(--text);
+				background-color: transparent;
+				border: 1px solid var(--hover);
+
+				&:hover {
+					background-color: var(--hover);
+				}
+			}
+
+			.option-container {
+				display: none;
+				position: absolute;
+				flex-direction: column;
+				padding: 4px 0;
+				gap: 4px;
+				border-radius: 8px;
+				background-color: var(--appMenuContentBG);
+				backdrop-filter: blur(40px);
+				box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+
+				button {
+					height: 28px;
+					margin: 0 4px;
+					padding: 0 12px;
+					border-radius: 4px;
+					font-size: 14px;
+					text-align: left;
+					color: var(--text);
+					background-color: transparent;
+
+					&:hover {
+						background-color: var(--hover);
+					}
+
+					&.selected {
+						background-color: var(--hover2);
+					}
+				}
+			}
+		}
+
+		.topbar-group {
+			height: 22px;
+			margin: 9px 0 9px 0;
+			border-radius: 6px;
+
+			.topbar-button {
+				margin: 0;
+			}
+		}
+
 		.theme-toggle {
 			position: relative;
 
@@ -147,139 +272,6 @@ main.web .topbar {
 
 			#moon {
 				opacity: 0%;
-			}
-		}
-	}
-
-	&.buttonbar,
-	&.toolbar,
-	&.default {
-		height: 40px;
-
-		.topbar-container {
-			height: 40px;
-			gap: 9px;
-			padding-right: 9px;
-			border-bottom: 1px solid rgb(65, 65, 65);
-			border-bottom: 1px solid var(--gridGap);
-			background-color: var(--topbar-BG);
-
-			.app-menu {
-				.app-menu-btn {
-					height: 22px;
-					padding: 0 8px;
-					margin: 9px 0;
-					border-radius: 5px;
-				}
-			}
-
-			.topbar-button {
-				height: 22px;
-				width: 36px;
-				margin: 9px 0;
-				padding: 0;
-				border-radius: 6px;
-
-				&:hover {
-					background-color: var(--hover);
-				}
-
-				img {
-					margin: -4px 3px;
-				}
-			}
-
-			.topbar-dropdown {
-				.topbar-button {
-					.arrow {
-						width: 16px;
-						height: 22px;
-						margin: 0;
-					}
-				}
-			}
-
-			.window-title {
-				height: 40px;
-				line-height: 40px;
-				margin: 0;
-				font-size: 13px;
-				font-weight: 600;
-			}
-
-			.document-title {
-				height: 40px;
-				line-height: 40px;
-
-				.save-indicator {
-					margin: 0 0 0 3px;
-					font-size: 13px;
-					font-weight: 400;
-					opacity: 60%;
-				}
-			}
-
-			.select {
-				&:hover {
-					.option-container {
-						display: flex;
-					}
-				}
-
-				.select-btn {
-					height: 28px;
-					margin: 13px 0;
-					padding: 0 12px;
-					border-radius: 6px;
-					color: var(--text);
-					background-color: transparent;
-					border: 1px solid var(--hover);
-
-					&:hover {
-						background-color: var(--hover);
-					}
-				}
-
-				.option-container {
-					display: none;
-					position: absolute;
-					flex-direction: column;
-					padding: 4px 0;
-					gap: 4px;
-					border-radius: 8px;
-					background-color: var(--appMenuContentBG);
-					backdrop-filter: blur(40px);
-					box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
-
-					button {
-						height: 28px;
-						margin: 0 4px;
-						padding: 0 12px;
-						border-radius: 4px;
-						font-size: 14px;
-						text-align: left;
-						color: var(--text);
-						background-color: transparent;
-
-						&:hover {
-							background-color: var(--hover);
-						}
-
-						&.selected {
-							background-color: var(--hover2);
-						}
-					}
-				}
-			}
-
-			.topbar-group {
-				height: 22px;
-				margin: 9px 0 9px 0;
-				border-radius: 6px;
-
-				.topbar-button {
-					margin: 0;
-				}
 			}
 		}
 	}
