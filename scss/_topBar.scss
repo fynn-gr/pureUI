@@ -187,6 +187,22 @@ main .topbar {
 			position: relative;
 
 			.select-btn {
+				display: flex;
+				flex-direction: row;
+
+				.options {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+
+					p {
+						visibility: hidden;
+
+						&.sel {
+							visibility: visible;
+						}
+					}
+				}
 			}
 
 			.option-container {
@@ -197,9 +213,6 @@ main .topbar {
 
 				&.exposed {
 					display: flex;
-				}
-
-				button {
 				}
 			}
 		}
@@ -216,7 +229,7 @@ main .topbar {
 				margin: 0;
 
 				&:hover {
-					background-color: transparent;
+					background-color: var(--hover);
 				}
 
 				&.active {

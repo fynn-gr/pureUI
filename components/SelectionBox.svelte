@@ -1,5 +1,5 @@
 <script lang="ts">
-import { uiPlatform } from "@/ts/Stores.svelte";
+
 
 interface Props {
 	options: Array<{ name: string; value: any }>;
@@ -21,7 +21,14 @@ $inspect(selectedObj);
 		onclick={() => {
 			exposed = !exposed;
 			onChange();
-		}}>{selectedObj.name}</button
+		}}>
+		<div class="options">
+			{#each options as e}
+				<p class:sel={selectedObj == e}>{e.name}</p>
+			{/each}
+		</div>
+			<img src="./icons/std/select_arrow.svg" alt="">
+		</button
 	>
 	<div class="option-container" class:exposed>
 		{#each options as option}

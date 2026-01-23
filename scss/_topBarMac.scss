@@ -192,7 +192,6 @@ main.mac .topbar {
 
 			.select-btn {
 				height: 22px;
-				padding: 0 10px;
 				color: var(--text);
 				background-color: transparent;
 				border: 1px solid var(--hover);
@@ -200,6 +199,28 @@ main.mac .topbar {
 
 				&:hover {
 					background-color: var(--hover);
+				}
+
+				.options {
+					p {
+						height: 22px;
+						line-height: 22px;
+						margin-top: -22px;
+						font-size: 12px;
+						text-align: center;
+						margin-left: 6px;
+						margin-right: 6px;
+
+						&:first-child {
+							margin-top: 0;
+						}
+					}
+				}
+
+				img {
+					height: 16px;
+					margin: auto 0;
+					filter: var(--icon-filter);
 				}
 			}
 
@@ -225,11 +246,11 @@ main.mac .topbar {
 					background-color: transparent;
 					border-radius: 5px;
 
-					&.selected {
-						background-color: var(--accent);
+					&:hover {
+						background-color: var(--hover);
 					}
 
-					&:hover {
+					&.selected {
 						background-color: var(--accent);
 					}
 				}
