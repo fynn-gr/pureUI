@@ -120,19 +120,7 @@ main.mac .topbar {
 		}
 
 		.topbar-dropdown {
-			&.attached {
-				.topbar-button {
-					width: 16px;
-
-					.arrow {
-						margin: 0;
-					}
-				}
-			}
-
 			.topbar-button {
-				width: 46px;
-
 				img {
 					margin: -1px 2px;
 				}
@@ -140,7 +128,6 @@ main.mac .topbar {
 				.arrow {
 					width: 16px;
 					height: 30px;
-					margin: 0 0 0 -6px;
 				}
 			}
 
@@ -323,6 +310,17 @@ main.mac .topbar {
 			}
 
 			.topbar-dropdown {
+				&.attached {
+					.topbar-button {
+						width: 16px;
+
+						.arrow {
+							margin: 0;
+						}
+					}
+
+				}
+
 				.topbar-button {
 					width: 46px;
 
@@ -395,6 +393,25 @@ main.mac .topbar {
 
 				img {
 					margin: -1px 2px;
+				}
+			}
+
+			.topbar-dropdown {
+				&.attached {
+					.topbar-button {
+						width: 16px;
+
+						.arrow {
+							margin: 0;
+						}
+					}
+				}
+				.topbar-button {
+					width: 46px;
+
+					.arrow {
+						margin: 0 0 0 -6px;
+					}
 				}
 			}
 
