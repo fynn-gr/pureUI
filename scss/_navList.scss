@@ -88,7 +88,7 @@
 		border-radius: 6px;
 
 		&.exposed {
-			background-color: rgba(112, 112, 112, 0.2);
+			background-color: rgb(87, 87, 87);
 
 			.content {
 				padding-bottom: 4px;
@@ -98,6 +98,10 @@
 			.nav-item .expander img {
 				rotate: 0deg;
 			}
+		}
+
+		&.odd {
+			background-color: var(--navbar-BG);
 		}
 
 		&:has(> .active) {
