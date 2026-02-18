@@ -173,15 +173,12 @@ main.mac .topbar {
 		}
 
 		.select {
-			line-height: 22px;
 			color: var(--text);
 			background-color: transparent;
 
 			.select-btn {
-				height: 22px;
 				color: var(--text);
 				background-color: transparent;
-				border: 1px solid var(--hover);
 				border-radius: 6px;
 
 				&:hover {
@@ -190,17 +187,10 @@ main.mac .topbar {
 
 				.options {
 					p {
-						height: 22px;
-						line-height: 22px;
-						margin-top: -22px;
 						font-size: 12px;
 						text-align: center;
 						margin-left: 6px;
 						margin-right: 6px;
-
-						&:first-child {
-							margin-top: 0;
-						}
 					}
 				}
 
@@ -318,7 +308,6 @@ main.mac .topbar {
 							margin: 0;
 						}
 					}
-
 				}
 
 				.topbar-button {
@@ -337,7 +326,24 @@ main.mac .topbar {
 			}
 
 			.select {
+				line-height: 22px;
 				margin: 9px 0 9px 0;
+
+				.select-btn {
+					height: 22px;
+
+					.options {
+						p {
+							height: 22px;
+							line-height: 22px;
+							margin-top: -22px;
+
+							&:first-child {
+								margin-top: 0;
+							}
+						}
+					}
+				}
 			}
 
 			.topbar-group {
@@ -375,13 +381,13 @@ main.mac .topbar {
 
 			.document-title {
 				p {
-					height: 28px;
-					line-height: 28px;
+					height: 48px;
+					line-height: 48px;
 				}
 
 				.save-indicator {
-					height: 28px;
-					line-height: 28px;
+					height: 48px;
+					line-height: 48px;
 				}
 			}
 
@@ -416,7 +422,28 @@ main.mac .topbar {
 			}
 
 			.select {
-				margin: 16px 0 15px 0;
+				margin: 14px 0;
+
+				.select-btn {
+					height: 28px;
+					line-height: 28px;
+
+					.options {
+						p {
+							height: 28px;
+							line-height: 28px;
+							margin-top: -28px;
+
+							&:first-child {
+								margin-top: 0;
+							}
+						}
+					}
+
+					img {
+						margin: 5px 2px;
+					}
+				}
 			}
 
 			.topbar-group {
