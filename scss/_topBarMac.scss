@@ -98,6 +98,7 @@ main.mac .topbar {
 
 		.topbar-button {
 			border-radius: 6px;
+			background-color: var(--button-bg);
 		}
 
 		.window-title {
@@ -180,6 +181,7 @@ main.mac .topbar {
 				color: var(--text);
 				background-color: transparent;
 				border-radius: 6px;
+				background-color: var(--button-bg);
 
 				&:hover {
 					background-color: var(--hover);
@@ -237,6 +239,11 @@ main.mac .topbar {
 		.topbar-group {
 			gap: 1px;
 			border-radius: 6px;
+			background-color: var(--button-bg);
+
+			.topbar-button {
+				background-color: transparent;
+			}
 		}
 	}
 

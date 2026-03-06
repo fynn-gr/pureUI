@@ -50,6 +50,7 @@ main.win .topbar {
 
 		.topbar-button {
 			border-radius: 5px;
+			background-color: var(--button-bg);
 		}
 
 		.window-title {
@@ -173,6 +174,11 @@ main.win .topbar {
 
 		.topbar-group {
 			border-radius: 5px;
+			background-color: var(--button-bg);
+
+			.topbar-button {
+				background-color: transparent;
+			}
 		}
 
 		.win-buttons-ms {
