@@ -80,6 +80,6 @@ export function clickOutside(element: HTMLElement, callbackFunction: Function) {
 
 export function usingTauri(): boolean {
 	return (
-		typeof window !== "undefined" && typeof window.__TAURI__ !== "undefined"
+		typeof window !== "undefined" && typeof (window as Window & { __TAURI__?: unknown }).__TAURI__ !== "undefined"
 	);
 }
