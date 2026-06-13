@@ -1,4 +1,5 @@
-import { ReactNode, useEffect, useRef, useState } from "react";
+import type { ReactNode } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface TopBarDropdownProps {
 	icon: string | null;
@@ -7,7 +8,12 @@ interface TopBarDropdownProps {
 	children?: ReactNode;
 }
 
-export default function TopBarDropdown({ icon, toolTip, disabled = false, children }: TopBarDropdownProps) {
+export default function TopBarDropdown({
+	icon,
+	toolTip,
+	disabled = false,
+	children,
+}: TopBarDropdownProps) {
 	const [exposed, setExposed] = useState(false);
 	const ref = useRef<HTMLDivElement | null>(null);
 
@@ -22,9 +28,19 @@ export default function TopBarDropdown({ icon, toolTip, disabled = false, childr
 	}, []);
 
 	return (
-		<div className={`topbar-dropdown ${icon == null ? "attached" : ""} ${exposed ? "exposed" : ""}`} ref={ref}>
-			<button className={`topbar-button ${disabled ? "disabled" : ""}`} onClick={() => setExposed(prev => !prev)} disabled={disabled} title={toolTip}>
-				{icon != null ? <img src={`./icons/topbar/${icon}.svg`} alt={toolTip} /> : null}
+		<div
+			className={`topbar-dropdown ${icon == null ? "attached" : ""} ${exposed ? "exposed" : ""}`}
+			ref={ref}
+		>
+			<button
+				className={`topbar-button ${disabled ? "disabled" : ""}`}
+				onClick={() => setExposed((prev) => !prev)}
+				disabled={disabled}
+				title={toolTip}
+			>
+				{icon != null ? (
+					<img src={`./icons/topbar/${icon}.svg`} alt={toolTip} />
+				) : null}
 				<img src="./icons/std/dropdown_arrow.svg" alt="" className="arrow" />
 			</button>
 			{exposed ? <div className="dropdown">{children}</div> : null}

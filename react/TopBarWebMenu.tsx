@@ -1,4 +1,5 @@
-import { ReactNode, useEffect, useRef, useState } from "react";
+import type { ReactNode } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface TopBarWebMenuProps {
 	active: string;
@@ -21,7 +22,11 @@ export default function TopBarWebMenu({ active, name }: TopBarWebMenuProps) {
 
 	return (
 		<div className={`topbar-webmenu ${exposed ? "exposed" : ""}`} ref={ref}>
-			<button className="webmenu-btn" onClick={() => setExposed(prev => !prev)} title="Main Menu">
+			<button
+				className="webmenu-btn"
+				onClick={() => setExposed((prev) => !prev)}
+				title="Main Menu"
+			>
 				<p>
 					snug<b>{name}</b>
 				</p>
@@ -39,22 +44,30 @@ export default function TopBarWebMenu({ active, name }: TopBarWebMenuProps) {
 					<a href="" className={active === "stagetune" ? "active" : ""}>
 						<img className="svg-icon" src="./icons/web/stagetune.png" alt="" />
 						<p>Stragetune</p>
-						<p className="tag" style={{ backgroundColor: "#FF2D55" }}>Beta</p>
+						<p className="tag" style={{ backgroundColor: "#FF2D55" }}>
+							Beta
+						</p>
 					</a>
 					<a href="" className={active === "fairytale" ? "active" : ""}>
 						<img className="svg-icon" src="./icons/web/fairytale.png" alt="" />
 						<p>Fairytale</p>
-						<p className="tag" style={{ backgroundColor: "#FF9500" }}>Alpha</p>
+						<p className="tag" style={{ backgroundColor: "#FF9500" }}>
+							Alpha
+						</p>
 					</a>
 					<a href="" className={active === "refsheet" ? "active" : ""}>
 						<img className="svg-icon" src="./icons/web/refsheet.png" alt="" />
 						<p>Refsheet</p>
-						<p className="tag" style={{ backgroundColor: "#4F4F4F" }}>Alpha</p>
+						<p className="tag" style={{ backgroundColor: "#4F4F4F" }}>
+							Alpha
+						</p>
 					</a>
 					<a href="" className={active === "timeless" ? "active" : ""}>
 						<img className="svg-icon" src="./icons/web/timeless.png" alt="" />
 						<p>Timeless</p>
-						<p className="tag" style={{ backgroundColor: "#00C7BE" }}>Alpha</p>
+						<p className="tag" style={{ backgroundColor: "#00C7BE" }}>
+							Alpha
+						</p>
 					</a>
 				</div>
 			) : null}

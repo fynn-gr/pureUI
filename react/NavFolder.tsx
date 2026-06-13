@@ -1,4 +1,5 @@
-import { ReactNode, useEffect, useState } from "react";
+import type { ReactNode } from "react";
+import { useEffect, useState } from "react";
 
 interface NavFolderProps {
 	name: string;
@@ -10,7 +11,15 @@ interface NavFolderProps {
 	children?: ReactNode;
 }
 
-export default function NavFolder({ name, icon, onClick = () => {}, active, exposed, depth = 0, children }: NavFolderProps) {
+export default function NavFolder({
+	name,
+	icon,
+	onClick = () => {},
+	active,
+	exposed,
+	depth = 0,
+	children,
+}: NavFolderProps) {
 	const [isExposed, setIsExposed] = useState(exposed);
 
 	useEffect(() => {
@@ -18,18 +27,25 @@ export default function NavFolder({ name, icon, onClick = () => {}, active, expo
 	}, [exposed]);
 
 	return (
-		<div className={`nav-folder ${isExposed ? "exposed" : ""} ${depth % 2 === 1 ? "odd" : ""}`}>
-			<div className={`nav-item ${active ? "active" : ""}`} onClick={() => onClick()}>
+		<div
+			className={`nav-folder ${isExposed ? "exposed" : ""} ${depth % 2 === 1 ? "odd" : ""}`}
+		>
+			<div
+				className={`nav-item ${active ? "active" : ""}`}
+				onClick={() => onClick()}
+			>
 				<button
 					className="expander"
-					onClick={e => {
+					onClick={(e) => {
 						e.stopPropagation();
-						setIsExposed(prev => !prev);
+						setIsExposed((prev) => !prev);
 					}}
 				>
 					<img src="./icons/std/dropdown_arrow.svg" alt="" />
 				</button>
-				{icon ? <img src={`./icons/topbar/${icon}.svg`} alt="" className="icon" /> : null}
+				{icon ? (
+					<img src={`./icons/topbar/${icon}.svg`} alt="" className="icon" />
+				) : null}
 				<p>{name}</p>
 			</div>
 			{isExposed ? <div className="content">{children}</div> : null}
