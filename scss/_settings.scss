@@ -332,7 +332,7 @@ main.mac.settings {
 	}
 }
 
-main.tahoe.settings {
+main.liquidGlass.settings {
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: 28px 52px auto;
@@ -378,7 +378,8 @@ main.tahoe.settings {
 
 			&.active {
 				//background-color: var(--hover);
-				box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4),
+				box-shadow:
+					0px 0px 6px rgba(0, 0, 0, 0.4),
 					0px 2px 16px rgba(0, 0, 0, 0.4);
 
 				img {

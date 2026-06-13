@@ -1,14 +1,14 @@
 @use "./colors";
 
-main.tahoe .topbar {
+main.liquidGlass .topbar {
 	.win-buttons-mac {
 		top: 0;
 		left: 0;
 		display: flex;
 
 		button {
-			width: 12px;
-			height: 12px;
+			width: 14px;
+			height: 14px;
 			box-sizing: border-box;
 			border: none;
 			border-width: 1px;
@@ -343,7 +343,7 @@ main.tahoe .topbar {
 						&:hover {
 							background-color: var(--hover);
 						}
-						
+
 						&.selected {
 							background-color: var(--accent);
 						}

@@ -9,17 +9,21 @@ import AppMenu from "./AppMenu";
 import { saveSettings } from "@/ts/SaveLoad";
 
 interface AppMenuDevProps {
-	platforms?: Array<"mac" | "win" | "web" | "tahoe">;
+	platforms?: Array<"mac" | "win" | "web" | "liquidGlass">;
 	themes?: boolean;
 	appName: string;
 }
 
-export default function AppMenuDev({ platforms = ["mac", "win", "web", "tahoe"], themes = true, appName }: AppMenuDevProps) {
+export default function AppMenuDev({
+	platforms = ["mac", "win", "web", "liquidGlass"],
+	themes = true,
+	appName,
+}: AppMenuDevProps) {
 	const uiPlatformValue = useUiPlatform();
 	const themeValue = useTheme();
 	const settingsValue = useSettings();
 
-	function setPlatform(value: "mac" | "win" | "web" | "tahoe") {
+	function setPlatform(value: "mac" | "win" | "web" | "liquidGlass") {
 		setUiPlatform(value);
 		saveSettings(settingsValue, value, appName);
 	}
@@ -32,25 +36,36 @@ export default function AppMenuDev({ platforms = ["mac", "win", "web", "tahoe"],
 		<AppMenu name="Dev">
 			{platforms.includes("mac") && (
 				<button className="app-menu-item" onClick={() => setPlatform("mac")}>
-					{uiPlatformValue === "mac" && <img src="./icons/app_menu/checked.svg" alt="" />}
+					{uiPlatformValue === "mac" && (
+						<img src="./icons/app_menu/checked.svg" alt="" />
+					)}
 					<p className="name">mac</p>
 				</button>
 			)}
-			{platforms.includes("tahoe") && (
-				<button className="app-menu-item" onClick={() => setPlatform("tahoe")}>
-					{uiPlatformValue === "tahoe" && <img src="./icons/app_menu/checked.svg" alt="" />}
-					<p className="name">tahoe</p>
+			{platforms.includes("liquidGlass") && (
+				<button
+					className="app-menu-item"
+					onClick={() => setPlatform("liquidGlass")}
+				>
+					{uiPlatformValue === "liquidGlass" && (
+						<img src="./icons/app_menu/checked.svg" alt="" />
+					)}
+					<p className="name">liquidGlass</p>
 				</button>
 			)}
 			{platforms.includes("win") && (
 				<button className="app-menu-item" onClick={() => setPlatform("win")}>
-					{uiPlatformValue === "win" && <img src="./icons/app_menu/checked.svg" alt="" />}
+					{uiPlatformValue === "win" && (
+						<img src="./icons/app_menu/checked.svg" alt="" />
+					)}
 					<p className="name">win</p>
 				</button>
 			)}
 			{platforms.includes("web") && (
 				<button className="app-menu-item" onClick={() => setPlatform("web")}>
-					{uiPlatformValue === "web" && <img src="./icons/app_menu/checked.svg" alt="" />}
+					{uiPlatformValue === "web" && (
+						<img src="./icons/app_menu/checked.svg" alt="" />
+					)}
 					<p className="name">web</p>
 				</button>
 			)}
@@ -58,11 +73,15 @@ export default function AppMenuDev({ platforms = ["mac", "win", "web", "tahoe"],
 				<>
 					<div className="seperator" />
 					<button className="app-menu-item" onClick={() => setTheme("dark")}>
-						{themeValue === "dark" && <img src="./icons/app_menu/checked.svg" alt="" />}
+						{themeValue === "dark" && (
+							<img src="./icons/app_menu/checked.svg" alt="" />
+						)}
 						<p className="name">dark</p>
 					</button>
 					<button className="app-menu-item" onClick={() => setTheme("light")}>
-						{themeValue === "light" && <img src="./icons/app_menu/checked.svg" alt="" />}
+						{themeValue === "light" && (
+							<img src="./icons/app_menu/checked.svg" alt="" />
+						)}
 						<p className="name">light</p>
 					</button>
 				</>
