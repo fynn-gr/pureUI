@@ -34,7 +34,7 @@ export function processIcons() {
 					subdirs.push(entry);
 				}
 			}
-			console.log(subdirs)
+			console.log(subdirs);
 		} catch (err) {
 			console.error("Error while reading sourceDir subfolders:", err);
 		}
@@ -75,7 +75,7 @@ export function processIcons() {
 		} catch (err) {
 			console.error("Error:", err);
 		}
-	}
+	};
 
 	copyIconFiles(sourceDir, targetDir);
 }
@@ -107,16 +107,18 @@ export function buildI18N() {
 					cb(full);
 				}
 			}
-		}
+		};
 
-		walk(i18nDir, (file) => {
+		walk(i18nDir, file => {
 			const ext = path.extname(file).toLowerCase();
 			if (ext === ".yaml" || ext === ".yml") {
 				try {
 					const raw = fs.readFileSync(file, "utf8");
 					const data = load(raw);
 					const rel = path.relative(i18nDir, file);
-					const outPath = path.join(outDir, rel).replace(/\.(yaml|yml)$/i, ".json");
+					const outPath = path
+						.join(outDir, rel)
+						.replace(/\.(yaml|yml)$/i, ".json");
 					const outDirPath = path.dirname(outPath);
 					fs.mkdirSync(outDirPath, { recursive: true });
 					fs.writeFileSync(outPath, JSON.stringify(data, null, 2), "utf8");

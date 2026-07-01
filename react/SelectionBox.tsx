@@ -6,7 +6,11 @@ interface SelectionBoxProps {
 	onChange?: (value: any) => void;
 }
 
-export default function SelectionBox({ options, selected, onChange = () => {} }: SelectionBoxProps) {
+export default function SelectionBox({
+	options,
+	selected,
+	onChange = () => {},
+}: SelectionBoxProps) {
 	const [selectedObj, setSelectedObj] = useState(options[0]);
 	const [exposed, setExposed] = useState(false);
 
@@ -41,10 +45,10 @@ export default function SelectionBox({ options, selected, onChange = () => {} }:
 						key={index}
 						className={selectedObj === option ? "selected" : ""}
 						onClick={() => {
-						setSelectedObj(option);
-						setExposed(false);
-						onChange(option.value);
-					}}
+							setSelectedObj(option);
+							setExposed(false);
+							onChange(option.value);
+						}}
 					>
 						{option.name}
 					</button>

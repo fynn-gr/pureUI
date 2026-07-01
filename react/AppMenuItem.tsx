@@ -9,7 +9,14 @@ interface AppMenuItemProps {
 	checked?: string | null;
 }
 
-export default function AppMenuItem({ id, name, accelerator, disabled = false, icon, checked }: AppMenuItemProps) {
+export default function AppMenuItem({
+	id,
+	name,
+	accelerator,
+	disabled = false,
+	icon,
+	checked,
+}: AppMenuItemProps) {
 	const handler = useMenuHandler();
 
 	return (

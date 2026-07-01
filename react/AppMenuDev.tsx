@@ -13,11 +13,11 @@ export default function AppMenuDev({
 	themes = true,
 	appName,
 }: AppMenuDevProps) {
-	const uiPlatformValue = useStore((s) => s.uiPlatform);
-	const themeValue = useStore((s) => s.theme);
-	const settingsValue = useStore((s) => s.settings);
-	const setUiPlatform = useStore((s) => s.setUiPlatform);
-	const setStoreTheme = useStore((s) => s.setTheme);
+	const uiPlatformValue = useStore(s => s.uiPlatform);
+	const themeValue = useStore(s => s.theme);
+	const settingsValue = useStore(s => s.settings);
+	const setUiPlatform = useStore(s => s.setUiPlatform);
+	const setStoreTheme = useStore(s => s.setTheme);
 
 	function setPlatform(value: "mac" | "win" | "web" | "liquidGlass") {
 		setUiPlatform(value);

@@ -23,7 +23,7 @@ export default function AppMenuContainer({ children }: AppMenuContainerProps) {
 		<div
 			ref={ref}
 			className={`menu-container ${exposed ? "exposed" : ""}`}
-			onClick={() => setExposed((prev) => !prev)}
+			onClick={() => setExposed(prev => !prev)}
 		>
 			{children}
 		</div>

@@ -24,7 +24,7 @@ export default function TopBarWebMenu({ active, name }: TopBarWebMenuProps) {
 		<div className={`topbar-webmenu ${exposed ? "exposed" : ""}`} ref={ref}>
 			<button
 				className="webmenu-btn"
-				onClick={() => setExposed((prev) => !prev)}
+				onClick={() => setExposed(prev => !prev)}
 				title="Main Menu"
 			>
 				<p>

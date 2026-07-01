@@ -5,7 +5,12 @@ interface SettingsCheckboxProps {
 	onChange: () => void;
 }
 
-export default function SettingsCheckbox({ name, checked, checkboxName, onChange }: SettingsCheckboxProps) {
+export default function SettingsCheckbox({
+	name,
+	checked,
+	checkboxName,
+	onChange,
+}: SettingsCheckboxProps) {
 	return (
 		<div className="option">
 			<p className="name">{name}</p>

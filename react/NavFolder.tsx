@@ -36,9 +36,9 @@ export default function NavFolder({
 			>
 				<button
 					className="expander"
-					onClick={(e) => {
+					onClick={e => {
 						e.stopPropagation();
-						setIsExposed((prev) => !prev);
+						setIsExposed(prev => !prev);
 					}}
 				>
 					<img src="./icons/std/dropdown_arrow.svg" alt="" />

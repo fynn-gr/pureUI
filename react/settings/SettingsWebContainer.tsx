@@ -15,9 +15,10 @@ export default function SettingsWebContainer() {
 				<div className="win-buttons-web">
 					<button
 						onClick={() => {
-						(document.querySelector("dialog") as HTMLDialogElement | null)?.close();
-						}
-					}
+							(
+								document.querySelector("dialog") as HTMLDialogElement | null
+							)?.close();
+						}}
 					>
 						<img src="/icons/native/winButtonsWebClose.svg" alt="" />
 					</button>

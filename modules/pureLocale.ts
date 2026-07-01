@@ -3,15 +3,15 @@ import { getLang } from "@/ts/Stores";
 export class pureLocale {
 	language: string;
 	path: string;
-	obj: Record<string, string> = {}; 
+	obj: Record<string, string> = {};
 
 	constructor(language: string, path = "./local") {
 		this.language = language;
 		this.path = path;
 
 		fetch(`/locale/${language}.json`)
-			.then((res) => res.json())
-			.then((data) => {
+			.then(res => res.json())
+			.then(data => {
 				this.obj = data;
 				console.log(this.obj);
 			});

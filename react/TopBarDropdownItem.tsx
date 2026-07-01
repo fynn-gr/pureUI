@@ -5,9 +5,18 @@ interface TopBarDropdownItemProps {
 	disabled?: boolean;
 }
 
-export default function TopBarDropdownItem({ name, checked, onChange = () => {}, disabled = false }: TopBarDropdownItemProps) {
+export default function TopBarDropdownItem({
+	name,
+	checked,
+	onChange = () => {},
+	disabled = false,
+}: TopBarDropdownItemProps) {
 	return (
-		<button className={`item ${disabled ? "disabled" : ""}`} onClick={() => onChange()} disabled={disabled}>
+		<button
+			className={`item ${disabled ? "disabled" : ""}`}
+			onClick={() => onChange()}
+			disabled={disabled}
+		>
 			{checked === undefined ? (
 				<img src="" alt="" style={{ visibility: "hidden" }} />
 			) : checked ? (

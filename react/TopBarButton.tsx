@@ -7,7 +7,14 @@ interface TopBarButtonProps {
 	addClass?: string;
 }
 
-export default function TopBarButton({ id, icon, onClick, toolTip, disabled = false, addClass = "" }: TopBarButtonProps) {
+export default function TopBarButton({
+	id,
+	icon,
+	onClick,
+	toolTip,
+	disabled = false,
+	addClass = "",
+}: TopBarButtonProps) {
 	return (
 		<button
 			id={`btn-${id}`}

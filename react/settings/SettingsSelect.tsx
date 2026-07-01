@@ -13,12 +13,20 @@ interface SettingsSelectProps {
 }
 
 function optionValue(option: SelectionOption) {
-	return typeof option.value === "object" ? JSON.stringify(option.value) : String(option.value);
+	return typeof option.value === "object"
+		? JSON.stringify(option.value)
+		: String(option.value);
 }
 
-export default function SettingsSelect({ name, value, options, onChange }: SettingsSelectProps) {
-	const uiPlatformValue = useStore((s) => s.uiPlatform);
-	const currentValue = typeof value === "object" ? JSON.stringify(value) : String(value);
+export default function SettingsSelect({
+	name,
+	value,
+	options,
+	onChange,
+}: SettingsSelectProps) {
+	const uiPlatformValue = useStore(s => s.uiPlatform);
+	const currentValue =
+		typeof value === "object" ? JSON.stringify(value) : String(value);
 
 	return (
 		<div className="option">
@@ -27,7 +35,9 @@ export default function SettingsSelect({ name, value, options, onChange }: Setti
 				<select
 					value={currentValue}
 					onChange={e => {
-						const selected = options.find(option => optionValue(option) === e.target.value);
+						const selected = options.find(
+							option => optionValue(option) === e.target.value,
+						);
 						if (selected) {
 							onChange(selected.value);
 						}

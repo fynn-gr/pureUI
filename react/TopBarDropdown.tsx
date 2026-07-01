@@ -34,7 +34,7 @@ export default function TopBarDropdown({
 		>
 			<button
 				className={`topbar-button ${disabled ? "disabled" : ""}`}
-				onClick={() => setExposed((prev) => !prev)}
+				onClick={() => setExposed(prev => !prev)}
 				disabled={disabled}
 				title={toolTip}
 			>
