@@ -1,4 +1,4 @@
-import useStore from "@/ts/Stores";
+import { useAppState } from "@/ts/Stores";
 
 interface SelectionOption {
 	value: any;
@@ -24,7 +24,7 @@ export default function SettingsSelect({
 	options,
 	onChange,
 }: SettingsSelectProps) {
-	const uiPlatformValue = useStore(s => s.uiPlatform);
+	const uiPlatformValue = useAppState(s => s.uiPlatform);
 	const currentValue =
 		typeof value === "object" ? JSON.stringify(value) : String(value);
 

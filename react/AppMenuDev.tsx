@@ -1,4 +1,4 @@
-import useStore from "@/ts/Stores";
+import { useAppState } from "@/ts/Stores";
 import AppMenu from "./AppMenu";
 import { saveSettings } from "@/ts/SaveLoad";
 
@@ -13,11 +13,11 @@ export default function AppMenuDev({
 	themes = true,
 	appName,
 }: AppMenuDevProps) {
-	const uiPlatformValue = useStore(s => s.uiPlatform);
-	const themeValue = useStore(s => s.theme);
-	const settingsValue = useStore(s => s.settings);
-	const setUiPlatform = useStore(s => s.setUiPlatform);
-	const setStoreTheme = useStore(s => s.setTheme);
+	const uiPlatformValue = useAppState(s => s.uiPlatform);
+	const themeValue = useAppState(s => s.theme);
+	const settingsValue = useAppState(s => s.settings);
+	const setUiPlatform = useAppState(s => s.setUiPlatform);
+	const setStoreTheme = useAppState(s => s.setTheme);
 
 	function setPlatform(value: "mac" | "win" | "web" | "liquidGlass") {
 		setUiPlatform(value);
