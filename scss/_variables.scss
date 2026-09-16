@@ -3,12 +3,11 @@ $gridGap: 1px;
 
 //round corders
 main.mac {
-	--win-corner: 8px;
+	--win-corner: 16px;
 }
 
 main.liquidGlass {
 	--win-corner: 16px;
-	--win-corner-large: 26px;
 }
 
 main.win {
