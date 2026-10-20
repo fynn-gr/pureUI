@@ -1,21 +1,21 @@
 <script lang="ts">
-import { uiPlatform, theme, settings } from "@/ts/Stores.svelte";
-import AppMenu from "./AppMenu.svelte";
-import { saveSettings } from "@/ts/SaveLoad.svelte";
+	import { uiPlatform, theme, settings } from "@/ts/Stores.svelte";
+	import AppMenu from "./AppMenu.svelte";
+	import { saveSettings } from "@/ts/SaveLoad.svelte";
 
-interface Props {
-	platforms?: Array<"mac" | "win" | "web" | "tahoe">;
-	themes?: boolean;
-	appName: string;
-	children?: any;
-}
+	interface Props {
+		platforms?: Array<"mac" | "win" | "web" | "liquidGlass">;
+		themes?: boolean;
+		appName: string;
+		children?: any;
+	}
 
-let {
-	platforms = ["mac", "win", "web", "tahoe"],
-	themes = true,
-	appName,
-	children,
-}: Props = $props();
+	let {
+		platforms = ["mac", "win", "web", "liquidGlass"],
+		themes = true,
+		appName,
+		children,
+	}: Props = $props();
 </script>
 
 <AppMenu name="Dev">
@@ -33,18 +33,18 @@ let {
 			<p class="name">mac</p>
 		</button>
 	{/if}
-	{#if platforms.includes("tahoe")}
+	{#if platforms.includes("liquidGlass")}
 		<button
 			class="app-menu-item"
 			onclick={() => {
-				$uiPlatform = "tahoe";
+				$uiPlatform = "liquidGlass";
 				saveSettings($settings, $uiPlatform, appName);
 			}}
 		>
-			{#if $uiPlatform == "tahoe"}
+			{#if $uiPlatform == "liquidGlass"}
 				<img src="./icons/app_menu/checked.svg" alt="" />
 			{/if}
-			<p class="name">tahoe</p>
+			<p class="name">liquidGlass</p>
 		</button>
 	{/if}
 	{#if platforms.includes("win")}
