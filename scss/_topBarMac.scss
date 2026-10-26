@@ -9,8 +9,8 @@ main.mac .topbar {
 			display: flex;
 
 			button {
-				width: 12px;
-				height: 12px;
+				width: 14px;
+				height: 14px;
 				box-sizing: border-box;
 				border: none;
 				border-width: 1px;
@@ -248,16 +248,18 @@ main.mac .topbar {
 	}
 
 	&.default {
-		height: 28px;
+		height: 32px;
 
 		.win-buttons-mac {
-			height: 28px;
-			padding: 7px;
+			height: 32px;
+			padding: 9px;
 		}
 
 		.window-title {
 			height: 28px;
 			line-height: 28px;
+			font-size: 13px;
+			font-weight: 600;
 		}
 	}
 
