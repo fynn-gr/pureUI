@@ -1,13 +1,14 @@
 main.web .topbar {
-	height: 40px;
+	height: 38px;
 
 	.topbar-container {
-		height: 40px;
+		height: 38px;
 		gap: 9px;
 		padding-right: 9px;
 		border-bottom: 1px solid rgb(65, 65, 65);
 		border-bottom: 1px solid var(--gridGap);
 		background-color: var(--topbar-BG);
+		border-bottom: 1px solid var(--grid-gap);
 
 		.topbar-webmenu {
 			height: 40px;
@@ -88,94 +89,6 @@ main.web .topbar {
 			}
 		}
 
-		.app-menu {
-			.app-menu-btn {
-				height: 22px;
-				padding: 0 8px;
-				margin: 9px 0;
-				border-radius: 5px;
-			}
-
-			.menu-content {
-				gap: 4px;
-				padding: 4px 0;
-				background-color: var(--app-menu-content-BG);
-				border-radius: 8px;
-				border: 1px solid rgb(26, 26, 26);
-				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-
-				.app-menu-item {
-					display: flex;
-					flex-direction: row;
-					justify-content: left;
-					gap: 8px;
-					height: 28px;
-					margin: 0 4px;
-					border-radius: 5px;
-					font-size: 14px;
-
-					img {
-						width: 28px;
-						height: 28px;
-						filter: var(--icon-filter);
-					}
-
-					.name {
-						margin: 0 12px;
-						flex: 1;
-						line-height: 28px;
-						font-weight: 500;
-					}
-
-					.accelerator {
-						margin-right: 12px;
-						opacity: 50%;
-						line-height: 28px;
-						font-weight: 700;
-					}
-				}
-			}
-		}
-
-		.topbar-button {
-			height: 22px;
-			width: 30px;
-			margin: 9px 0;
-			padding: 0;
-			border-radius: 6px;
-			background-color: var(--button-bg);
-
-			&:hover {
-				background-color: var(--hover);
-			}
-
-			img {
-				margin: -4px 0px;
-			}
-		}
-
-		.topbar-dropdown {
-			&.attached {
-				.topbar-button {
-					width: 16px;
-
-					.arrow {
-						margin: 0;
-					}
-				}
-			}
-
-			.topbar-button {
-				width: 46px;
-
-				.arrow {
-					width: 16px;
-					height: 22px;
-					margin: 0 0 0 -6px;
-				}
-			}
-		}
-
 		.window-title {
 			height: 40px;
 			line-height: 40px;
@@ -193,80 +106,6 @@ main.web .topbar {
 				font-size: 13px;
 				font-weight: 400;
 				opacity: 60%;
-			}
-		}
-
-		.select {
-			.select-btn {
-				height: 22px;
-				margin: 9px 0;
-				border-radius: 6px;
-				color: var(--text);
-				background-color: var(--hover);
-
-				&:hover {
-					background-color: var(--hover);
-				}
-
-				.options {
-					p {
-						height: 22px;
-						line-height: 22px;
-						margin-top: -22px;
-						margin-left: 6px;
-						margin-right: 6px;
-
-						&:first-child {
-							margin-top: 0;
-						}
-					}
-				}
-
-				img {
-					height: 16px;
-					margin: auto 0;
-					filter: var(--icon-filter);
-				}
-			}
-
-			.option-container {
-				padding: 4px 0;
-				gap: 4px;
-				border-radius: 8px;
-				background-color: var(--appMenuContentBG);
-				backdrop-filter: blur(40px);
-				box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
-
-				button {
-					height: 28px;
-					margin: 0 4px;
-					padding: 0 12px;
-					border-radius: 4px;
-					font-size: 14px;
-					text-align: left;
-					color: var(--text);
-					background-color: transparent;
-
-					&:hover {
-						background-color: var(--hover);
-					}
-
-					&.selected {
-						background-color: var(--accent);
-					}
-				}
-			}
-		}
-
-		.topbar-group {
-			height: 22px;
-			margin: 9px 0 9px 0;
-			border-radius: 6px;
-			background-color: var(--button-bg);
-
-			.topbar-button {
-				margin: 0;
-				background-color: transparent;
 			}
 		}
 

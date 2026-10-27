@@ -68,14 +68,6 @@ main.mac {
 	}
 }
 
-main.liquidGlass {
-	corner-shape: superellipse(1.1);
-
-	.window-rim {
-		corner-shape: superellipse(1.1);
-	}
-}
-
 main.win {
 	&.custom-decorations.window-body {
 		border-radius: 9px;

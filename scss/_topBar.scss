@@ -7,11 +7,13 @@ main .topbar {
 	right: 0;
 	z-index: 600;
 	background-color: var(--topbar-BG);
+	border-bottom: 1px solid var(--grid-gap);
 
 	.topbar-container {
 		display: flex;
 		flex-direction: row;
 		flex-wrap: nowrap;
+		align-items: center;
 
 		.spacer {
 			flex: 10;
@@ -33,6 +35,7 @@ main .topbar {
 			.app-menu-btn {
 				color: var(--text);
 				background-color: var(--hover);
+				border-radius: 5px;
 			}
 
 			.menu-content {
@@ -41,6 +44,11 @@ main .topbar {
 				z-index: 999;
 				flex-direction: column;
 				background-color: var(--app-menu-content-BG);
+				gap: 4px;
+				padding: 4px 0;
+				border-radius: 8px;
+				border: 1px solid rgb(26, 26, 26);
+				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 
 				&:has(.app-menu-item > img) {
 					.app-menu-item:not(:has(img)) {
@@ -58,6 +66,11 @@ main .topbar {
 					text-align: left;
 					color: var(--text);
 					background-color: transparent;
+					gap: 8px;
+					height: 28px;
+					margin: 0 4px;
+					border-radius: 5px;
+					font-size: 14px;
 
 					&:hover {
 						background-color: var(--hover);
@@ -70,14 +83,25 @@ main .topbar {
 					img {
 						display: block;
 						margin-right: -12px;
+						width: 28px;
+						height: 28px;
+						filter: var(--icon-filter);
 					}
 
 					.name {
 						display: block;
+						margin: 0 12px;
+						flex: 1;
+						line-height: 28px;
+						font-weight: 500;
 					}
 
 					.accelerator {
 						display: block;
+						margin-right: 12px;
+						opacity: 50%;
+						line-height: 28px;
+						font-weight: 700;
 					}
 				}
 
@@ -97,6 +121,7 @@ main .topbar {
 
 		.topbar-button {
 			background-color: transparent;
+			border-radius: 6px;
 
 			img {
 				filter: var(--icon-filter);
@@ -184,35 +209,10 @@ main .topbar {
 		}
 
 		.select {
-			position: relative;
-
 			.select-btn {
-				display: flex;
-				flex-direction: row;
-
 				.options {
-					display: flex;
-					flex-direction: column;
-					align-items: center;
-
 					p {
-						visibility: hidden;
-
-						&.sel {
-							visibility: visible;
-						}
 					}
-				}
-			}
-
-			.option-container {
-				display: none;
-				flex-direction: column;
-				position: absolute;
-				top: 0;
-
-				&.exposed {
-					display: flex;
 				}
 			}
 		}
@@ -220,6 +220,8 @@ main .topbar {
 		.topbar-group {
 			display: flex;
 			flex-direction: row;
+			gap: 1px;
+			border-radius: 6px;
 
 			&:hover {
 				background-color: var(--hover);
@@ -254,8 +256,170 @@ main .topbar {
 		}
 	}
 
-	&.buttonbar {
+	&.buttonbar,
+	&.toolbar {
+		height: 38px;
+
 		.topbar-container {
+			height: 38px;
+			gap: 9px;
+
+			.app-menu {
+				.app-menu-btn {
+					height: 26px;
+					width: 40px;
+					padding: 0;
+				}
+			}
+
+			.document-title {
+				p {
+					height: 38px;
+					line-height: 38px;
+				}
+
+				.save-indicator {
+					height: 38px;
+					line-height: 38px;
+				}
+			}
+
+			.topbar-button {
+				height: 26px;
+				width: 26px;
+				padding: 0;
+
+				img {
+					margin: -2px;
+				}
+			}
+
+			.topbar-dropdown {
+				&.attached {
+					.topbar-button {
+						width: 16px;
+
+						.arrow {
+							margin: 3px 0 3px 0px;
+						}
+					}
+				}
+
+				.topbar-button {
+					width: 52px;
+
+					img {
+						margin: -4px 2px;
+					}
+
+					.arrow {
+						width: 16px;
+						height: 22px;
+						margin: 3px 0 3px -6px;
+					}
+				}
+			}
+
+			.select {
+				position: relative;
+				line-height: 26px;
+				color: var(--text);
+				background-color: transparent;
+
+				.select-btn {
+					height: 26px;
+					display: flex;
+					flex-direction: row;
+					color: var(--text);
+					background-color: transparent;
+					border-radius: 6px;
+
+					&:hover {
+						background-color: var(--hover);
+					}
+
+					.options {
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+
+						p {
+							visibility: hidden;
+							height: 26px;
+							line-height: 26px;
+							font-size: 12px;
+							text-align: center;
+							margin-top: -26px 6px 0 6px;
+
+							&.sel {
+								visibility: visible;
+							}
+
+							&:first-child {
+								margin-top: 0;
+							}
+
+							img {
+								height: 16px;
+								margin: auto 0;
+								filter: var(--icon-filter);
+							}
+						}
+					}
+
+					img {
+						width: 16px;
+						height: 16px;
+						opacity: 50%;
+						line-height: 28px;
+						font-weight: 700;
+					}
+				}
+
+				.option-container {
+					display: none;
+					flex-direction: column;
+					position: absolute;
+					top: -6px;
+					left: -6px;
+					padding: 5px;
+					gap: 0;
+					border: 1px solid rgba(128, 128, 128, 0.437);
+					border-radius: 6px;
+					backdrop-filter: blur(44px);
+					-webkit-backdrop-filter: blur(40px);
+					background-color: rgba(21, 21, 21, 0.6);
+					box-shadow: 0 0 6px rgba(0, 0, 0, 0.367);
+
+					&.exposed {
+						display: flex;
+					}
+
+					button {
+						height: 22px;
+						padding: 0 6px;
+						text-align: left;
+						line-height: 22px;
+						font-size: 13px;
+						color: var(--text);
+						background-color: transparent;
+						border-radius: 5px;
+
+						&:hover {
+							background-color: var(--hover);
+						}
+
+						&.selected {
+							background-color: var(--accent);
+						}
+					}
+				}
+			}
+
+			.topbar-group {
+				height: 26px;
+			}
+
 			.tab-container {
 				display: flex;
 				flex-direction: row;
@@ -274,9 +438,6 @@ main .topbar {
 				}
 			}
 		}
-	}
-
-	&.toolbar {
 	}
 
 	&.tabbar {

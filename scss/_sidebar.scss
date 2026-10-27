@@ -1,7 +1,9 @@
 @use "../scss/_colors" as colors;
 
 .sidebar {
-	//background-color: var(--navbar-BG);
+	background-color: var(--navbar-BG);
+	border-right: 1px solid var(--grid-gap);
+
 	.sidebar-inner {
 		overflow: hidden;
 	}
@@ -18,8 +20,7 @@
 
 main.mac {
 	.sidebar {
-		border-right: 1px solid var(--grid-gap);
-		background-color: var(--navbar-BG);
+		
 
 		.nav-tabs {
 			margin: 0;
@@ -60,54 +61,8 @@ main.mac {
 	}
 }
 
-main.liquidGlass {
-	.sidebar {
-		position: relative;
-		backdrop-filter: none;
-		z-index: 50;
-		border-radius: 16px 0 0 16px;
-		background-color: var(--topbar-BG);
-		box-shadow:
-			0px 0px 6px rgba(0, 0, 0, 0.4),
-			0px 2px 16px rgba(0, 0, 0, 0.4);
-
-		.nav-tabs {
-			margin: 0 6px 0 6px;
-			border: 1px solid rgba(128, 128, 128, 0.343);
-			border-radius: 13px;
-
-			button {
-				height: 24px;
-				padding: 0;
-				background-color: transparent;
-				border-radius: 13px;
-
-				&.active {
-					background-color: var(--accent);
-					color: var(--text);
-
-					img {
-						filter: var(--icon-filter);
-					}
-				}
-
-				img {
-					width: 24px;
-					height: 24px;
-					filter: var(--icon-filter);
-				}
-			}
-		}
-
-		.nav-list {
-			margin-top: 36px;
-		}
-	}
-}
-
 main.win {
 	.sidebar {
-		background-color: var(--topbar-BG);
 	}
 
 	&:has(.buttonbar) {
@@ -125,7 +80,6 @@ main.win {
 
 main.web {
 	.sidebar {
-		background-color: var(--topbar-BG);
 
 		.nav-list {
 			margin-top: 36px;

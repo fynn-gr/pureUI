@@ -1,5 +1,4 @@
 main.mac .topbar {
-	border-bottom: 1px solid var(--grid-gap);
 	border-radius: 0 8px 0 0;
 
 	.topbar-container {
@@ -55,52 +54,6 @@ main.mac .topbar {
 			}
 		}
 
-		.app-menu {
-			.app-menu-btn {
-				font-weight: 600;
-				border-radius: 6px;
-			}
-
-			.menu-content {
-				padding: 5px;
-				border-radius: 6px;
-				background-color: var(--app-menu-content-BG);
-				border: 1px solid rgba(128, 128, 128, 0.504);
-
-				.app-menu-item {
-					display: flex;
-					flex-direction: row;
-					justify-content: left;
-					gap: 8px;
-					height: 22px;
-					line-height: 22px;
-					padding: 0 6px 0 0;
-					border-radius: 5px;
-					font-size: 14px;
-
-					&:hover {
-						background-color: var(--accent);
-					}
-
-					img {
-						width: 22px;
-						height: 22px;
-						margin-right: -6px;
-						filter: var(--icon-filter);
-					}
-				}
-
-				.seperator {
-					margin: 4px 0;
-				}
-			}
-		}
-
-		.topbar-button {
-			border-radius: 6px;
-			background-color: var(--button-bg);
-		}
-
 		.window-title {
 			font-size: 13px;
 			font-weight: 600;
@@ -131,119 +84,6 @@ main.mac .topbar {
 					height: 30px;
 				}
 			}
-
-			.dropdown {
-				padding: 5px;
-				border-radius: 6px;
-				backdrop-filter: blur(40px);
-				-webkit-backdrop-filter: blur(40px);
-				background-color: rgb(21, 21, 21);
-				border: 1px solid rgba(128, 128, 128, 0.504);
-
-				.item {
-					justify-content: left;
-					height: 22px;
-					line-height: 22px;
-					padding: 0 5px;
-					border-radius: 5px;
-					font-size: 14px;
-
-					&:hover {
-						background-color: var(--accent);
-					}
-
-					img {
-						width: 22px;
-						height: 22px;
-						margin-left: -5px;
-						filter: var(--icon-filter);
-						-webkit-filter: var(--icon-filter);
-					}
-
-					.name {
-						line-height: 22px;
-						height: 22px;
-					}
-				}
-
-				.seperator {
-					margin: 4px 0;
-					border-top: 1px solid rgba(128, 128, 128, 0.2);
-				}
-			}
-		}
-
-		.select {
-			color: var(--text);
-			background-color: transparent;
-
-			.select-btn {
-				color: var(--text);
-				background-color: transparent;
-				border-radius: 6px;
-				background-color: var(--button-bg);
-
-				&:hover {
-					background-color: var(--hover);
-				}
-
-				.options {
-					p {
-						font-size: 12px;
-						text-align: center;
-						margin-left: 6px;
-						margin-right: 6px;
-					}
-				}
-
-				img {
-					height: 16px;
-					margin: auto 0;
-					filter: var(--icon-filter);
-				}
-			}
-
-			.option-container {
-				top: -6px;
-				left: -6px;
-				padding: 5px;
-				gap: 0;
-				border: 1px solid rgba(128, 128, 128, 0.437);
-				border-radius: 6px;
-				backdrop-filter: blur(44px);
-				-webkit-backdrop-filter: blur(40px);
-				background-color: rgba(21, 21, 21, 0.6);
-				box-shadow: 0 0 6px rgba(0, 0, 0, 0.367);
-
-				button {
-					height: 22px;
-					padding: 0 6px;
-					text-align: left;
-					line-height: 22px;
-					font-size: 13px;
-					color: var(--text);
-					background-color: transparent;
-					border-radius: 5px;
-
-					&:hover {
-						background-color: var(--hover);
-					}
-
-					&.selected {
-						background-color: var(--accent);
-					}
-				}
-			}
-		}
-
-		.topbar-group {
-			gap: 1px;
-			border-radius: 6px;
-			background-color: var(--button-bg);
-
-			.topbar-button {
-				background-color: transparent;
-			}
 		}
 	}
 
@@ -263,205 +103,22 @@ main.mac .topbar {
 		}
 	}
 
-	&.buttonbar {
-		height: 38px;
-
+	&.buttonbar,
+	&.toolbar {
 		.topbar-container {
-			height: 38px;
-			gap: 9px;
-			padding-right: 9px;
+			padding-right: 6px;
+
+			& .topbar-group:last-child {
+				border-top-right-radius: 10px !important;
+
+				.topbar-button:last-child {
+					border-top-right-radius: 10px !important;
+				}
+			}
 
 			.win-buttons-mac {
 				height: 38px;
-				padding: 14px 4px 14px 14px;
-			}
-
-			.app-menu {
-				.app-menu-btn {
-					height: 22px;
-					width: 40px;
-					margin: 8px 0 8px 0;
-					padding: 0;
-				}
-			}
-
-			.document-title {
-				p {
-					height: 38px;
-					line-height: 38px;
-				}
-
-				.save-indicator {
-					height: 38px;
-					line-height: 38px;
-				}
-			}
-
-			.topbar-button {
-				height: 22px;
-				width: 30px;
-				margin: 9px 0;
-				padding: 0;
-
-				img {
-					margin: -4px 0;
-				}
-			}
-
-			.topbar-dropdown {
-				&.attached {
-					.topbar-button {
-						width: 16px;
-
-						.arrow {
-							margin: 0;
-						}
-					}
-				}
-
-				.topbar-button {
-					width: 46px;
-
-					img {
-						margin: -4px 2px;
-					}
-
-					.arrow {
-						width: 16px;
-						height: 22px;
-						margin: 0 0 0 -6px;
-					}
-				}
-			}
-
-			.select {
-				line-height: 22px;
-				margin: 9px 0 9px 0;
-
-				.select-btn {
-					height: 22px;
-
-					.options {
-						p {
-							height: 22px;
-							line-height: 22px;
-							margin-top: -22px;
-
-							&:first-child {
-								margin-top: 0;
-							}
-						}
-					}
-				}
-			}
-
-			.topbar-group {
-				height: 22px;
-				margin: 9px 0;
-
-				.topbar-button {
-					margin: 0;
-				}
-			}
-		}
-	}
-
-	&.toolbar {
-		height: 54px;
-
-		.topbar-container {
-			height: 54 px;
-			gap: 13px;
-			padding-right: 12px;
-
-			.win-buttons-mac {
-				height: 54px;
-				padding: 21px 4px 21px 21px;
-			}
-
-			.app-menu {
-				.app-menu-btn {
-					height: 28px;
-					width: 40px;
-					margin: 13px 0;
-					padding: 0;
-				}
-			}
-
-			.document-title {
-				p {
-					height: 48px;
-					line-height: 48px;
-				}
-
-				.save-indicator {
-					height: 48px;
-					line-height: 48px;
-				}
-			}
-
-			.topbar-button {
-				height: 28px;
-				width: 40px;
-				margin: 14px 0;
-				padding: 0;
-
-				img {
-					margin: -1px 2px;
-				}
-			}
-
-			.topbar-dropdown {
-				&.attached {
-					.topbar-button {
-						width: 16px;
-
-						.arrow {
-							margin: 0;
-						}
-					}
-				}
-				.topbar-button {
-					width: 46px;
-
-					.arrow {
-						margin: 0 0 0 -6px;
-					}
-				}
-			}
-
-			.select {
-				margin: 14px 0;
-
-				.select-btn {
-					height: 28px;
-					line-height: 28px;
-
-					.options {
-						p {
-							height: 28px;
-							line-height: 28px;
-							margin-top: -28px;
-
-							&:first-child {
-								margin-top: 0;
-							}
-						}
-					}
-
-					img {
-						margin: 5px 2px;
-					}
-				}
-			}
-
-			.topbar-group {
-				height: 28px;
-				margin: 13px 0;
-
-				.topbar-button {
-					margin: 0;
-				}
+				padding: 12px 0 12px 12px;
 			}
 		}
 	}
