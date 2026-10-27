@@ -208,15 +208,6 @@ main .topbar {
 			}
 		}
 
-		.select {
-			.select-btn {
-				.options {
-					p {
-					}
-				}
-			}
-		}
-
 		.topbar-group {
 			display: flex;
 			flex-direction: row;
@@ -370,9 +361,11 @@ main .topbar {
 					img {
 						width: 16px;
 						height: 16px;
+						margin: 5px 0 5px -4px;
 						opacity: 50%;
 						line-height: 28px;
 						font-weight: 700;
+						filter: var(--icon-filter);
 					}
 				}
 
