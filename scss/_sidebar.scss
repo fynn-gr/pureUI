@@ -11,43 +11,46 @@
 	.nav-tabs {
 		display: flex;
 		flex-direction: row;
+		align-items: left;
+		padding: 0 8px;
 
 		button {
-			flex-grow: 1;
+			display: flex;
+			flex-direction: row;
+			border-radius: 6px;
+			background-color: transparent;
+
+			&.active {
+				background-color: var(--hover);
+
+				img {
+					filter: var(--icon-filter);
+				}
+
+				p {
+					display: block;
+				}
+			}
+
+			img {
+				filter: var(--icon-filter);
+			}
+
+			p {
+				display: none;
+				height: 30px;
+				line-height: 30px;
+				padding: 0 6px 0 0;
+				font-size: 12px;
+				font-weight: 600;
+				color: var(--text);
+			}
 		}
 	}
 }
 
 main.mac {
 	.sidebar {
-		
-
-		.nav-tabs {
-			margin: 0;
-			border-top: 1px solid rgba(128, 128, 128, 0.343);
-			border-bottom: 1px solid rgba(128, 128, 128, 0.343);
-
-			button {
-				height: 28px;
-				padding: 0;
-				background-color: transparent;
-				border-radius: 13px;
-
-				&.active {
-					color: var(--text);
-
-					img {
-						filter: var(--accent-filter);
-					}
-				}
-
-				img {
-					width: 28px;
-					height: 28px;
-					filter: var(--icon-filter);
-				}
-			}
-		}
 
 		.nav-list {
 			margin-top: 46px;
