@@ -1,7 +1,7 @@
 @use "../scss/_colors" as colors;
 
 .sidebar {
-	background-color: var(--navbar-BG);
+	background-color: var(--topbar-BG);
 	border-right: 1px solid var(--grid-gap);
 
 	.sidebar-inner {

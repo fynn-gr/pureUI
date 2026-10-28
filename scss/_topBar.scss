@@ -338,9 +338,9 @@ main .topbar {
 							visibility: hidden;
 							height: 26px;
 							line-height: 26px;
+							margin: -26px 6px 0px 6px;
 							font-size: 12px;
 							text-align: center;
-							margin-top: -26px 6px 0 6px;
 
 							&.sel {
 								visibility: visible;

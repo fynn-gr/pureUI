@@ -106,6 +106,7 @@
 
 		&:has(> .active) {
 			background-color: var(--accent);
+			
 			& > .nav-item {
 				background-color: transparent;
 			}
