@@ -103,6 +103,10 @@ main.mac .topbar {
 		.topbar-container {
 			padding-right: 6px;
 
+			& .topbar-button:last-child {
+				border-top-right-radius: 10px !important;
+			}
+
 			& .topbar-group:last-child {
 				border-top-right-radius: 10px !important;
 
